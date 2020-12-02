@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copyright Information &#8212; Perl 5 By Example</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="#" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Perl 5 By Example</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch01.html">
+   1. 01 - Getting Your Feet Wet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch02.html">
+   2. 02 - Numeric and String Literals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch03.html">
+   3. 03 - Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch04.html">
+   4. 04 - Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch05.html">
+   5. 05 - Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch06.html">
+   6. 06 - Statements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch07.html">
+   7. 07 - Control Statements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch08.html">
+   8. 08 - References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch09.html">
+   9. 09 - Using Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   10. 10 - Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch11.html">
+   11. 11 - Creating Reports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch12.html">
+   12. 12 - Using Special Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   13. 13 - Handling Errors and Signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   14. 14 - What Are Objects?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   15. 15 - Perl Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   16. 16 - Debugging Perl
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   17. 17 - Command-line Options
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch18.html">
+   18. 18 - Using Internet Protocols
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   19. 19 - What is CGI?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch20.html">
+   20. 20 - Form Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch21.html">
+   21. 21 - Using Perl with Web Servers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch22.html">
+   22. 22 - Internet Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xp0a.html">
+   23. Appendix A - Review Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xp0b.html">
+   24. Appendix B - Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xp0c.html">
+   25. Appendix C - Function List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xp0d.html">
+   26. Appendix D - The Windows Registry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="xp0e.html">
+   27. CD Contents Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="errata.html">
+   28. Errata
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ftplib.html">
+   29. ftplib.pl
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/copyright.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="copyright-information">
+<h1>Copyright Information<a class="headerlink" href="#copyright-information" title="Permalink to this headline">¶</a></h1>
+<CENTER><A name="Copyright Info"></A>Copyright � 1996, Que 
+Corporation<BR>Technical support for our books and software is available by 
+email from <A href="mailto:support@mcp.com">support@mcp.com</A> </CENTER>
+<P>
+<BLOCKQUOTE><FONT size=2>Copyright �1996, Que Corporation. All rights 
+  reserved. No part of this book may be used or reproduced in any form or by any 
+  means, or stored in a database or retrieval system without prior written 
+  permission of the publisher except in the case of brief quotations embodied in 
+  critical articles and reviews. Making copies of any part of this book for any 
+  purpose other than your own personal use is a violation of United States 
+  copyright laws. For information, address Que Corporation, 201 West 
+  103<SUP>rd</SUP> Street, Indianapolis, IN 46290.
+  <P>Notice: This material is from <I>Perl 5 by Example</I>, ISBN: 
+  0-7897-0866-3. The electronic version of this material has not been through 
+  the final proof reading stage that the book goes through before being 
+  published in printed form. Some errors may exist here that are corrected 
+  before the book is published. This material is provided "as is" without any 
+  warranty of any kind.</FONT> </P></BLOCKQUOTE>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By David Medinets<br/>
+        
+            &copy; <a href="#">Copyright</a> 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

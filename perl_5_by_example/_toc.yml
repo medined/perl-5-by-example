@@ -1,7 +1,47 @@
-# Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
-- file: intro
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
+- file: _intro
+  numbered: true
+
+- part: Basic Perl
+  chapters:
+  - file: getting-your-feet-wet
+  - file: literals
+  - file: variables
+  - file: operators
+  - file: functions
+  - file: statements
+  - file: control-statements
+  - file: references
+
+- part: Intermediate Perl
+  chapters:
+  - file: files
+  - file: regular-expressions
+  - file: reports
+
+- part: Advanced Perl
+  chapters:
+  - file: special-variables
+  - file: errors
+  - file: objects
+  - file: modules
+  - file: debugging
+  - file: cli
+
+- part: The Internet
+  chapters:
+  - file: internet-protocols
+  - file: cgi
+  - file: form-processing
+  - file: web-servers
+  - file: internet-resources
+
+- part: Miscellany
+  chapters:
+  - file: review-answers
+  - file: glossary
+  - file: function-list
+  - file: windows-registry
+  - file: cd-contents
+  - file: ftplib
+  - file: errata

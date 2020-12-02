@@ -1,0 +1,1226 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7. ftplib.pl &#8212; Perl 5 By Example</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="6. Errata" href="ch28.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Perl 5 By Example</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Basic Perl
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch01.html">
+   1. Getting Your Feet Wet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="literals.html">
+   2. Numeric and String Literals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch03.html">
+   3. Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch04.html">
+   4. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch05.html">
+   5. Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch06.html">
+   6. Statements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch07.html">
+   7. Control Statements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch08.html">
+   8. References
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Intermediate Perl
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch09.html">
+   1. Using Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regular-expressions.html">
+   2. Regular Expressions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch11.html">
+   3. Creating Reports
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Advanced Perl
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch12.html">
+   1. Using Special Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch13.html">
+   2. Handling Errors and Signals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch14.html">
+   3. What Are Objects?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch15.html">
+   4. Perl Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch16.html">
+   5. Debugging Perl
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch17.html">
+   6. Command-line Options
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  The Internet
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="internet-resources.html">
+   1. Using Internet Protocols
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch19.html">
+   2. What is CGI?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch20.html">
+   3. Form Processing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch21.html">
+   4. Using Perl with Web Servers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch22.html">
+   5. Internet Resources
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Miscellany
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch23.html">
+   1. Review Questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch24.html">
+   2. Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch25.html">
+   3. Function List
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch26.html">
+   4. The Windows Registry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch27.html">
+   5. CD Contents Overview
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch28.html">
+   6. Errata
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. ftplib.pl
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch29.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ftplib-pl">
+<h1><span class="section-number">7. </span>ftplib.pl<a class="headerlink" href="#ftplib-pl" title="Permalink to this headline">¶</a></h1>
+<p>This file is needed for listing 18.5 in the book if you are using Win95 or WinNT.</p>
+<p>Note: Use cut and paste directly from your web browser window in order to copy this file. Looking at the HTML source won’t help because the &lt; and &gt; characters have been replaced by their HTML entity equivalents.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>;############################################################################
+;#
+;#  ftplib.pl - an FTP library
+;#
+;#  Revision:  1.1L 4/5/95
+;#             Luke Y. Lu &amp;lt;ylu@mail.utexas.edu&amp;gt;
+;#             add sub gets to get file and return it as a big string.
+;#
+;#  Revision:  1.1  8/16/94
+;#
+;#  Authors:   Gene Spafford    &amp;lt;spaf@cs.purdue.edu&amp;gt;
+;#             David Sundstrom  &amp;lt;sunds@lobby.ti.com&amp;gt;
+;#
+;#  Co-Author: Randal Schwartz
+;#
+;# Public Functions:
+;#  ftp::ascii()
+;#  ftp::binary()
+;#  ftp::close()
+;#  ftp::cdup()         - move up one level in the directory hierarchy
+;#  ftp::cwd( newDir )  - change to a different remote directory.
+;#  ftp::debug(&#39;ON&#39;)    - starts printing FTP server responses to stderr.
+;#  ftp::debug()        - stops printing FTP server responses to stderr.
+;#  ftp::delete( fileName )
+;#  ftp::dir( dirName )     - returns a array with filenames, size, dates, and permissions.
+;#  ftp::error()
+;#  ftp::get( remoteFileName, localFileName ) - retrieves a remote file. If a local filename is not specified, the remote name will be used.
+;#  ftp::gets( remoteFileName )                - retrieves a remote file into a scalar.
+;#  ftp::list( dirName )
+;#  ftp::mkdir( dirName )
+;#  ftp::open( siteName, userId, password, account )
+;#  ftp::put( localFileName, remoteFileName )
+;#  ftp::pwd()  - Get name of current remote directory
+;#  ftp::rename( fromName, toName ) - rename remote file.
+;#  ftp::response() - get last response from server.
+;#  ftp::rmdir( dirName )
+;#  ftp::site( siteCmd )    - send a site command.
+;#  ftp::timeout( value )   - set the timeout value, 0 is forever.
+;#
+;#  This version of ftplib does not use the chat2.pl library.
+;#
+;#  References:  RFC959 - File Transfer Protocol (FTP)
+;#                        J. Postel and J. Reynolds, Oct 1985
+;#
+;#
+;#  NOTE TO SysV USERS:  You need to have sys/socket.ph installed on your
+;#   system in order for the arguments to socket to be correct.  Ftplib
+;#   will assume BSD defaults for socket if it cannot load socket.ph.  These
+;#   defaults will not work on SysV systems.  Run h2ph to create socket.ph.
+;#   (Thanks to Andreas Klingler &amp;lt;mfrz06@hp53.rrze.uni-erlangen.de&amp;gt;)
+;#
+;#   Thanks to Ed Ravin &amp;lt;elr@wp.prodigy.com&amp;gt; for multi-interface fixes
+;#
+; ############################################################################
+#   @(#)ftplib.pl   1.6 4/14/95 (cc.utexas.edu) /home/uts/cc/ccdc/zippy/src/perl/url_get/SCCS/s.ftplib.pl
+
+package ftp;
+    if ($] &amp;lt; 5.0) {
+        eval &#39;require &quot;sys/socket.ph&quot;&#39;;  ## needed to get socket arguments for sys5
+    } else {
+        eval &#39;use Socket&#39;;  ## For Perl5
+    }
+
+; ############################################################################
+; ############################################################################
+;#                                                                            #
+;#  Package Initialization                                                    #
+;#                                                                            #
+;#  This section is run when the package is required.  Here I initialize      #
+;#  package globals.                                                          #
+;#                                                                            #
+;#                                                                            #
+; ############################################################################
+
+INIT: { 
+    $Ftp = getservbyname(&quot;ftp&quot;, &quot;tcp&quot;) || 21;
+                                                           
+    # signals to catch
+    @sigs = (&#39;INT&#39;, &#39;HUP&#39;, &#39;TERM&#39;, &#39;QUIT&#39;); 
+
+    if (Win32::IsWin95) {
+        # dmm - Win95 does not generate some of those signals.
+        @sigs = (&#39;INT&#39;, &#39;TERM&#39;);
+    }
+
+;#
+;# init socket stuff
+;#
+    
+    # format to pack to build argment for socket call
+    $Sockaddr = &#39;S n a4 x8&#39;;
+    # $Sockaddr = &#39;S n c4 x8&#39;; for SunOS 5.4+ (Solaris 2)
+    
+    # this will contain the address of the command connection
+    # which will be used in the bind to the data connection.
+    $Cmdaddr = &#39;\0&#39;x4;
+    $Cmdname = &#39;\0&#39;x16;
+
+    # get protocol number for tcp, assume 6 if getprotobyname fails
+    $Proto = getprotobyname(&quot;tcp&quot;) || 6;
+
+    # fallback on BSD defaults if socket.ph wasn&#39;t loaded
+    # Of course, if you&#39;re running under SYS5, this won&#39;t work for you
+    # you must have run h2ph to install socket.ph.
+    $Inet = &amp;amp;AF_INET || 2;
+    $Stream = &amp;amp;SOCK_STREAM || 1;
+
+    
+;#
+;# &quot;define&quot; (document) package globals
+;#
+
+    # filehandles
+
+    # CMD        - socket handle for command channel
+    # DATA       - socket handle for accepted data channel
+    # GENERIC    - data channel before accept
+    # DFILE      - file handle for get/put
+           
+    # globals
+
+        # dmm - i initialized $User, $Password, $Host, and @Resp to
+        # avoid messages about void context.
+     $User         = &#39;&#39;;
+     $Password     = &#39;&#39;;
+     $Host         = &#39;&#39;;
+     $NeedsClose   = 0;  # non-zero if a session is open 
+     $NeedsCleanup = 0;  # non-zero if a file needs to be removed
+     @Resp         = (); # last response from server
+     $Ascii        = 1;  # true if Ascii mode
+     $Debug        = 0;  # if true, print ftp responses to stderr
+     $Timeout      = 0;  # timeout value; 0==infinity
+} # end INIT #
+
+;#
+;#
+;#
+;#
+  
+; ############################################################################
+; ############################################################################
+;#                                                                            #
+;#  User routines                                                             #
+;#                                                                            #
+;#  These are the functions intended to be callable by the user.  In most     #
+;#  cases, undef is returned if there was an error, and some non-zero number  #
+;#  if the command was successful.                                            #
+;#                                                                            #
+;#  The exception to this are functions such as &quot;list&quot; which return an        #
+;#  array context.  An empty array may indicate no files, or it may indicate  #
+;#  an error condition.  To find out, call ftp&#39;error;  if the return value    #
+;#  is not &quot;undef&quot;, there was an error.                                       #
+;#                                                                            #
+;#                                                                            #
+; ############################################################################
+
+; ############################################################################
+;#   change to ascii file transfer
+;#
+sub ascii { ## Public 
+    $Ascii=1;
+    &amp;amp;cmd (&quot;2&quot;, &quot;type a&quot;);
+}
+
+; ############################################################################
+;#   change to binary file transfer
+;#
+sub binary { ## Public
+    $Ascii=0;
+    &amp;amp;cmd (&quot;2&quot;, &quot;type i&quot;);
+}
+
+; ############################################################################
+;#
+;#  Close an FTP session
+
+sub close { ## Public
+    local($ret);
+    return 1 unless $NeedsClose;
+    $ret=&amp;amp;cmd(&quot;2&quot;,&quot;quit&quot;);
+    close CMD;
+    undef $NeedsClose;
+    &amp;amp;signals(0);
+    $ret;
+}
+
+; ############################################################################
+;#   cd up a directory level
+;#
+sub cdup { ## Public
+    &amp;amp;cmd (&quot;2&quot;, &quot;cdup&quot;);
+}
+
+; ############################################################################
+;# change remote directory
+
+sub cwd { ## Public
+    &amp;amp;cmd(&quot;2&quot;, &quot;cwd&quot;, @_);
+}
+  
+; ############################################################################
+;#
+;#  enable (disable) debugging - prints FTP server responses to stderr
+
+sub debug { ## Public
+    if ($_[0]) {$Debug=1;} else {$Debug=0;}
+1;
+}
+
+; ############################################################################
+;#  delete a remote file
+
+sub delete { ## Public
+    &amp;amp;cmd(&quot;2&quot;, &quot;dele&quot;, @_); 
+}
+
+; ############################################################################
+;#  get a directory listing of remote directory (&quot;ls -l&quot;)
+
+sub dir { ## Public
+    &amp;amp;get_listing(&quot;list&quot;, @_);
+}
+
+; ############################################################################
+;# 
+;#  Get last error message
+
+sub error { ## Public
+    $Error;
+}
+
+; ############################################################################
+;#  get a remote file to a local file
+;#    get(remote[, local])
+;#
+
+sub get { ## Public
+    local($remote, $local) = @_;  
+    local($ret, $len)=(0,0);
+    local($rin, $rout, @buf);
+    local($buf)     = &#39;&#39;;
+    local($partial) = &#39;&#39;;
+
+    ($local = $remote) unless $local;
+
+    unless (open(DFILE, &quot;&amp;gt;$local&quot;)) {  
+       $Error =  &quot;Open of local file $local failed: $!&quot;;
+       return undef;
+    }
+
+    binmode(DFILE) unless $Ascii;
+
+    $NeedsCleanup = $local;    # in case of signal
+    
+    return &amp;amp;xferclean() unless (&amp;amp;dataconn());
+
+    return &amp;amp;xferclean() unless (&amp;amp;cmd(&quot;1&quot;, &quot;retr $remote&quot;));
+
+    return &amp;amp;xferclean() unless (&amp;amp;ftp_accept());
+
+    vec($rin,fileno(DATA),1) = 1 if Win32::IsWin95 == 0;
+#    vec($rin,fileno(DATA),1) = 1;
+    for (;;) {
+       if (Win32::IsWin95) {
+           $condition = $Timeout == 0;
+       }
+       else {
+           $condition = ($Timeout == 0) || select($rout=$rin, undef, undef, $Timeout);
+       }
+       if ($condition) {
+          last unless ($len = sysread(DATA, $buf, 1024));
+          if($Ascii) { 
+             substr($buf,0,0)=$partial;  ## prepend from last sysread
+             @buf=split(/\r?\n/,$buf);   ## break into lines
+             if ($buf=~/\n$/) { $partial=&#39;&#39;; } else { $partial=pop(@buf); }
+             foreach(@buf) { print DFILE $_,&quot;\n&quot;; }
+          } else {
+             last unless ( (syswrite(DFILE,$buf,$len)==$len) );
+          }
+       } else {
+           $Error = &quot;Timeout while recieving data from $Host&quot;;
+           return &amp;amp;xferclean();
+       }
+    }
+
+    close DATA;
+    close DFILE;
+    $ret=&amp;amp;cmd(&quot;2&quot;);
+
+    if (!defined($len)) {
+        $Error = &quot;Error while reading data from server: $!&quot;;
+        return &amp;amp;xferclean();
+    } elsif ($len) {
+        $Error = &quot;Error while writing to $local: $!&quot;;
+        return &amp;amp;xferclean();
+    }
+
+    undef $NeedCleanup;
+    $ret;
+
+}
+
+; ############################################################################
+;#  get a remote file and return it as a possibly huge string.
+;#  gets(remote)
+;#
+
+sub gets { ## Public
+    local($remote) = @_;  
+    local($len)=0;
+    local($rets)=&#39;&#39;;
+    local($rin, $rout, @buf);
+    local($buf)     = &#39;&#39;;
+    local($partial) = &#39;&#39;;
+    
+    return undef unless (&amp;amp;dataconn());
+
+    return undef unless (&amp;amp;cmd(&quot;1&quot;, &quot;retr $remote&quot;));
+
+    return undef unless (&amp;amp;ftp_accept());
+
+    vec($rin,fileno(DATA),1) = 1 if Win32::IsWin95 == 0;
+#    vec($rin,fileno(DATA),1) = 1;
+    for (;;) {
+       if (Win32::IsWin95) {
+           $condition = $Timeout == 0;
+       }
+       else {
+           $condition = ($Timeout == 0) || select($rout=$rin, undef, undef, $Timeout);
+       }
+       if ($condition) {
+          last unless($len=sysread(DATA,$buf,1024));
+          if($Ascii) { 
+             substr($buf,0,0)=$partial;  ## prepend from last sysread
+             @buf=split(/\r?\n/,$buf);   ## break into lines
+             if ($buf=~/\n$/) { $partial=&#39;&#39;; } else { $partial=pop(@buf); }
+             foreach(@buf) { $rets .= $_ . &quot;\n&quot;; }
+          } else {
+             $rets .= substr($buf, 0, $len);
+          }
+       } else {
+           $Error = &quot;Timeout while recieving data from $Host&quot;;
+           return undef;
+       }
+    }
+
+    close DATA;
+
+    if (!defined($len)) {
+        $Error = &quot;Error while reading data from server: $!&quot;;
+        return undef;
+    }
+
+    return &amp;amp;cmd(&quot;2&quot;) ? $rets : undef;
+}
+
+; ############################################################################
+;#  Do a simple name list (&quot;ls&quot;)
+
+sub list { ## Public
+    &amp;amp;get_listing(&quot;nlst&quot;, @_);
+}
+
+; ############################################################################
+;#   Make a remote directory
+
+sub mkdir { ## Public
+    &amp;amp;cmd(&quot;2&quot;, &quot;mkd&quot;, @_);
+}
+
+; ############################################################################
+;#
+;#  Open an ftp connection to remote host
+;#  open(host,[user],[pass],[acct]);
+;#
+;#  An alternate FTP port may be specified as part of the hostname:
+;#     host:port
+;#
+;#  Examples:   some.machine.com:4444      128.247.85.2:4444
+
+sub open {  ## Public
+
+    if ($NeedsClose) {
+        $Error = &quot;Connection still open to $Host!&quot;;
+        return undef;
+    }
+
+    $Host = shift(@_);
+    local($user, $password, $acct) = @_;
+    local($altport, $ret);
+
+    
+    ($Host,$altport) = split (/\:/,$Host);
+    $user = &quot;anonymous&quot; unless $user;
+    $password = &quot;-&quot; . $main&#39;ENV{&#39;USER&#39;} . &quot;@&quot; unless $password;
+    $Error = &#39;&#39;;
+
+    local($destaddr,$destproc);
+
+    ;#
+    ;# Build destination address
+    ;#
+
+    if ($Host =~ /^(\d+)+\.(\d+)\.(\d+)\.(\d+)$/) {
+    $destaddr = pack(&#39;C4&#39;, $1, $2, $3, $4);
+    } else {
+    local(@temp) = gethostbyname($Host);
+    unless (@temp) {
+           $Error = &quot;Can&#39;t get IP address of $Host&quot;;
+           return undef;
+        }
+    $destaddr = $temp[4];
+    }
+
+    ;#
+    ;# Connect socket to destination; log in
+    ;#
+
+    $destproc = pack($Sockaddr, $Inet, 
+                    (defined($altport)?$altport:$Ftp), $destaddr);
+    if (socket(CMD, $Inet, $Stream, $Proto)) {
+       if (connect(CMD, $destproc)) {
+
+          ### This info will be used by future data connections ###
+          $Cmdaddr = (unpack ($Sockaddr, getsockname(CMD)))[2];
+          $Cmdname = pack($Sockaddr, $Inet, 0, $Cmdaddr);
+
+          select((select(CMD), $| = 1)[$[]);
+
+          &amp;amp;signals($NeedsClose = 1);
+          return undef unless (&amp;amp;cmd(&quot;2&quot;));
+
+          unless ($ret=&amp;amp;cmd(&quot;23&quot;, &quot;user $user&quot;)) {
+             $Error .= &quot;\nuser command to $Host failed&quot;;
+             return undef;
+          }
+               
+          return 1 if ($ret eq &quot;2&quot;);
+
+          unless ($ret=&amp;amp;cmd(&quot;23&quot;,&quot;pass $password&quot;)) {
+              $Error .= &quot;\npassword command to $Host failed&quot;;
+              return undef;
+          }
+              
+          return 1 if ($ret eq &quot;2&quot;);
+
+          unless (&amp;amp;cmd(&quot;2&quot;, &quot;acct $acct&quot;)) {
+              $Error .= &quot;acct command to $Host failed&quot;;
+              return undef;
+          }
+
+          return 1;
+       }
+    }
+
+    $Error = &quot;Cannot connect to $Host: $!&quot;;
+    close(CMD);
+    return undef;
+}
+
+; ############################################################################
+;#  put a local file to a remote file
+;#    put(local[,remote])
+
+sub put { ## Public
+    local($local, $remote) = @_;  
+    local($ret, $len)=(0,0);
+    local($buf);
+    ($remote = $local) unless $remote;
+
+    unless (open(DFILE, &quot;$local&quot;)) {  
+       $Error =  &quot;Open of local file $local failed: $!&quot;;
+       return undef;
+    }
+
+    binmode(DFILE) unless $Ascii;
+
+    return &amp;amp;xferclean() unless (&amp;amp;dataconn());
+
+    return &amp;amp;xferclean() unless (&amp;amp;cmd(&quot;1&quot;, &quot;stor $remote&quot;));
+
+    return &amp;amp;xferclean() unless (&amp;amp;ftp_accept());
+
+    if($Ascii) {
+       while (&amp;lt;DFILE&amp;gt;) { 
+          s/\n$/\r\n/;
+          print DATA $_; 
+       }
+    } else {
+       while ( ($len=sysread(DFILE,$buf,1024)) &amp;amp;&amp;amp; 
+               (syswrite(DATA,$buf,$len)==$len) ) {next;}
+    }
+
+    close DATA;
+    close DFILE;
+    $ret=&amp;amp;cmd(&quot;2&quot;);
+
+    if (!defined($len)) {
+        $Error = &quot;Error while writing data to server: $!&quot;;
+        return undef;
+    } elsif ($len) {
+        $Error = &quot;Error while reading from $local: $!&quot;;
+        return undef;
+    }
+
+    $ret;
+}
+
+; ############################################################################
+;#
+;#  Get name of current remote directory
+
+sub pwd { ## Public
+
+    return undef unless (&amp;amp;cmd(&quot;2&quot;, &quot;pwd&quot;));
+    if ($Resp[$#Resp]=~/&quot;([^&quot;]+)/) {   #only return dir if quote delimited
+        return $1;                  
+    }
+    $Resp[$#Resp];
+
+}
+
+; ############################################################################
+;#
+;#  Rename a remote file
+
+sub rename { ## Public
+    local($from, $to) = @_;
+
+    &amp;amp;cmd(&quot;3&quot;, &quot;rnfr $from&quot;) &amp;amp;&amp;amp; &amp;amp;cmd(&quot;2&quot;, &quot;rnto $to&quot;);
+}
+
+; ############################################################################
+;# 
+;#  Get last response from server, including lreplies
+
+sub response { ## Public
+    @Resp;
+}
+
+; ############################################################################
+;#
+;#  Remove a remote directory
+
+sub rmdir { ## Public
+    &amp;amp;cmd(&quot;2&quot;, &quot;rmd&quot;, @_);
+}
+
+; ############################################################################
+;#
+;#  Send a site command - response is returned if no error.
+
+sub site { ## Public
+    return () unless &amp;amp;cmd(&quot;2&quot;, &quot;site&quot;, @_);     
+    @Resp;
+}
+
+; ############################################################################
+;#
+;#  Timeout - set timeout value; 0==infinity
+
+sub timeout { ## Public
+    $Timeout = $_[0];
+    $Timeout = 1 if ($Timeout &amp;lt; 0);
+1;
+}
+
+; ############################################################################
+;#
+;#  Set transfer type (for compatiblity to old ftplib.pl)
+
+sub type { ## Public
+    
+    local($type) = @_;
+
+    if    ($type eq &#39;a&#39; || $type eq &#39;A&#39;) {$Ascii = 1;}
+    elsif ($type eq &#39;i&#39; || $type eq &#39;I&#39; || $type eq &#39;l&#39; || $type eq &#39;L&#39;) {$Ascii = 0;}
+    else {
+       $Error = qq(Type must be &quot;a&quot; for ASCII or &quot;i&quot;,&quot;l&quot; for binary);
+       return undef;
+    }
+
+    &amp;amp;cmd(&quot;2&quot;, &quot;type&quot;, $type); 
+}
+
+
+; ############################################################################
+; ############################################################################
+;#                                                                            #
+;#  Support routines                                                          #
+;#                                                                            #
+;#  These are the functions which support ftplib, and are not intended to     #
+;#  be called by the user.                                                    #
+;#                                                                            #
+;#                                                                            #
+; ############################################################################
+
+; ############################################################################
+;#
+;#  Generate a file listing into an array, for either LIST or NLST
+
+sub get_listing {
+
+    local(@dir,$rin,$rout,$ls);     
+    undef $Error;
+
+    return () unless &amp;amp;dataconn();
+    unless (&amp;amp;cmd(&quot;1&quot;, @_) &amp;amp;&amp;amp; &amp;amp;ftp_accept()) {
+       close DATA;
+       return ();
+    }
+
+    vec($rin,fileno(DATA),1) = 1 if Win32::IsWin95 == 0;
+#   vec($rin,fileno(DATA),1) = 1;
+    for (;;) {
+       if (Win32::IsWin95) {
+           $condition = $Timeout == 0;
+       }
+       else {
+          $condition = ($Timeout == 0) || select($rout=$rin, undef, undef, $Timeout);
+       }
+       if ($condition) {
+           last unless ($ls=&amp;lt;DATA&amp;gt;);
+           $ls=~tr/\r\n//d;
+           push(@dir,$ls); 
+       } else {
+           $Error = &quot;Timeout while retrieving file list from $Host&quot;;
+           close DATA;
+           return ();
+       }
+    }
+                       
+    close DATA;
+
+    return () unless &amp;amp;cmd(&quot;2&quot;);
+    @dir;
+
+}
+
+; ############################################################################
+;#
+;#  Accept a data connection from the server
+
+sub ftp_accept {
+    unless(accept(DATA,GENERIC)) {
+       $Error = &quot;Can&#39;t accept data connection: $!&quot;;
+       close(DATA); close(GENERIC);
+       return undef;
+    }                            
+1;
+}
+
+; ############################################################################
+;#
+;#  Establish a data socket, send PORT command to server, and listen
+
+sub dataconn {
+
+    local($port, $family, $myportcmd, @myaddr);
+    unless ($NeedsClose) {
+       $Error = &quot;No connection is open&quot;;
+       return undef;
+    }
+    if (socket(GENERIC, $Inet, $Stream, $Proto)) {
+       if (bind(GENERIC, $Cmdname)) {
+          if (listen(GENERIC, 1)) {
+             select((select(GENERIC), $| = 1)[0]);
+             ($family, $port, @myaddr) = 
+                  unpack(&quot;S n C C C C x8&quot;, getsockname(GENERIC));
+             push(@myaddr, $port &amp;gt;&amp;gt; 8, $port &amp;amp; 0xff);
+             $myportcmd = join(&#39;,&#39;, @myaddr);
+             if (&amp;amp;cmd(&quot;2&quot;, &quot;port $myportcmd&quot;)) { return 1; }
+          }
+       }
+    }
+
+    $Error = &quot;$!\nCan&#39;t create data socket&quot;;
+    close GENERIC;
+    return undef;
+}       
+
+; ############################################################################
+;#
+;#  response = cmd ( primary_response, args ... )
+;#
+;#  Send a command to the server, and wait for a reply.  Long replies
+;#  are ignored, but are collected for the &quot;response&quot; subroutine.
+;#
+;#  Only the primary response codes are examined for success or failure.
+;#  You pass a string of acceptable codes, any of which will be interpreted
+;#  as successful.
+;#
+;#  The remaining argument(s) are the string to send to the server.  If undefined,
+;#  no string is sent, and we just wait for a reply.
+;#
+;#  The matched primary response code is returned upon success.  undef is 
+;#  returned on failure, and $Error holds the error.  
+;#  @Resp contains the complete server response.
+
+sub cmd {
+
+    local($code, @cmds) = @_;
+    local($rin, $rout, $cmd, $partial, @buf);
+    local($buf) = &#39;&#39;;
+    local($partial) = &#39;&#39;;
+
+    undef @Resp;
+    undef $Error;
+
+    unless ($NeedsClose) {
+       $Error = &quot;No connection is open&quot;;
+       return undef;
+    }
+
+    if (defined(@cmds)) {     
+       $cmd=join(&quot; &quot;, @cmds);
+       print CMD $cmd,&quot;\r\n&quot;;
+       if ($Debug) {
+           if ($cmd=~/^pass/) {
+               print STDERR &quot;&amp;gt;&amp;gt; pass .....\n&quot;;
+           } else {
+               print STDERR  &quot;&amp;gt;&amp;gt; $cmd\n&quot;;
+           }
+       }
+    }
+
+    vec($rin, fileno(CMD), 1) = 1 if Win32::IsWin95 == 0;
+#   vec($rin, fileno(CMD), 1) = 1;
+    for (;;) {
+         if (Win32::IsWin95) {
+             $condition = $Timeout == 0;
+         }
+         else {
+            $condition = ($Timeout == 0) || select($rout=$rin, undef, undef, $Timeout);
+         }
+        if ($condition) {
+            unless(sysread(CMD, $buf, 1024)) {
+                $Error = &quot;Unexpected EOF on command channel&quot;;
+                return undef;
+            } 
+            substr($buf,0,0) = $partial;  ## prepend from last sysread
+            @buf=split(/\r?\n/, $buf);  ## break into lines
+            if ($buf=~/\n$/) { $partial=&#39;&#39;; } else { $partial=pop(@buf); }
+            foreach $cmd (@buf) {
+                if ($Debug) {print STDERR &quot;&amp;lt;&amp;lt; $cmd\n&quot;;}
+                push(@Resp,$cmd);
+                if ($cmd =~/^\d\d\d[^-]/) {
+                    if ($cmd=~/^([$code])/) {return $1;}
+                    $Error = &quot;Unexpected reply: &#39;$cmd&#39; -- expected response &#39;[$code]&#39;&quot;;
+                    return undef;
+                } 
+            }
+        } else {
+            $Error = &quot;Timeout while talking to $Host&quot;;
+            return undef;
+        }
+    }
+}
+
+; ############################################################################
+;#
+;#  Clean up a data transfer gone bad
+
+sub xferclean {
+    
+    close DATA;
+    close DFILE;
+    if ($NeedsCleanup) {
+       unlink($NeedsCleanup);
+       undef $NeedsCleanup;
+    }        
+   return undef;
+}
+
+; ############################################################################
+;#  
+;#  Signal handler.  Close connection and die
+
+sub abort {
+
+    $NeedsClose || die &quot;ftp interrupted by signal.\n&quot;;
+
+    print CMD &quot;abor\r\n&quot;;
+    close DATA;
+    close CMD;
+
+    close DFILE;
+    unlink($NeedsCleanup) if $NeedsCleanup;
+    die;
+}
+
+; ############################################################################
+;#
+;#  Establish signal handlers, but only for signals which haven&#39;t already
+;#  been changed from &quot;DEFAULT&quot;
+
+sub signals {
+    local($flag, $sig) = @_;
+
+    local ($old, $new) = (&#39;DEFAULT&#39;, &quot;ftp&#39;abort&quot;);
+    $flag || (($old, $new) = ($new, $old));
+
+    # dmm - added an eval around the assignment so that
+    # operating system that don&#39;t have the signals defined
+    # will display an error message instead of terminating.
+
+    foreach $sig (@sigs) {
+        if (defined($SIG{$sig})){
+            ($SIG{$sig} eq $old) &amp;amp;&amp;amp; eval(&#39;($SIG{$sig} = $new)&#39;);
+        }
+        else {
+            eval(&#39;($SIG{$sig} = $new)&#39;);
+        }
+    }     
+}
+
+1;  ## required for packages &lt;/PRE&gt;&lt;/B&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;
+</pre></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="ch28.html" title="previous page"><span class="section-number">6. </span>Errata</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By David Medinets<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
