@@ -61,7 +61,7 @@ name. Whenever you see a package name, you're also seeing a class - even if none
 of the object-oriented techniques are used. 
 <P>Object-oriented modules keep all function and variable names close to the 
 vest - so to speak. They are not available directly, you access them through the 
-module name. Remember the <TT>Inventory_item-&gt;new()</TT> notation? 
+module name. Remember the <TT>Inventory_item->new()</TT> notation? 
 <P>However, simple function collections don't have this object-oriented need for 
 secrecy. They want your script to directly access the defined functions. This is 
 done using the Exporter class, <TT>@EXPORT</TT>, and <TT>@EXPORT_OK</TT>. 
@@ -87,8 +87,10 @@ files, and do other clean-up type duties.
 <P>Perl has constructors and destructors that work at the module level as well 
 as the class level. The module constructor is called the <TT>BEGIN</TT> block, 
 while the module destructor is called the <TT>END</TT> block. 
-<H3><A name="The BEGIN Block">The <TT>BEGIN</TT> Block</A></H3>The 
-<TT>BEGIN</TT> block is evaluated as soon as it is defined. Therefore, it can 
+
+### The BEGIN Block
+
+The <TT>BEGIN</TT> block is evaluated as soon as it is defined. Therefore, it can 
 include other functions using <TT>do()</TT> or <TT>require</TT> statements. 
 Since the blocks are evaluated immediately after definition, multiple 
 <TT>BEGIN</TT> blocks will execute in the order that they appear in the script. 
@@ -126,8 +128,10 @@ package Foo;
 <P>This program displays: 
 <P><B><PRE>main
 Foo</PRE></B>
-<H3><A name="The END Block">The <TT>END</TT> Block</A></H3>The <TT>END</TT> 
-blocks are the last thing to be evaluated. They are even evaluated after 
+
+### The END Block
+
+The <TT>END</TT> blocks are the last thing to be evaluated. They are even evaluated after 
 <TT>exit()</TT> or <TT>die()</TT> functions are called. Therefore, they can be 
 used to close files or write messages to log files. Multiple <TT>END</TT> blocks 
 are evaluated in reverse order. 
@@ -158,9 +162,7 @@ Main</PRE></B>
   <TR>
     <TD bgColor=lightcyan>Signals that are sent to your script can bypass the 
       <TT>END</TT> blocks. So, if your script is in danger of stopping due to a 
-      signal, be sure to define a signal-handler function. See Chapter 13, "<A 
-      href="ch13.htm">Handling Errors and 
-      Signals</A>," for more information.</TD></TR></TBODY></TABLE>
+      signal, be sure to define a signal-handler function. See [](./errors.md) for more information.</TD></TR></TBODY></TABLE>
 
 ## Symbol Tables
 
@@ -418,8 +420,7 @@ print("${$ref}\n");
 Can't use string ("Testing.") as a SCALAR ref while "strict refs" in
     use at 15lst05.pl line 14.</PRE></B>The second print statement, even though 
 obviously wrong, does not generate any errors. Imagine if you were using a 
-complicated data structure like the ones described in Chapter 8, "<A 
-href="ch08.htm">References</A>." You could spend 
+complicated data structure like the ones described in [](./references.md). You could spend 
 hours looking for a bug like this. After the <TT>strict</TT> pragma is turned 
 on, however, a run-time error is generated when the same print statement is 
 repeated. Perl even displays the value of the scalar that attempted to 
@@ -590,8 +591,10 @@ logical and to the declaration, the warning messages are avoided.
 
 This section shows you how to use the <TT>Carp</TT>, <TT>English</TT>, and <TT>Env</TT> modules. After 
 looking at these examples, you should feel comfortable about trying the rest. 
-<H3><A name="Example: The Carp Module">Example: The <TT>Carp</TT> 
-Module</A></H3>This useful little module lets you do a better job of analyzing 
+
+### Example: The Carp Module
+
+This useful little module lets you do a better job of analyzing 
 run-time errors - like when your script can't open a file or when a unexpected 
 input value is found. It defines the <TT>carp()</TT>, <TT>croak()</TT>, and 
 <TT>confess()</TT> functions. These are similar to <TT>warn()</TT> and 
@@ -707,11 +710,12 @@ The function call history is also called a <I>stack trace</I>. As each function
 is called, the address from which it is called gets placed on a stack. When the 
 <TT>confess()</TT> function is called, the stack is unwound or read. This lets 
 Perl print the function call history. 
-<H3><A name="Example: The English Module">Example: The <TT>English</TT> 
-Module</A></H3>The <TT>English</TT> module is designed to make your scripts more 
+
+### The English Module
+
+The <TT>English</TT> module is designed to make your scripts more 
 readable. It creates aliases for all of the special variables that were 
-discussed in Chapter 12, "<A href="ch12.htm">Using 
-Special Variables</A>." Table 15.3 lists all of the aliases that are defined. 
+discussed in [](./special-variables.md). Table 15.3 lists all of the aliases that are defined. 
 After the table, some examples show you how the aliases are used. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -828,10 +832,10 @@ After the table, some examples show you how the aliases are used.
     <TD vAlign=top>$$ </TD>
     <TD vAlign=top>$PROCESS_ID or $PID</TD></TR>
   <TR>
-    <TD vAlign=top>$&lt; </TD>
+    <TD vAlign=top>$< </TD>
     <TD vAlign=top>$REAL_USER_ID or $UID</TD></TR>
   <TR>
-    <TD vAlign=top>$&gt; </TD>
+    <TD vAlign=top>$> </TD>
     <TD vAlign=top>$EFFECTIVE_USER_ID or $EUID</TD></TR>
   <TR>
     <TD vAlign=top>$( </TD>
@@ -920,8 +924,10 @@ Matched String: BBBABBB</PRE></B>You can see that the <TT>$&amp;</TT> and
 <TT>$MATCH</TT> variables are equivalent. This means that you can use another 
 programmer's functions without renaming their variables and still use the 
 English names in your own functions. 
-<H3><A name="Example: The Env Module">Example: The <TT>Env</TT> 
-Module</A></H3>If you use environment variables a lot, then you need to look at 
+
+### Example: The Env Module
+
+If you use environment variables a lot, then you need to look at 
 the <TT>Env</TT> module. It will enable you to directly access the environment 
 variables as Perl scalar variables instead of through the <TT>%Env</TT> hash. 
 For example, <TT>$PATH</TT> is equivalent to <TT>$ENV{'PATH'}</TT>. 

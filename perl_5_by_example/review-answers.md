@@ -1,6 +1,7 @@
 # Review Questions
 
-<H3><A name="Chapter 1">Chapter 1</A></H3>
+### Chapter 1
+
 <OL>
   <LI>What is the address of Perl's home page?<BR><B><A 
   href="http://www.perl.com/">http://www.perl.com/</A>.</B> 
@@ -11,7 +12,9 @@
   <P></P>
   <LI>Why are comments important to Programming? <BR><B>Comments will enable you 
   to figure out the intent behind the mechanics of your program.</B></LI></OL>
-<H3><A name="Chapter 2">Chapter 2</A></H3>
+
+### Chapter 2
+
 <OL>
   <LI>What are the four types of data that can be used in 
   literals?<BR><B>Literals can be Numeric, Strings, Arrays, or Associative 
@@ -110,7 +113,9 @@
   <P></P>
   <LI>What is the easiest way to represent an array that includes the numbers 56 
   to 87?<BR><B>(56..87)</LI></OL></B>
-<H3><A name="Chapter 3">Chapter 3</A></H3>
+
+### Chapter 3
+
 <OL>
   <LI>What are the three basic data types that Perl uses? <BR><B>Scalar, Array 
   and associative array.</B> 
@@ -139,7 +144,9 @@
   <P></P>
   <LI>How can you access associative array elements? <BR><B>You use curly braces 
   around the subscript and a $ to begin the variable name. </B></LI></OL>
-<H3><A name="Chapter 4">Chapter 4</A></H3>
+
+### Chapter 4
+
 <OL>
   <LI>What are three arithmetic operators? <BR>
   <TABLE cellPadding=10 border=0>
@@ -165,7 +172,7 @@
   <P></P>
   <LI>What is the value of 1 ^ 1? <BR><B>0</B> 
   <P></P>
-  <LI>What is the value of 1 &lt;&lt; 3? <BR><B>8</B> 
+  <LI>What is the value of 1 << 3? <BR><B>8</B> 
   <P></P>
   <LI>What is the ternary operator used for? <BR><B>The <I>ternary</I> operator 
   is actually a sequence of operators designed to choose between two options. 
@@ -177,14 +184,16 @@
   <P></P>
   <LI>What is the value of 2 * 5 + 10? <BR><B>20</B> 
   <P></P>
-  <LI>What is the value of 65 &gt;&gt; 1? <BR><B>32</B> 
+  <LI>What is the value of 65 >> 1? <BR><B>32</B> 
   <P></P>
   <LI>What is the spaceship operator used for? <BR><B>Compares two values and 
   returns a -1 for less than and a +1 for greater than. </B>
   <P></P>
   <LI>If an array were defined with ("fy".."gb"), how many elements would it 
   have?<BR><B>4</B></LI></OL>
-<H3><A name="Chapter 5">Chapter 5</A></H3>
+
+### Chapter 5
+
 <OL>
   <LI>What is a parameter? <BR><B>A parameter is a value that gets passed to a 
   procedure.</B> 
@@ -217,8 +226,10 @@
   evaluate an expression for every element of a given array. The special 
   variable <TT>$_</TT> is assigned each element of the specified array before 
   the expression is evaluated. </B>
-  <H3><A name="Chapter 6">Chapter 6</A></H3>
-  <LI>What are expressions? <BR><B>They are a sequence of literals, variables, 
+  
+  ### Chapter 6
+  
+    <LI>What are expressions? <BR><B>They are a sequence of literals, variables, 
   function connected by one or more operators that evaluate to a single 
   value-scalar or array. </B>
   <P></P>
@@ -243,7 +254,9 @@
   <P></P>
   <LI>What will the following code display?<BR><B>firstVar = 10<BR>secondVar = 
   20</B> </LI></OL>
-<H3><A name="Chapter 7">Chapter 7</A></H3>
+
+### Chapter 7
+
 <OL>
   <LI>What are the four loop keywords? <BR><B>While, until, for and foreach</B> 
   <P></P>
@@ -255,7 +268,7 @@
   <P></P>
   <LI>What will be displayed when this program executes?<BR><B><PRE>$firstVar = 5;
 {
-    if ($firstVar &gt; 10) {
+    if ($firstVar > 10) {
         last;
     }
     $firstVar++;
@@ -280,7 +293,9 @@ print("$firstVar\n");</PRE></B><B>This program will display:
   <I>and </I>remove the first element of the parameter array from the array at 
   the same time. If you use <TT>shift()</TT> all by itself, the value of the 
   first element is lost. </B></LI></OL>
-<H3><A name="Chapter 8">Chapter 8</A></H3>
+
+### Chapter 8
+
 <OL>
   <LI>What is a reference? <BR><B>A <I>reference</I> is a scalar value that 
   points to a memory location that holds some type of data. </B>
@@ -305,7 +320,9 @@ print("$firstVar\n");</PRE></B><B>This program will display:
   <P></P>
   <LI>What will the following line of code display?<BR><B><PRE>print("${\ref(\(1..5))}");</PRE></B><B>This code will display: 
   <P><B><PRE>	ARRAY</PRE></B></B></LI></OL>
-<H3><A name="Chapter 9">Chapter 9</A></H3>
+
+### Chapter 9
+
 <OL>
   <LI>What is a file handle? <BR><B>File handles are variables used to 
   manipulate files. </B>
@@ -321,18 +338,18 @@ print("$firstVar\n");</PRE></B><B>This program will display:
   <LI>Are variables in the computer's memory considered persistent storage? 
   <BR><B>No</B>. 
   <P></P>
-  <LI>What is the <TT>&lt;&gt;</TT> operator used for? <BR><B>The 
-  <TT>&lt;&gt;</TT> characters, when used together, are called the 
+  <LI>What is the <TT><></TT> operator used for? <BR><B>The 
+  <TT><></TT> characters, when used together, are called the 
   <I>diamond</I> operator. They tell Perl to read a line of input from the file 
   handle inside the operators. </B>
   <P></P>
   <LI>What is the default file handle for the <TT>printf()</TT> function? 
   <BR><B>The default file handle is <TT>STDOUT</TT>.</B> 
   <P></P>
-  <LI>What is the difference between the following two open statements?<BR><B><PRE>     open(FILE_ONE, "&gt;FILE_ONE.DAT");
-     open(FILE_TWO, "&gt;&gt;FILE_TWO.DAT");</PRE></B><B>The &gt; character 
+  <LI>What is the difference between the following two open statements?<BR><B><PRE>     open(FILE_ONE, ">FILE_ONE.DAT");
+     open(FILE_TWO, ">>FILE_TWO.DAT");</PRE></B><B>The > character 
   causes the file to be opened for writing and causes any existing data in the 
-  file to be lost. Whereas the &gt;&gt; character sequence will open the file 
+  file to be lost. Whereas the >> character sequence will open the file 
   for appending-preserving the existing data. </B>
   <P></P>
   <LI>What value will the following expression return?<BR><B><PRE>     (stat("09lst01.pl"))[7];</PRE></B><B>This expression will return the 
@@ -342,7 +359,9 @@ print("$firstVar\n");</PRE></B><B>This program will display:
   <P></P>
   <LI>What will the following statement display? <BR><B><PRE>printf("%x", 16); </PRE></B><B>The statement displays: 
   <P><B><PRE>10</PRE></B></B></LI></OL>
-<H3><A name="Chapter 10">Chapter 10</A></H3>
+
+### Chapter 10
+
 <OL>
   <LI>Can you use variable interpolation with the translation operator? 
   <BR><B>No</B> 
@@ -364,7 +383,7 @@ print("$firstVar\n");</PRE></B><B>This program will display:
   <LI>What does the <TT>\d</TT> meta-character sequence mean? <BR><B>The 
   <TT>\d</TT> sequence is a symbolic character class that matches digits. </B>
   <P></P>
-  <LI>What is the meaning of the dollar sign in the following pattern?<BR><B><PRE>/AA[.&lt;]$]ER/</PRE></B><B>The <TT>$</TT> is the beginning character of 
+  <LI>What is the meaning of the dollar sign in the following pattern?<BR><B><PRE>/AA[.<]$]ER/</PRE></B><B>The <TT>$</TT> is the beginning character of 
   the special variable <TT>$]</TT>.</B> 
   <P></P>
   <LI>What is a word boundary? <BR><B>A word boundary is that imaginary point 
@@ -373,7 +392,9 @@ print("$firstVar\n");</PRE></B><B>This program will display:
   <P></P>
   <LI>What will be displayed by the following program? <BR><B><PRE>$_ = 'AB AB AC';
 print m/c$/i;</PRE></B><B>This program displays:<BR><B><PRE>1</PRE></B></B></LI></OL>
-<H3><A name="Chapter 11">Chapter 11</A></H3>
+
+### Chapter 11
+
 <OL>
   <LI>What is the syntax of the format statement?<BR><B>The syntax is:<BR><B><PRE>format FORMATNAME =
     FIELD_LINE
@@ -388,7 +409,7 @@ print m/c$/i;</PRE></B><B>This program displays:<BR><B><PRE>1</PRE></B></B></LI>
   <LI>How can you change a detail format line into a header format line? 
   <BR><B>By changing the field lines and value lines.</B> 
   <P></P>
-  <LI>What is the <TT>&gt;</TT> format character used for? <BR><B>This character 
+  <LI>What is the <TT>></TT> format character used for? <BR><B>This character 
   indicates that the field should be right-justified. </B>
   <P></P>
   <LI>What is the <TT>$^L</TT> variable used for? <BR><B>The <TT>$^L</TT> 
@@ -405,7 +426,9 @@ print m/c$/i;</PRE></B><B>This program displays:<BR><B><PRE>1</PRE></B></B></LI>
   select function returns the value of the previous default file handle, after 
   executing the second <TT>select()</TT> the default file handle will be 
   restored to its previous value.</B></LI></OL>
-<H3><A name="Chapter 12">Chapter 12</A></H3>
+
+### Chapter 12
+
 <OL>
   <LI>What is the <TT>$/</TT> variable used for? <BR><B>This variable holds the 
   input record separator. </B>
@@ -436,7 +459,9 @@ B
 C
 D
 E</PRE></B></B></LI></OL>
-<H3><A name="Chapter 13">Chapter 13</A></H3>
+
+### Chapter 13
+
 <OL>
   <LI>Why is it important to check for errors? <BR><B>There is only one way to 
   check for errors in any programming language. You need to test the return 
@@ -472,7 +497,9 @@ E</PRE></B></B></LI></OL>
   <P></P>
   <LI>Which signal is used to trap floating point exceptions? 
 <BR><B>FPE</B></LI></OL></B>
-<H3><A name="Chapter 14">Chapter 14</A></H3>
+
+### Chapter 14
+
 <OL>
   <LI>What is an object? <BR><B>The book you are reading is an object. The knife 
   and fork that you eat with are objects. In short, your life is filled with 
@@ -507,7 +534,9 @@ E</PRE></B></B></LI></OL>
   <P></P>
   <LI>How can you create a function that is available to all classes in your 
   script? <BR><B>Start a definition of the <TT>UNIVERSAL</TT> class.</B></LI></OL>
-<H3><A name="Chapter 15">Chapter 15</A></H3>
+
+### Chapter 15
+
 <OL>
   <LI>What is a module? <BR><B>A <I>module</I> is a namespace defined in a file. 
   For example, the <TT>English</TT> module is defined in the <TT>English.pm</TT> 
@@ -534,7 +563,9 @@ E</PRE></B></B></LI></OL>
   <LI>How can you create a variable that is local to a package? <BR><B>Fully 
   qualify your variable name in the declaration or initialization statement. 
   </B></LI></OL>
-<H3><A name="Chapter 16">Chapter 16</A></H3>
+
+### Chapter 16
+
 <OL>
   <LI>What is a logic error? <BR><B><I>Logic</I> errors are insidious and 
   difficult to find. For example, you might place an assignment statement inside 
@@ -568,7 +599,9 @@ E</PRE></B></B></LI></OL>
   when you should use the equality operator (<TT>==</TT>). If you are creating a 
   conditional expression, you'll almost always use the equality operator 
   (<TT>==</TT>).</B></LI></OL>
-<H3><A name="Chapter 17">Chapter 17</A></H3>
+
+### Chapter 17
+
 <OL>
   <LI>What is a command line option?<BR><B>Command-line options (also called 
   switches) turn on and off different behaviors of the Perl interpreter.</B> 
@@ -596,7 +629,9 @@ E</PRE></B></B></LI></OL>
   then the <TT>-c</TT> option checks the syntax of any Perl script specified on 
   the command line. </B>
   <P></P></LI></OL>
-<H3><A name="Chapter 18">Chapter 18</A></H3>
+
+### Chapter 18
+
 <OL>
   <LI>What is a protocol? <BR><B>A protocol is a set of commands and responses. 
   </B>
@@ -625,7 +660,9 @@ E</PRE></B></B></LI></OL>
   <P></P>
   <LI>What is the largest NNTP reponse in terms of bytes? 
   <BR><B>Unlimited.</B></LI></OL>
-<H3><A name="Chapter 19">Chapter 19</A></H3>
+
+### Chapter 19
+
 <OL>
   <LI>Is CGI a programming language? <BR><B>No.</B> 
   <P></P>
@@ -642,12 +679,14 @@ E</PRE></B></B></LI></OL>
   <P></P>
   <LI>Why is CGItap a useful program? <BR><B>It is a CGI debugging aid that can 
   help pinpoint the problem in a troubling CGI application. </B></LI></OL>
-<H3><A name="Chapter 20">Chapter 20</A></H3>
+
+### Chapter 20
+
 <OL>
   <LI>What does the acronym HTML stand for? <BR><B>HyperText Markup Language. 
   </B>
   <P></P>
-  <LI>What are the &lt;H1&gt;..&lt;/H1&gt; set of tags used for? <BR><B>It 
+  <LI>What are the <H1>..</H1> set of tags used for? <BR><B>It 
   formats text as a first level heading.</B> 
   <P></P>
   <LI>What is the down side of using SSI directives? <BR><B>They are very 
@@ -658,11 +697,13 @@ E</PRE></B></B></LI></OL>
   <LI>Why should all angle brackets be replaced in form information? <BR><B>So 
   that the web browser doesn't think that a new HTML tag is starting.</B> 
   <P></P>
-  <LI>How much text can be entered into a &lt;TEXTAREA&gt; input field? 
+  <LI>How much text can be entered into a <TEXTAREA> input field? 
   <BR><B>Unlimited.</B> 
   <P></P>
   <LI>Can you debug a CGI script? <BR><B>Yes. </B></LI></OL>
-<H3><A name="Chapter 21">Chapter 21</A></H3>
+
+### Chapter 21
+
 <OL>
   <LI>What is the access log used for? <BR><B>It records who and what accesses a 
   specific HTML page or graphic. </B>

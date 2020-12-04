@@ -40,8 +40,7 @@ c:/a_long_directory_name/a_long_subdirectory_name/a_long_file_name.doc</PRE></B>
     <TD bgColor=lightcyan>It is very important that you check for errors when 
       dealing with files. To simplify the examples in this chapter, little error 
       checking will be used in the example. Instead, error checking information 
-      will be discussed in Chapter 13, "Handling Exceptions and 
-  Signals."<BR></TD></TR></TBODY></TABLE>
+      will be discussed in [](./errors.md).<BR></TD></TR></TBODY></TABLE>
 
 ## Some Files Are Standard
 
@@ -76,8 +75,10 @@ every <TT>print()</TT> statement in this book. The <TT>print()</TT> function
 uses <TT>STDOUT</TT> as the default if no other file handle is specified. Later 
 in this chapter, in the "Examples: Printing Revisited" section, you will see how 
 to send output to a file instead of to the monitor. 
-<H3><A name="Example: Using STDIN">Example: Using <I>STDIN</I></A></H3>Reading a 
-line of input from the standard input, <TT>STDIN</TT>, is one of the easiest 
+
+### Example: Using STDIN
+
+Reading a line of input from the standard input, <TT>STDIN</TT>, is one of the easiest 
 things that you can do in Perl. This following three line program will read a 
 line from the keyboard and then display it. This will continue until you press 
 <TT>Ctrl+Z</TT> on DOS systems or <TT>Ctrl-D</TT> on UNIX systems. 
@@ -90,10 +91,10 @@ line from the keyboard and then display it. This will continue until you press
       </B></FONT></TD></TR>
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
-while (&lt;STDIN&gt;) {
+while (<STDIN>) {
     print();
 }</PRE></B></TD></TR></TBODY></TABLE>
-<P>The <TT>&lt;&gt;</TT> characters, when used together, are called the 
+<P>The <TT><></TT> characters, when used together, are called the 
 <I>diamond</I> operator. They tell Perl to read a line of input from the file 
 handle inside the operators. In this case, <TT>STDIN</TT>. Later, you'll use the 
 diamond operators to read from other file handles. 
@@ -103,7 +104,7 @@ parameters, which tells <TT>print()</TT> to use <TT>$_</TT> as the default
 parameter. Using the <TT>$_</TT> variable can save a lot of typing but I'll let 
 you decide which is more readable. Here is the same program without using 
 <TT>$_</TT>. 
-<P><B><PRE>while ($inputLine = &lt;STDIN&gt;) {
+<P><B><PRE>while ($inputLine = <STDIN>) {
     print($inputLine);
 }</PRE></B>When you pressed <TT>Ctrl+Z</TT> or <TT>Ctrl+D</TT>, you told Perl 
 that the input file was finished. This caused the diamond operator to return the 
@@ -122,15 +123,16 @@ value of <TT>Ctrl+D</TT> - is read.
     <TD bgColor=lightpink>When a file is read using the diamond operator, the 
       newline character that ends the line is kept as part of the input string. 
       Frequently ,you'll see the <TT>chop()</TT> function used to remove the 
-      newline. For instance, <TT>chop($inputLine = &lt;INPUT_FILE&gt;);</TT>. 
+      newline. For instance, <TT>chop($inputLine = <INPUT_FILE>);</TT>. 
       This statement reads a line from the input file, assigns its value to 
       <TT>$inputLine</TT> and then removes that last character from 
       <TT>$inputLine</TT> - which is almost guaranteed to be a newline 
       character. If you fear that the last character is not a newline, use the 
       <TT>chomp()</TT> function instead.<BR></TD></TR></TBODY></TABLE>
-<H3><A name="Example: Using Redirection to Change STDIN and STDOUT">Example: 
-Using Redirection to Change <I>STDIN</I> and <I>STDOUT</I></A></H3>DOS and UNIX 
-let you change the standard input from being the keyboard to being a file by 
+
+### Example: Using Redirection to Change STDIN and STDOUT
+
+DOS and UNIX let you change the standard input from being the keyboard to being a file by 
 changing the command line that you use to execute Perl programs. Until now, you 
 probably used a command line similar to: 
 <P><B><PRE>perl -w 09lst01.pl</PRE></B>In the previous example, Perl read the keyboard 
@@ -138,22 +140,23 @@ to get the standard input. But, if there was a way to tell Perl to use the file
 <TT>09LST01.PL</TT> as the standard input you could have the program print 
 itself. Pretty neat, huh? Well, it turns out that you can change the standard 
 input. It's done this way: 
-<P><B><PRE>perl -w 09lst01.pl &lt; 09lst01.pl</PRE></B>The <TT>&lt;</TT> character is 
+<P><B><PRE>perl -w 09lst01.pl < 09lst01.pl</PRE></B>The <TT><</TT> character is 
 used to <I>redirect</I> the standard input to the <TT>09LST01.PL</TT> file. You 
 now have a program that duplicates the functionality of the DOS type command. 
 And it only took three lines of Perl code! 
-<P>You can redirect standard output to a file using the <TT>&gt;</TT> character. 
+<P>You can redirect standard output to a file using the <TT>></TT> character. 
 So if you wanted a copy of <TT>09LST01.PL</TT> to be sent to <TT>OUTPUT.LOG</TT> 
 you could use this command line: 
-<P><B><PRE>perl -w 09lst01.pl &lt;09lst01.pl &gt;output.log</PRE></B>Keep this use of 
-the <TT>&lt;</TT> and <TT>&gt;</TT> characters in mind. You'll be using them 
-again shortly when we talk about the <TT>open()</TT> function. The <TT>&lt;</TT> 
+<P><B><PRE>perl -w 09lst01.pl <09lst01.pl >output.log</PRE></B>Keep this use of 
+the <TT><</TT> and <TT>></TT> characters in mind. You'll be using them 
+again shortly when we talk about the <TT>open()</TT> function. The <TT><</TT> 
 character will signify that files should be opened for input and the 
-<TT>&gt;</TT> will be used to signify an output file. But first, let's continue 
+<TT>></TT> will be used to signify an output file. But first, let's continue 
 talking about accessing files listed on the command line. 
-<H3><A name="Example: Using the Diamond Operator (<>)">Example: Using the 
-Diamond Operator (<I>&lt;&gt;</I>)</A></H3>If no file handle is used with the 
-diamond operator, Perl will examine the <TT>@ARGV</TT> special variable. If 
+
+### Example: Using the Diamond Operator (<>)
+
+If no file handle is used with the diamond operator, Perl will examine the <TT>@ARGV</TT> special variable. If 
 <TT>@ARGV</TT> has no elements, then the diamond operator will read from 
 <TT>STDIN</TT> - either from the keyboard or from a redirected file. So, if you 
 wanted to display the contents of more than one file, you could use the program 
@@ -166,15 +169,15 @@ shown in Listing 9.2.
       Read from Multiple Files or from STDIN </B></FONT></TD></TR>
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
-while (&lt;&gt;) {
+while (<>) {
     print();
 }</PRE></B></TD></TR></TBODY></TABLE>
 <P>The command line to run the program might look like this: 
 <P><B><PRE>perl -w 09lst02.pl 09lst01.pl 09lst02.pl</PRE></B>And the output would be: 
-<P><B><PRE>while (&lt;STDIN&gt;) {
+<P><B><PRE>while (<STDIN>) {
     print();
 }
-while (&lt;&gt;) {
+while (<>) {
     print();
 }</PRE></B>Perl will create the <TT>@ARGV</TT> array from the command line. Each 
 file name on the command line - after the program name - will be added to the 
@@ -196,14 +199,14 @@ like in a program.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 @ARGV = ("09lst01.pl", "09lst02.pl");
-while (&lt;&gt;) {
+while (<>) {
     print();
 }</PRE></B></TD></TR></TBODY></TABLE>
 <P>This program displays: 
-<P><B><PRE>while (&lt;STDIN&gt;) {
+<P><B><PRE>while (<STDIN>) {
     print();
 }
-while (&lt;&gt;) {
+while (<>) {
     print();
 }</PRE></B>Next, we will take a look at the ways that Perl lets you test files, 
 and following that, the functions that can be used with files. 
@@ -347,8 +350,10 @@ you need to work with binary files, be sure to use the <TT>binmode()</TT> file
 function which is described in the section called "<A 
 href="ch09.htm#Example: Binary Files">Example: 
 Binary Files</A>" later in this chapter. 
-<H3><A name="Example: Using File Tests">Example: Using File Tests</A></H3>For 
-our first example with file tests, let's examine a list of files from the 
+
+### Example: Using File Tests
+
+For our first example with file tests, let's examine a list of files from the 
 command line and determine if each is a regular file or a special file. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -715,11 +720,11 @@ perl.exe is 61952 bytes long.</PRE></B>
       modification times on each file in <TT>FILE_LIST</TT>.</TD></TR>
   <TR>
     <TD vAlign=top><TT>write</TT>(<TT>FILE_HANDLE</TT>) </TD>
-    <TD vAlign=top>Writes a formatted record to <TT>FILE_HANDLE</TT>. See 
-      chapter 11, "<A href="ch11.htm">Creating 
-      Reports</A>," for more information.</TD></TR></TBODY></TABLE>
-<H3><A name="Example: Opening Files">Example: Opening Files</A></H3>The 
-<TT>open()</TT> function is used to open a file and create a connection to it 
+    <TD vAlign=top>Writes a formatted record to <TT>FILE_HANDLE</TT>. See [](./reports.md), for more information.</TD></TR></TBODY></TABLE>
+
+### Example: Opening Files
+
+The <TT>open()</TT> function is used to open a file and create a connection to it 
 called a file handle. The basic <TT>open()</TT> function call looks like this: 
 <P><B><PRE>open(FILE_HANDLE);</PRE></B>The <TT>FILE_HANDLE</TT> parameter in this 
 version of <TT>open()</TT>is the name for the new file handle. It is also the 
@@ -755,7 +760,7 @@ input. For example:
 $INPUT_FILE = "fixed.dat";
 
 open(INPUT_FILE);
-@array = &lt;INPUT_FILE&gt;;
+@array = <INPUT_FILE>;
 close(INPUT_FILE);
 
 foreach (@array) {
@@ -799,38 +804,38 @@ different ways. Table 9.4 shows all of the different method used to open a file.
     <TD vAlign=top>Opens the file called <TT>FILENAME.EXT</TT> for input using 
       <TT>FILE_HANDLE</TT> as the file handle.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>open(FILE_HANDLE, &lt;FILENAME.EXT);</TT></TD>
+    <TD vAlign=top><TT>open(FILE_HANDLE, <FILENAME.EXT);</TT></TD>
     <TD vAlign=top>Opens FILENAME.EXT for input using FILE_HANDLE as the file 
       handle.</TD></TR>
   <TR>
     <TD vAlign=top><TT>open</TT>(<TT>FILE_HANDLE</TT>, 
-      <TT>&gt;FILENAME.EXT</TT>); </TD>
+      <TT>>FILENAME.EXT</TT>); </TD>
     <TD vAlign=top>Opens <TT>FILENAME.EXT</TT> for output using 
       <TT>FILE_HANDLE</TT> as the file handle.</TD></TR>
   <TR>
     <TD vAlign=top><TT>open</TT>(<TT>FILE_HANDLE</TT>, <TT>-</TT>); </TD>
     <TD vAlign=top>Opens standard input.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>open</TT>(<TT>FILE_HANDLE</TT>, <TT>&gt;-</TT>); </TD>
+    <TD vAlign=top><TT>open</TT>(<TT>FILE_HANDLE</TT>, <TT>>-</TT>); </TD>
     <TD vAlign=top>Opens standard output.</TD></TR>
   <TR>
     <TD vAlign=top><TT>open</TT>(<TT>FILE_HANDLE</TT>, 
-      <TT>&gt;&gt;FILENAME.EXT</TT>); </TD>
+      <TT>>>FILENAME.EXT</TT>); </TD>
     <TD vAlign=top>Opens <TT>FILENAME.EXT</TT> for appending using 
       <TT>FILE_HANDLE</TT> as the file handle.</TD></TR>
   <TR>
     <TD vAlign=top><TT>open</TT>(<TT>FILE_HANDLE</TT>, 
-      <TT>+&lt;FILENAME.EXT</TT>); </TD>
+      <TT>+<FILENAME.EXT</TT>); </TD>
     <TD vAlign=top>Opens <TT>FILENAME.EXT</TT> for both input and output using 
       <TT>FILE_HANDLE</TT> as the file handle.</TD></TR>
   <TR>
     <TD vAlign=top><TT>open</TT>(<TT>FILE_HANDLE</TT>, 
-      <TT>+&gt;FILENAME.EXT</TT>); </TD>
+      <TT>+>FILENAME.EXT</TT>); </TD>
     <TD vAlign=top>Opens <TT>FILENAME.EXT</TT> for both input and output using 
       <TT>FILE_HANDLE</TT> as the file handle.</TD></TR>
   <TR>
     <TD vAlign=top><TT>open</TT>(<TT>FILE_HANDLE</TT>, 
-      <TT>+&gt;&gt;FILENAME.EXT</TT>); </TD>
+      <TT>+>>FILENAME.EXT</TT>); </TD>
     <TD vAlign=top>Opens <TT>FILENAME.EXT</TT> for both input and output using 
       <TT>FILE_HANDLE</TT> as the file handle.</TD></TR>
   <TR>
@@ -846,20 +851,20 @@ different ways. Table 9.4 shows all of the different method used to open a file.
 <TR><TD bgColor=black><FONT color=lightcyan size=4><B>Note by Matthew Kleiman</B></FONT></TD></TR>
 <TR><TD bgColor=lightcyan>
 
-The +&lt; prefix will open the file only if it
+The +< prefix will open the file only if it
 exists and it will maintain the original data.  This is the equivalent of
-using the &lt; prefix, with the added bonus that the file can be written to as
-well.  The +&gt; command will open the file regardless of whether it exists or
+using the < prefix, with the added bonus that the file can be written to as
+well.  The +> command will open the file regardless of whether it exists or
 not.  If it does exist, the file will be truncated (all data will be lost
 and a new file will be created) but the new file will be open for
-input/output instead of just output.  I do not know what the +&gt;&gt; does for
+input/output instead of just output.  I do not know what the +>> does for
 certain (it is not in the documentation as far as i can tell) but i deduce
-that it is similar to +&lt; but starts at the end of the file just as the
+that it is similar to +< but starts at the end of the file just as the
 normal append prefix does.
 
 </TD></TR>
 </TBODY></TABLE>
-<P>By prefixing the file name with a <TT>&gt;</TT> character you open the file 
+<P>By prefixing the file name with a <TT>></TT> character you open the file 
 for output. This next example opens a file that will hold a log of messages. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -878,7 +883,7 @@ for output. This next example opens a file that will hold a log of messages.
       to call <TT>print()</TT>. 
       <P>Send the second message to the <TT>MESSAGE.LOG</TT> file. 
       <P>Close the file.</TT></P></TD></TR></TBODY></TABLE>
-<P><B><PRE>if (open(LOGFILE, "&gt;message.log")) {
+<P><B><PRE>if (open(LOGFILE, ">message.log")) {
     print LOGFILE ("This is message number 1.\n");
     print LOGFILE ("This is message number 2.\n");
     close(LOGFILE);
@@ -891,7 +896,7 @@ more information about printing in the section "<A
 href="ch09.htm#Example: Printing Revisited">Example: 
 Printing Revisited</A>" later in this chapter. 
 <P>If you needed to add something to the end of the <TT>MESSAGE.LOG</TT> file, 
-you use <TT>&gt;&gt;</TT> as the file name prefix when opening the file. For 
+you use <TT>>></TT> as the file name prefix when opening the file. For 
 example: 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -908,7 +913,7 @@ example:
       <P>Send a message to the <TT>MESSAGE.LOG</TT> file. 
       <P>Send a message to the <TT>MESSAGE.LOG</TT> file. 
       <P>Close the file.</TT></P></TD></TR></TBODY></TABLE>
-<P><B><PRE>if (open(LOGFILE, "&gt;&gt;message.log")) {
+<P><B><PRE>if (open(LOGFILE, ">>message.log")) {
     print LOGFILE ("This is message number 3.\n");
     print LOGFILE ("This is message number 4.\n");
     close(LOGFILE);
@@ -918,8 +923,10 @@ lines:
 This is message number 2.
 This is message number 3.
 This is message number 4.</PRE></B>
-<H3><A name="Example: Binary Files">Example: Binary Files</A></H3>When you need 
-to work with data files, you will need to know what binary mode is. There are 
+
+### Example: Binary Files
+
+When you need to work with data files, you will need to know what binary mode is. There are 
 two major differences between binary mode and text mode: 
 <P>
 <UL>
@@ -977,7 +984,7 @@ two major differences between binary mode and text mode:
     <TD bgColor=#fffaa0><B><PRE><BR>
 $buffer = "";
 
-open(FILE, "&lt;binary.dat");
+open(FILE, "<binary.dat");
 read(FILE, $buffer, 20, 0);
 close(FILE);
 
@@ -1008,8 +1015,8 @@ mode.</TD></TR></P></TABLE></P>
     <TD bgColor=black><FONT color=lightcyan size=4><B>Errata 
   Note</B></FONT></TD></TR>
   <TR>
-    <TD bgColor=lightcyan>The printed version used a &gt; character to open 
-      the <TT>binary.dat</TT> file instead of the &lt; 
+    <TD bgColor=lightcyan>The printed version used a > character to open 
+      the <TT>binary.dat</TT> file instead of the < 
 character.</TD></TR></TBODY></TABLE>
 <P>This example does a couple of things that haven't been seen yet in this book. 
 The <TT>read()</TT> function is used as an alternative to the line-by-line input 
@@ -1058,7 +1065,7 @@ output display look a little like the input file.
     <TD bgColor=#fffaa0><B><PRE><BR>
 $buffer = "";
 
-open(FILE, "&lt;binary.dat");
+open(FILE, "<binary.dat");
 binmode(FILE);
 read(FILE, $buffer, 20, 0);
 close(FILE);
@@ -1084,9 +1091,9 @@ binary modes. We'll use a data file called <TT>EOF.DAT</TT> with the following
 contents: 
 <P><B><PRE>01
 02
-&lt;end of file character&gt;03</PRE></B>Since the end of file character is a 
-non-printing character, it can't be shown directly. In the spot <TT>&lt;end of 
-file character&gt;</TT> above is really the value 26. 
+<end of file character>03</PRE></B>Since the end of file character is a 
+non-printing character, it can't be shown directly. In the spot <TT><end of 
+file character></TT> above is really the value 26. 
 <P>Here is the program that yousaw previously read the <TT>BINARY.DAT</TT> file 
 only this time it will read <TT>EOF.DAT</TT>. 
 <P>
@@ -1118,7 +1125,7 @@ only this time it will read <TT>EOF.DAT</TT>.
     <TD bgColor=#fffaa0><B><PRE><BR>
 $buffer = "";
 
-open(FILE, "&lt;eof.dat");
+open(FILE, "<eof.dat");
 read(FILE, $buffer, 20, 0);
 close(FILE);
 
@@ -1167,7 +1174,7 @@ binary mode to whole file can be read.
     <TD bgColor=#fffaa0><B><PRE><BR>
 $buffer = "";
 
-open(FILE, "&lt;eof.dat");
+open(FILE, "<eof.dat");
 binmode(FILE);
 read(FILE, $buffer, 20, 0);
 close(FILE);
@@ -1189,10 +1196,12 @@ hexadecimal mode.</TD></TR></TABLE></P>With binary mode on, bytes with a value
 of 26 have no special meaning and the third line can be read. You see that the 
 value 26 - 1A in hexadecimal - was printed along with the rest of the 
 characters. 
-<H3><A name="Example: Reading into a Hash">Example: Reading into a Hash</A></H3>
+
+### Example: Reading into a Hash
+
 <P>You've already seen that you can read a file directly into a regular array 
 using this syntax: 
-<P><B><PRE>@array = &lt;FILE_HANDLE&gt;;</PRE></B>Unfortunately, there is no similar 
+<P><B><PRE>@array = <FILE_HANDLE>;</PRE></B>Unfortunately, there is no similar 
 way to read an entire file into a hash. But it's still pretty easy to do. The 
 following example will use the line number as the hash key for each line of a 
 file. 
@@ -1221,8 +1230,8 @@ file.
       </B></FONT></TD></TR>
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
-open(FILE, "&lt;fixed.dat");
-while (&lt;FILE&gt;) {
+open(FILE, "<fixed.dat");
+while (<FILE>) {
     $hash{$.} = $_;
 }
 close(FILE);
@@ -1233,8 +1242,10 @@ foreach (keys %hash) {
 <P>This program displays: 
 <P><B><PRE>1: 1212Jan       Jaspree             Painter
 2: 3453Kelly     Horton              Jockey</PRE></B>
-<H3><A name="Example: Getting File Statistics">Example: Getting File 
-Statistics</A></H3>The file test operators can tell you a lot about a file but 
+
+### Example: Getting File Statistics
+
+The file test operators can tell you a lot about a file but 
 sometimes you need more. In those cases, you use the <TT>stat()</TT> or 
 <TT>lstat()</TT> function. The <TT>stat()</TT> returns file information in a 13 
 element array. You can pass either a file handle or a file name as the 
@@ -1302,8 +1313,10 @@ value from the 13 element array returned by <TT>stat()</TT>. For example:
 function is surrounded by parentheses so that the return value is evaluated in 
 an array context. Then the ninth element is assigned to <TT>$mtime</TT>. You can 
 use this technique whenever a function returns a list. 
-<H3><A name="Example: Using the Directory Functions">Example: Using the 
-Directory Functions</A></H3>Perl has several functions that let you work with 
+
+### Example: Using the Directory Functions
+
+Perl has several functions that let you work with 
 directories. You can make a directory with the <TT>mkdir()</TT> function. You 
 can delete a directory with the <TT>rmdir()</TT> function. Switching from the 
 current directory to another is done using the <TT>chdir()</TT> function. 
@@ -1362,8 +1375,10 @@ separate line. If you need to know the number of Perl programs, evaluate the
       to read than <TT>$numPerlPrograms</TT>. No naming convention should be 
       inflexible. Use it as a guideline and break the rules when it seems 
       wise.<BR></TD></TR></TBODY></TABLE>
-<H3><A name="Example: Printing Revisited">Example: Printing 
-Revisited</A></H3>We've been using the <TT>print()</TT> function throughout this 
+
+### Example: Printing Revisited
+
+We've been using the <TT>print()</TT> function throughout this 
 book without really looking at how it works. Let's remedy that now. 
 <P>The <TT>print()</TT> function is used to send output to a file handle. Most 
 of the time, we've been using <TT>STDOUT</TT> as the file handle. Since 
@@ -1390,7 +1405,7 @@ take a look at this:
       <TT>TESTFILE.DAT</TT> file. 
       <P>Change the default file handle back to <TT>STDOUT</TT>. 
       <P>This line prints to <TT>STDOUT</TT>.</TT></P></TD></TR></TBODY></TABLE>
-<P><B><PRE>open(OUTPUT_FILE, "&gt;testfile.dat");
+<P><B><PRE>open(OUTPUT_FILE, ">testfile.dat");
 $oldHandle = select(OUTPUT_FILE);
 print("This is line 1.\n");
 select($oldHandle);
@@ -1537,10 +1552,7 @@ advance, you could use the following technique.
       width of the numbers to print. 
       <P>Define the <TT>max()</TT> function. You can look in the "<A 
       href="ch07.htm#Example: Foreach Loops">Example: 
-      Foreach Loops</A>" of Chapter 7, "<A 
-      href="ch07.htm">Control Statements</A>," for 
-      more information about the <TT>max()</TT> 
-function.</TT></P></TD></TR></TBODY></TABLE>
+      Foreach Loops</A>" of [](./control-statements.md), for more information about the <TT>max()</TT> function.</TT></P></TD></TR></TBODY></TABLE>
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
@@ -1562,7 +1574,7 @@ sub max {
     my($max) = shift(@_);
 
     foreach $temp (@_) {
-        $max = $temp if $temp &gt; $max;
+        $max = $temp if $temp > $max;
     }
     return($max);
 }</PRE></B></TD></TR></TBODY></TABLE>
@@ -1626,17 +1638,20 @@ Perl supports a feature called
 <I>globbing</I> which lets you use wildcard characters to find filenames. A 
 <I>wildcard</I> character is like the wild card in poker. It can have more than 
 one meaning. Let's look at some of the simpler examples. 
-<H3><A name="Example: Assigning a glob to an Array">Example: Assigning a 
-<I>glob</I> to an Array</A></H3>One common chore for computer administrators is 
+
+
+### Example: Assigning a glob to an Array
+
+One common chore for computer administrators is 
 the removal of backup files. You can use the globbing technique with the 
 <TT>unlink()</TT> function to perform this chore. 
-<P><B><PRE>unlink(&lt;*.bak&gt;);</PRE></B>The file specification, <TT>*.bak</TT>, is 
+<P><B><PRE>unlink(<*.bak>);</PRE></B>The file specification, <TT>*.bak</TT>, is 
 placed between the diamond operator and when evaluated returns a list of files 
 that match the specification. An asterisk means zero or more of any character 
 will be matched. So this <TT>unlink()</TT> call will delete all files with a 
 <TT>BAK</TT> extension. 
 <P>You can use the following: 
-<P><B><PRE>@array = &lt;f*.*&gt;;</PRE></B>To get a list of all files that start with 
+<P><B><PRE>@array = <f*.*>;</PRE></B>To get a list of all files that start with 
 the letter f. The next chapter, "<A 
 href="ch10.htm">Regular Expressions</A>," will show 
 you more ways to specify file names. Most of the meta-characters used in Chapter 
@@ -1649,9 +1664,10 @@ structures. Creating a program to read and write those structures is beyond the
 scope of this book. However, the following examples will show you how to use 
 simpler data structures. The same techniques can be applied to the more 
 complicated data structures as well. 
-<H3><A name="Example: Splitting a Record into Fields">Example: Splitting a 
-Record into Fields</A></H3>This example will show you how to read a file 
-line-by-line and break the input records into fields based on a separator 
+
+### Example: Splitting a Record into Fields
+
+This example will show you how to read a file line-by-line and break the input records into fields based on a separator 
 string. The file, <TT>FIELDS.DAT</TT>, will be used with the following contents: 
 
 <P><B><PRE>1212:Jan:Jaspree:Painter
@@ -1688,9 +1704,9 @@ and split them into fields.
     <TD bgColor=#fffaa0><B><PRE><BR>
 @fieldList = qw(fName lName job age);
 
-open(FILE, "&lt;fields.dat");
+open(FILE, "<fields.dat");
 
-while(&lt;FILE&gt;) {
+while(<FILE>) {
     @data{@fieldList} = split(/:/, $_, scalar @fieldList);
 
     foreach (@fieldList) {
@@ -1745,14 +1761,14 @@ file.
 <P>There are three files - actually file handles - that are always opened before 
 your program starts. These are <TT>STDIN</TT>, <TT>STDOUT</TT>, and 
 <TT>STDERR</TT>. The <TT>STDIN</TT> file handle is used to connect to the 
-standard input, usually the keyboard. You can use the <TT>&lt;</TT> character to 
+standard input, usually the keyboard. You can use the <TT><</TT> character to 
 override the standard input on the command line so that input comes from a file 
 instead of the keyboard. The <TT>STDOUT</TT> file handle is used to connect to 
-the standard output, usually the monitor. The <TT>&gt;</TT> character is used to 
+the standard output, usually the monitor. The <TT>></TT> character is used to 
 override the standard output. And finally, the <TT>STDERR</TT> file handle is 
 used when you want to output error messages. <TT>STDERR</TT> usually points to 
 the computer's monitor. 
-<P>The diamond operator (<TT>&lt;&gt;</TT>) is used to read an entire line of 
+<P>The diamond operator (<TT><></TT>) is used to read an entire line of 
 text from a file. It stops reading when the end of line character - the newline 
 - character is read. The returned string always includes the newline character. 
 If no file handle is used with the diamond operator, it will attempt to read 
@@ -1792,8 +1808,8 @@ separator character.
 to each other. Instead, I tried to give you a feel for the many ways that files 
 can be used. A entire book can be written on the different ways to use files. 
 But, you now know enough to create any kind of file that you might need. 
-<P>Chapter 10, "<A href="ch10.htm">Regular 
-Expressions</A>," covers the most difficult topics related to Perl. In fact, 
+
+[](./regular-expressions.md), covers the most difficult topics related to Perl. In fact, 
 Perl's regular expressions are one of the main reasons to learn the language. 
 Few other languages will give you equivalent functionality. 
 
@@ -1808,13 +1824,13 @@ Few other languages will give you equivalent functionality.
   <P></P>
   <LI>Are variables in the computer's memory considered persistent storage? 
   <P></P>
-  <LI>What is the <TT>&lt;&gt;</TT> operator used for? 
+  <LI>What is the <TT><></TT> operator used for? 
   <P></P>
   <LI>What is the default file handle for the <TT>printf()</TT> function? 
   <P></P>
   <LI>What is the difference between the following two open statements? 
-  <P><B><PRE>     open(FILE_ONE, "&gt;FILE_ONE.DAT");
-     open(FILE_TWO, "&gt;&gt;FILE_TWO.DAT");</PRE></B>
+  <P><B><PRE>     open(FILE_ONE, ">FILE_ONE.DAT");
+     open(FILE_TWO, ">>FILE_TWO.DAT");</PRE></B>
   <LI>What value will the following expression return? 
   <P><B><PRE>     (stat("09lst01.pl"))[7];</PRE></B>
   <LI>What is globbing? 

@@ -195,12 +195,12 @@ statement block is executed rather than before. Here is an example of the
 do {
     print("inside:  firstVar = $firstVar\n");
     $firstVar++;
-} while ($firstVar &lt; 2);
+} while ($firstVar < 2);
 
 print("outside: firstVar = $firstVar\n");</PRE></B>This program displays: 
 <P><B><PRE>inside:  firstVar = 10
 outside: firstVar = 11</PRE></B>This example shows that the statement block is 
-executed even though the condition *$firstVar &lt; 2* is false when the 
+executed even though the condition *$firstVar < 2* is false when the 
 loop starts. This ability occasionally comes in handy while counting down - such 
 as when printing pages of a report. 
 <P>
@@ -243,7 +243,7 @@ need to use the *while* statement.
       again. 
       <P>Print the value of *$firstVar*.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>$firstVar = 10;
-while ($firstVar &lt; 2) {
+while ($firstVar < 2) {
     print("inside:  firstVar = $firstVar\n");
     $firstVar++;
 };
@@ -268,7 +268,7 @@ execute the statement block - like the following:
       again. 
       <P>Print the value of *$firstVar*.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>$firstVar = 10;
-while ($firstVar &lt; 12) {
+while ($firstVar < 12) {
     print("inside:  firstVar = $firstVar\n");
     $firstVar++;
 };
@@ -281,9 +281,10 @@ looking at the code. When *$firstVar* is still 11, the condition is true,
 so the statement block is executed again, thereby incrementing 
 *$firstVar* to 12. Then, the next time the condition is evaluated, it is 
 false and the loop ends with *$firstVar* equal to 12. 
-<H3><A name="Example: Until Loops">Example: <I>Until</I> 
-Loops</A></H3><I>*Until*</I> loops are used to repeat a block of 
-statements while some condition is false. Like the previous *while* loop, 
+
+### Example: Until Loops
+
+<I>*Until*</I> loops are used to repeat a block of statements while some condition is false. Like the previous *while* loop, 
 there are also two forms of the *until* loop; one where the condition is 
 checked before the statements are executed (the *until* loop) and one in 
 which the condition is checked after the statements are executed (the 
@@ -315,7 +316,7 @@ Here is an example of the *do...until* loop.
 do {
     print("inside:  firstVar = $firstVar\n");
     $firstVar++;
-} until ($firstVar &lt; 2);
+} until ($firstVar < 2);
 
 print("outside: firstVar = $firstVar\n");</PRE></B>This program displays: 
 <P><B><PRE>inside:  firstVar = 10
@@ -338,9 +339,9 @@ loop. Therefore, this is an <I>endless </I>loop.
       side. So the above loop becomes 
       <P><PRE></B>do {
     ...
-} until (($firstVar &lt; 2) == 1);</PRE></TD></TR></TBODY></TABLE>This example 
+} until (($firstVar < 2) == 1);</PRE></TD></TR></TBODY></TABLE>This example 
 shows that the statement block is executed even though the condition 
-*$firstVar &lt; 2* is false when the loop starts. The next example shows 
+*$firstVar < 2* is false when the loop starts. The next example shows 
 the *until* loop in action. Notice that the statement block does not 
 execute because the conditional expression is false when the loop starts. 
 <P>
@@ -360,7 +361,7 @@ execute because the conditional expression is false when the loop starts.
       again. 
       <P>Print the value of *$firstVar*.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>$firstVar = 10;
-until ($firstVar &lt; 20) {
+until ($firstVar < 20) {
     print("inside:  firstVar = $firstVar\n");
     $firstVar++;
 };
@@ -385,7 +386,7 @@ getting executed.
       again. 
       <P>Print the value of *$firstVar*.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>$firstVar = 10;
-until ($firstVar &gt; 12) {
+until ($firstVar > 12) {
     print("inside:  firstVar = $firstVar\n");
     $firstVar++;
 };
@@ -394,8 +395,10 @@ print("outside: firstVar = $firstVar\n");</PRE></B>This program displays:
 inside:  firstVar = 11
 inside:  firstVar = 12
 outside: firstVar = 13</PRE></B>
-<H3><A name="Example: For Loops">Example: <I>For</I> Loops</A></H3>One of the 
-most common tasks in programming is looping a specific number of times. Whether 
+
+### Example: For Loops
+
+One of the most common tasks in programming is looping a specific number of times. Whether 
 you need to execute a certain function for every customer in your database or 
 print a page in a report, the <I>for</I> loop can be used. Its syntax is: 
 <P><B><PRE>for (INITIALIZATION; CONDITION; INCREMENT/DECREMENT) {
@@ -408,7 +411,7 @@ aids in identifying the loop variables.
 <P>When initializing variables, be sure not to confuse the equality operator 
 (*==*) with the assignment operator (*=*). The following is an 
 example of what this error could look like: 
-<P><B><PRE>for ($index == 0; $index &lt; 0; $index++)</PRE></B>One of the equal signs 
+<P><B><PRE>for ($index == 0; $index < 0; $index++)</PRE></B>One of the equal signs 
 should be removed. If you think you are having a problem with programming the 
 *for* loop, make sure to check out the operators. 
 <P>The <I>condition</I> expression is used to determine whether the loop should 
@@ -431,7 +434,7 @@ example of a basic *for* loop.
       *$firstVar* is less than 100. 
       <P>Print the value of *$firstVar* each time through the 
       loop.*</P></TD></TR></TBODY></TABLE>
-<P><B><PRE>for ($firstVar = 0; $firstVar &lt; 100; $firstVar++) {
+<P><B><PRE>for ($firstVar = 0; $firstVar < 100; $firstVar++) {
     print("inside:  firstVar = $firstVar\n");
 }</PRE></B>This program will display: 
 <P><B><PRE>inside:  firstVar = 0
@@ -455,7 +458,7 @@ inside:  firstVar = 99</PRE></B>This program will display the numbers 0 through
       long as *$firstVar* is greater than 0. 
       <P>Print the value of *$firstVar* each time through the 
       loop.*</P></TD></TR></TBODY></TABLE>
-<P><B><PRE>for ($firstVar = 100; $firstVar &gt; 0; $firstVar--) {
+<P><B><PRE>for ($firstVar = 100; $firstVar > 0; $firstVar--) {
     print("inside:  firstVar = $firstVar\n");
 }</PRE></B>This program will display: 
 <P><B><PRE>inside:  firstVar = 100
@@ -481,7 +484,7 @@ expressions.
       <P>Print the value of *$firstVar* and *$secondVar* each time 
       through the loop.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>for ($firstVar = 100, $secondVar = 0;
-     $firstVar &gt; 0;
+     $firstVar > 0;
      $firstVar--, $secondVar++) {
 
         print("inside:  firstVar = $firstVar  secondVar = $secondVar\n");
@@ -520,15 +523,16 @@ is read, the *$endOfFile* flag variable will be set to 1.
       *$firstVar* is less than 50. 
       <P>Print the value of *$firstVar* and *$secondVar* each time 
       through the loop.*</P></TD></TR></TBODY></TABLE>
-<P><B><PRE>for ($endOfFile = 0, $firstVar = 0; $firstVar &lt; 50;
+<P><B><PRE>for ($endOfFile = 0, $firstVar = 0; $firstVar < 50;
     $firstVar++, $secondVar++) {
     if (readLine() == 0)
         $endOfFile = 1;
 }</PRE></B>If the *$endOfFile* variable is 1 when the loop ends then you 
 know the file has less than 50 lines. 
-<H3><A name="Example: Foreach Loops">Example: <I>Foreach</I> 
-Loops</A></H3>Arrays are so useful that Perl provides a special form of the 
-*for* statement just for them. The *<I>foreach*</I> statement is 
+
+### Example: Foreach Loops
+
+Arrays are so useful that Perl provides a special form of the *for* statement just for them. The *<I>foreach*</I> statement is 
 used solely to iterate over the elements of an array. It is very handy for 
 finding the largest element, printing the elements, or simply seeing if a given 
 value is a member of an array. 
@@ -560,7 +564,7 @@ sub max {
     my($max) = shift(@_);
 
     foreach $temp (@_) {
-        $max = $temp if $temp &gt; $max;
+        $max = $temp if $temp > $max;
     }
     return($max);
 }</PRE></B>This program displays: 
@@ -599,13 +603,13 @@ sub max {
     my($max) = shift(@_);
 
     foreach (@_) {
-        $max = $_ if $_ &gt; $max;
+        $max = $_ if $_ > $max;
     }
     return($max);
 }</PRE></B>The third item has nothing to do with the *foreach* loop, at 
 least not directly. But this seems like a good time to mention it. The statement 
 inside the loop could also be written in the following way: 
-<P><B><PRE>$max = $_ if $max &lt; $_;</PRE></B>with the sense of the operator 
+<P><B><PRE>$max = $_ if $max < $_;</PRE></B>with the sense of the operator 
 reversed. However, notice that it will take more effort to understand what the 
 statement - as a whole - is doing. The reader of your program knows that the 
 function is looking for the greatest value in a list. If the less than operator 
@@ -616,8 +620,7 @@ your program logic to agree with the main premise of the function.
 the function name and the local variable name are the same except for the 
 beginning dollar sign. This shows that function names and variable names use 
 different namespaces. 
-<P>Remember namespaces? They were mentioned in Chapter 3, "<A 
-href="ch03.htm">Variables</A>". </P>
+<P>Remember namespaces? They were mentioned in [](./variables.md). </P>
 <P>Using the *foreach* statement requires using a little bit of caution 
 because the local variable (either *$_* or the one you specify) accesses 
 the array elements using the call by reference scheme. When call by reference is 
@@ -680,9 +683,9 @@ with a short description.
     <TD vAlign=top>Jumps to a specified label.</TD></TR></TBODY></TABLE>
 <P>Each of these keywords is described further in its own section which follows. 
 
-<H3><A name="Example: The last Keyword">Example: The <I>last</I> 
-Keyword</A></H3>The *last* keyword is used to exit from a statement 
-block. This ability is useful if you are searching an array for a value. When 
+### Example: The last Keyword
+
+The *last* keyword is used to exit from a statement block. This ability is useful if you are searching an array for a value. When 
 the value is found, you can stop the loop early. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -700,7 +703,7 @@ the value is found, you can stop the loop early.
       string equality operator is used. If the array element is "T", then exit 
       the loop.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>@array = ("A".."Z");
-for ($index = 0; $index &lt; @array; $index++) {
+for ($index = 0; $index < @array; $index++) {
     if ($array[$index] eq "T") {
         last;
     }
@@ -731,7 +734,7 @@ a basic loop.
       <P>Print the value of *$index* while inside the loop. 
       <P>Print the value of *$index* after the loop 
   ends.*</P></TD></TR></TBODY></TABLE>
-<P><B><PRE>for ($index = 0; $index &lt; 10; $index++) {
+<P><B><PRE>for ($index = 0; $index < 10; $index++) {
     if ($index == 5) {
         last;
     }
@@ -762,11 +765,11 @@ add an inner loop to complicate things.
       <P>Increment *$index*. 
       <P>Print the value of *$index*.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>OUTER_LOOP:
-    for ($index = 0; $index &lt; 10; $index++) {
+    for ($index = 0; $index < 10; $index++) {
         if ($index == 5) {
             last;
         }
-        while ($index &lt; 10) {
+        while ($index < 10) {
             if ($index == 4) {
                 last OUTER_LOOP;
             }
@@ -784,8 +787,10 @@ index = 4</PRE></B>The inner *while* loop increments *$index*
 while it is less than 10. However, before it can reach 10 it must pass 4, which 
 triggers the *if* statement and exits both loops. You can tell that the 
 outer loop was also exited because the outer print statement is never executed. 
-<H3><A name="Example: The next Keyword">Example: The <I>next</I> 
-Keyword</A></H3>The *next* keyword lets you skip the rest of the 
+
+### Example: The next Keyword
+
+The *next* keyword lets you skip the rest of the 
 statement block and start the next iteration. One use of this behavior could be 
 to select specific array elements for processing and ignoring the rest. For 
 example: 
@@ -806,7 +811,7 @@ example:
   changed.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>@array = (0..9);
 print("@array\n");
-for ($index = 0; $index &lt; @array; $index++) {
+for ($index = 0; $index < @array; $index++) {
     if ($index == 3 || $index == 5) {
         next;
     }
@@ -838,8 +843,8 @@ directly to the increment/decrement expression. You can also use the
       the label *OUTER_LOOP*. 
       <P>Display the values of *$row* and *$col* and mention that 
       the code is inside the outer loop.*</P></TD></TR></TBODY></TABLE>
-<P><B><PRE>OUTER_LOOP: for ($row = 0; $row &lt; 3; $row++) {
-                for ($col = 0; $col &lt; 3; $col++) {
+<P><B><PRE>OUTER_LOOP: for ($row = 0; $row < 3; $row++) {
+                for ($col = 0; $col < 3; $col++) {
                     print("inner: $row,$col\n");
                     if ($col == 1) {
                         next OUTER_LOOP;
@@ -855,9 +860,10 @@ inner: 2,0
 inner: 2,1</PRE></B>You can see that the *next* statement in the inner 
 loop causes Perl to skip the *print* statement in the outer loop whenever 
 *$col* is equal to 1. 
-<H3><A name="Example: The redo Keyword">Example: The <I>redo</I> 
-Keyword</A></H3>The *redo* keyword causes Perl to restart the current 
-statement block. Neither the increment/decrement expression nor the conditional 
+
+### Example: The redo Keyword
+
+The *redo* keyword causes Perl to restart the current statement block. Neither the increment/decrement expression nor the conditional 
 expression is evaluated before restarting the block. This keyword is usually 
 used when getting input from outside the program, either from the keyboard or 
 from a file. It is essential that the conditions that caused the redo statement 
@@ -884,7 +890,7 @@ input.
       characters.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>{
     print("What is your name? ");
-    $name = &lt;STDIN&gt;;
+    $name = <STDIN>;
     chop($name);
 
     if (! length($name)) {
@@ -926,7 +932,7 @@ flow. Without it, you would need to use a *do...until* loop. For example:
       characters.*</P></TD></TR></TBODY></TABLE>
 <P><B><PRE>do {
     print("What is your name? ");
-    $name = &lt;STDIN&gt;;
+    $name = <STDIN>;
     chomp($name);
 
     if (! length($name)) {
@@ -940,9 +946,10 @@ print("Thank you, " . uc($name) . "\n");</PRE></B>The *do...until* loop
 is less efficient because the length of *$name* needs to be tested twice. 
 Since Perl has so many ways to do any given task, it pays to think about which 
 method is more efficient before implementing your ideas. 
-<H3><A name="Example: The goto Keyword">Example: The <I>goto</I> 
-Keyword</A></H3>The *goto* statement lets your program jump directly to 
-any label. However, because Perl also provides the loop statements and other 
+
+### Example: The goto Keyword
+
+The *goto* statement lets your program jump directly to any label. However, because Perl also provides the loop statements and other 
 jump keywords, its use is looked down on by most programmers. Using the 
 *goto* in your programs frequently cause your program logic to become 
 convoluted. If you write a program that you feel needs a *goto* in order 
@@ -999,7 +1006,7 @@ keywords can be used with labels so they can be used inside nested loops.
   <LI>What will be displayed when this program executes? 
   <P><B><PRE>$firstVar = 5;
 {
-    if ($firstVar &gt; 10) {
+    if ($firstVar > 10) {
         last;
     }
     $firstVar++;

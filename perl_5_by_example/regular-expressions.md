@@ -150,9 +150,9 @@ string inside a file is very easy because the defaults are designed to
 facilitate this activity. For example: 
 <P><B><PRE>$target = "M";
 
-open(INPUT, "&lt;findstr.dat");
+open(INPUT, "<findstr.dat");
 
-while (&lt;INPUT&gt;) {
+while (<INPUT>) {
      if (/$target/) {
          print "Found $target on line $.";
      }
@@ -170,8 +170,10 @@ close(INPUT);</PRE></B>
 <TT>M</TT>. When an <TT>M</TT> is found, the print statement is executed. The 
 print statement prints the letter that is found and the line number it was found 
 on. 
-<H3><A name="The Matching Options">The Matching Options</A></H3>The matching 
-operator has several options that enhance its utility. The most useful option is 
+
+### The Matching Options
+
+The matching operator has several options that enhance its utility. The most useful option is 
 probably the capability to ignore case and to create an array of all matches in 
 a string. Table 10.2 shows the options you can use with the matching operator. 
 <P>
@@ -263,8 +265,10 @@ need to use a second set of brackets to enclose the replacement pattern. For
 instance: 
 <P><B><PRE>$_ = "AAA bbb AAA";
 $result = s{bbb}{1234567890};</PRE></B>
-<H3><A name="The Substitution Options">The Substitution Options</A></H3>Like the 
-matching operator, the substitution operator has several options. One 
+
+### The Substitution Options
+
+Like the matching operator, the substitution operator has several options. One 
 interesting option is the capability to evaluate the replacement pattern as an 
 expression instead of a string. You could use this capability to find all 
 numbers in a file and multiply them by a given percentage, for instance. Or you 
@@ -349,8 +353,10 @@ doesn't perform variable interpolation.
       <P>The UNIX sed utility uses a <I>y</I> to indicate translations. To make 
       learning Perl easier for sed users, y is supported as a synonym for 
     tr.</P></TD></TR></TBODY></TABLE>
-<H3><A name="The Translation Options">The Translation Options</A></H3>The 
-translation operator has options different from the matching and substitution 
+
+### The Translation Options
+
+The translation operator has options different from the matching and substitution 
 operators. You can delete matched characters, replace repeated characters with a 
 single character, and translate only characters that don't match the character 
 list. Table 10.4 shows the translation options. 
@@ -854,8 +860,10 @@ However, some of the components deserve a bit more study. The next few sections
 look at character classes, quantifiers, pattern memory, pattern precedence, and 
 the extension syntax. Then the rest of the chapter is devoted to showing 
 specific examples of when to use the different components. 
-<H3><A name="Example: Character Classes">Example: Character Classes</A></H3>A 
-character class defines a type of character. The character class [0123456789] 
+
+### Example: Character Classes
+
+ A character class defines a type of character. The character class [0123456789] 
 defines the class of decimal digits, and [0-9a-f] defines the class of 
 hexadecimal digits. Notice that you can use a dash to define a range of 
 consecutive characters. Character classes let you match any of a range of 
@@ -937,8 +945,10 @@ character.
       caret, or it could be used to complement a character class. Therefore, it 
       is vital that you decide which context any given pattern character or 
       symbol is in before assigning a meaning to it.</TD></TR></TBODY></TABLE>
-<H3><A name="Example: Quantifiers">Example: Quantifiers</A></H3>Perl provides 
-several different quantifiers that let you specify how many times a given 
+
+### Example: Quantifiers
+
+Perl provides several different quantifiers that let you specify how many times a given 
 component must be present before the match is true. They are used when you don't 
 know in advance how many characters need to be matched. Table 10.6 lists the 
 different quantifiers that can be used. 
@@ -1040,8 +1050,10 @@ characters that the <TT>*</TT> matches is zero. If we change the <TT>*</TT> to a
 <TT>+</TT>, then the program will display 
 <P><B><PRE>/</PRE></B>Next, let's look at the concept of pattern memory, which lets 
 you keep bits of matched string around after the match is complete. 
-<H3><A name="Example: Pattern Memory">Example: Pattern Memory</A></H3>Matching 
-arbitrary numbers of characters is fine, but without the capability to find out 
+
+### Example: Pattern Memory
+
+Matching arbitrary numbers of characters is fine, but without the capability to find out 
 what was matched, patterns would be not very useful. Perl lets you enclose 
 pattern components inside parentheses in order to store the string that matched 
 the components into pattern memory. You might also hear <I>pattern memory 
@@ -1101,8 +1113,10 @@ having to add parentheses to find information.
       stored in the pattern memory, make sure to assign them to other variables. 
       Pattern memory is local to the enclosing block and lasts only until 
       another match is done.</TD></TR></TBODY></TABLE>
-<H3><A name="Example: Pattern Precedence">Example: Pattern 
-Precedence</A></H3>Pattern components have an order of precedence just as 
+
+### Example: Pattern Precedence
+
+Pattern components have an order of precedence just as 
 operators do. If you see the following pattern: 
 <P><B><PRE>m/a|b+/</PRE></B>it's hard to tell if the pattern should be 
 <P><B><PRE> m/(a|b)+/  # match any sequence of  "a" and "b" characters
@@ -1141,8 +1155,10 @@ Therefore, the second interpretation is correct.
       components are evaluated because they have the highest precedence. 
       However, unless you use the extended syntax, you will be affecting the 
       pattern memory.</TD></TR></TBODY></TABLE></B>
-<H3><A name="Example: Extension Syntax">Example: Extension Syntax</A></H3>The 
-regular expression extensions are a way to significantly add to the power of 
+
+### Example: Extension Syntax
+
+The regular expression extensions are a way to significantly add to the power of 
 patterns without adding a lot of meta-characters to the proliferation that 
 already exists. By using the basic (?...) notation, the regular expression 
 capabilities can be greatly extended. 
@@ -1239,7 +1255,7 @@ Jackie  Orthopedist 34
 Karen Veterinarian 28</PRE></B>and you want to find all veterinarians and store 
 the value of the first column, you can use a look-ahead assertion. This will do 
 both tasks in one step. For example: 
-<P><B><PRE>while (&lt;&gt;) {
+<P><B><PRE>while (<>) {
     push(@array, $&amp;) if m/^\w+(?=\s+Vet)/;
 }
 
@@ -1259,7 +1275,7 @@ format. So let's use a different tactic.
                      (?# with the character sequence "Vet")
            ';
 
-while (&lt;&gt;) {
+while (<>) {
     push(@array, $&amp;) if m/$pattern/x;
 }
 
@@ -1281,7 +1297,7 @@ follow the matched string. For example, using the same data as in the previous
 example, you can look for everyone who is not a veterinarian. Your first 
 inclination might be to simply replace the <TT>(?=...)</TT> with the 
 <TT>(?!...)</TT> in the previous example. 
-<P><B><PRE> while (&lt;&gt;) {
+<P><B><PRE> while (<>) {
     push(@array, $&amp;) if m/^\w+(?!\s+Vet)/;
 }
 
@@ -1291,7 +1307,7 @@ Perl is looking at the last character of the word to see if it matches the
 <TT>Vet</TT> character sequence. In order to correctly match the first word, you 
 need to explicitly tell Perl that the first word ends at a word boundary, like 
 this: 
-<P><B><PRE>while (&lt;&gt;) {
+<P><B><PRE>while (<>) {
     push(@array, $&amp;) if m/^\w+\b(?!\s+Vet)/;
 }
 
@@ -1316,8 +1332,9 @@ section. Instead, I will explain a matching situation in italicized text and
 then a possible resolution will immediately follow. After the resolution, I'll 
 add some comments to explain how the match is done. In all of these examples, 
 the string to search will be in the <TT>$_</TT> variable. 
-<H3><A name="Example: Using the Match Operator">Example: Using the Match 
-Operator</A></H3>
+
+### Example: Using the Match Operator
+
 <UL>
   <LI>If you need to find repeated characters in a string like the AA in "ABC AA 
   ABC", then do this: 
@@ -1485,8 +1502,8 @@ m!^.*/(.*)!;</PRE></B>After this match statement, <TT>$1</TT> will equal
   <LI>If you want to search a file for a string and print some of the 
   surrounding lines, you can do this: 
   <P><B><PRE># read the whole file into memory.
-open(FILE, "&lt;fndstr.dat");
-@array = &lt;FILE&gt;;
+open(FILE, "<fndstr.dat");
+@array = <FILE>;
 close(FILE);
 # specify which string to find.
 $stringToFind = "A";
@@ -1494,7 +1511,7 @@ $stringToFind = "A";
 # string. The $#array notation is used to
 # determine the number of elements in the
 # array.
-for ($index = 0; $index &lt;= $#array; $index++) {
+for ($index = 0; $index <= $#array; $index++) {
     last if $array[$index] =~ /$stringToFind/;
 }
 # Use $index to print two lines before
@@ -1508,8 +1525,9 @@ foreach (@array[$index-2..$index+2]) {
   because the entire file is read into memory at once. In addition, the program 
   assumes that the input file always contains the string that you are looking 
   for.</LI></UL>
-<H3><A name="Example: Using the Substitution Operator">Example: Using the 
-Substitution Operator</A></H3>
+
+### Example: Using the Substitution Operator
+
 <UL>
   <LI>If you need to remove whitespace from the beginning of a string, you can 
   do this: 
@@ -1611,8 +1629,9 @@ print;</PRE></B>When this program is run, it will display
   <P><B><PRE>Error: File too large for the file named DATA.OUT</PRE></B>The values of 
   the <TT>$errMsg</TT> and <TT>$fileName</TT> variables were interpolated into 
   the replacement pattern as needed.</LI></UL>
-<H3><A name="Example: Using the Translation Operator">Example: Using the 
-Translation Operator</A></H3>
+
+### Example: Using the Translation Operator
+
 <UL>
   <LI>If you need to count the number of times a given letter appears in a 
   string, you can do this: 
@@ -1630,8 +1649,9 @@ Translation Operator</A></H3>
   more efficient - in this instance - than using logical operators and a loop 
   statement. This is because the translation can be done by creating a simple 
   lookup table.</LI></UL>
-<H3><A name="Example: Using the Split() Function">Example: Using the 
-<I>Split()</I> Function</A></H3>
+
+### Example: Using the Split() Function
+
 <UL>
   <LI>If you need to split a string into words, you can do this: 
   <P><B><PRE>s/^\s+//;
@@ -1732,7 +1752,7 @@ the task of creating reports.
   <LI>What does the <TT>\d</TT> meta-character sequence mean? 
   <P></P>
   <LI>What is the meaning of the dollar sign in the following pattern? 
-  <P><B><PRE>/AA[.&lt;]$]ER/</PRE></B>
+  <P><B><PRE>/AA[.<]$]ER/</PRE></B>
   <LI>What is a word boundary? 
   <P></P>
   <LI>What will be displayed by the following program? 

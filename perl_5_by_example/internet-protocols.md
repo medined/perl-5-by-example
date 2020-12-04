@@ -229,8 +229,10 @@ a handy reference. But remember, you probably won't need them all.
 program creates a socket (the server) and another connects to it (the client). 
 The next couple of sections will look at both server programs and client 
 programs. 
-<H3><A name="The Server Side of a Conversation">The Server Side of a 
-Conversation</A></H3>Server programs will use the socket() function to create a 
+
+### The Server Side of a Conversation
+
+Server programs will use the socket() function to create a 
 socket; bind() to give the socket an address so that it can be found; listen() 
 to see if anyone wants to talk; and accept() to start the conversation. Then 
 send() and recv() functions can be used to hold the conversation. And finally, 
@@ -307,8 +309,10 @@ conversations. The normal accept() function call looks like this:
 conversation has been started, use print(), send(), recv(), read(), or write() 
 to hold the conversation. The examples later in the chapter show how the 
 conversations are held. 
-<H3><A name="The Client Side of a Conversation">The Client Side of a 
-Conversation</A></H3>Client programs will use socket() to create a socket and 
+
+### The Client Side of a Conversation
+
+Client programs will use socket() to create a socket and 
 connect() to initiate a connection to a server's socket. Then input/output 
 functions are used to hold a conversation. And the close() function closes the 
 socket. 
@@ -478,13 +482,13 @@ case-sensitive.
   <TR>
     <TD vAlign=top>MAIL</TD>
     <TD vAlign=top>Indicates who is sending the mail. For example, MAIL 
-      FROM:&lt;medined@mtolive.com&gt;. Remember this is not your name, it's the 
+      FROM:<medined@mtolive.com>. Remember this is not your name, it's the 
       name of the person who is sending the mail message. Any returned mail will 
       be sent back to this address.</TD></TR>
   <TR>
     <TD vAlign=top>RCPT</TD>
     <TD vAlign=top>Indicates who is recieving the mail. For example, RCPT 
-      TO:&lt;rolf@earthdawn.com&gt;. You can indicate more than one user by 
+      TO:<rolf@earthdawn.com>. You can indicate more than one user by 
       issuing multiple RCPT commands.</TD></TR>
   <TR>
     <TD vAlign=top>DATA</TD>
@@ -623,67 +627,73 @@ is shown in Table 18.4. Hopefully, you'll never see most of them.
   causes.</TD></TR></TBODY></TABLE>
 <P>Now that you've seen all of the SMTP commands and reply codes, let's see what 
 a typical mail conversation might look like. In the following conversation, the 
-'&gt;' lines are the SMTP commands that your programs issues. The '&lt;' lines 
+'>' lines are the SMTP commands that your programs issues. The '<' lines 
 are the mail server's replies. 
-<P><B><PRE>&gt;HELO
-&lt;250 saturn.planet.net Hello medined@mtolive.com [X.X.X.X],pleased to meet you
+<P><B><PRE>>HELO
+<250 saturn.planet.net Hello medined@mtolive.com [X.X.X.X],pleased to meet you
 
-&gt;MAIL From: &lt;(Rolf D'Barno, 5th Circle Archer)&gt;
-&lt;250 &lt;(Rolf D'Barno, 5th Circle Archer)&gt;... Sender ok
+>MAIL From: <(Rolf D'Barno, 5th Circle Archer)>
+<250 <(Rolf D'Barno, 5th Circle Archer)>... Sender ok
 
-&gt;RCPT To: &lt;medined@mtolive.com&gt;
-&lt;250 &lt;medined@mtolive.com&gt;... Recipient ok
+>RCPT To: <medined@mtolive.com>
+<250 <medined@mtolive.com>... Recipient ok
 
-&gt;DATA
-&lt;354 Enter mail, end with "." on a line by itself
+>DATA
+<354 Enter mail, end with "." on a line by itself
 
-&gt;From: (Rolf D'Barno, 5th Circle Archer)
-&gt;Subject: Arrows
-&gt;This is line one.
-&gt;This is line two.
-&gt;.
-&lt;250 AAA14672 Message accepted for delivery
+>From: (Rolf D'Barno, 5th Circle Archer)
+>Subject: Arrows
+>This is line one.
+>This is line two.
+>.
+<250 AAA14672 Message accepted for delivery
 
-&gt;QUIT
-&lt;221 saturn.planet.net closing connection</PRE></B>The bold lines are the 
+>QUIT
+<221 saturn.planet.net closing connection</PRE></B>The bold lines are the 
 commands that are sent to the server. Some of the SMTP commands are a bit more 
 complex than others. In the next few sections, the MAIL, RCPT and DATA commands 
 are discussed. You will also see how to react to undeliverable mail. 
-<H3><A name="The MAIL Command">The <I>MAIL</I> Command</A></H3>The MAIL command 
-tells the mail server to start a new conversation. It's also used to let the 
+
+### The MAIL Command
+
+The MAIL command tells the mail server to start a new conversation. It's also used to let the 
 mail server know where to send a mail message to report errors. The syntax looks 
 like this: 
-<P><B><PRE>MAIL FROM:&lt;reverse-path&gt;</PRE></B>If the mail server accepts the 
+<P><B><PRE>MAIL FROM:<reverse-path></PRE></B>If the mail server accepts the 
 command, it will reply with a code of 250. Otherwise, the reply code will be 
 greater than 400. 
 <P>In the example shown previously 
-<P><B><PRE>&gt;MAIL From:&lt;(medined@mtolive.com)&gt;
-&lt;250 &lt;(medined@mtolive.com)&gt;... Sender ok</PRE></B>The reverse-path is 
+<P><B><PRE>>MAIL From:<(medined@mtolive.com)>
+<250 <(medined@mtolive.com)>... Sender ok</PRE></B>The reverse-path is 
 different from the name given as the sender following the DATA command. You can 
 use this technique to give a mailing list or yourself an alias. For example, if 
 you are maintaining a mailing list to your college alumnis, you might want the 
 name that appears in the reader's mailer to be '87 RugRats instead of your own 
 name. 
-<H3><A name="The RCPT Command">The <I>RCPT</I> Command</A></H3>You tell the mail 
-server who the recipient of your message is by using the RCPT command. You can 
+
+### The RCPT Command
+
+You tell the mail server who the recipient of your message is by using the RCPT command. You can 
 send more than one RCPT command for multiple recipients. The server will respond 
 with a code of 250 to each command. The syntax for the RCPT is: 
-<P><B><PRE>RCPT TO:&lt;forward-path&gt;</PRE></B>Only one recipient can be named per 
+<P><B><PRE>RCPT TO:<forward-path></PRE></B>Only one recipient can be named per 
 RCPT command. If the recipient is not known to the mail server, the response 
 code will be 550. You might also get a response code indicating that the 
 recipient is not local to the server. If that is the case, you will get one of 
 two responses back from the server: 
 <P>
 <UL>
-  <LI><B>251 User not local; will forward to &lt;forward-path&gt;</B> - This 
+  <LI><B>251 User not local; will forward to <forward-path></B> - This 
   reply means that the server will forward the message. The correct mail address 
   is returned so that you can store it for future use. 
   <P></P>
-  <LI><B>551 User not local; please try &lt;forward-path&gt;</B> - This reply 
+  <LI><B>551 User not local; please try <forward-path></B> - This reply 
   means that the server won't forward the message. You need to issue another 
   RCPT command with the new address.</LI></UL>
-<H3><A name="The DATA Command">The <I>DATA</I> Command</A></H3>After starting 
-the mail conversation and telling the server who the recipient or recipients 
+
+### The DATA Command
+
+After starting the mail conversation and telling the server who the recipient or recipients 
 are, you use the DATA command to send the body of the message. The syntax for 
 the DATA command is very simple: 
 <P><B><PRE>DATA</PRE></B>After you get the standard 354 response, send the body of the 
@@ -698,8 +708,10 @@ a 250 reply code.
   <TR>
     <TD bgColor=lightcyan>The body of the message can also include several 
       header items like Date, Subject, To, Cc, and From.</TD></TR></TBODY></TABLE>
-<H3><A name="Reporting Undeliverable Mail">Reporting Undeliverable 
-Mail</A></H3>The mail server is responsible for reporting undeliverable mail, so 
+
+### Reporting Undeliverable Mail
+
+The mail server is responsible for reporting undeliverable mail, so 
 you may not need to know too much about this topic. However, this information 
 may come in handy if you ever run a list service or if you send a message from a 
 temporary account. 
@@ -708,11 +720,11 @@ non-existent mailbox. The server keeps trying to send a notification message to
 the reverse-path specified in the MAIL command. 
 <P>The answer to this dilema is to specify an empty reverse path in the MAIL 
 command of a notification message like this: 
-<P><B><PRE>MAIL FROM:&lt;&gt;</PRE></B>An entire mail session that delivers a error 
+<P><B><PRE>MAIL FROM:<></PRE></B>An entire mail session that delivers a error 
 notification message might look like the following: 
-<P><B><PRE>MAIL FROM:&lt;&gt;
+<P><B><PRE>MAIL FROM:<>
 250 ok
-RCPT TO:&lt;@HOST.COM@HOSTW.ARPA&gt;
+RCPT TO:<@HOST.COM@HOSTW.ARPA>
 250 ok
 DATA
 354 send the mail data, end with .
@@ -728,7 +740,9 @@ delivered.
         "550 No Such User"
 .
 250 ok</PRE></B>
-<H3><A name="Using Perl to Send Mail">Using Perl to Send Mail</A></H3>
+
+### Using Perl to Send Mail
+
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
   <TR>
@@ -869,8 +883,8 @@ select(SMTP); $| = 1; select(STDOUT);    # use unbuffered i/o.
 }
 
 sendSMTP(1, "HELO\n");
-sendSMTP(1, "MAIL From: &lt;$mailFrom&gt;\n");
-sendSMTP(1, "RCPT To: &lt;$mailTo&gt;\n");
+sendSMTP(1, "MAIL From: <$mailFrom>\n");
+sendSMTP(1, "RCPT To: <$mailTo>\n");
 sendSMTP(1, "DATA\n");
 
 send(SMTP, "From: $realName\n", 0);
@@ -891,29 +905,29 @@ sub sendSMTP {
     my($debug)  = shift;
     my($buffer) = @_;
 
-    print STDERR ("&gt; $buffer") if $debug;
+    print STDERR ("> $buffer") if $debug;
     send(SMTP, $buffer, 0);
 
     recv(SMTP, $buffer, 200, 0);
-    print STDERR ("&lt; $buffer") if $debug;
+    print STDERR ("< $buffer") if $debug;
 
     return( (split(/ /, $buffer))[0] );
 }</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>This program displays: 
-<P><B><PRE>&gt; HELO
-&lt; 250 saturn.planet.net Hello medined@stan54.planet.net
+<P><B><PRE>> HELO
+< 250 saturn.planet.net Hello medined@stan54.planet.net
     [207.3.100.120], pleased to meet you
-&gt; MAIL From: &lt;medined@mtolive.com&gt;
-&lt; 250 &lt;medined@mtolive.com&gt;... Sender ok
-&gt; RCPT To: &lt;~r00tbeer@fundy.csd.unbsj.ca&gt;
-&lt; 250 &lt;~r00tbeer@fundy.csd.unbsj.ca&gt;... Recipient ok
-&gt; DATA
-&lt; 354 Enter mail, end with "." on a line by itself
-&gt;
+> MAIL From: <medined@mtolive.com>
+< 250 <medined@mtolive.com>... Sender ok
+> RCPT To: <~r00tbeer@fundy.csd.unbsj.ca>
+< 250 <~r00tbeer@fundy.csd.unbsj.ca>... Recipient ok
+> DATA
+< 354 Enter mail, end with "." on a line by itself
+>
 .
-&lt; 250 TAA12656 Message accepted for delivery
-&gt; QUIT
-&lt; 221 saturn.planet.net closing connection</PRE></B>The lines in bold are the 
+< 250 TAA12656 Message accepted for delivery
+> QUIT
+< 221 saturn.planet.net closing connection</PRE></B>The lines in bold are the 
 commands that were sent to the server. The body of the letter is not shown in 
 the output. However, Figure 18.2 shows how the letter looks when displayed using 
 Netscape's mail program. 
@@ -975,7 +989,7 @@ needed.</TD></TR></TBODY></TABLE>
       <P><TT>Initialize $username to a valid username for the mail server.</TT> 
       <P><TT>Initialize $password to a valid password for the user name.</TT> 
       <P><TT>Create a new POP3Client object.</TT> 
-      <P><TT>Iterate over the mail messages on the server. $pop-&gt;Count holds 
+      <P><TT>Iterate over the mail messages on the server. $pop->Count holds 
       the number of messages waiting on the server to be read.</TT> 
       <P><TT>Initialize a flag variable. When set true, the script will have 
       </TT>
@@ -1013,7 +1027,7 @@ use strict;
 my($i, $from, $subject);
 
 format main::STDOUT_TOP =
-    @|||||||||||||||||||||||||||||||||||||||||||||||||  Pg @&lt;
+    @|||||||||||||||||||||||||||||||||||||||||||||||||  Pg @<
     "Waiting Mail Regarding EarthDawn",                    $%
 
     Sender                  Subject
@@ -1021,7 +1035,7 @@ format main::STDOUT_TOP =
 .
 
 format main::STDOUT =
-    @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+    @<<<<<<<<<<<<<<<<<<<<<  @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
            $from,                    $subject
 .
 
@@ -1029,12 +1043,12 @@ my($username)   = 'medined';
 my($password)   = 'XXXXXXXX';
 my($mailServer) = 'mailhost2.planet.net';
 
-my($pop) = Mail::POP3Client-&gt;new($username, $password, $mailServer);
+my($pop) = Mail::POP3Client->new($username, $password, $mailServer);
 
-for ($i = 1; $i &lt;= $pop-&gt;Count; $i++) {
+for ($i = 1; $i <= $pop->Count; $i++) {
     my($earthDawn) = 0;
 
-    foreach ($pop-&gt;Head($i)) {
+    foreach ($pop->Head($i)) {
         $from = $1 if /From:\s(.+)/;
         $subject = $1 if /Subject:\s(.+)/;
 
@@ -1288,44 +1302,44 @@ foreach (@dirList) {
     print("\t$_\n");
 }</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>This program displays: 
-<P><B><PRE>&lt;&lt; 220 flood FTP server (Version wu-2.4(21) Tue Apr 9 17:01:12 EDT 1996) ready.
-&gt;&gt; user anonymous
-&lt;&lt; 331 Guest login ok, send your complete e-mail address as password.
-&gt;&gt; pass .....
-&lt;&lt; 230-                     Welcome to the
-&lt;&lt; 230-                  University of Florida
+<P><B><PRE><< 220 flood FTP server (Version wu-2.4(21) Tue Apr 9 17:01:12 EDT 1996) ready.
+>> user anonymous
+<< 331 Guest login ok, send your complete e-mail address as password.
+>> pass .....
+<< 230-                     Welcome to the
+<< 230-                  University of Florida
 .
 .
 .
-&lt;&lt; 230 Guest login ok, access restrictions apply.
-&gt;&gt; port 207,3,100,103,4,135
-&lt;&lt; 200 PORT command successful.
-&gt;&gt; nlst pub/perl/faq
-&lt;&lt; 150 Opening ASCII mode data connection for file list.
-&lt;&lt; 226 Transfer complete.
-&gt;&gt; cwd /pub/perl/faq
-&lt;&lt; 250 CWD command successful.
-&gt;&gt; type i
-&lt;&lt; 200 Type set to I.
-&gt;&gt; port 207,3,100,103,4,136
-&lt;&lt; 200 PORT command successful.
-&gt;&gt; retr FAQ.gz
-&lt;&lt; 150 Opening BINARY mode data connection for FAQ.gz (75167 bytes).
-&lt;&lt; 226 Transfer complete.
-&gt;&gt; port 207,3,100,103,4,138
-&lt;&lt; 200 PORT command successful.
-&gt;&gt; nlst
-&lt;&lt; 150 Opening BINARY mode data connection for file list.
-&lt;&lt; 226 Transfer complete.
+<< 230 Guest login ok, access restrictions apply.
+>> port 207,3,100,103,4,135
+<< 200 PORT command successful.
+>> nlst pub/perl/faq
+<< 150 Opening ASCII mode data connection for file list.
+<< 226 Transfer complete.
+>> cwd /pub/perl/faq
+<< 250 CWD command successful.
+>> type i
+<< 200 Type set to I.
+>> port 207,3,100,103,4,136
+<< 200 PORT command successful.
+>> retr FAQ.gz
+<< 150 Opening BINARY mode data connection for FAQ.gz (75167 bytes).
+<< 226 Transfer complete.
+>> port 207,3,100,103,4,138
+<< 200 PORT command successful.
+>> nlst
+<< 150 Opening BINARY mode data connection for file list.
+<< 226 Transfer complete.
 list of /pub/perl/faq
      FAQ
      FAQ.gz
-&gt;&gt; port 207,3,100,103,4,
+>> port 207,3,100,103,4,
 139
-&lt;&lt; 200 PORT command successful.
-&gt;&gt; list
-&lt;&lt; 150 Opening BINARY mode data connection for /bin/ls.
-&lt;&lt; 226 Transfer complete.
+<< 200 PORT command successful.
+>> list
+<< 150 Opening BINARY mode data connection for /bin/ls.
+<< 226 Transfer complete.
 list of /pub/perl/faq
      total 568
      drwxrwxr-x   2 1208     31           512 Nov  7  1995 .
@@ -1343,8 +1357,7 @@ only displayed when the debugging feature is turned on.
 One of the most valuable services offered on the net is Usenet newsgroups. Most newsgroups 
 are question and answer forums. You post a message - perhaps asking a question. 
 And, usually, you get a quick response. In addition, a small number of 
-newsgroups are used to distribute information. Chapter 23, "<A 
-href="ch22.htm">Internet Resources</A>," describes 
+newsgroups are used to distribute information. [](./internet-resources.md) describes 
 some specific newsgroups that you might want to read. 
 <P>Like most services, NNTP uses a client/server model. You connect to a news 
 server and request information using NNTP. The protocol consists of a series of 
@@ -1490,13 +1503,13 @@ package News;
         my($server)     = shift || 'news';
 
         my($self) = {
-            'DEBUG'  =&gt; 0,
-            'SERVER' =&gt; $server,
+            'DEBUG'  => 0,
+            'SERVER' => $server,
         };
 
         bless($self, $class);
 
-        $self-&gt;initialize();
+        $self->initialize();
 
         $main::SIG{'INT'} = 'News::closeSocket';
 
@@ -1508,7 +1521,7 @@ package News;
 
         my($proto)      = getprotobyname('tcp')        || 6;
         my($port)       = getservbyname('nntp', 'tcp') || 119;
-        my($serverAddr) = (gethostbyname($self-&gt;{'SERVER'}))[4];
+        my($serverAddr) = (gethostbyname($self->{'SERVER'}))[4];
 
         socket(SOCKET, main::AF_INET(), main::SOCK_STREAM(), $proto)
             or die("socket: $!");
@@ -1523,7 +1536,7 @@ package News;
         $| = 1;
         select(main::STDOUT);
 
-        $self-&gt;getInitialResponse();
+        $self->getInitialResponse();
     }
 
     sub getInitialResponse {
@@ -1531,7 +1544,7 @@ package News;
         my($inpBuf) = '';
 
         recv(SOCKET, $inpBuf, 200, 0);
-        print("&lt;$inpBuf\n") if $self-&gt;{'DEBUG'};
+        print("<$inpBuf\n") if $self->{'DEBUG'};
     }
 
     sub closeSocket {     # close smtp socket on error
@@ -1547,21 +1560,21 @@ package News;
         my($self) = shift;
         my($state) = shift;
 
-        $self-&gt;{'DEBUG'} = 1 if $state =~ m/on|1/i;
-        $self-&gt;{'DEBUG'} = 0 if $state =~ m/off|0/i;
+        $self->{'DEBUG'} = 1 if $state =~ m/on|1/i;
+        $self->{'DEBUG'} = 0 if $state =~ m/off|0/i;
     }
 
     sub send {
         my($self)   = shift;
         my($buffer) = @_;
 
-        print("&gt; $buffer") if $self-&gt;{'DEBUG'};
+        print("> $buffer") if $self->{'DEBUG'};
         send(SOCKET, $buffer, 0);
 
         # Use a large number to receive because some articles
         # can be huge.
         recv(SOCKET, $buffer, 1000000, 0);
-        print("&lt; $buffer") if $self-&gt;{'DEBUG'};
+        print("< $buffer") if $self->{'DEBUG'};
 
         return($buffer);
     }
@@ -1572,22 +1585,22 @@ package News;
         my($self)          = shift;
         my($articleNumber) = shift;
 
-        return($self-&gt;send("ARTICLE $articleNumber\n"));
+        return($self->send("ARTICLE $articleNumber\n"));
     }
 
     sub group {
         my($self)      = shift;
         my($newsgroup) = shift;
 
-        split(/ /, $self-&gt;send("GROUP $newsgroup\n"));
+        split(/ /, $self->send("GROUP $newsgroup\n"));
     }
 
     sub help {
-        return($_[0]-&gt;send("HELP\n"));
+        return($_[0]->send("HELP\n"));
     }
 
     sub quit {
-        $_[0]-&gt;send("QUIT\n");
+        $_[0]->send("QUIT\n");
         close(SOCKET);
     }
 
@@ -1595,25 +1608,25 @@ package main;
 
     my(@lines, $from, $help, $subject);
 
-    my($obj) = News-&gt;new('jupiter.planet.net');
-    $obj-&gt;debug('ON');
+    my($obj) = News->new('jupiter.planet.net');
+    $obj->debug('ON');
 
     my($replyCode, $numArticles, $firstArticle, $lastArticle) =
-        $obj-&gt;group('comp.lang.perl.misc');
+        $obj->group('comp.lang.perl.misc');
 
     if (211 == $replyCode ) {
         printf("\nThere are %d articles, from %d to %d.\n\n",
             $numArticles, $firstArticle, $lastArticle);
     }
 
-    $obj-&gt;debug('OFF');
+    $obj->debug('OFF');
 
     my($loopVar);
     my($loopStart) = $firstArticle;
     my($loopEnd)   = min($lastArticle, $firstArticle+5);
 
-    for ($loopVar = $loopStart; $loopVar &lt;= $loopEnd; $loopVar++) {
-        @lines = split(/\n/, $obj-&gt;article($loopVar));
+    for ($loopVar = $loopStart; $loopVar <= $loopEnd; $loopVar++) {
+        @lines = split(/\n/, $obj->article($loopVar));
         foreach (@lines) {
             $from    = $1 if (/From:\s(.*?)\s/);
             $subject = $1 if (/Subject:\s(.*)/);
@@ -1621,24 +1634,24 @@ package main;
         print("#$loopVar\tFrom:    $from\n\tSubject: $subject\n\n");
     }
 
-    $obj-&gt;debug('ON');
-    $help    = $obj-&gt;help();
+    $obj->debug('ON');
+    $help    = $obj->help();
 
-    $obj-&gt;quit();
+    $obj->quit();
 
 sub min {
     my($min) = shift;
 
     foreach (@_) {
-        $min = $_ if $_ &lt; $min;
+        $min = $_ if $_ < $min;
     }
     return($min);
 }</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>This program displays: 
-<P><B><PRE>&lt;200 jupiter.planet.net InterNetNews NNRP server INN 1.4 22-Dec-93 ready (post
+<P><B><PRE><200 jupiter.planet.net InterNetNews NNRP server INN 1.4 22-Dec-93 ready (post
 
-&gt; GROUP comp.lang.perl.misc
-&lt; 211 896 27611 33162 comp.lang.perl.misc
+> GROUP comp.lang.perl.misc
+< 211 896 27611 33162 comp.lang.perl.misc
 
 There are 896 articles, from 27611 to 33162.
 
@@ -1659,8 +1672,8 @@ There are 896 articles, from 27611 to 33162.
 #27616  From:    Tim
     Subject: Re: How do I suppress this error message
 
-&gt; HELP
-&lt; 100 Legal commands
+> HELP
+< 100 Legal commands
   authinfo user Name|pass Password
   article [MessageID|Number]
   body [MessageID|Number]
@@ -1673,8 +1686,8 @@ There are 896 articles, from 27611 to 33162.
   list [active|newsgroups|distributions|schema]
   listgroup newsgroup
   mode reader
-  newgroups yymmdd hhmmss ["GMT"] [&lt;distributions&gt;]
-  newnews newsgroups yymmdd hhmmss ["GMT"] [&lt;distributions&gt;]
+  newgroups yymmdd hhmmss ["GMT"] [<distributions>]
+  newnews newsgroups yymmdd hhmmss ["GMT"] [<distributions>]
   next
   post
   slave
@@ -1684,7 +1697,7 @@ There are 896 articles, from 27611 to 33162.
   xover [range]
   xpat header range|MessageID pat [morepat...]
   xpath xpath MessageID
-Report problems to &lt;medined@mtolive.com&gt;
+Report problems to <medined@mtolive.com>
 .</PRE></B>The program previously listed is very useful for hacking but it is 
 not ready for professional use in several respects. The first problem is that it 
 pays no attention to how large the incoming article is. It will read up to one 
@@ -1699,8 +1712,8 @@ Unfortunately, the HTTP protocol is a bit extensive to cover in
 this introductory book. However, if you've read and understood the examples in 
 this chapter. Then, you'll have little problem downloading some modules from the 
 CPAN archives and quickly writing your own web crawling programs. You can find 
-out more about CPAN in Chapter 23, "<A 
-href="ch22.htm">Internet Resources</A>." 
+out more about CPAN in [](./internet-resources.md).
+
 <P>In order to get you started, there are two files on the CD-ROM, url.pl and 
 url_get.pl. These libraries will retrieve web documents when given a specific 
 URL. Place them into your Perl directory and run the program in Listing 18.7. It 

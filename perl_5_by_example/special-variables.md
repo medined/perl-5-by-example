@@ -90,7 +90,7 @@ else's code.
     <TD vAlign=top><TT>$?</TT> </TD>
     <TD vAlign=top>Holds the status of the last pipe close, back-quote string, 
       or <TT>system()</TT> function. You can find more information about the 
-      <TT>$?</TT> variable in Chapter 13, "Handling Exceptions and Signals." 
+      <TT>$?</TT> variable in [](./errors.md). 
   </TD></TR>
   <TR>
     <TD vAlign=top><TT>$&amp;</TT> </TD>
@@ -122,12 +122,12 @@ else's code.
     <TD vAlign=top>Holds the name of the file containing the Perl script being 
       executed.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>$&lt;number&gt;</TT> </TD>
+    <TD vAlign=top><TT>$<number></TT> </TD>
     <TD vAlign=top>This group of variables (<TT>$1</TT>, <TT>$2</TT>, 
       <TT>$3</TT>, and so on) holds the regular expression pattern memory. Each 
       set of parentheses in a pattern stores the string that match the 
       components surrounded by the parentheses into one of the 
-      <TT>$&lt;number&gt;</TT> variables.</TD></TR>
+      <TT>$<number></TT> variables.</TD></TR>
   <TR>
     <TD vAlign=top><TT>$[</TT> </TD>
     <TD vAlign=top>Holds the base array index. Normally, it's set to 0. Most 
@@ -152,18 +152,18 @@ else's code.
     <TD vAlign=top>When used in a numeric context, holds the current value of 
       <TT>errno</TT>. If used in a string context, will hold the error string 
       associated with <TT>errno</TT>. For more information about <TT>errno</TT>, 
-      see Chapter 13, "Handling Exceptions."</TD></TR>
+      see [](./errors.md).</TD></TR>
   <TR>
     <TD vAlign=top><TT>$@</TT> </TD>
     <TD vAlign=top>Holds the syntax error message, if any, from the last 
       <TT>eval()</TT> function call. For more information about <TT>errno</TT>, 
-      see Chapter 13, "Handling Exceptions."</TD></TR>
+      see [](./errors.md).</TD></TR>
   <TR>
-    <TD vAlign=top><TT>$&lt;</TT> </TD>
+    <TD vAlign=top><TT>$<</TT> </TD>
     <TD vAlign=top>This UNIX-based variable holds the read uid of the current 
       process.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>$&gt;</TT> </TD>
+    <TD vAlign=top><TT>$></TT> </TD>
     <TD vAlign=top>This UNIX-based variable holds the effective uid of the 
       current process.</TD></TR>
   <TR>
@@ -180,8 +180,7 @@ else's code.
   <TR>
     <TD vAlign=top>$^D </TD>
     <TD vAlign=top>Holds the current value of the debugging flags. For more 
-      information, see Chapter 16, "<A 
-      href="ch16.htm">Debugging Perl</A>." </TD></TR>
+      information, see [](./debugging.md).</TD></TR>
   <TR>
     <TD vAlign=top><TT>$^F</TT> </TD>
     <TD vAlign=top>Holds the value of the maximum system file description. 
@@ -195,9 +194,7 @@ else's code.
   <TR>
     <TD vAlign=top><TT>$^L</TT> </TD>
     <TD vAlign=top>Holds the string used to eject a page for report printing. 
-      Chapter 11, "<A href="ch11.htm">Creating 
-      Reports</A>," shows how to use this variable to create simple 
-  footers.</TD></TR>
+      [](./reports.md) shows how to use this variable to create simple footers.</TD></TR>
   <TR>
     <TD vAlign=top><TT>$^P</TT> </TD>
     <TD vAlign=top>This variable is an internal flag that the debugger clears 
@@ -217,7 +214,7 @@ else's code.
   <TR>
     <TD vAlign=top><TT>$ARGV</TT> </TD>
     <TD vAlign=top>Holds the name of the current file being read when using 
-      the diamond operator <TT>(&lt;&gt;)</TT>.</TD></TR>
+      the diamond operator <TT>(<>)</TT>.</TD></TR>
   <TR>
     <TD vAlign=top><TT>@ARGV</TT> </TD>
     <TD vAlign=top>This array variable holds a list of the command line 
@@ -233,8 +230,7 @@ else's code.
     <TD vAlign=top>This array variable holds a list of directories where Perl 
       can look for scripts to execute. The list is mainly used by the 
       <TT>require</TT> statement. You can find more information about require 
-      statements in Chapter 15, "<A 
-      href="ch15.htm">Perl Modules</A>." </TD></TR>
+      statements in [](./modules.md).</TD></TR>
   <TR>
     <TD vAlign=top><TT>%INC</TT> </TD>
     <TD vAlign=top>This hash variable has entries for each filename included 
@@ -252,9 +248,7 @@ else's code.
   <TR>
     <TD vAlign=top><TT>%SIG</TT></TD>
     <TD vAlign=top>This hash variable contains entries for signal handlers. 
-      For more information about signal handlers, see Chapter 13, "<A 
-      href="ch13.htm">Handling Exceptions and 
-      Signals</A>."</TD></TR>
+      For more information about signal handlers, see [](./errors.md).</TD></TR>
   <TR>
     <TD vAlign=top>_ </TD>
     <TD vAlign=top>This file handle (the underscore) can be used when testing 
@@ -309,8 +303,7 @@ you can look at for more information.
       look at Perl programming, see Que's Special Edition Using Perl for Web 
       Programming.</TD></TR>
   <TR>
-    <TD colSpan=2><I>Variables Used with Files (See Chapter 9, "<A 
-      href="ch09.htm">Using Files</A>")</I></TD></TR>
+    <TD colSpan=2><I>Variables Used with Files. See [](./files.md)</I></TD></TR>
   <TR>
     <TD vAlign=top><TT>$.</TT> </TD>
     <TD vAlign=top>This variable holds the current record or line number of 
@@ -335,7 +328,7 @@ you can look at for more information.
   <TR>
     <TD vAlign=top><TT>$ARGV</TT> </TD>
     <TD vAlign=top>This variable holds the name of the current file being read 
-      when using the diamond operator <TT>(&lt;&gt;)</TT>.</TD></TR>
+      when using the diamond operator <TT>(<>)</TT>.</TD></TR>
   <TR>
     <TD vAlign=top>_ </TD>
     <TD vAlign=top>This file handle (the underscore) can be used when testing 
@@ -360,9 +353,7 @@ you can look at for more information.
     <TD vAlign=top>This file handle is used to send output to the standard 
       output file. Normally, this is the display, but it can be changed.</TD></TR>
   <TR>
-    <TD colSpan=2><I>Variables Used with Patterns (See Chapter 10, "<A 
-      href="ch10.htm">Regular 
-    Expressions</A>")</I></TD></TR>
+    <TD colSpan=2><I>Variables Used with Patterns. See [](./regular-expressions.md)</I></TD></TR>
   <TR>
     <TD vAlign=top><TT>$&amp;</TT> </TD>
     <TD vAlign=top>This variable holds the string that was matched by the last 
@@ -389,12 +380,12 @@ you can look at for more information.
       using the <TT>/m</TT> option with the regular expression matching and 
       substitution operators. Normally, <TT>$*</TT> is equal to 0.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>$&lt;number&gt;</TT> </TD>
+    <TD vAlign=top><TT>$<number></TT> </TD>
     <TD vAlign=top>This group of variables (<TT>$1</TT>, <TT>$2</TT>, 
       <TT>$3</TT>, and so on) holds the regular expression pattern memory. Each 
       set of parentheses in a pattern stores the string that matches the 
       components surrounded by the parentheses into one of the 
-      <TT>$&lt;number&gt;</TT> variables.</TD></TR>
+      <TT>$<number></TT> variables.</TD></TR>
   <TR>
     <TD colSpan=2><I>Variables Used with Printing</I></TD></TR>
   <TR>
@@ -419,8 +410,7 @@ you can look at for more information.
       Printing Revisited</A>" in Chapter 9 to specify your own default 
   format.</TD></TR>
   <TR>
-    <TD colSpan=2><I>Variables Used with Processes (See Chapter 13, "Handing 
-      Exceptions and Signals")</I></TD></TR>
+    <TD colSpan=2><I>Variables Used with Processes. See [](./errors.md)</I></TD></TR>
   <TR>
     <TD vAlign=top><TT>$$</TT> </TD>
     <TD vAlign=top>This UNIX-based variable holds the process number of the 
@@ -429,8 +419,7 @@ you can look at for more information.
     <TD vAlign=top><TT>$?</TT> </TD>
     <TD vAlign=top>This variable holds the status of the last pipe close, 
       back-quote string, or <TT>system()</TT> function. More information about 
-      the <TT>$?</TT> variable can be found in Chapter 13, "Handling Exceptions 
-      and Signals."</TD></TR>
+      the <TT>$?</TT> variable can be found in [](./errors.md).</TD></TR>
   <TR>
     <TD vAlign=top><TT>$0</TT> </TD>
     <TD vAlign=top>This variable holds the name of the file containing the 
@@ -445,19 +434,18 @@ you can look at for more information.
     <TD vAlign=top>This variable, when used in a numeric context, holds the 
       current value of <TT>errno</TT>. If used in a string context, it will hold 
       the error string associated with <TT>errno</TT>. For more information 
-      about <TT>errno</TT>, see Chapter 13, "Handling Exceptions and 
-  Signals."</TD></TR>
+      about <TT>errno</TT>, see [](./errors.md).</TD></TR>
   <TR>
     <TD vAlign=top><TT>$@</TT> </TD>
     <TD vAlign=top>This variable holds the syntax error message, if any, from 
       the last <TT>eval()</TT> function call. For more information about 
-      <TT>errno</TT>, see Chapter 13, "Handling Exceptions and Signals."</TD></TR>
+      <TT>errno</TT>, see [](./errors.md).</TD></TR>
   <TR>
-    <TD vAlign=top><TT>$&lt;</TT> </TD>
+    <TD vAlign=top><TT>$<</TT> </TD>
     <TD vAlign=top>This UNIX-based variable holds the read uid of the current 
       process.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>$&gt;</TT> </TD>
+    <TD vAlign=top><TT>$></TT> </TD>
     <TD vAlign=top>This UNIX-based variable holds the effective uid of the 
       current process.</TD></TR>
   <TR>
@@ -484,12 +472,9 @@ you can look at for more information.
   <TR>
     <TD vAlign=top><TT>%SIG</TT> </TD>
     <TD vAlign=top>This hash variable contains entries for signal handlers. 
-      For more information about signal handlers, see Chapter 13, "Handling 
-      Exceptions and Signals."</TD></TR>
+      For more information about signal handlers, see [](./errors.md).</TD></TR>
   <TR>
-    <TD colSpan=2><I>Variables Used with Reports (see Chapter 11, "<A 
-      href="ch11.htm">Creating 
-  Reports</A>")</I></TD></TR>
+    <TD colSpan=2><I>Variables Used with Reports. See [](./reports.md)</I></TD></TR>
   <TR>
     <TD vAlign=top><TT>$%</TT> </TD>
     <TD vAlign=top>This variable holds the current page number for the default 
@@ -526,8 +511,7 @@ you can look at for more information.
   <TR>
     <TD vAlign=top><TT>$^L</TT> </TD>
     <TD vAlign=top>This variable holds the string used to eject a page for 
-      report printing. Chapter 11, "<A 
-      href="ch11.htm">Creating Reports</A>," shows 
+      report printing. [](./reports.md) shows 
       how to use this variable to create simple footers.</TD></TR>
   <TR>
     <TD colSpan=2><I>Miscellaneous Variables</I></TD></TR>
@@ -538,8 +522,7 @@ you can look at for more information.
   <TR>
     <TD vAlign=top><TT>$^D</TT> </TD>
     <TD vAlign=top>This variable holds the current value of the debugging 
-      flags. For more information, see Chapter 16, "<A 
-      href="ch16.htm">Debugging Perl</A>." </TD></TR>
+      flags. For more information, see [](./debugging.md).</TD></TR>
   <TR>
     <TD vAlign=top><TT>$^I</TT> </TD>
     <TD vAlign=top>This variable holds the file extension used to create a 
@@ -568,8 +551,7 @@ you can look at for more information.
     <TD vAlign=top>This array variable holds a list of directories where Perl 
       can look for scripts to execute. The list is used mainly by the require 
       statement. You can find more information about <TT>require</TT> statements 
-      in Chapter 15, "<A href="ch15.htm">Perl 
-      Modules</A>." </TD></TR>
+      in [](./modules.md). </TD></TR>
   <TR>
     <TD vAlign=top><TT>%INC</TT> </TD>
     <TD vAlign=top>This hash variable has entries for each filename included 
@@ -581,8 +563,10 @@ of the variables are simple enough to use that you don't need to see examples by
 this time. However, the <TT>DATA</TT> file handle and the <TT>%ENV</TT> 
 associated array deserve some additional mention. They are discussed in the 
 following sections. 
-<H3><A name="Example: Using the DATA File Handle">Example: Using the <I>DATA</I> 
-File Handle</A></H3>As you no doubt realize by now, Perl has some really odd 
+
+### Example: Using the DATA File Handle
+
+As you no doubt realize by now, Perl has some really odd 
 features, and the <TT>DATA</TT> file handle is one of them. This file handle 
 lets you store read-only data in the same file as your Perl script, which might 
 come in handy if you need to send both code and data to someone via e-mail. 
@@ -602,7 +586,7 @@ file handle.
       <P>Loop through the <TT>@lines</TT> array, printing each element. 
       <P>Everything above the <TT>__END__</TT> line is code; everything below is 
       data.</TT></P></TD></TR></TBODY></TABLE>
-<P><B><PRE>@lines = &lt;DATA&gt;;
+<P><B><PRE>@lines = <DATA>;
 
 foreach (@lines) {
     print("$_");
@@ -615,8 +599,10 @@ Line three</PRE></B>This program displays the following:
 <P><B><PRE>Line one
 Line two
 Line three</PRE></B>
-<H3><A name="Example: Using the %ENV Variable">Example: Using the <I>%ENV</I> 
-Variable</A></H3><I>Environment variables</I> are used by the operating system 
+
+### Example: Using the %ENV Variable
+
+<I>Environment variables</I> are used by the operating system 
 to store bits of information that are needed to run the computer. They are 
 called environment variables because you rarely need to use them and because 
 they simply remain in the background - just another part of the overall 
@@ -674,9 +660,7 @@ with files, some with arrays, and so forth.
 information from the same file that holds the Perl script. 
 <P>The <TT>%ENV</TT> variable was also discussed. This hash is used to hold the 
 environmental variables used mostly by the operating system. 
-<P>In the next chapter, "<A 
-href="ch13.htm">Handling Exceptions and 
-Signals</A>," you learn about how to handle error conditions, use the 
+<P>In [](./errors.md) you learn about how to handle error conditions, use the 
 <TT>eval()</TT> function, and other things dealing with exceptions that can 
 happen while your program runs. 
 

@@ -19,8 +19,7 @@ and how to dereference them using curly braces.
   <TR>
     <TD bgColor=black><FONT color=lightcyan size=4><B>Note</B></FONT></TD></TR>
   <TR>
-    <TD bgColor=lightcyan>Note:</B> I briefly mentioned hashes in Chapter 3,
-      "<A href="ch03.htm">Variables</A>." Just to
+    <TD bgColor=lightcyan>Note:</B> I briefly mentioned hashes in [](./variables.md). Just to
       refresh your memory, hashes are another name for associative arrays. Since
       "hash" is shorter than "associative array," I'll be using both terms in
       this chapter.</TD></TR></TBODY></TABLE>
@@ -63,28 +62,29 @@ backslash to the front of a value or variable.
       Glob references. They can be used to pass file handles to subroutines.
       However, it seems like Glob references are not needed since Perl will let
       you pass file handles directly (as well as indirectly) to subroutines. For
-      example: <B><PRE>open(FILE, '&lt;test.dat');
+      example: <B><PRE>open(FILE, '<test.dat');
 $refGlob = \*FILE;
 readLineFromFile($refGlob);   # this line and the next seem to work in the same way.
 readLineFromFile(FILE);
 
 sub readLineFromFile {
     my($temp) = shift;
-    $line = &lt;$temp&gt;;
+    $line = <$temp>;
 }</PRE></B>If you try this example - create a test.dat file first - you
       will see that the two calls to readLineFromFile() work correctly.
   </TD></TR></TBODY></TABLE>
 <P>
-<H3><A name="Example: Passing Parameters to Functions">Example: Passing
-Parameters to Functions</A></H3>Back in Chapter 5, "<A
-href="ch05.htm">Functions</A>," we talked about
+
+### Example: Passing Parameters to Functions
+
+Back in [](./functions.md) we talked about
 passing parameters to functions. At the time, we were not able to pass more than
 one array to a function. This was because functions only see one array (the
 <TT>@_</TT> array) when looking for parameters. References can be used to
 overcome this limitation.
-<P>Let's start off by passing two arrays into a function to show that the
-function only sees one array.
-<P>
+
+Let's start off by passing two arrays into a function to show that the function only sees one array.
+
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
   <TR>
@@ -148,8 +148,10 @@ example use references:
   <LI>In the lines marked "Three," the scalar values were dereferenced.
   Dereferencing means that Perl will use the reference as if it were a normal
   data type - In this case, an array variable.</LI></OL>
-<H3><A name="Example: The ref() Function">Example: The <I>ref()</I>
-Function</A></H3>Using references to pass arrays into a function worked well and
+
+### Example: The ref() Function
+
+Using references to pass arrays into a function worked well and
 it was easy, wasn't it? However, what happens if you pass a scalar reference to
 the <TT>firstSub()</TT> function instead of an array reference?
 <P>
@@ -261,7 +263,7 @@ return.
             does result in $c being a reference to an array with three elements
             (1, 2, and 3).</TD></TR></TBODY></TABLE></TD></TR>
   <TR>
-    <TD vAlign=top>ref( \{1 =&gt; "Joe"} ); </TD>
+    <TD vAlign=top>ref( \{1 => "Joe"} ); </TD>
     <TD vAlign=top>HASH</TD></TR>
   <TR>
     <TD vAlign=top>ref( \&amp;firstSub ); </TD>
@@ -301,7 +303,7 @@ return.
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>$scalar = 10;
 @array  = (1, 2);
-%hash   = ( "1" =&gt; "Davy Jones" );
+%hash   = ( "1" => "Davy Jones" );
 # I added extra spaces around the parameter list
 # so that the backslashes are easier to see.
 printRef( $scalar, @array, %hash );
@@ -328,15 +330,17 @@ code that dereferences variables from producing errors when the wrong type of
 reference is used. Notice that five 'Non-references' strings are displayed. Why?
 Because both @array and %hash are 'flattened' when they are moved into the
 <TT>@_</TT> array.
-<H3><A name="Example: Creating a Data Record">Example: Creating a Data
-Record</A></H3>Perl's associative arrays (hashes) are extremely useful when it
+
+### Example: Creating a Data Record
+
+Perl's associative arrays (hashes) are extremely useful when it
 comes to storing information in a way that facilitates easy retrieval. For
 example, you could store customer information like this:
-<P><B><PRE>%record = ( "Name"    =&gt; "Jane Hathaway",
-            "Address" =&gt; "123 Anylane Rd.",
-            "Town"    =&gt; "AnyTown",
-            "State"   =&gt; "AnyState",
-            "Zip"     =&gt; "12345-1234"
+<P><B><PRE>%record = ( "Name"    => "Jane Hathaway",
+            "Address" => "123 Anylane Rd.",
+            "Town"    => "AnyTown",
+            "State"   => "AnyState",
+            "Zip"     => "12345-1234"
 );</PRE></B>The <TT>%record</TT> associative array can also be considered a
 <I>data record</I> with five <I>members</I>. Each member is a single item of
 information. The data record is a group of members that relate to a single
@@ -371,23 +375,23 @@ and how to initialize a database array.
   Records</B></FONT></P></TD></TR>
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
-<P>%recordOne = ( "Name"    =&gt; "Jane Hathaway",
-               "Address" =&gt; "123 Anylane Rd.",
-               "Town"    =&gt; "AnyTown",
-               "State"   =&gt; "AnyState",
-               "Zip"     =&gt; "12345-1234"
+<P>%recordOne = ( "Name"    => "Jane Hathaway",
+               "Address" => "123 Anylane Rd.",
+               "Town"    => "AnyTown",
+               "State"   => "AnyState",
+               "Zip"     => "12345-1234"
 );
 
-%recordTwo = ( "Name"    =&gt; "Kevin Hughes",
-               "Address" =&gt; "123 Allways Dr.",
-               "Town"    =&gt; "AnyTown",
-               "State"   =&gt; "AnyState",
-               "Zip"     =&gt; "12345-1234"
+%recordTwo = ( "Name"    => "Kevin Hughes",
+               "Address" => "123 Allways Dr.",
+               "Town"    => "AnyTown",
+               "State"   => "AnyState",
+               "Zip"     => "12345-1234"
 );
 
 @database = ( \%recordOne, \%recordTwo );</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>You can print the address member of the first record like this:
-<P><B><PRE>print( %{$database[0]}-&gt;{"Address"} . "\n");</PRE></B>which displays:
+<P><B><PRE>print( %{$database[0]}->{"Address"} . "\n");</PRE></B>which displays:
 <P><B><PRE>123 Anylane Rd.</PRE></B>Let's dissect the dereferencing expression in this
 print statement. Remember to work left to right and always evaluate brackets and
 parentheses first. Ignoring the <TT>print()</TT> function and the newline, you
@@ -405,7 +409,7 @@ can evaluate this line of code in the following way.
   reference type. In this case we see a <TT>%</TT> which means an associative
   array.
   <P></P>
-  <LI>The <TT>-&gt;</TT> is the infix dereference operator. It tells Perl that
+  <LI>The <TT>-></TT> is the infix dereference operator. It tells Perl that
   the thing being dereferenced on the left (the <TT>database</TT> reference in
   this case) is connected to something on the right.
   <P><LU>The 'thing' on the right is the key value or "Address." Notice that it
@@ -417,11 +421,11 @@ can evaluate this line of code in the following way.
   <TR>
     <TD bgColor=black><FONT color=lightcyan size=4><B>Note</B></FONT></TD></TR>
   <TR>
-    <TD bgColor=lightcyan>Using the <TT>%{$database[0]}-&gt;{"Address"}</TT>
+    <TD bgColor=lightcyan>Using the <TT>%{$database[0]}->{"Address"}</TT>
       notation is pretty cumbersome. Although it lets you can see exactly what
       is happening in terms of referencing and dereferencing. You can also let
       Perl handle the details by using the following notation:
-      <TT>$database[0]-&gt;{"Address"}</TT>.</TD></TR></TBODY></TABLE>
+      <TT>$database[0]->{"Address"}</TT>.</TD></TR></TBODY></TABLE>
 <P>The variable declaration in the above example uses three variables to define
 the data's structure. We can condense the declaration down to one variable as
 shown in Listing 8.5.
@@ -450,22 +454,22 @@ shown in Listing 8.5.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>@database = (
-    { "Name"    =&gt; "Jane Hathaway",
-      "Address" =&gt; "123 Anylane Rd.",
-      "Town"    =&gt; "AnyTown",
-      "State"   =&gt; "AnyState",
-      "Zip"     =&gt; "12345-1234"
+    { "Name"    => "Jane Hathaway",
+      "Address" => "123 Anylane Rd.",
+      "Town"    => "AnyTown",
+      "State"   => "AnyState",
+      "Zip"     => "12345-1234"
     },
-    { "Name"    =&gt; "Kevin Hughes",
-      "Address" =&gt; "123 Allways Dr.",
-      "Town"    =&gt; "AnyTown",
-      "State"   =&gt; "AnyState",
-      "Zip"     =&gt; "12345-1234"
+    { "Name"    => "Kevin Hughes",
+      "Address" => "123 Allways Dr.",
+      "Town"    => "AnyTown",
+      "State"   => "AnyState",
+      "Zip"     => "12345-1234"
     }
 );
 
-print(%{$database[0]}-&gt;{"Name"} . "\n");
-print(%{$database[1]}-&gt;{"Name"} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
+print(%{$database[0]}->{"Name"} . "\n");
+print(%{$database[1]}->{"Name"} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>This program displays:
 <P><B><PRE>Jane Hathaway
 Kevin Hughes</PRE></B>Let's analyze the dereferencing code in the first print
@@ -483,7 +487,7 @@ line.
   reference type. In this case we see a <TT>%</TT> which means an associative
   array.
   <P></P>
-  <LI>The -&gt; is the infix dereference operator. It tells Perl that the thing
+  <LI>The -> is the infix dereference operator. It tells Perl that the thing
   being dereferenced on the left (the <TT>database</TT> reference in this case)
   is connected to something on the right.
   <P></P>
@@ -502,7 +506,7 @@ Perl will automatically provide a reference to it.
 example. So far, we've used hash references as elements of an array. When one
 data type is stored inside of another data type, this is called <I>nesting
 </I>data types. You can nest data types as often and as deeply as you'd like.
-<P>At this stage of the example, <TT>%{$database[0]}-&gt;{"Name"}</TT> was used
+<P>At this stage of the example, <TT>%{$database[0]}->{"Name"}</TT> was used
 to dereference the "Name" member of the first record. This type of dereferencing
 uses an array subscript to tell Perl which record to look at. However, you could
 use an associative array to hold the records. With an associative array, you
@@ -533,22 +537,22 @@ shows how this can be done.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>%database = (
-    "MRD-100" =&gt; { "Name"    =&gt; "Jane Hathaway",
-                   "Address" =&gt; "123 Anylane Rd.",
-                   "Town"    =&gt; "AnyTown",
-                   "State"   =&gt; "AnyState",
-                   "Zip"     =&gt; "12345-1234"
+    "MRD-100" => { "Name"    => "Jane Hathaway",
+                   "Address" => "123 Anylane Rd.",
+                   "Town"    => "AnyTown",
+                   "State"   => "AnyState",
+                   "Zip"     => "12345-1234"
                  },
-    "MRD-250" =&gt; { "Name"    =&gt; "Kevin Hughes",
-                   "Address" =&gt; "123 Allways Dr.",
-                   "Town"    =&gt; "AnyTown",
-                   "State"   =&gt; "AnyState",
-                   "Zip"     =&gt; "12345-1234"
+    "MRD-250" => { "Name"    => "Kevin Hughes",
+                   "Address" => "123 Allways Dr.",
+                   "Town"    => "AnyTown",
+                   "State"   => "AnyState",
+                   "Zip"     => "12345-1234"
                  }
 );
 
-print(%{$database{"MRD-100"}}-&gt;{"Name"} . "\n");
-print(%{$database{"MRD-250"}}-&gt;{"Name"} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
+print(%{$database{"MRD-100"}}->{"Name"} . "\n");
+print(%{$database{"MRD-250"}}->{"Name"} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>This program displays:
 <P><B><PRE>Jane Hathaway
 Kevin Hughes</PRE></B>You should be able to follow the same steps that we used
@@ -586,22 +590,22 @@ create a data record.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>$database{"MRD-300"} = {
-    "Name"    =&gt; "Nathan Hale",
-    "Address" =&gt; "999 Centennial Ave.",
-    "Town"    =&gt; "AnyTown",
-    "State"   =&gt; "AnyState",
-    "Zip"     =&gt; "12345-1234"
+    "Name"    => "Nathan Hale",
+    "Address" => "999 Centennial Ave.",
+    "Town"    => "AnyTown",
+    "State"   => "AnyState",
+    "Zip"     => "12345-1234"
 };
 
 $refCustomer = $database{"MRD-300"};
-print(%{$refCustomer}-&gt;{"Name"} . "\n");
-print(%{$refCustomer}-&gt;{"Address"} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
+print(%{$refCustomer}->{"Name"} . "\n");
+print(%{$refCustomer}->{"Address"} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>This program displays:
 <P><B><PRE>Nathan Hale
 999 Centennial Ave.</PRE></B>Notice that by using a temporary variable
 (<TT>$refCustomer</TT>) the program code is more readable. The alternative would
 be this:
-<P><B><PRE>print(%{$database{"MRD-300"}}-&gt;{"Name"} . "\n");</PRE></B>Most
+<P><B><PRE>print(%{$database{"MRD-300"}}->{"Name"} . "\n");</PRE></B>Most
 programmers would agree that using the temporary variable aids in the
 understanding of the program.
 <P>Our last data structure example shows how to add members to an existing
@@ -646,42 +650,42 @@ customer record MRD-300.
     while (($key, $value) = each(%database)) {
         print("$key = {\n");
         while (($innerKey, $innerValue) = each(%{$value})) {
-            print("\t$innerKey =&gt; $innerValue\n");
+            print("\t$innerKey => $innerValue\n");
         }
         print("};\n\n");
     }
 };
 $database{"MRD-300"} = {
-    "Name"    =&gt; "Nathan Hale",
-    "Address" =&gt; "999 Centennial Ave.",
-    "Town"    =&gt; "AnyTown",
-    "State"   =&gt; "AnyState",
-    "Zip"     =&gt; "12345-1234"
+    "Name"    => "Nathan Hale",
+    "Address" => "999 Centennial Ave.",
+    "Town"    => "AnyTown",
+    "State"   => "AnyState",
+    "Zip"     => "12345-1234"
 };
 # print database before dynamic changes.
 </P></PRE>&amp; {$codeRef};<PRE>
 $refCustomer = $database{"MRD-300"};
-%{$refCustomer}-&gt;{"Home Phone"}     = "(111) 511-1322";
-%{$refCustomer}-&gt;{"Business Phone"} = "(111) 513-4556";
+%{$refCustomer}->{"Home Phone"}     = "(111) 511-1322";
+%{$refCustomer}->{"Business Phone"} = "(111) 513-4556";
 # print database after dynamic changes.
 </PRE>&amp; {$codeRef};</B></TT></TD></TR></TBODY></TABLE>
 <P>This program displays:
 <P><B><PRE>MRD-300 = {
-        Town =&gt; AnyTown
-        State =&gt; AnyState
-        Name =&gt; Nathan Hale
-        Zip =&gt; 12345-1234
-        Address =&gt; 999 Centennial Ave.
+        Town => AnyTown
+        State => AnyState
+        Name => Nathan Hale
+        Zip => 12345-1234
+        Address => 999 Centennial Ave.
 };
 
 MRD-300 = {
-        Town =&gt; AnyTown
-        State =&gt; AnyState
-        Name =&gt; Nathan Hale
-        Home Phone =&gt; (111) 511-1322
-        Zip =&gt; 12345-1234
-        Business Phone =&gt; (111) 513-4556
-        Address =&gt; 999 Centennial Ave.
+        Town => AnyTown
+        State => AnyState
+        Name => Nathan Hale
+        Home Phone => (111) 511-1322
+        Zip => 12345-1234
+        Business Phone => (111) 513-4556
+        Address => 999 Centennial Ave.
 };</PRE></B>This example does two new things. The first thing is that it uses an
 anonymous function referenced by <TT>$codeRef</TT>. This is done for
 illustration purposes. There is no reason to use an anonymous function. There
@@ -700,10 +704,10 @@ anonymous functions make programs much harder to understand.
 <P>The second thing is that a regular hash assignment statement was use to add
 values. You can use any of the array functions with these nested data
 structures.
-<H3><A
-name="Example: Interpolating Functions inside Double-Quoted Strings">Example:
-Interpolating Functions inside Double-Quoted Strings</A></H3>You can use
-references to force Perl to interpolate the return value of a function call
+
+### Example: Interpolating Functions inside Double-Quoted Strings
+
+You can use references to force Perl to interpolate the return value of a function call
 inside double-quoted strings. This helps to reduce the number of temporary
 variables needed by your program.
 <P>
@@ -770,8 +774,8 @@ how to add new data members to an existing record.
 inside double-quoted strings. You'll use this technique - at times - to avoid
 using temporary variables when printing or concatenating the output of functions
 to other strings.
-<P>Chapter 9, "<A href="ch09.htm">Using Files</A>,"
-introduces you to opening, reading, and writing files. You find out how to store
+
+[](./files.md) introduces you to opening, reading, and writing files. You find out how to store
 the data records you've constructed in this chapter to a file for long-term
 storage.
 
@@ -795,7 +799,7 @@ storage.
   <P><B><PRE>print("${\ref(\(1..5))}");</PRE></B>
   <LI>Using the <TT>%database</TT> array in Listing 8.6, what will the following
   line of code display?
-  <P><B><PRE>print(%{$database{"MRD-100"}}-&gt;{"Zip"} . "\n");</PRE></B></LI></OL>
+  <P><B><PRE>print(%{$database{"MRD-100"}}->{"Zip"} . "\n");</PRE></B></LI></OL>
 
 ## Review Exercises
 
@@ -813,4 +817,4 @@ storage.
   <LI>Write a program based on Listing 8.7 that adds a data member indicating
   which weekdays a salesman may call the customer with an id of MRD-300. Use the
   following as an example:
-  <P><B><PRE>"Best days to call" =&gt; ["Monday", "Thursday" ]</PRE></B></LI></OL>
+  <P><B><PRE>"Best days to call" => ["Monday", "Thursday" ]</PRE></B></LI></OL>

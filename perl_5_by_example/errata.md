@@ -186,8 +186,8 @@ changes needed to address the issues listed below.
     <TD vAlign=top align=left bgColor=lightgrey><A 
       href="ch06.cfm#David Rasch">In Chapter 6</A>, 
       one of the examples had a typographical error while discussing a complex 
-      statement. Instead of <I>$bookSize = ($numOfPages &gt;= 1200 : "Large" : 
-      "Normal");</I> the text should by <I>$bookSize = ($numOfPages &gt;= 1200 ? 
+      statement. Instead of <I>$bookSize = ($numOfPages >= 1200 : "Large" : 
+      "Normal");</I> the text should by <I>$bookSize = ($numOfPages >= 1200 ? 
       "Large" : "Normal");</I>. Note that the first colon was a typographical 
       error and it should be a question mark.</TD></TR>
   <TR>
@@ -255,8 +255,8 @@ changes needed to address the issues listed below.
       <P>6</P></TD>
     <TD vAlign=top>Clarification</TD>
     <TD vAlign=top>Randal Schwartz </TD>
-    <TD vAlign=top align=left><I>%{$database[0]}-&gt;{"Address"}</I> can also 
-      be written as <I>$database[0]-&gt;{"Address"}</I>. Perl will automatically 
+    <TD vAlign=top align=left><I>%{$database[0]}->{"Address"}</I> can also 
+      be written as <I>$database[0]->{"Address"}</I>. Perl will automatically 
       place the <I>$database[0]</I> into a hash context. I feel that fully 
       specifying the required context better documents your programs. But some 
       people disagree with me.</TD></TR>

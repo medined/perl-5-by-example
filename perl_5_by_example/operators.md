@@ -12,9 +12,8 @@ some task or operation. All operators cause actions to be performed on
 practical terms, any particular operand will be a literal, a variable, or an 
 expression. You've already been introduced to literals and variables. A good 
 working definition of expression is some combination of operators and operands 
-that are evaluated as a unit. Chapter 6, "<A 
-href="ch06.htm">Statements</A>," has more 
-information about expressions. 
+that are evaluated as a unit. [](./statements.md) has more information about expressions. 
+
 <P>Operands are also <I>recursive</I> in nature. In Perl, the expression 3 + 5 
 (two operands and a plus operator) can be considered as one operand with a value 
 of 8. For instance, (3 + 5) - 12 is an expression that consists of two operands 
@@ -67,8 +66,7 @@ that type's description in Table 4.1.
     <TD vAlign=top>Binding </TD>
     <TD vAlign=top><BR></TD>
     <TD vAlign=top>These operators are used during string comparisons and are 
-      explained in Chapter 10, "<A 
-      href="ch10.htm">Regular Expressions</A>." 
+      explained in [](./regular-expressions.md). 
   </TD></TR>
   <TR>
     <TD vAlign=top>Bitwise </TD>
@@ -81,24 +79,19 @@ that type's description in Table 4.1.
     <TD vAlign=top>Comma </TD>
     <TD vAlign=top>Chapter 6 </TD>
     <TD vAlign=top>The comma operator has two functions. It serves to separate 
-      array or list elements (see Chapter 2, "<A 
-      href="ch02.htm">Numeric and String 
-      Literals</A>") and it serves to separate expressions (see Chapter 6, "<A 
-      href="ch06.htm">Statements</A>").</TD></TR>
+      array or list elements (see [](./literals.md)) and it serves to separate expressions (see [](./statements.md)).</TD></TR>
   <TR>
     <TD vAlign=top>File Test </TD>
     <TD vAlign=top>Chapter 9 </TD>
     <TD vAlign=top>These operators are used to test for various conditions 
       associated with files. You can test for file existence, file type, and 
-      file access rights among other things. See Chapter 9, "<A 
-      href="ch09.htm">Using Files</A>," for more 
+      file access rights among other things. See [](./files.md) for more 
       information.</TD></TR>
   <TR>
     <TD vAlign=top>List </TD>
     <TD vAlign=top>Chapter 5 </TD>
     <TD vAlign=top>List operators are funny things in Perl. They resemble 
-      function calls in other languages. List operators are discussed in Chapter 
-      5, "<A href="ch05.htm">Functions</A>." </TD></TR>
+      function calls in other languages. List operators are discussed in [](./functions.md).</TD></TR>
   <TR>
     <TD vAlign=top>Logical </TD>
     <TD vAlign=top>Chapter 13 </TD>
@@ -106,9 +99,7 @@ that type's description in Table 4.1.
       the sentence "If John has a fever AND John has clogged sinuses OR an 
       earache AND John is NOT over 60 years old, then John has a cold," the AND, 
       OR and NOT are acting as logical operators. The low precedence logical 
-      operators will be discussed separately in Chapter 13, "<A 
-      href="ch13.htm">Handling Errors and 
-      Signals</A>," on.</TD></TR>
+      operators will be discussed separately in [](./errors.md).</TD></TR>
   <TR>
     <TD vAlign=top>Numeric Relational </TD>
     <TD vAlign=top><BR></TD>
@@ -118,11 +109,9 @@ that type's description in Table 4.1.
     <TD vAlign=top>Postfix </TD>
     <TD vAlign=top>Chapter 5 </TD>
     <TD vAlign=top>A member of this group of operators - (), [], {} - appears 
-      at the end of the affected objects. You've already seen them used in 
-      Chapter 3, "<A href="ch03.htm">Variables</A>" 
+      at the end of the affected objects. You've already seen them used in [](./variables.md) 
       for arrays and associative arrays. The parentheses operators are also used 
-      for list operators as discussed in Chapter 5, "<A 
-      href="ch05.htm">Functions</A>." </TD></TR>
+      for list operators as discussed in [](./functions.md). </TD></TR>
   <TR>
     <TD vAlign=top>Range </TD>
     <TD vAlign=top><BR></TD>
@@ -132,8 +121,7 @@ that type's description in Table 4.1.
     <TD vAlign=top>Reference </TD>
     <TD vAlign=top>Chapter 8 </TD>
     <TD vAlign=top>The reference operators are used to manipulate variables. 
-      For more information, see Chapter 8, "<A 
-      href="ch08.htm">References</A>." </TD></TR>
+      For more information, see [](./references.md). </TD></TR>
   <TR>
     <TD vAlign=top>String </TD>
     <TD vAlign=top><BR></TD>
@@ -187,8 +175,9 @@ binary operators act in a similar fashion. <A name="Patrick Hanly"></A>
   <TR>
     <TD vAlign=top><TT>op1 % op2</TT></TD>
     <TD vAlign=top>Modulus</TD></TR></TBODY></TABLE>
-<H3><A name="Example: The Exponentiation Operator">Example: The Exponentiation 
-Operator</A></H3>
+
+### Example: The Exponentiation Operator
+
 <P>The <I>exponentiation</I> operator is used to raise a number to a power. For 
 instance, 2 ** 4 is equivalent to 2 * 2 * 2 * 2 which equals 16. You'll 
 occasionally see a reference to exponentiation when the discussion turns to how 
@@ -210,8 +199,10 @@ which is equivalent to 4 * 4 * 4 or 64.
       <P>Print $secondVar.</TT></P></TD></TR></TBODY></TABLE><B><PRE>$firstVar = 4;
 $secondVar = $firstVar ** 3;
 print("$secondVar\n");</PRE></B>This program produces the following output: <B><PRE>64</PRE></B>
-<H3><A name="Example: The Modulus Operator">Example: The Modulus 
-Operator</A></H3>The <I>modulus </I>operator is used to find the remainder of 
+
+### Example: The Modulus Operator
+
+The <I>modulus </I>operator is used to find the remainder of 
 the division between two integer operands. For instance, 10 % 7 equals 3 because 
 10 / 7 equals 1 with 3 left over. 
 <P>I've found the modulus operator to be useful when my programs need to run 
@@ -241,7 +232,7 @@ statement.</TT></P></TD></TR></TBODY></TABLE>
       Items</B></FONT></P></TD></TR>
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
-<P>for ($index = 0; $index &lt;= 100; $index++) {
+<P>for ($index = 0; $index <= 100; $index++) {
     if ($index % 10 == 0) {
         print("$index ");
     }
@@ -250,8 +241,7 @@ statement.</TT></P></TD></TR></TBODY></TABLE>
 <P>When this program is run, the output should look like the following: <B><PRE>0 10 20 30 40 50 60 70 80 90 100</PRE></B>Notice that every 10th item is 
 printed. By changing the value on the right side of the modulus operator you can 
 affect how many items are processed before the message is printed. Changing the 
-value to 15 means that a message will be printed every 15 items. Chapter 7, "<A 
-href="ch07.htm">Control Statements</A>," describes 
+value to 15 means that a message will be printed every 15 items. [](./control-statements.md) describes 
 the <TT>if</TT> and <TT>for</TT> statement in detail. 
 
 ## The Unary Arithmetic Operators
@@ -312,8 +302,10 @@ operand, the operand is incremented or decremented before its value is used. If
 the <TT>++</TT> or <TT>--</TT> operators appear after the operand, then the 
 value of the operand is used and then the operand is incremented or decremented 
 as required. 
-<H3>Example: The Pre-increment Operator</H3>This example shows how to use the 
-pre-increment operator (<TT>++</TT>). 
+
+### Example: The Pre-increment Operator
+
+This example shows how to use the pre-increment operator (<TT>++</TT>). 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
@@ -349,8 +341,10 @@ print(++$numPages, "\n");
 6</PRE></B>You can see that the new way of coding is shorter than the original 
 way. The statement <TT>print(++$numPages, "\n");</TT> will first increment the 
 <TT>$numPages</TT> variable and then allow the print command to use it. 
-<H3><A name="Example: The Pre-Decrement Operator">Example: The Pre-Decrement 
-Operator</A></H3>This example shows how to use the pre-decrement operator 
+
+### Example: The Pre-Decrement Operator
+
+This example shows how to use the pre-decrement operator 
 (<TT>--</TT>). 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -395,8 +389,10 @@ print("$numPages $totalPages \n");
 4 9</PRE></B>The statement <TT>$totalPages = --$numPages + 5;</TT> will first 
 decrement the <TT>$numPages</TT> variable and then allow the plus operator to 
 use it. 
-<H3><A name="Example: The Post-increment Operator">Example: The Post-increment 
-Operator</A></H3>This example shows how to use the <TT>++</TT> and <TT>--</TT> 
+
+### Example: The Post-increment Operator
+
+This example shows how to use the <TT>++</TT> and <TT>--</TT> 
 post-increment operators. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -459,11 +455,8 @@ post-increment and post-decrement operators as needed.
 
 ## The Logical Operators
 
-<I>Logical operators </I>are mainly used to control program flow. Usually you will find 
-them as part of an <TT>if</TT>, a <TT>while</TT> or some other control 
-statement. Control statements are discussed in Chapter 7, "<A 
-href="ch07.htm">Control Statements</A>." 
-<P>
+<I>Logical operators </I>are mainly used to control program flow. Usually you will find them as part of an <TT>if</TT>, a <TT>while</TT> or some other control statement. Control statements are discussed in [](./control-statements.md). 
+
 <TABLE cellPadding=10 border=1>
   <CAPTION>Table 4.4-The Logical Operators</CAPTION>
   <TBODY>
@@ -485,8 +478,10 @@ that can be evaluated to a true or false value. Then the value of the conditions
 are used to determine the overall value of the <TT>op1 operator op2</TT> or 
 <TT>!op1</TT> grouping. The following examples demonstrate different ways that 
 logical conditions can be used. 
-<H3><A name="Example: The " (&#38;&#38;)? Operator AND?>Example: The "AND" 
-Operator (<I>&amp;&amp;</I>)</A></H3>The <TT>&amp;&amp;</TT> operator is used to 
+
+### Example: The AND Operator (&&)
+
+The <TT>&amp;&amp;</TT> operator is used to 
 determine if both operands or conditions are true. Table 4.5 shows the results 
 of using the <TT>&amp;&amp;</TT> operator on the four sets of true/false values. 
 
@@ -528,8 +523,10 @@ of using the <TT>&amp;&amp;</TT> operator on the four sets of true/false values.
     print("Error!");
 };</PRE></B>If either of the two conditions is false or incorrect then the print 
 command is bypassed. 
-<H3><A name="Example: The " Operator (||)? OR?>Example: The "OR" Operator 
-(<I>||</I>)</A></H3>The <TT>||</TT> operator is used to determine if either of 
+
+### Example: The OR Operator (||)
+
+The <TT>||</TT> operator is used to determine if either of 
 the conditions is true. Table 4.6 shows the results of using the <TT>||</TT> 
 operator on the four sets of true/false values. 
 <P>
@@ -598,8 +595,10 @@ run.
       for the entire condition to return true. The correct way is:<BR><PRE>if ($firstVar == 9 || $firstVar == 10) {
     print("Error!");
 };</PRE></TD></TR></TBODY></TABLE>
-<H3><A name="Example: The " Operator (!)? NOT?>Example: The "NOT" Operator 
-(!)</A></H3>The <TT>!</TT> operator is used to convert true values to false and 
+
+### Example: The NOT Operator (!)
+
+The <TT>!</TT> operator is used to convert true values to false and 
 false values to true. In other words, it inverts a value. Perl considers any 
 non-zero value to be true - even string values. Table 4.7 shows the results of 
 using the <TT>!</TT> operator on true and false values. 
@@ -664,12 +663,12 @@ that they work on a smaller scale. <A name="Daniel R Selig"></A>
       of the operand. I've never found this useful, so we'll skip looking at an 
       example of it.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>op1 &gt;&gt; op2</TT> </TD>
+    <TD vAlign=top><TT>op1 >> op2</TT> </TD>
     <TD vAlign=top>The SHIFT RIGHT operator moves the bits to the right, 
       discards the far right bit, and assigns the left-most bit a value of 0. 
       Each move to right effectively divides <TT>op1</TT> in half.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>op1 &lt;&lt; op2</TT> </TD>
+    <TD vAlign=top><TT>op1 << op2</TT> </TD>
     <TD vAlign=top>The SHIFT LEFT operator moves the bits to the left, 
       discards the far left bit, and assigns the rightmost bit a value of 0. 
       Each move to the left effectively multiplies <TT>op1</TT> by 
@@ -694,9 +693,10 @@ umpire throwing a flag. The variable says, "Whoa!, don't modify this file."
 <P>When you have more than one flag variable, if might be more efficient to use 
 a single variable to indicate the value of more than one flag. The next example 
 shows you how to do this. 
-<H3><A name="Example: Using the &amp;, |, and ^ Operators">Example: Using the 
-<I>&amp;</I>, <I>|</I>, and <I>^</I> Operators</A></H3>The first step to using 
-bitwise operators to indicate more than one flag in a single variable is to 
+
+### Example: Using the &, |, and ^ Operators
+
+The first step to using bitwise operators to indicate more than one flag in a single variable is to 
 define the meaning of the bits that you'd like to use. Figure 4.1 shows an 
 example of 8 bits that could be used to control the attributes of text on a 
 display. 
@@ -715,12 +715,13 @@ evaluate each bit, you will see that <TT>$textAttr</TT> gets assigned a value of
 attributes on. 
 <P>The next step might be to turn the italic attribute off. This is done with 
 the EXLUSIVE-OR operator, like so: <B><PRE>$textAttr = $textAttr ^ 128;</PRE></B>
-<H3><A name="Example: Using the >> and << Operators">Example: Using the 
-<I>&gt;&gt;</I> and <I>&lt;&lt;</I> Operators</A></H3>The <I>bitwise shift 
-</I>operators are used to move all of the bits in the operand left or right a 
+
+### Example: Using the >> and << Operators
+
+The <I>bitwise shift</I> operators are used to move all of the bits in the operand left or right a 
 given number of times. They come in quite handy when you need to divide or 
 multiply integer values. 
-<P>This example will divide by 4 using the <TT>&gt;&gt;</TT> operator. 
+<P>This example will divide by 4 using the <TT>>></TT> operator. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
@@ -733,14 +734,14 @@ multiply integer values.
       <P>Shift the bits inside <TT>$firstVar</TT> two places to the right and 
       assign the new value to <TT>$secondVar</TT>. 
       <P>Print the <TT>$secondVar</TT> variable.</TT></P></TD></TR></TBODY></TABLE><B><PRE>$firstVar = 128;
-$secondVar = $firstVar &gt;&gt; 2;
+$secondVar = $firstVar >> 2;
 print("$secondVar\n");</PRE></B>The program produces the following output: <B><PRE>32</PRE></B>Let's look at the bit patterns of the variables before and 
 after the shift operation. First, <TT>$firstVar</TT> is assigned 128 or 1000000. 
 Then the value in <TT>$firstVar</TT> is shifted left by 2 places. So the new 
 value is 00100000 or 32 which is assigned to <TT>$secondVar</TT>. 
 <P>The right-most bit of a value is lost when the bits are shifted right. You 
 can see this in the next example. 
-<P>This example will divide by 8 using the <TT>&gt;&gt;</TT> operator. 
+<P>This example will divide by 8 using the <TT>>></TT> operator. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
@@ -754,10 +755,10 @@ can see this in the next example.
       <P>Shift the bits inside <TT>$firstVar</TT> three places to the right and 
       assign the new value to <TT>$secondVar</TT>. 
       <P>Print the <TT>$secondVar</TT> variable.</TT></P></TD></TR></TBODY></TABLE><B><PRE>$firstVar = 129;
-$secondVar = $firstVar &gt;&gt; 3;
+$secondVar = $firstVar >> 3;
 print("$secondVar\n");</PRE></B>The program produces the following output: <B><PRE>16</PRE></B>Since the bit value of 16 is 00010000, you can tell that the 
 right-most bit has disappeared. 
-<P>Here's a quick example using the <TT>&lt;&lt;</TT> operator. We'll multiply 
+<P>Here's a quick example using the <TT><<</TT> operator. We'll multiply 
 128 by 8. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -771,7 +772,7 @@ right-most bit has disappeared.
       <P>Shift the bits inside <TT>$firstVar</TT> three places to the left and 
       assign the new value to <TT>$secondVar</TT>. 
       <P>Print the <TT>$secondVar</TT> variable.</TT></P></TD></TR></TBODY></TABLE><B><PRE>$firstVar = 128;
-$secondVar = $firstVar &lt;&lt; 3;
+$secondVar = $firstVar << 3;
 print $secondVar;</PRE></B>The program produces the following output: <B><PRE>1024</PRE></B>The value of 1024 is beyond the bounds of the 8 bits that the 
 other examples used. This was done to show you that the number of bits available 
 for your use is not limited to one byte. You are really limited by however many 
@@ -815,32 +816,34 @@ operator is less than another.
   <TR>
     <TD colSpan=2><I>The Comparison Operators</I></TD></TR>
   <TR>
-    <TD vAlign=top><TT>op1 &lt; op2</TT> </TD>
+    <TD vAlign=top><TT>op1 < op2</TT> </TD>
     <TD vAlign=top>This operator returns true if <TT>op1</TT> is less than 
-      <TT>op2</TT>. For example, 6 &lt; 7 is true.</TD></TR>
+      <TT>op2</TT>. For example, 6 < 7 is true.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>op1 &lt;= op2</TT> </TD>
+    <TD vAlign=top><TT>op1 <= op2</TT> </TD>
     <TD vAlign=top>This operator returns true if <TT>op1</TT> is less than or 
-      equal to <TT>op2</TT>. For example, 7 &lt;= 7 is true.</TD></TR>
+      equal to <TT>op2</TT>. For example, 7 <= 7 is true.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>op1 &gt; op2</TT> </TD>
+    <TD vAlign=top><TT>op1 > op2</TT> </TD>
     <TD vAlign=top>This operator returns true if <TT>op1</TT> is greater than 
-      <TT>op2</TT>. For example, 6 &gt; 5 is true.</TD></TR>
+      <TT>op2</TT>. For example, 6 > 5 is true.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>op1 &gt;= op2</TT> </TD>
+    <TD vAlign=top><TT>op1 >= op2</TT> </TD>
     <TD vAlign=top>This operator returns true if <TT>op1</TT> is greater than 
-      or equal to <TT>op2</TT>. For example, 7 &gt;= 7 is true.</TD></TR>
+      or equal to <TT>op2</TT>. For example, 7 >= 7 is true.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>op1 &lt;=&gt; op2</TT> </TD>
+    <TD vAlign=top><TT>op1 <=> op2</TT> </TD>
     <TD vAlign=top>This operator returns 1 if <TT>op1</TT> is greater than 
       <TT>op2</TT>, 0 if <TT>op1</TT> equals <TT>op2</TT>, and -1 if 
       <TT>op1</TT> is less than <TT>op2</TT>.</TD></TR></TBODY></TABLE>
 <P>You will see many examples of these operators when you read about controlling 
 program flow in Chapter 7, "<A 
 href="ch07.htm">Control Statements</A>." Therefore, 
-I'll only show an example of the <TT>&lt;=&gt;</TT> comparison operator here. 
-<H3><A name="Example: Using the <=> Operator">Example: Using the &lt;=&gt; 
-Operator</A></H3>The <I>number comparison </I>operator is used to quickly tell 
+I'll only show an example of the <TT><=></TT> comparison operator here. 
+
+### Example: Using the <=> Operator
+
+The <I>number comparison </I>operator is used to quickly tell 
 the relationship between one operand and another. It is frequently used during 
 sorting activities. 
 <P><B>
@@ -849,7 +852,7 @@ sorting activities.
   <TR>
     <TD bgColor=black><FONT color=lightpink SIZE-4><B>Tip</B></FONT></TD></TR>
   <TR>
-    <TD bgColor=lightpink>You may sometimes see the &lt;=&gt; operator called 
+    <TD bgColor=lightpink>You may sometimes see the <=> operator called 
       the spaceship operator because of the way that it 
 looks.<BR></TD></TR></TBODY></TABLE></B>
 <P>
@@ -866,9 +869,9 @@ looks.<BR></TD></TR></TBODY></TABLE></B>
 $midVar = 10;
 $hiVar  = 12;
 
-print($lowVar &lt;=&gt; $midVar, "\n");
-print($midVar &lt;=&gt; $midVar, "\n");
-print($hiVar  &lt;=&gt; $midVar, "\n");</PRE></B>The program produces the 
+print($lowVar <=> $midVar, "\n");
+print($midVar <=> $midVar, "\n");
+print($hiVar  <=> $midVar, "\n");</PRE></B>The program produces the 
 following output: <B><PRE>-1
 0
 1</PRE></B>The -1 indicates that $lowVar (8) is less than $midVar (10). The 0 
@@ -926,9 +929,11 @@ strings. You will see examples of these operators when you read about control
 program flow in Chapter 7, "<A 
 href="ch07.htm">Control Statements</A>." So, we'll 
 only show an example of the <TT>cmp</TT> comparison operator here. 
-<H3><A name="Example: Using the cmp Operator">Example: Using the <I>cmp</I> 
-Operator</A></H3>The string comparison operator acts exactly like the 
-&lt;<I>=</I>&gt; operator except that it is designed to work with string 
+
+### Example: Using the cmp Operator
+
+The string comparison operator acts exactly like the 
+<<I>=</I>> operator except that it is designed to work with string 
 operands. This example will compare the values of three different strings. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -965,8 +970,7 @@ following statement: <B><PRE>if (CONDITION-PART) {
     TRUE-PART
 } else {
     FALSE-PART
-}</PRE></B>You can find more information about <TT>if</TT> statements in Chapter 
-7, "<A href="ch07.htm">Control Statements</A>." 
+}</PRE></B>You can find more information about <TT>if</TT> statements in [](./control-statements.md). 
 <P>The value of the entire operation depends on the evaluation of the 
 CONDITION-PART section of the statement. If the CONDITION-PART evaluates to 
 true, then the TRUE-PART is the value of the entire operation. If the 
@@ -980,9 +984,10 @@ entire operation.
   <TR>
     <TD bgColor=lightpink>The ternary operator is also referred to as the 
       conditional operator by some references.<BR></TD></TR></TBODY></TABLE></B>
-<H3><A name="Example: Using the Ternary Operator to Assign Values">Example: 
-Using the Ternary Operator to Assign Values</A></H3>I frequently use the ternary 
-operator to assign a value to a variable when it can take one of two values. 
+
+### Example: Using the Ternary Operator to Assign Values
+
+I frequently use the ternary operator to assign a value to a variable when it can take one of two values. 
 This use of the operator is fairly straightforward. 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -1042,9 +1047,9 @@ firstVar = $temp == 0 ?
   <TR>
     <TD bgColor=lightpink>Abusing the language in this manner will make your 
       programs difficult to understand and maintain. You can use the <TT>if</TT> 
-      statement for better looking and more maintainable code. See Chapter 7, 
-      "<A href="ch07.htm">Control Statements</A>," 
+      statement for better looking and more maintainable code. See [](./control-statements.md)
       for more information.<BR></TD></TR></TBODY></TABLE></B>
+
 <P>If you'd like to see a really strange use of the ternary operator, take a 
 look at this next example. It uses the ternary operator to determine which 
 variable gets assigned a value. <B><PRE>$firstVar = 1;
@@ -1079,11 +1084,11 @@ assignment operator.
 
 ## The Range Operator (..)
 
-The range operator was already introduced to you in Chapter 3, "<A 
-href="ch03.htm">Variables</A>," when you read about 
-arrays. I review its use here - in an array context - in a bit more detail. 
-<H3><A name="Example: Using the Range Operator">Example: Using the Range 
-Operator</A></H3>When used with arrays, the range operator simplifies the 
+The range operator was already introduced to you in [](./variables.md) when you read about arrays. I review its use here - in an array context - in a bit more detail. 
+
+### Example: Using the Range Operator
+
+When used with arrays, the range operator simplifies the 
 process of creating arrays with contiguous sequences of numbers and letters. 
 We'll start with an array of the numbers one through ten. 
 <P>
@@ -1223,8 +1228,10 @@ Perl has two different string operators - the concatenation
 (<TT>.</TT>) operator and the repetition (<TT>x</TT>) operator. These operators 
 make it easy to manipulate strings in certain ways. Let's start with the 
 concatenation operator. 
-<H3><A name="Example: Using the Concatenation Operator">Example: Using the 
-Concatenation Operator</A></H3>The <I>concatenation</I> operator is used to join 
+
+### Example: Using the Concatenation Operator
+
+The <I>concatenation</I> operator is used to join 
 two strings together. If you have a numeric value as one of the two operands, 
 Perl will quietly convert it to a string. 
 <P>Here is an example that shows Perl converting a number into a string. 
@@ -1262,8 +1269,10 @@ adding any spaces or other separating characters. If you want a space between
 the string after they are concatenated, you must ensure that one of original 
 strings has the space character - either at the end of the first string or the 
 start of the second. 
-<H3><A name="Example: Using the Repetition Operator">Example: Using the 
-Repetition Operator</A></H3>The <I>repetition</I> operator is used to repeat any 
+
+### Example: Using the Repetition Operator
+
+The <I>repetition</I> operator is used to repeat any 
 string a given number of times. Like the concatenation operator, any numbers 
 will be quietly converted to strings so that they can be repeated. 
 <P>Here is an example that how to repeat a string 7 times. 
@@ -1383,12 +1392,12 @@ familiar with all of the operations described in the table.
     <TD vAlign=top>This operator assigns the value of <TT>var x op1</TT> to 
       <TT>var</TT>.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>var &lt;&lt;= op1;</TT> </TD>
-    <TD vAlign=top>This operator assigns the value of <TT>var &lt;&lt; 
+    <TD vAlign=top><TT>var <<= op1;</TT> </TD>
+    <TD vAlign=top>This operator assigns the value of <TT>var << 
       op1</TT> to <TT>var</TT>.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>var &gt;&gt;= op1;</TT> </TD>
-    <TD vAlign=top>This operator assigns the value of <TT>var &gt;&gt; 
+    <TD vAlign=top><TT>var >>= op1;</TT> </TD>
+    <TD vAlign=top>This operator assigns the value of <TT>var >> 
       op1</TT> to <TT>var</TT>.</TD></TR>
   <TR>
     <TD vAlign=top><TT>var &amp;= op1;</TT> </TD>
@@ -1421,9 +1430,10 @@ operators. Their use is straightforward. However, when assigning values to
 arrays there are some special situations. The first is assigning values to array 
 slices and the second is assign array elements to scalars. Let's start with 
 array slices. 
-<H3><A name="Example: Assignment Using Array Slices">Example: Assignment Using 
-Array Slices</A></H3>If you recall from Chapter 3, "<A 
-href="ch03.htm">Variables</A>," array slices let 
+
+### Example: Assignment Using Array Slices
+
+If you recall from [](./variables.md) array slices let 
 you directly access multiple elements of an array using either the comma or 
 range operators. For instance, the variable <TT>@array[10, 12]</TT> refers to 
 both the tenth and the twelfth elements of the <TT>@array</TT> array. 
@@ -1538,11 +1548,11 @@ to select and create a new array in one step. </P>
 print("@array1\n");
 print("@array2\n");</PRE></B>This program produces the following output: <B><PRE>A B C D E F G H I J
 C E G</PRE></B>
-<H3><A name="Example: Assigning an Array to Scalar Variables">Example: Assigning 
-an Array to Scalar Variables</A></H3>At times, you may want to take array 
-elements and assign them to scalar variables. The ability is especially useful 
-inside functions and you'll read about that usage in Chapter 5,"<A 
-href="ch05.htm">Functions</A>" . 
+
+### Example: Assigning an Array to Scalar Variables
+
+At times, you may want to take array elements and assign them to scalar variables. The ability is especially useful 
+inside functions and you'll read about that usage in [](./functions.md). 
 <P>It's also useful when you want to make your code more readable. So that 
 instead of referring to the 3<SUP>rd</SUP> element of an array as 
 <TT>$array[3]</TT>, you can refer to the value as <TT>$town</TT> or whatever 
@@ -1611,7 +1621,7 @@ to left because it affects the operand immediately to its right.
     <TD vAlign=top>Left to right </TD></TR>
   <TR>
     <TD vAlign=top>21</TD>
-    <TD vAlign=top>&gt;</TD>
+    <TD vAlign=top>></TD>
     <TD vAlign=top>infix dereference operator </TD>
     <TD vAlign=top>Left to right</TD></TR>
   <TR>
@@ -1633,8 +1643,7 @@ to left because it affects the operand immediately to its right.
   <TR>
     <TD vAlign=top>17</TD>
     <TD vAlign=top>=~, !~ </TD>
-    <TD vAlign=top>Match, Not match - These operators are described in <A 
-      href="ch10.htm">Chapter 10</A>. Briefly, they 
+    <TD vAlign=top>Match, Not match - These operators are described in [](./regular-expressions.md). Briefly, they 
       tell Perl to do pattern matching, substitution or translation on a 
       specific variable instead of the <TT>$_</TT> special variable.</TD>
     <TD vAlign=top>Left to right</TD></TR>
@@ -1650,7 +1659,7 @@ to left because it affects the operand immediately to its right.
     <TD vAlign=top>Left to right </TD></TR>
   <TR>
     <TD vAlign=top>14</TD>
-    <TD vAlign=top>&lt;&lt;, &gt;&gt; </TD>
+    <TD vAlign=top><<, >> </TD>
     <TD vAlign=top>Bitwise left shift, Bitwise right shift</TD>
     <TD vAlign=top>Left to right </TD></TR>
   <TR>
@@ -1735,9 +1744,11 @@ to left because it affects the operand immediately to its right.
 <P>Operators that are not discussed in this chapter are discussed elsewhere in 
 this book. Table 4.1, at the beginning of the chapter, points out where you can 
 get more information on those operators. In addition, you can read about the low 
-precedence logical operators in Chapter 13, "Handling Exceptions and Signals." 
-<H3><A name="Example: Order of Precedence">Example: Order of 
-Precedence</A></H3>While it is not possible to show examples of all the 
+precedence logical operators in [](./errors.md).
+
+### Example: Order of Precedence
+
+While it is not possible to show examples of all the 
 ramifications of operator precedence, we can look at one or two so that you can 
 get a feel for the concept. 
 <P>First, an example using the ternary operator and various arithmetic 
@@ -1861,10 +1872,8 @@ shortcuts to reduce typing and clarify the meaning of the assignment. </P>
 precedence. Several examples were given to illustrate how precedence worked. My 
 recommendation is to use parentheses to explicitly tell Perl how which order to 
 evaluate operators. 
-<P>The next chapter, "<A 
-href="ch05.htm">Functions</A>," will look at how 
-functions and list operators are the same thing. And you will be introduced to 
-subroutines and parameters. 
+
+[](./functions.md) looks at how functions and list operators are the same thing. And you will be introduced to subroutines and parameters. 
 
 ## Review Questions
 
@@ -1877,7 +1886,7 @@ subroutines and parameters.
   <P></P>
   <LI>What is the value of 1 <TT>^</TT> 1? 
   <P></P>
-  <LI>What is the value of 1 <TT>&lt;&lt;</TT> 3? 
+  <LI>What is the value of 1 <TT><<</TT> 3? 
   <P></P>
   <LI>What is the ternary operator used for? 
   <P></P>
@@ -1887,7 +1896,7 @@ subroutines and parameters.
   <P></P>
   <LI>What is the value of 2 * 5 <TT>+</TT> 10? 
   <P></P>
-  <LI>What is the value of 65 <TT>&gt;&gt;</TT> 1? 
+  <LI>What is the value of 65 <TT>>></TT> 1? 
   <P></P>
   <LI>What is the <TT>spaceship</TT> operator used for? 
   <P></P>
@@ -1902,7 +1911,7 @@ subroutines and parameters.
   <LI>Using the post-decrement operator, subtract one from <TT>$firstVar</TT>. 
   <P></P>
   <LI>Write a program that assigns values to <TT>$firstVar</TT> and 
-  <TT>$secondVar</TT> and uses the <TT>&gt;=</TT> operator to test their 
+  <TT>$secondVar</TT> and uses the <TT>>=</TT> operator to test their 
   relationship to each other. Print the resulting value. 
   <P></P>
   <LI>Use the <TT>**=</TT> assignment operator to assign a value to 
@@ -1911,7 +1920,7 @@ subroutines and parameters.
   <LI>Use the ternary operator to decide between to different value. 
   <P></P>
   <LI>Write a program that assigns values to <TT>$firstVar</TT> and 
-  <TT>$secondVar</TT> and uses the <TT>&lt;=&gt;</TT> operator to test their 
+  <TT>$secondVar</TT> and uses the <TT><=></TT> operator to test their 
   relationship to each other. Print the resulting value. 
   <P></P>
   <LI>Use the concatenation operator to join the following values together: "A" 

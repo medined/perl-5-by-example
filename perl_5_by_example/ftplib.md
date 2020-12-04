@@ -10,13 +10,13 @@ Note: Use cut and paste directly from your web browser window in order to copy t
 ;#  ftplib.pl - an FTP library
 ;#
 ;#  Revision:  1.1L 4/5/95
-;#             Luke Y. Lu &lt;ylu@mail.utexas.edu&gt;
+;#             Luke Y. Lu <ylu@mail.utexas.edu>
 ;#             add sub gets to get file and return it as a big string.
 ;#
 ;#  Revision:  1.1  8/16/94
 ;#
-;#  Authors:   Gene Spafford    &lt;spaf@cs.purdue.edu&gt;
-;#             David Sundstrom  &lt;sunds@lobby.ti.com&gt;
+;#  Authors:   Gene Spafford    <spaf@cs.purdue.edu>
+;#             David Sundstrom  <sunds@lobby.ti.com>
 ;#
 ;#  Co-Author: Randal Schwartz
 ;#
@@ -54,15 +54,15 @@ Note: Use cut and paste directly from your web browser window in order to copy t
 ;#   system in order for the arguments to socket to be correct.  Ftplib
 ;#   will assume BSD defaults for socket if it cannot load socket.ph.  These
 ;#   defaults will not work on SysV systems.  Run h2ph to create socket.ph.
-;#   (Thanks to Andreas Klingler &lt;mfrz06@hp53.rrze.uni-erlangen.de&gt;)
+;#   (Thanks to Andreas Klingler <mfrz06@hp53.rrze.uni-erlangen.de>)
 ;#
-;#   Thanks to Ed Ravin &lt;elr@wp.prodigy.com&gt; for multi-interface fixes
+;#   Thanks to Ed Ravin <elr@wp.prodigy.com> for multi-interface fixes
 ;#
 ; ############################################################################
 #   @(#)ftplib.pl   1.6 4/14/95 (cc.utexas.edu) /home/uts/cc/ccdc/zippy/src/perl/url_get/SCCS/s.ftplib.pl
 
 package ftp;
-    if ($] &lt; 5.0) {
+    if ($] < 5.0) {
         eval 'require "sys/socket.ph"';  ## needed to get socket arguments for sys5
     } else {
         eval 'use Socket';  ## For Perl5
@@ -250,7 +250,7 @@ sub get { ## Public
 
     ($local = $remote) unless $local;
 
-    unless (open(DFILE, "&gt;$local")) {  
+    unless (open(DFILE, ">$local")) {  
        $Error =  "Open of local file $local failed: $!";
        return undef;
     }
@@ -489,7 +489,7 @@ sub put { ## Public
     return &amp;xferclean() unless (&amp;ftp_accept());
 
     if($Ascii) {
-       while (&lt;DFILE&gt;) { 
+       while (<DFILE>) { 
           s/\n$/\r\n/;
           print DATA $_; 
        }
@@ -568,7 +568,7 @@ sub site { ## Public
 
 sub timeout { ## Public
     $Timeout = $_[0];
-    $Timeout = 1 if ($Timeout &lt; 0);
+    $Timeout = 1 if ($Timeout < 0);
 1;
 }
 
@@ -627,7 +627,7 @@ sub get_listing {
           $condition = ($Timeout == 0) || select($rout=$rin, undef, undef, $Timeout);
        }
        if ($condition) {
-           last unless ($ls=&lt;DATA&gt;);
+           last unless ($ls=<DATA>);
            $ls=~tr/\r\n//d;
            push(@dir,$ls); 
        } else {
@@ -674,7 +674,7 @@ sub dataconn {
              select((select(GENERIC), $| = 1)[0]);
              ($family, $port, @myaddr) = 
                   unpack("S n C C C C x8", getsockname(GENERIC));
-             push(@myaddr, $port &gt;&gt; 8, $port &amp; 0xff);
+             push(@myaddr, $port >> 8, $port &amp; 0xff);
              $myportcmd = join(',', @myaddr);
              if (&amp;cmd("2", "port $myportcmd")) { return 1; }
           }
@@ -724,9 +724,9 @@ sub cmd {
        print CMD $cmd,"\r\n";
        if ($Debug) {
            if ($cmd=~/^pass/) {
-               print STDERR "&gt;&gt; pass .....\n";
+               print STDERR ">> pass .....\n";
            } else {
-               print STDERR  "&gt;&gt; $cmd\n";
+               print STDERR  ">> $cmd\n";
            }
        }
     }
@@ -749,7 +749,7 @@ sub cmd {
             @buf=split(/\r?\n/, $buf);  ## break into lines
             if ($buf=~/\n$/) { $partial=''; } else { $partial=pop(@buf); }
             foreach $cmd (@buf) {
-                if ($Debug) {print STDERR "&lt;&lt; $cmd\n";}
+                if ($Debug) {print STDERR "<< $cmd\n";}
                 push(@Resp,$cmd);
                 if ($cmd =~/^\d\d\d[^-]/) {
                     if ($cmd=~/^([$code])/) {return $1;}

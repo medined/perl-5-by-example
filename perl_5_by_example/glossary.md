@@ -11,9 +11,9 @@ how it is accessed and used.
 
 Alternation is the term used when a 
 regular expression pattern chooses between two or more choices. For example, 
-<TT>m/one|two|three/</TT> will match if the string in <TT>$_</TT> contains any 
-one of the three character sequences: <TT>one</TT>, <TT>two</TT>, or 
-<TT>three</TT>. 
+*m/one|two|three/* will match if the string in *$_* contains any 
+one of the three character sequences: *one*, *two*, or 
+*three*. 
 <P>See also Regular Expression. 
 
 ## Alternative Quotes
@@ -21,10 +21,10 @@ one of the three character sequences: <TT>one</TT>, <TT>two</TT>, or
 Perl has three distinctive types of quotes: single-quotes('), double-quotes("), and 
 back-quotes(`). If you'd like to be a bit more explicit in quoting, you can use 
 the alternates that are also provided: q() for single-quotes, qq() for 
-double-quotes, and qx() for back-quotes. For example, <TT>q(This)</TT> is 
-equivalent to <TT>'This'</TT>. Perl also has a alternative mechanism that can be 
-used to quote a lot of small single words. For example, <TT>qw(one, two, 
-three)</TT> is equivalent to(<TT>'one', 'two', 'three')</TT>. 
+double-quotes, and qx() for back-quotes. For example, *q(This)* is 
+equivalent to *'This'*. Perl also has a alternative mechanism that can be 
+used to quote a lot of small single words. For example, *qw(one, two, 
+three)* is equivalent to(*'one', 'two', 'three')*. 
 
 ## Anchor
 
@@ -34,11 +34,11 @@ See Pattern Anchor.
 
 It is often very useful to create a function or variable 
 without identifying names; these programming elements are called anonymous. You 
-allude to them using references. For example, if you initialize <TT>$foo</TT> 
-using <TT>$foo = { 'John' =&gt; 10, 'Karen' =&gt; 20}</TT>, then <TT>$foo</TT> 
+allude to them using references. For example, if you initialize *$foo* 
+using *$foo = { 'John' => 10, 'Karen' => 20}*, then *$foo* 
 becomes a reference to the anonymous hash. You access the hash entries by 
-dereferencing <TT>$foo</TT>. For example, <TT>@{$foo}{'John'}</TT> is equal to 
-<TT>10</TT>. 
+dereferencing *$foo*. For example, *@{$foo}{'John'}* is equal to 
+*10*. 
 <P>See also Reference and Dereference. 
 
 ## ANSI
@@ -65,7 +65,7 @@ An array is a collection of values stored as a
 unit. I think of an array in the same way that I think of a list because both 
 are composed of many things. An array can be composed of numbers, strings, 
 hashes, or even other arrays. A basic array assignment looks like this: 
-<TT>@array =(1, 2, 'Three', 4);</TT>. 
+*@array =(1, 2, 'Three', 4);*. 
 
 ## Array Context
 
@@ -74,11 +74,11 @@ See Context(Array & Scalar).
 ## Array Range
 
 A range is a shorthand method for 
-generating consecutive elements of an array. For example, <TT>@array 
-=(1..6)</TT> is equivalent to <TT>@array =(1, 2, 3, 4, 5, 6)</TT>. You can also 
+generating consecutive elements of an array. For example, *@array 
+=(1..6)* is equivalent to *@array =(1, 2, 3, 4, 5, 6)*. You can also 
 create letter ranges-Perl will automatically generate the missing letters. For 
-example, <TT>@array =('AA'..'AD')</TT> is equivalent to <TT>@array =('AA', 'AB', 
-'AC', 'AD')</TT>. 
+example, *@array =('AA'..'AD')* is equivalent to *@array =('AA', 'AB', 
+'AC', 'AD')*. 
 
 ## Array Slice
 
@@ -86,16 +86,16 @@ A slice is a shorthand method for
 specifying specific elements of an array. Instead of specifying one index inside 
 the square brackets, you can specify multiple indexes. You can either assign the 
 result of a slice of another array variable or assign new values to the 
-specified elements. For example, <TT>@array[0, 6]</TT> refers to the 
-1<SUP>st</SUP> and 7th elements in the array. <TT>@array[0..4]</TT> refers to 
+specified elements. For example, *@array[0, 6]* refers to the 
+1<SUP>st</SUP> and 7th elements in the array. *@array[0..4]* refers to 
 the elements from 0 to 4-five in all. Slice assignments look like this: 
-<TT>@array[0..2] = @foo;</TT> or <TT>@array[0..2] =('one', $two, 'three');</TT>. 
+*@array[0..2] = @foo;* or *@array[0..2] =('one', $two, 'three');*. 
 
 ## Array Splice
 
 A splice is a way to modify an 
 array variable to add, delete, or replace elements. See the description of the 
-<TT>splice()</TT> function in Appendix D, "<A 
+*splice()* function in Appendix D, "<A 
 href="xp0d.htm">Function List</A>." 
 
 ## ASCII
@@ -115,14 +115,14 @@ easily handle.
 ## Assignment
 
 An assignment statement stores a value 
-into a variable. For example, <TT>$foo = 4</TT> stores the value of <TT>4</TT> 
-into the <TT>$foo</TT> variable. The left side of the statement must be an 
+into a variable. For example, *$foo = 4* stores the value of *4* 
+into the *$foo* variable. The left side of the statement must be an 
 lvalue-something that ultimately will resolve to a memory location where the 
 storage will take place. 
 ## Associative Array
 
 An associative array-also called a hash-uses strings as indexes instead of numbers; for 
-example, <TT>$hash{'david'}</TT> or <TT>$hash{'Larry Wall'}</TT>. Note that 
+example, *$hash{'david'}* or *$hash{'Larry Wall'}*. Note that 
 hashes use curly brackets around the index while arrays use square brackets. 
 
 ## Associativity (left-to-right & right-to-left)
@@ -134,9 +134,9 @@ it looks right first-like the minus sign-then it has right associativity.
 
 ## awk
 
-<TT>awk</TT> is a UNIX-based utility that scans 
+*awk* is a UNIX-based utility that scans 
 input lines for a specific pattern. Perl has most, if not all, of the abilities 
-of <TT>awk</TT>. 
+of *awk*. 
 <P>See also Pattern. 
 
 ## Backtracking
@@ -171,7 +171,7 @@ bitwise operators and how they can be used.
 
 A block of code is a series of statements 
 surrounded by curly braces. Code blocks can be viewed as single-pass loops. 
-Using the <TT>my()</TT> function inside a code block will create a variable 
+Using the *my()* function inside a code block will create a variable 
 local to that block. 
 <P>See also Scope. 
 
@@ -180,12 +180,12 @@ local to that block.
 Many functions need 
 information before they can do their work. This information is given to 
 functions in the form of parameters. For example, in the function call 
-<TT>foo('one', 'two')</TT>, the strings <TT>'one'</TT> and <TT>'two'</TT> are 
+*foo('one', 'two')*, the strings *'one'* and *'two'* are 
 parameters. When parameters are passed to the function by reference, the 
 function can modify the parameters and the change can be seen by the calling 
-function or program. For example, <TT>foo(\$result)</TT> passes a reference to 
-the $result variable into the <TT>foo()</TT> function. Inside the function, the 
-reference can dereferenced to get at and modify the value of <TT>$result</TT>. 
+function or program. For example, *foo(\$result)* passes a reference to 
+the $result variable into the *foo()* function. Inside the function, the 
+reference can dereferenced to get at and modify the value of *$result*. 
 <P>See also Call by Value. 
 
 ## Call by Value
@@ -193,7 +193,7 @@ reference can dereferenced to get at and modify the value of <TT>$result</TT>.
 Many functions need 
 information before they can do their work. This information is given to 
 functions in the form of parameters. For example, in the function call 
-<TT>foo('one', 'two')</TT>, the strings <TT>'one'</TT> and <TT>'two'</TT> are 
+*foo('one', 'two')*, the strings *'one'* and *'two'* are 
 parameters. When parameters are passed to the function by value, changes to the 
 value inside the function are not seen outside the function. 
 <P>See also Call by Reference. 
@@ -202,15 +202,14 @@ value inside the function are not seen outside the function.
 
 A character class-used in pattern matching-defines a type of character. The character class 
 [0123456789] defines the class of decimal digits. And [0-9a-f] defines the class 
-of hexadecimal digits. Chapter 11, "<A 
-href="ch10.htm">Regular Expressions</A>," discusses 
+of hexadecimal digits. [](./regular-expressions.md), discusses 
 character class in detail. 
 <P>See Regular Expression. 
 
 ## Child Process
 
 Some operating systems-such as 
-UNIX-let your program create clones of itself using the <TT>fork()</TT> 
+UNIX-let your program create clones of itself using the *fork()* 
 function. These clones are called child processes or sub-processes. Child 
 processes are frequently used by server processes. For example, you might fork a 
 process(create a child process) to handle multiple request on a single socket. 
@@ -221,9 +220,7 @@ A class is a combination of variables and
 functions designed to emulate an object. An object can be anything you want it 
 to be-a pen, an ATM machine, a car, whatever. The class's variables(also called 
 properties) and functions(also called methods) are the computer's way of 
-modeling the object. See Chapter 14, "<A 
-href="ch14.htm">What Are Objects?</A>" for more 
-information. 
+modeling the object. See [](./objects.md) for more information. 
 <P>See also Encapsulation, Inheritance, Polymorphism. 
 
 ## Client/Server
@@ -241,10 +238,9 @@ browser for the client and a cgi-enabled Web server as the server.
 Perl has several 
 options you can control when invoking your Perl script. They are called 
 command-line options because you add them to the command that invokes Perl. For 
-example, in the command <TT>perl -w test.pl</TT>, the <TT>-w</TT> is a 
+example, in the command *perl -w test.pl*, the *-w* is a 
 command-line option which causes Perl to display messages about questionable 
-code. Chapter 17, "<A href="ch17.htm">Command-line 
-Options</A>," has a description of all of the available options. 
+code. [](./cli.md), has a description of all of the available options. 
 
 ## Compiler
 
@@ -260,14 +256,14 @@ topic.
 
 The errors caught during the compilation phase are called compile-time errors. When the compiler 
 converts a program to an internal format, it checks for syntax errors and, if 
-the <TT>-w</TT> option is turned on, questionable coding practices. 
+the *-w* option is turned on, questionable coding practices. 
 
 ## Concatenation
 
 Concatenation consists of taking 
 two things and sticking them together. The operation is frequently used with 
 strings. In fact, Perl has its own concatenation operator-the period; for 
-example, <TT>'one' . 'two'</TT> is equivalent to <TT>'onetwo'</TT>. 
+example, *'one' . 'two'* is equivalent to *'onetwo'*. 
 
 ## Constant
 
@@ -286,7 +282,7 @@ very, very slow.
 Classes use constructor functions to 
 create an object. This is usually done by creating an anonymous hash and storing 
 the classes properties inside the hash as entries. Most constructor functions 
-are named <TT>new()</TT>. 
+are named *new()*. 
 <P>See also Classes, Deconstructor. 
 
 ## Context(Array & Scalar)
@@ -296,13 +292,13 @@ scalar-that is returned from a function. If you place parentheses around the
 function call, the return value will be placed in an array(of course, it might 
 only be a one-element array). Function calls that are themselves parameters to 
 another function are usually evaluated in an array context also. You can use the 
-<TT>scalar()</TT> function to create a scalar context. This is valuable when 
-determining the size of an array. For example, <TT>scalar(@array)</TT> will 
+*scalar()* function to create a scalar context. This is valuable when 
+determining the size of an array. For example, *scalar(@array)* will 
 return the number of elements in @array. 
-<P>Functions can use the <TT>wantarray()</TT> function to determine their own 
+<P>Functions can use the *wantarray()* function to determine their own 
 calling context. Appendix D, "<A 
 href="xp0d.htm">Function List</A>", has an example 
-that uses the <TT>wantarray()</TT> function. 
+that uses the *wantarray()* function. 
 
 ## Control Characters
 
@@ -336,11 +332,7 @@ arrays, associative arrays or hashes, and references.
 
 ## Debugger
 
-Perl has a feature that lets you step 
-line-by-line through your programs. This feature is called a debugger because it 
-is generally used to find logic errors or bugs in your programs. Chapter 17, "<A 
-href="ch16.htm">Debugging Perl</A>" , shows how to 
-use the debugger. 
+Perl has a feature that lets you step line-by-line through your programs. This feature is called a debugger because it is generally used to find logic errors or bugs in your programs. [](./debugging.md), shows how to use the debugger. 
 
 ## Declaration
 
@@ -348,14 +340,14 @@ A declaration tells Perl that you
 want to use a variable. Most languages require you to declare the variables that 
 you intend to use. This enables the compiler to perform some optimizations and 
 perhaps see if you use a variable incorrectly. Perl does not require and does 
-not have any declaration statement-the closest thing is the <TT>my()</TT> 
+not have any declaration statement-the closest thing is the *my()* 
 function. 
 
 ## Deconstructor
 
 Deconstructor functions are used by classes to clean up after you are done with an object. You might need to 
 close a socket or file, or to write some log messages. All deconstructor 
-functions are named <TT>DESTROY()</TT>. 
+functions are named *DESTROY()*. 
 <P>See also Classes, Constructor. 
 
 ## Defined
@@ -367,36 +359,29 @@ A defined variable is one that has been initialized with a value.
 A delimiter is used to tell when one 
 thing ends and another begins. Delimiters are widely used in text-based 
 databases to separate one field from another. For example, in the string 
-<TT>"one:two:three"</TT> the colon is the delimiter. You can break a string into 
-components based on a delimiter using the <TT>split()</TT> function; you can put 
-the string back together again using the <TT>join()</TT> function. 
+*"one:two:three"* the colon is the delimiter. You can break a string into 
+components based on a delimiter using the *split()* function; you can put 
+the string back together again using the *join()* function. 
 
 ## Dereference
 
 A reference is a scalar that points 
 to a value. The act of dereferencing means to follow the link to arrive at the 
-value. For example, you can create a reference with the following <TT>$foo = 
-\10;</TT>. This makes <TT>$foo</TT> a reference to an anonymous literal value of 
-10. Printing <TT>$foo</TT> prints the value of the reference. To get at the 
-value, you need to dereference $foo like this <TT>${$foo}</TT>. The symbol in 
+value. For example, you can create a reference with the following *$foo = 
+\10;*. This makes *$foo* a reference to an anonymous literal value of 
+10. Printing *$foo* prints the value of the reference. To get at the 
+value, you need to dereference $foo like this *${$foo}*. The symbol in 
 front of the curly brace depends on the type of reference. Use $ for scalars, @ 
 for arrays, and % for hashes. 
 <P>See also Reference. 
 
 ## Detail Line
 
-You use detail lines to display 
-information about individual items in reports. Reports can also have header, 
-footer, sub-total, and total lines. Chapter 12, "<A 
-href="ch11.htm">Creating Reports</A>," has examples 
-of how to prepare reports. 
+You use detail lines to display information about individual items in reports. Reports can also have header, footer, sub-total, and total lines. [](./reports.md), has examples of how to prepare reports. 
 
 ## Diamond Operator
 
-The diamond operator(<>) is used to read a line of input from a file. Some 
-operating systems, like UNIX, can use the diamond operator to read from sockets. 
-Chapter 10, "<A href="ch09.htm">Using Files</A>," 
-has examples that use the diamond operator. 
+The diamond operator(<>) is used to read a line of input from a file. Some operating systems, like UNIX, can use the diamond operator to read from sockets. [](./files.md) has examples that use the diamond operator. 
 
 ## Directory
 
@@ -415,7 +400,7 @@ day.
 ## Empty Strings, Arrays, Lists, and Hashes
 
 Empty strings have no characters and have a length and 
-value of zero. They are literally represented by <TT>""</TT>. Empty arrays have 
+value of zero. They are literally represented by *""*. Empty arrays have 
 no elements and are literally represented by(). Empty hashes have no entries and 
 are literally represented by {}. If you have a variable that contains a large 
 string, you can free up or release memory by assigning the empty string to it. 
@@ -459,20 +444,18 @@ characters can have more than one meaning depending on the situation in which
 they are used. The period could mean to match any character in a regular 
 expression or it could simply be needed to represent a period. You can force 
 Perl to use a literal context by placing a slash(\) in front of the character to 
-create an escape sequence. For example, <TT>\.</TT> means that a regular period 
+create an escape sequence. For example, *\.* means that a regular period 
 should be matched in a regular expression pattern. This simple definition is 
 complicated by the fact that some escape sequences have meanings all their own. 
-For example, <TT>\t</TT> indicates the tab character.<B> See</B> Table 2.1 in 
-Chapter 2, "Numeric and String Literals, for a list of all of the special escape 
-sequences. 
-<P>
+For example, *\t* indicates the tab character.<B> See</B> Table 2.1 in 
+[](./literals.md), for a list of all of the special escape sequences. 
 
 ## Expression
 
 An expression is one or more operands 
 connected by one or more operators. The operands can be either literal values, 
-variables, or functions. For example, <TT>$foo</TT> is an expression. <TT>$foo 
-+(34 * bar())</TT> is also an expression. Expressions can be arbitrarily 
+variables, or functions. For example, *$foo* is an expression. *$foo 
++(34 * bar())* is also an expression. Expressions can be arbitrarily 
 complex. 
 <P>See also Statement. 
 
@@ -499,15 +482,13 @@ filehandles should have names that use all capitals.
 
 You use footer lines to display information at 
 the bottom of the page in reports. Reports can also have header, detail-line, 
-sub-total, and total lines. See Chapter 11, "<A 
-href="ch11.htm">Creating Reports</A>," for more information. 
+sub-total, and total lines. See [](./reports.md) for more information. 
 
 ## Formats
 
 You use formats to control a report's 
 appearance. You can specify both the static text and the variables that will be 
-displayed in the report. Chapter 11, "<A 
-href="ch11.htm">Creating Reports</A>," shows you 
+displayed in the report. [](./reports.md) shows you 
 how to create reports. 
 
 ## ftp
@@ -523,22 +504,23 @@ See Procedure.
 
 You use globbing(what a funny word!) to 
 expand a file specification into a list of matching files. For example, *.pl 
-might be matched by <TT>test.pl</TT> and <TT>foo.pl</TT>. Use the 
-<TT>glob()</TT> function to do your globbing. 
+might be matched by *test.pl* and *foo.pl*. Use the 
+*glob()* function to do your globbing. 
 
 ## Greedy Regular Expressions
 
 Regular expressions are normally greedy-they try to find the 
 longest sequence of characters that match a given pattern. For example, if you 
-use <TT>"qqBqqBqqB"</TT> as your search space and <TT>/(qqB)+/</TT> as your 
-pattern, there are three matching possibilities. They are <TT>"qqB"</TT>, 
-<TT>"qqBqqB"</TT>, and <TT>"qqBqqBqqB"</TT>. Perl will find the longest matching 
-string, so <TT>$&amp;</TT> will be equal to <TT>"qqBqqBqqB"</TT>. You can 
-reverse this behavior by adding a <TT>?</TT> to the pattern. For example, 
-<TT>/(qqB)+?/</TT> will match <TT>"qqB"</TT>. Don't use the <TT>*</TT> 
-meta-character with the <TT>?</TT> meta-character because it will always match 
-the empty string. 
-<P>See also Regular Expression. 
+use *"qqBqqBqqB"* as your search space and */(qqB)+/* as your 
+pattern, there are three matching possibilities. They are *"qqB"*, 
+*"qqBqqB"*, and *"qqBqqBqqB"*. Perl will find the longest matching 
+string, so *$&amp;* will be equal to *"qqBqqBqqB"*. You can 
+reverse this behavior by adding a *?* to the pattern. For example, 
+*/(qqB)+?/* will match *"qqB"*. Don't use the *** 
+meta-character with the *?* meta-character because it will always match 
+the empty string.
+
+See also Regular Expression. 
 
 ## Grep
 
@@ -552,17 +534,16 @@ See Associative Array.
 
 Header lines are used to display information 
 at the top of a report's page. Reports can also have footer, detail-line, 
-sub-total, and total lines. Chapter 11, "<A 
-href="ch11.htm">Creating Reports</A>," shows you 
+sub-total, and total lines. [](./reports.md) shows you 
 how to create headers for your reports. 
 
 ## Here Documents
 
 You use a here document to specify input to a variable or function. It is typically used with the 
-<TT>print()</TT> functon. An example will explain better than words: 
+*print()* functon. An example will explain better than words: 
 
 ```
-print &lt;&lt;"_END_";
+print <<"_END_";
 This is the first line of output.
 The value of \$foo is $foo.
 This is the third line of output.
@@ -572,7 +553,7 @@ print("This is the fourth line of output\n");
 ```
 
 The syntax for here documents is both freeform and rigid. The ending label must be immediately to 
-the right of the &lt;&lt; symbol and must be enclosed in quotes. The ending 
+the right of the << symbol and must be enclosed in quotes. The ending 
 label-after the document-must be by itself on a line and at the beginning of the 
 line. 
 <P>Here documents are useful if you need to output a lot of lines at one time. 
@@ -601,9 +582,9 @@ the remote server's address, and creating and binding a socket.
 
 ## Interpolation
 
-Interpolation means the replacement of a variable name with its value. For example, if <TT>$foo</TT> 
-equals <TT>"dinner"</TT> then <TT>"big $foo"</TT> is equal to <TT>"big 
-dinner"</TT>. 
+Interpolation means the replacement of a variable name with its value. For example, if *$foo* 
+equals *"dinner"* then *"big $foo"* is equal to *"big 
+dinner"*. 
 
 ## Interpreter
 
@@ -648,7 +629,7 @@ is represented by \n in strings. The linefeed can also be referred to as Ctrl+M,
 ## Library
 
 A library is a file that groups related functions together. Libraries are loaded into your program using the 
-<TT>require</TT> compiler directive. [](./modules.md) talks a little bit about libraries. 
+*require* compiler directive. [](./modules.md) talks a little bit about libraries. 
 
 ## List
 
@@ -656,41 +637,32 @@ See Array.
 
 ## Literal
 
-A literal is a value that is represented "as is" in your source code. There are four types of Perl literals: Number, Strings, 
-Arrays, and Hashes. Chapter 2, "<A 
-href="ch02.htm">Numeric and String Literals</A>," 
-shows many examples of literals. 
+A literal is a value that is represented "as is" in your source code. There are four types of Perl literals: Number, Strings, Arrays, and Hashes. [](./literals.md), shows many examples of literals. 
 
 ## Loop
 
-A loop is a series of statements that are executed more than once. Each loop has a control mechanism to stop looping. Chapter 7, "<A href="ch07.htm">Control Statements</A>," discusses the different types of looping and controls that are used. 
-<P>See also Endless Loop 
+A loop is a series of statements that are executed more than once. Each loop has a control mechanism to stop looping. [](./control-statements.md) discusses the different types of looping and controls that are used. 
+
+See also Endless Loop 
 
 ## Meta Characters
 
-Meta characters are characters that have more than one meaning inside regular expressions. Chapter 
-10, "<A href="ch10.htm">Regular Expressions</A>," 
-has an in-depth discussion of meta-characters. 
-<P>See also Regular Expressions. 
+Meta characters are characters that have more than one meaning inside regular expressions. [](./regular-expressions.md) has an in-depth discussion of meta-characters.
+
+See also Regular Expressions. 
 
 ## Module
 
-A module is a file that holds a related group 
-of functions-such as a library. However, modules are a bit more complex. Modules 
-can control which function and variable names get exported from the module 
-namespace into the main namespace. See Chapter 15, "<A 
-href="ch15.htm">Perl Modules</A>," for more 
-information. 
+A module is a file that holds a related group of functions-such as a library. However, modules are a bit more complex. Modules can control which function and variable names get exported from the module namespace into the main namespace. See [](./modules.md) for more information. 
 
 ## Namespace
 
 Namespaces are used to segregate 
 function and variable names. Each data type has its own namespace. This means 
 that you can use the same variable name for different data types. For example, 
-<TT>$foo</TT>, <TT>@foo</TT>, and <TT>%foo</TT> are different data types with 
-the same name. You can create your own namespace with the <TT>Package</TT> 
-keyword. See Chapter 14, "<A href="ch14.htm">What 
-Are Objects?</A>" for more information. 
+*$foo*, *@foo*, and *%foo* are different data types with 
+the same name. You can create your own namespace with the *Package* 
+keyword. See [](./objects.md) for more information. 
 
 ## Object
 
@@ -708,15 +680,12 @@ operator.
 ## Parameter
 
 Some functions need outside information before they can perform their tasks. The outside information is called a 
-parameter. For example, the <TT>print()</TT> function needs to know what it 
+parameter. For example, the *print()* function needs to know what it 
 should print and where. 
 
 ## Polymorphism
 
-Polymorphism is a term from the object-oriented world. It means that a child class can redefine a method already 
-defined in the parent class. Chapter 14, "<A 
-href="ch14.htm">What Are Objects?</A>," discusses 
-polymorphism. 
+Polymorphism is a term from the object-oriented world. It means that a child class can redefine a method already defined in the parent class. [](./objects.md) discusses polymorphism. 
 
 ## Port
 
@@ -728,11 +697,7 @@ specifies a port number of 80.
 
 ## Precedence
 
-Every Perl operator and function has 
-an associated priority. This priority or precedence level tells Perl which 
-operators should be evaluated first. Chapter 4, "<A 
-href="ch04.htm">Operators</A>," lists all of the 
-operators and their priorities. 
+Every Perl operator and function has an associated priority. This priority or precedence level tells Perl which operators should be evaluated first. [](./operators.md) lists all of the operators and their priorities. 
 
 ## Procedure
 
@@ -746,8 +711,7 @@ the generic name used to refer to both functions and subroutines.
 
 A protocol is a set of agreed-upon 
 commands and responses. The Internet has a plethora of protocols that you can 
-use. See Chapter 23, "<A href="ch22.htm">Internet 
-Resources</A>," for information about how to find more information. 
+use. [](./internet-resources.md) for information about how to find more information. 
 
 ## Range
 
@@ -759,18 +723,16 @@ See Database.
 
 ## Reference
 
-A reference is a scalar value that points to a memory location that holds some type of data. See Chapter 8, "<A 
-href="ch08.htm">References</A>," for more information. 
+A reference is a scalar value that points to a memory location that holds some type of data. See [](./references.md) for more information. 
 
 ## Regular Expression
 
-A Regular Expression is used to find patterns in strings. See Chapter 11, "<A 
-href="ch10.htm">Regular Expressions</A>," for more information. 
+A Regular Expression is used to find patterns in strings. See [](./regular-expressions.md) for more information. 
 
 ## Return Value
 
 All Perl functions return a value when they are finished. The return value is the value of the last executed 
-statement or you can use the <TT>return()</TT> to explicitly state it. You may 
+statement or you can use the *return()* to explicitly state it. You may 
 always choose to ignore the return value by not assigning the function call to a variable. 
 
 ## Run-time Error
@@ -780,8 +742,7 @@ usually harder to track down than compile-time errors.
 
 ## Scalar
 
-A scalar variable can hold one string or number value at a time. Chapter 3, "<A 
-href="ch03.htm">Variables</A>," shows you how scalars can be used. 
+A scalar variable can hold one string or number value at a time. [](./variables.md) shows you how scalars can be used. 
 
 ## Scalar Context
 
@@ -792,23 +753,19 @@ See Context(Array & Scalar).
 Normal Perl variables can be used by any 
 function and therefore are said to have a global visibility or scope. You can 
 create variables that are local to a particular function or block of code with 
-the <TT>my()</TT> function. These variables have a local scope. 
+the *my()* function. These variables have a local scope. 
 
 ## Short-circuit Operators
 
-The <TT>&&</TT> and <TT>||</TT> operators are considered short-circuit 
+The *&&* and *||* operators are considered short-circuit 
 operators because the second operand might not be evaluated. For example, in the 
-statement <TT>0 &amp;&amp; die();</TT> the <TT>die()</TT> function will not be 
-executed. However, in the statement <TT>0 || die();</TT> the <TT>die()</TT> 
+statement *0 &amp;&amp; die();* the *die()* function will not be 
+executed. However, in the statement *0 || die();* the *die()* 
 function will be executed. 
 
 ## Signals
 
-A signal is a message sent to your program 
-by the operating system. When a signal is received by your program, it 
-interrupts the normal flow of execution. If you don't have a signal handler 
-function defined, default internal functions will be called. See Chapter 13, "<A 
-href="ch13.htm">Handling Errors and Signals</A>," for more information. 
+A signal is a message sent to your program by the operating system. When a signal is received by your program, it interrupts the normal flow of execution. If you don't have a signal handler function defined, default internal functions will be called. See [](./errors.md) for more information. 
 
 ## Slice
 
@@ -816,12 +773,7 @@ See Array Slice.
 
 ## Socket
 
-A socket is the end link of a connection 
-between two computers. The first step to using any of the Internet protocols is 
-to create a connection to another computer using the socket functions. Then, you 
-can send and receive information over the sockets. See Chapter 18, "<A 
-href="ch18.htm">Using Internet Protocols</A>," for 
-more information. 
+A socket is the end link of a connection between two computers. The first step to using any of the Internet protocols is to create a connection to another computer using the socket functions. Then, you can send and receive information over the sockets. See [](./internet-protocols.md) for more information. 
 
 ## Splice
 
@@ -842,11 +794,11 @@ executable statement.
 
 ## STDERR, STDIN, and STDOUT
 
-<TT>STDERR</TT>, <TT>STDIN</TT>, and <TT>STDOUT</TT> are 
-pre-defined filehandles that every program can use. You use <TT>STDERR</TT> to 
+*STDERR*, *STDIN*, and *STDOUT* are 
+pre-defined filehandles that every program can use. You use *STDERR* to 
 display error messages, usually on the computer's monitor. You use 
-<TT>STDIN</TT> to get input, usually from the keyboard. And you use 
-<TT>STDOUT</TT> to display messages, usually on the computer's monitor. 
+*STDIN* to get input, usually from the keyboard. And you use 
+*STDOUT* to display messages, usually on the computer's monitor. 
 
 ## Subroutine
 
@@ -863,7 +815,7 @@ marker.
 
 ## Undefined Value
 
-The undefined value(<TT>undef</TT>) can be returned by functions to indicate an error 
+The undefined value(*undef*) can be returned by functions to indicate an error 
 condition. It is also the value returned when a non-existent hash entry is accessed. 
 
 ## Variable
@@ -872,10 +824,10 @@ A variable is a changeable piece of information used in computer programs. Typic
 data type. Perl variables can be scalars, arrays, or hashes. Every variable has 
 a life-cycle. It gets created, used, and is then destroyed. Regular Perl 
 variables are created when they are initialized and destroyed when the program 
-ends. The <TT>my()</TT> function can create a variable that only exists inside a function or code block. 
+ends. The *my()* function can create a variable that only exists inside a function or code block. 
 
 ## Whitespace
 
 Whitespace is a term that refers to space, tab, and newline characters. These characters create white space on a 
-page when printed. You can use the <TT>\s</TT> symbolic character class in 
+page when printed. You can use the *\s* symbolic character class in 
 patterns to match whitespace characters. 

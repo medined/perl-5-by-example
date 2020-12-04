@@ -129,20 +129,26 @@ The following sites are good places to visit to build up your Perl and/or CGI sc
 will begin to give you an idea of what exactly already exists that you can use,
 or modify for your own use. You will be amazed at what is available that is
 either freeware or shareware.
-<h3><a name="Perl Documentation">Perl Documentation</a></h3><a href="http://www.perlhelp.de/">http://www.perlhelp.de/</a>
+
+### Perl Documentation
+
+<a href="http://www.perlhelp.de/">http://www.perlhelp.de/</a>
 <p>Valid as of May 19, 2003 - This site contains links to Perl documentation in German and English.
 </p>
-<H3><A name="The Perl Language Home Page">The Perl Language Home Page</A></H3><A
-href="http://www.perl.com/">http://www.perl.com/</A>
+
+### The Perl Language Home Page
+
+<A href="http://www.perl.com/">http://www.perl.com/</A>
 <P>The Perl language home page is connected to the Internet via a 28.8K link, so
 be prepared to wait a little bit while downloading. Around the end of July, the
 server was having difficulties staying up - hopefully they have been resolved by
 the time you read this.
 <P>However, when the site is available, it has valuable information. You should
 definitely stop in and browse.
-<H3><A name="Pearls of Wisdom by Larry Wall">Pearls of Wisdom by Larry
-Wall</A></H3><A
-href="ftp://convex.com/pub/perl/info/lwall-quotes">ftp://convex.com/pub/perl/info/lwall-quotes</A>
+
+### Pearls of Wisdom by Larry Wall
+
+<A href="ftp://convex.com/pub/perl/info/lwall-quotes">ftp://convex.com/pub/perl/info/lwall-quotes</A>
 
 <P>Larry Wall is the inventor of Perl. His admirers have created this web page
 to commemorate some of Larry's wittier comments.
@@ -155,7 +161,7 @@ as a philosopher:
 <P>
 <BLOCKQUOTE>"What is the sound of Perl? Is it not the sound of a wall that
   people have stopped banging their heads against?" --Larry Wall in
-  &lt;1992Aug26.184221.29627@netlabs.com&gt;</BLOCKQUOTE>Larry as a computer nerd:
+  <1992Aug26.184221.29627@netlabs.com></BLOCKQUOTE>Larry as a computer nerd:
 
 <P>
 <BLOCKQUOTE>I might be able to shoehorn a reference count in on top of the
@@ -164,9 +170,11 @@ as a philosopher:
 -lwall</BLOCKQUOTE>Larry as an programmer with impossible specifications:
 <P>
 <BLOCKQUOTE>You want it in one line? Does it have to fit in 80 columns? :)
-  --Larry Wall in &lt;7349@jpl-devvax.JPL.NASA.GOV&gt; </BLOCKQUOTE>
-<H3><A name=Yahoo>Yahoo</A></H3><A
-href="http://www.yahoo.com/">http://www.yahoo.com/</A>
+  --Larry Wall in <7349@jpl-devvax.JPL.NASA.GOV> </BLOCKQUOTE>
+
+### Yahoo
+
+<A href="http://www.yahoo.com/">http://www.yahoo.com/</A>
 <P>One of the best places to begin a search for information or for files is at
 Yahoo. This is one of the better organized and comprehensive search sites on the
 Web.
@@ -181,16 +189,18 @@ href="http://www.yahoo.com/Computers_and_Internet/Programming_Languages/Perl/">h
 <P><A
 href="http://www.yahoo.com/Computers_and_Internet/Internet/World_Wide_Web/CGI___Common_Gateway_Interface/">http://www.yahoo.com/Computers_and_Internet/Internet/World_Wide_Web/CGI___Common_Gateway_Interface/</A>
 
-<H3><A name="The CGI.pm Module">The CGI.pm Module</A></H3><A
-href="http://www-genome.wi.mit.edu/ftp/pub/software/WWW/cgi_docs.html">http://www-genome.wi.mit.edu/ftp/pub/software/WWW/cgi_docs.html</A>
+### The CGI.pm Module
+
+<A href="http://www-genome.wi.mit.edu/ftp/pub/software/WWW/cgi_docs.html">http://www-genome.wi.mit.edu/ftp/pub/software/WWW/cgi_docs.html</A>
 
 <P><TT>CGI.pm</TT> is a module that provides powerful functions for performing
 HTML form and CGI programming with Perl. This library requires Perl 5.001m, and
 makes use of object-oriented techniques. This is a must for your Perl bookmark
 list.
-<H3><A name="Selina Sol's CGI Script Archive">Selina Sol's CGI Script
-Archive</A></H3><A
-href="http://www.extropia.com/selena/">http://www.extropia.com/selena/</A>
+
+### Selina Sol's CGI Script Archive
+
+<A href="http://www.extropia.com/selena/">http://www.extropia.com/selena/</A>
 <P>This attractive and very useful site contains links to many fairly
 sophisticated CGI scripts. For example, Web Chat 1.0 contains a slide show
 script, guest book, a complete shopping cart example, and many others. This site
@@ -240,8 +250,10 @@ Table 23.2 shows some of the scripts and their descriptions.
   <TR>
     <TD vAlign=top>date.pl </TD>
     <TD vAlign=top>Date based perl module</TD></TR></TBODY></TABLE>
-<H3><A name="The Web Developer's Virtual Library">The Web Developer's Virtual
-Library</A></H3><A href="http://www.stars.com/">http://www.stars.com/</A>
+
+### The Web Developer's Virtual Library
+
+<A href="http://www.stars.com/">http://www.stars.com/</A>
 <P>This site is a very comprehensive resource that the site terms a "web
 developer's encyclopedia." There are many tutorials on HTML, CGI, HTTP,
 Databases, and Style Guidelines. This site is an incredibly rich source of links
@@ -249,13 +261,17 @@ to virtually any web development-related topic you can think of. The CGI page
 has 69 links, the HTML has 55 links, and so on. This site is definitely a must
 for visiting, especially when you have time to do a little link hopping and
 exploring, or when you need to find a web development resource.
-<H3><A name="Introduction to CGI">Introduction to CGI</A></H3><A
-href="http://www.virtualville.com/library/cgi.html">http://www.virtualville.com/library/cgi.html</A>
+
+### Introduction to CGI
+
+<A href="http://www.virtualville.com/library/cgi.html">http://www.virtualville.com/library/cgi.html</A>
 
 <P>This site explains how the CGI specification works and provides a nice set of
 link to other resources.
-<H3><A name="Perl for Win32">Perl for Win32</A></H3><A
-href="http://www.activeware.com/">http://www.activeware.com/</A> - home page
+
+### Perl for Win32
+
+<A href="http://www.activeware.com/">http://www.activeware.com/</A> - home page
 <P><A
 href="http://www.endcontsw.com/people/evangelo/Perl_for_Win32_FAQ.html">http://www.endcontsw.com/people/evangelo/Perl_for_Win32_FAQ.html</A>
 - FAQ
@@ -265,15 +281,17 @@ available to let Perl work with the Microsoft Internet Information Server. This
 library will work with the Microsoft Internet Information Server to improve the
 efficiency of CGI access with Perl. Note that the release of this DLL may still
 be a beta release.
-<H3><A name="Randal L. Schwartz's Home Page">Randal L. Schwartz's Home
-Page</A></H3><A
-href="http://www.teleport.com/~merlyn/">http://www.teleport.com/~merlyn/</A>
+
+### Randal L. Schwartz's Home Page
+
+<A href="http://www.teleport.com/~merlyn/">http://www.teleport.com/~merlyn/</A>
 <P>Randal is one of the most knowledgeable Perl gurus. His home page has links
 to some of the columns that he wrote for the <I>Web Techniques</I> and <I>UNIX
 Review</I> magazines.
-<H3><A name="Dale Bewley's Perl Scripts and Links!">Dale Bewley's Perl Scripts
-and Links!</A></H3><A
-href="http://www.engr.iupui.edu/~dbewley/perl/">http://www.engr.iupui.edu/~dbewley/perl/</A>
+
+### Dale Bewley's Perl Scripts and Links!
+
+<A href="http://www.engr.iupui.edu/~dbewley/perl/">http://www.engr.iupui.edu/~dbewley/perl/</A>
 - Perl information
 <P><A
 href="http://www.engr.iupui.edu/~dbewley/cgi/">http://www.engr.iupui.edu/~dbewley/cgi/</A>
@@ -283,14 +301,17 @@ references, tutorials, and script archives. In addition, Dale frequents the
 #perl and #cgi irc channels using a nickname of dwnwrd. Make sure to say hi if
 you see him. Figure 23.3 shows the beginning of Dale's Perl page.
 <P><I>Fig. 22.3 - Dale's Perl Page</I>
-<H3><A name="Matt's Script Archive">Matt's Script Archive</A></H3><A
-href="http://www.worldwidemart.com/scripts/">http://www.worldwidemart.com/scripts/</A>
+
+### Matt's Script Archive
+
+<A href="http://www.worldwidemart.com/scripts/">http://www.worldwidemart.com/scripts/</A>
 
 <P>Matt Wright's scripts are turning up all over the web. His Perl page has
 examples of guestbooks, counters, and a simple search scripts.
-<H3><A name="The Comprehensive Perl Archive Network">The Comprehensive Perl
-Archive Network</A></H3><A
-href="http://www.perl.com/CPAN">http://www.perl.com/CPAN</A> - this site will
+
+### The Comprehensive Perl Archive Network
+
+<A href="http://www.perl.com/CPAN">http://www.perl.com/CPAN</A> - this site will
 connect you to a mirror site.
 <P><A
 href="ftp://ftp.funet.fi/pub/languages/perl/CPAN/">ftp://ftp.funet.fi/pub/languages/perl/CPAN/</A>
@@ -306,8 +327,10 @@ are listed by author, category, and by module.
 <P>Also, check out the <TT>/scripts</TT> sub-directory. This sub-directory is
 itself sub-divided into more directories, each representing a different
 category. Each category has scripts that can be examined, used, and modified.
-<H3><A name="Database API for Perl">Database API for Perl</A></H3><A
-href="http://www.hermetica.com/technologia/DBI/index.html">http://www.hermetica.com/technologia/DBI/index.html</A>
+
+### Database API for Perl
+
+<A href="http://www.hermetica.com/technologia/DBI/index.html">http://www.hermetica.com/technologia/DBI/index.html</A>
 - DBperl home page
 <P><A href="http://www.fugue.com/dbi/">http://www.fugue.com/dbi/</A> - DBperl
 mailing lists
@@ -318,12 +341,14 @@ a consistent database interface independent of the actual database being used."
 With DBperl you can access the following databases: Oracle, Sybase, mSQL,
 Informix, and Quickbase. Plans are currently underway to implement an interface
 for ODBC.
-<H3><A name="The cgi-lib.pl Home Page">The cgi-lib.pl Home Page</A></H3><A
-href="http://www.bio.cam.ac.uk/cgi-lib/">http://www.bio.cam.ac.uk/cgi-lib/</A>
+
+### The cgi-lib.pl Home Page
+
+<A href="http://www.bio.cam.ac.uk/cgi-lib/">http://www.bio.cam.ac.uk/cgi-lib/</A>
 <P>This famous library is widely used by many Perl/CGI programmers. The library
 includes functions such as <TT>ReadParse()</TT> which will parse the data passed
 to the script from the form, or <TT>HtmlTop()</TT> and <TT>HtmlBot()</TT> which
-will print out specific &lt;head&gt; and end of &lt;body&gt; sections of an HTML
+will print out specific <head> and end of <body> sections of an HTML
 document.
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -336,8 +361,10 @@ document.
       href="http://perl.com/perl/info/www/!cgi-lib.html">http://perl.com/perl/info/www/!cgi-lib.html</A></B>
       web page for a cogent set of reasons why you should use the
       <TT>CGI.pm</TT> module instead.</TD></TR></TBODY></TABLE>
-<H3><A name="The CGI Collection">The CGI Collection</A></H3><A
-href="http://www.selah.net/cgi.html">http://www.selah.net/cgi.html</A>
+
+### The CGI Collection
+
+<A href="http://www.selah.net/cgi.html">http://www.selah.net/cgi.html</A>
 <P>This site has a set of scripts, some created with Perl and some created with
 C. Among some of the scripts you can find at this site are those listed in Table
 23.3. In particular check out how a simple little script such as
@@ -363,22 +390,27 @@ C. Among some of the scripts you can find at this site are those listed in Table
     <TD vAlign=top>FrameChat </TD>
     <TD vAlign=top>Odd little application that will implement a frames based
       chat service. Perl 5 is required</TD></TR></TBODY></TABLE>
-<H3><A name="HTML Form Processing Modules (HFPM) Home Page">HTML Form Processing
-Modules (HFPM) Home Page</A></H3>The HFPM is a set of modules written to accept
-a submitted HTML form, possibly modify the contents of the submitted fields, and
+
+### HTML Form Processing Modules (HFPM) Home Page
+
+The HFPM is a set of modules written to accept a submitted HTML form, possibly modify the contents of the submitted fields, and
 output the result using e-mail, appending to a file, and/or displaying it to the
 user or returning an arbitrary URL. They also operate on the environmental
 variables passed in from the client and server.
 <P>You will need perl5 and a UNIX-based system to use the modules listed at this
 site, and a copy of <TT>CGI.pm</TT>, mentioned previously.
-<H3><A name=PureAmiga>PureAmiga</A></H3><A
-href="http://www.netlink.co.uk/users/PureAmiga/pcgi/index.html">http://www.netlink.co.uk/users/PureAmiga/pcgi/index.html</A>
+
+### PureAmiga
+
+<A href="http://www.netlink.co.uk/users/PureAmiga/pcgi/index.html">http://www.netlink.co.uk/users/PureAmiga/pcgi/index.html</A>
 
 <P>You might think that all of the activity for CGI scripting with Perl is done
 only on UNIX or Windows NT. However, this site has many excellent examples of
 CGI scripting for the Amiga.
-<H3><A name=MacPerl>MacPerl</A></H3><A
-href="http://err.ethz.ch/~neeri/macintosh/perl.html">http://err.ethz.ch/~neeri/macintosh/perl.html</A>
+
+### MacPerl
+
+<A href="http://err.ethz.ch/~neeri/macintosh/perl.html">http://err.ethz.ch/~neeri/macintosh/perl.html</A>
 - home page
 <P><A
 href="http://www.unimelb.edu.au/~ssilcot/macperl-primer/home.html">http://www.unimelb.edu.au/~ssilcot/macperl-primer/home.html</A>
@@ -390,21 +422,26 @@ href="http://www.marketspace.com.au/~adam/">http://www.marketspace.com.au/~adam/
 href="ftp://ftp.netcom.com/pub/ha/hal/MacPerl/faq.html">ftp://ftp.netcom.com/pub/ha/hal/MacPerl/faq.html</A>
 - FAQ
 <P>Apple computers can also run Perl.
-<H3><A name="CGI Scripts and HTML Forms">CGI Scripts and HTML Forms</A></H3><A
-href="http://kufacts.cc.ukans.edu/info/forms/forms-intro.html">http://kufacts.cc.ukans.edu/info/forms/forms-intro.html</A>
+
+### CGI Scripts and HTML Forms
+
+<A href="http://kufacts.cc.ukans.edu/info/forms/forms-intro.html">http://kufacts.cc.ukans.edu/info/forms/forms-intro.html</A>
 
 <P>This site contains a nice little introduction to CGI and forms. Not only does
 it describe the process, it also provides graphics that demonstrate how HTML
 Forms/CGI interact.
-<H3><A name="The CGI Documentation by NCSA">The CGI Documentation by
-NCSA</A></H3><A
-href="http://hoohoo.ncsa.uiuc.edu/docs/cgi/">http://hoohoo.ncsa.uiuc.edu/docs/cgi/</A>
+
+### The CGI Documentation by NCSA
+
+<A href="http://hoohoo.ncsa.uiuc.edu/docs/cgi/">http://hoohoo.ncsa.uiuc.edu/docs/cgi/</A>
 
 <P>If you want to learn something, sometimes you just have to go back to the
 source. This site provides a CGI overview. It also includes tips on writing
 secure CGI scripts, a topic that must always concern CGI programmers.
-<H3><A name="Miscellaneous Sites">Miscellaneous Sites</A></H3>The basic Perl
-manual can be found at:
+
+### Miscellaneous Sites
+
+The basic Perl manual can be found at:
 <P><A
 href="http://www.atmos.washington.edu/perl/perl.html">http://www.atmos.washington.edu/perl/perl.html</A>
 
@@ -433,8 +470,7 @@ me - my nickname is WasWaldo.
 
 ## Summary
 
-You've finally the end of the journey that was mentioned in Chapter 1,"<A
-href="ch01.htm">Getting Your Feet Wet</A>" . I hope
+You've finally the end of the journey that was mentioned in [](./getting-your-feet-wet.md). I hope
 you enjoyed reading this book as much as I enjoyed writing it. While I was doing
 research, I took advantage of every resource listed in this chapter. If you have
 unanswered questions, I urge you to ask them either in IRC or the relevant
@@ -456,8 +492,9 @@ web site. By starting at the Yahoo site, you always see an updated list of
 available Perl resources. Some sites (like Dale Dewley's - <B><A
 href="http://www.engr.iupui.edu/~dbewley/perl/">http://www.engr.iupui.edu/~dbewley/perl/</A></B>)
 has resources that you will refer to over and over again.
-<P>Sometimes, you absolutely can't wait for an answer. When you have pressing
-deadlines or your brain is frazzeled, turn to the #perl channel on an Efnet IRC
-server.
+
+<P>Sometimes, you absolutely can't wait for an answer. When you have pressing deadlines or your brain is frazzeled, turn to the #perl channel on an Efnet IRC server.
+
 <P>At this point there's nothing left to say but...
+
 <P>Happy Programing!

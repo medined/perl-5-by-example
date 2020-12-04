@@ -147,8 +147,10 @@ using these earlier versions.
 directory of your boot drive (usually <TT>C:</TT>). The file was created when 
 you first installed Windows. If Windows can't recover from a Registry failure 
 using the DA0 files, you can try using <TT>system.1<SUP>st</SUP></TT> file. 
-<H3><A name="How to Back Up the Registry">How to Back Up the 
-Registry</A></H3>You can manually back up the Registry by exporting the 
+
+### How to Back Up the Registry
+
+You can manually back up the Registry by exporting the 
 information using the Windows <TT>regedit</TT> utility. This utility lets you 
 export all of the Registry information to a text file. Follow these steps to 
 perform the export: 
@@ -178,8 +180,10 @@ length-too long to place on a diskette.
 <P>You can also boot your system into DOS mode and copy the 
 <TT>\windows\user.dat</TT> and <TT>\windows\system.dat</TT> files either onto a 
 diskette or into a directory other than <TT>\windows</TT>. 
-<H3><A name="How to Restore the Registry">How to Restore the 
-Registry</A></H3>Now that you know how to back up the Registry by using the 
+
+### How to Restore the Registry
+
+Now that you know how to back up the Registry by using the 
 export feature of the Registry Editor, let's look at restoring the Registry 
 using the import feature. Use this procedure to import the text-based Registry 
 file: 
@@ -273,12 +277,12 @@ need to hunt through four or five files.
       me clarify one thing. The <TT>DmmReg</TT> module has <I>two</I> 
       constructor functions: <TT>createKey()</TT> and <TT>openKey()</TT>. Both 
       functions will return an object reference. If you aren't sure what 
-      constructor functions are, see Chapter 14, "<A 
-      href="ch14.htm">What Are 
-  Objects?</A>."</TD></TR></TBODY></TABLE>
+      constructor functions are, see [](./objects.md).</TD></TR></TBODY></TABLE>
 <P></B>
-<H3><A name="Opening an Existing Key">Opening an Existing Key</A></H3>To open an 
-existing Registry key, you need only know the key's name. For example, if you 
+
+### Opening an Existing Key
+
+To open an existing Registry key, you need only know the key's name. For example, if you 
 want to determine if a file association exists for <TT>.pl</TT> files, check for 
 the existence of the <TT>HKEY_CLASSES_ROOT\.pl</TT> key like this: 
 <P>[ic: psc] 
@@ -294,7 +298,7 @@ use strict;
 
 my($handle);
 
-$handle = HKEY_CLASSES_ROOT-&gt;openKey('.pl');
+$handle = HKEY_CLASSES_ROOT->openKey('.pl');
 print("There " .
      (defined($handle)? "is an" : "is no") .
     " association for .pl files\.n");</PRE></B>If your system does not have any 
@@ -304,17 +308,19 @@ used as the class name and the subkey name is passed as the only argument to the
 openKey method. 
 <P>If you need to open a key that is deeper in the hierarchy, simply add the 
 branches to the argument of the openKey method. 
-<P><B><PRE>$handle = HKEY_USERS-&gt;openKey('Default\Software\
+<P><B><PRE>$handle = HKEY_USERS->openKey('Default\Software\
 Microsoft\User information');</PRE></B>You can also see from this second example 
 that the <TT>DmmReg</TT> module lets you create more than one type of object. 
 Actually, you can create a different object for each of the six root keys. Each 
 class has exactly the same methods and functionality. 
-<H3><A name="Creating a New Key">Creating a New Key</A></H3>Creating a new key 
-is almost as simple as opening an existing one. You specify the name of the new 
+
+### Creating a New Key
+
+Creating a new key is almost as simple as opening an existing one. You specify the name of the new 
 key, and you optionally specify a value for the default name-value pair. For 
 example, if you wanted to create a Registry key that holds the name of the last 
 data file that your script opened you could do it like this: 
-<P><B><PRE>$h = HKEY_LOCAL_MACHINE-&gt;createKey(
+<P><B><PRE>$h = HKEY_LOCAL_MACHINE->createKey(
   'SOFTWARE\A Perl Test Script\Last Data File',
   'C:\TEST.DAT');</PRE></B>The first argument is the name of the key and the 
 second argument is the data that will be assigned to the default name. 
@@ -342,8 +348,9 @@ memory and not written to disk-a volatile key. However, this level of detail is
 more involved than this brief introducton can cover. Please read <I>Special 
 Edition Using the Windows 95 Registry</I> if you need more advanced information. 
 
-<H3><A name="Finding a Key's Value">Finding a Key's Value</A></H3>You can find 
-out a key's value by using the <TT>getValue()</TT> method in the <TT>DmmReg</TT> 
+### Finding a Key's Value
+
+You can find out a key's value by using the <TT>getValue()</TT> method in the <TT>DmmReg</TT> 
 module. For example, to read the name of the data file that was written in the 
 last section, you do this: <B><PRE>Specify that this script will use the DmmReg module.
 Specify that strict variable checking should be done.
@@ -360,13 +367,13 @@ my($handle);
 my($keyName) = 'SOFTWARE\A Perl Test Script\Last Data File';
 my($value)
 
-$handle = HKEY_LOCAL_MACHINE-&gt;openKey($keyName);
-$value  = ($handle-&gt;getValue(''))[1];
+$handle = HKEY_LOCAL_MACHINE->openKey($keyName);
+$value  = ($handle->getValue(''))[1];
 print("The data file was named $value\n");</PRE></B>This program displays: 
 <P><B><PRE>The data file was named C:\TEST.DAT</PRE></B>You may find the call to the 
 <TT>getValue()</TT> method to be a little confusing. Let's take a closer look at 
 it: 
-<P><B><PRE>$data = ($handle-&gt;getValue(''))[1];</PRE></B>The <TT>getValue()</TT> 
+<P><B><PRE>$data = ($handle->getValue(''))[1];</PRE></B>The <TT>getValue()</TT> 
 method returns an array that holds the data type of the value and the value 
 itself. Since you only need the value in this example, an array slice was used. 
 You place parentheses around the entire function call to ensure that the return 
@@ -378,8 +385,10 @@ type of data stored in the Registry. While you can work with other data types,
 like binary data, you'll need to look at more advanced books to find out how. 
 For example, Que's <I>Special Edition Using the Windows 95 Registry</I> by Jerry 
 Honeycutt is a good choice. 
-<H3><A name="Setting a Key's Name-value Pairs">Setting a Key's Name-value 
-Pairs</A></H3>You've already seen how to set the value of the default name-value 
+
+### Setting a Key's Name-value Pairs
+
+You've already seen how to set the value of the default name-value 
 pair by using the <TT>createKey()</TT> method. In this section, you use the 
 <TT>setValue()</TT> method to explicitly set any name-value pair. Let's build on 
 the example shown in "<A 
@@ -404,18 +413,20 @@ use strict;
 my($handle);
 my($keyName) = 'SOFTWARE\A Perl Test Script';
 
-$handle = HKEY_LOCAL_MACHINE-&gt;createKey($keyName);
-$handle-&gt;setValue('Data File',    'c:\perl5\test.dat');
-$handle-&gt;setValue('Date',         '07-01-1996');
-$handle-&gt;setValue('Message File', 'c:\perl5\friday.log');</PRE></B>After this 
+$handle = HKEY_LOCAL_MACHINE->createKey($keyName);
+$handle->setValue('Data File',    'c:\perl5\test.dat');
+$handle->setValue('Date',         '07-01-1996');
+$handle->setValue('Message File', 'c:\perl5\friday.log');</PRE></B>After this 
 script is run, you can see the name-value pairs using the Registry Editor as 
 shown in Figure E.6. 
 <P><I>Fig. d.6 - A Registry Key with Four Name-Value Pairs</I> 
 <P>Notice that the default name-value pair is no longer valued. Since you are 
 using specifying names with the <TT>setValue()</TT> method, the default name is 
 no longer needed. 
-<H3><A name="Getting a List of Subkeys">Getting a List of Subkeys</A></H3>The 
-<TT>getKeys()</TT> method of the <TT>DmmReg</TT> module is used to retrieve a 
+
+### Getting a List of Subkeys
+
+The <TT>getKeys()</TT> method of the <TT>DmmReg</TT> module is used to retrieve a 
 list of subkeys for any specified key. For example, if you need to find all of 
 the subkeys for the <TT>HKEY_CURRENT_USER\Network</TT> key use the following 
 code. 
@@ -437,10 +448,10 @@ my($keyName) = 'Network';
 my(@subKeys);
 my($subKey);
 
-$handle = HKEY_CURRENT_USER-&gt;openKey('Network');
+$handle = HKEY_CURRENT_USER->openKey('Network');
 die("Unable to open $keyName") unless defined($handle);
 
-$handle-&gt;getKeys(\@subKeys);
+$handle->getKeys(\@subKeys);
 foreach $subKey (sort(@subKeys)) {
     print("$subKey\n");
 }</PRE></B>This program displays: 
@@ -455,8 +466,10 @@ Recent</PRE></B>
       correct-that will not let you get a list of keys starting from one of the 
       six root keys. Since the first level of subkeys do not change, use the 
       Registry Editor to find them.</TD></TR></TBODY></TABLE>
-<H3><A name="Getting a List of Name-Value Pairs">Getting a List of Name-Value 
-Pairs</A></H3>Earlier, in "Setting a Key's Name-Value Pairs," you saw that each 
+
+#### Getting a List of Name-Value Pairs
+
+Earlier, in "Setting a Key's Name-Value Pairs," you saw that each 
 Registry key can have name-value pairs associated with it. You use the 
 <TT>getValues()</TT> method to get a list of these pairs. 
 <P>[ic: psc] 
@@ -476,8 +489,8 @@ my($keyName) = 'SOFTWARE\A Perl Test Script';
 my($name);
 my(%pairs);
 
-$handle = HKEY_LOCAL_MACHINE-&gt;openKey($keyName);
-$handle-&gt;getValues(\%pairs);
+$handle = HKEY_LOCAL_MACHINE->openKey($keyName);
+$handle->getValues(\%pairs);
 foreach $name (sort(keys(%pairs))) {
     printf("%-12.12s: @{$pairs{$name}}[1]\n", $name);
 }</PRE></B>This program displays: 
@@ -503,63 +516,69 @@ There are several common uses for the Registry besides storing configuration inf
 <P>By this time, you understand all of the concepts involved in creating 
 Registry keys and name-value pairs, so the code to do each task will be 
 presented with very few comments. 
-<H3><A name="Creating a File Association">Creating a File 
-Association</A></H3>There are three steps to creating file associations: 
+
+### Creating a File Association
+
+There are three steps to creating file associations: 
 <P>
 <OL>
   <LI>Tell Windows about the file extension. These lines of code will define 
   extension for both Perl scripts and Perl modules. The default value is used by 
   Windows as a pointer to another Registry key where additonal information is 
   stored. Step 2 will create this secondary key. 
-  <P><B><PRE>$handle = HKEY_CLASSES_ROOT-&gt;
+  <P><B><PRE>$handle = HKEY_CLASSES_ROOT->
   createKey('.pl', 'A Perl File');
-$handle = HKEY_CLASSES_ROOT-&gt;
+$handle = HKEY_CLASSES_ROOT->
   createKey('.pm', 'A Perl Module');</PRE></B>
   <LI>Create a key for the file extension description. The default value of this 
   key will be used as the file's type in the file's property list. 
-  <P><B><PRE>$handle = HKEY_CLASSES_ROOT-&gt;
+  <P><B><PRE>$handle = HKEY_CLASSES_ROOT->
   createKey('A Perl File',   'Perl Script');
-$handle = HKEY_CLASSES_ROOT-&gt;
+$handle = HKEY_CLASSES_ROOT->
   createKey('A Perl Module', 'Perl Module');</PRE></B>
   <LI>Create a key for each context menu option that you are creating. The keys 
   for the .pl extension is shown here. Change 'A Perl File' to 'A Perl Module' 
   to create context menu options for .pm files. 
-  <P><B><PRE>$handle = HKEY_CLASSES_ROOT-&gt;
+  <P><B><PRE>$handle = HKEY_CLASSES_ROOT->
   createKey('A Perl File\Shell\Open\Command',
   'C:\MSOFFICE7\WINWORD\WINWORD.EXE %1');
 
-$handle = HKEY_CLASSES_ROOT-&gt;
+$handle = HKEY_CLASSES_ROOT->
   createKey('A Perl File\Shell\Edit\Command',
   'C:\MSOFFICE7\WINWORD\WINWORD.EXE %1');
 
-$handle = HKEY_CLASSES_ROOT-&gt;
+$handle = HKEY_CLASSES_ROOT->
   createKey('A Perl File\Shell\Print\Command',
   'C:\MSOFFICE7\WINWORD\WINWORD.EXE /p
   %1');</PRE></B></LI></OL>For simplicity's sake, I have all of my associations 
 pointing to Microsoft Word, you should start whatever editor you normally use. 
-<H3><A name="Setting the Icon for a File Extension">Setting the Icon for a File 
-Extension</A></H3>You specify the icon for a file extension by creating a 
+
+### Setting the Icon for a File Extension
+
+You specify the icon for a file extension by creating a 
 <TT>DefaultIcon</TT> subkey under the extension description key like this: 
-<P><B><PRE>$handle = HKEY_CLASSES_ROOT-&gt;
+<P><B><PRE>$handle = HKEY_CLASSES_ROOT->
   createKey('A Perl File\DefaultIcon',
   'C:\WINDOWS\SYSTEM\SHELL32.DLL,27');</PRE></B>The default value of the 
 <TT>DefaultIcon</TT> key indicates which DLL and icon number to use. You can 
 experiment with different icon numbers to find one that you like. Icon number 27 
 in the <TT>shell32.dll</TT> file looks like a monitor that is displaying a 
 starburst. 
-<H3><A name="Enabling the 'new' Context Menu Option">Enabling the 'new' Context 
-Menu Option</A></H3>If you right-click while inside a folder or on the desktop, 
+
+### Enabling the 'new' Context Menu Option
+
+If you right-click while inside a folder or on the desktop, 
 one of the context menu options is <TT>new</TT>. You can add your own file types 
 to the <TT>new</TT> sub-menu by following these steps: 
 <P>
 <OL>
   <LI>Open the .pl extension key. 
-  <P><B><PRE>$handle = HKEY_CLASSES_ROOT-&gt;openKey('.pl');</PRE></B>
+  <P><B><PRE>$handle = HKEY_CLASSES_ROOT->openKey('.pl');</PRE></B>
   <LI>Create a subkey called <TT>ShellNew</TT>. 
-  <P><B><PRE>$handle = HKEY_CLASSES_ROOT-&gt;
+  <P><B><PRE>$handle = HKEY_CLASSES_ROOT->
   createKey('.pl\ShellNew', '');</PRE></B>
   <LI>Create a name-value pair with a name of <TT>NullFile</TT>.</LI></OL>
-<P><B><PRE>$handle-&gt;setValue('NullFile', '');</PRE></B>If you follow these steps 
+<P><B><PRE>$handle->setValue('NullFile', '');</PRE></B>If you follow these steps 
 for both the .pl and .pm extensions, your <TT>new</TT> context menu will look 
 like Figure E.7. 
 <P><I>Fig. d.7 - The New Sub-menu with Options to Create Perl Files</I> 

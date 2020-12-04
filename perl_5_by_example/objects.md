@@ -43,7 +43,7 @@ object-oriented terminology will ensure that you have a firm grasp of the
 concepts. If you had to learn new Perl concepts at the same time as the object 
 concepts, something might be lost because of information overload. 
 <P><I>Classes</I> are used to group and describe object types. Remember the 
-character classes from Chapter 10, "Regular Expressions?" A class in the 
+character classes from [](./regular-expressions.md). A class in the 
 object-oriented world is essentially the same thing. Let's create some classes 
 for an inventory system for a pen and pencil vendor. Start with a pen object. 
 How could you describe a pen from an inventory point of view? 
@@ -141,7 +141,7 @@ color (the rest were inherited). For the sake of argument, the ink color can be
 is created (the mechanism of creation is unimportant at the moment), a specific 
 color is assigned to it. Use <TT>"blue"</TT> for the moment. Here is a line of 
 code to create the object: 
-<P><B><PRE>$pen = Pen-&gt;new("blue");</PRE></B>Now the <TT>Pen</TT> object has been 
+<P><B><PRE>$pen = Pen->new("blue");</PRE></B>Now the <TT>Pen</TT> object has been 
 created. Do you care if the internal format of the ink color is the string 
 <TT>"blue"</TT> or the number 1? What if, because you expect to use thousands of 
 objects, the internal format changes from a string to a number to save computer 
@@ -211,8 +211,7 @@ object-oriented programming.
 
 ## How Perl Handles Objects
 
-Remember the concept of references that was discussed in Chapter 8,"<A 
-href="ch08.htm">References</A>" ? If not, please 
+Remember the concept of references that was discussed in [](./references.md)? If not, please 
 re-read it. References will play a large role in the rest of the chapter and are 
 critical to understanding how classes are used. You specifically need to 
 remember that the <TT>{ }</TT> notation indicates an anonymous hash. Armed with 
@@ -265,13 +264,13 @@ the <TT>inventory_item</TT> class could be defined in Perl.
         my($class) = shift;
 
         bless {
-            "PART_NUM"    =&gt; undef,
-            "QTY_ON_HAND" =&gt; undef
+            "PART_NUM"    => undef,
+            "QTY_ON_HAND" => undef
         }, $class;
     }
 
 package main;
-   $item = Inventory_item-&gt;new();</B></P></PRE></TT></TD></TR></TBODY></TABLE>
+   $item = Inventory_item->new();</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>There is a <I>lot</I> of new stuff in this small 10 line listing, and you'll 
 need to review it carefully to glean the information needed to understand 
 everything that is happening. You'll also start to translate between the Perl 
@@ -280,8 +279,7 @@ keywords and the object-oriented terminology.
 on if you are thinking in terms of objects or in terms of Perl. When considering 
 objects, it begins the definition of a class. When considering Perl, it means 
 that a specific namespace will be used. 
-<P>You read a little bit about namespace in Chapter 3, "<A 
-href="ch03.htm">Variables</A>." A <I>namespace</I> 
+<P>You read a little bit about namespace in [](./variables.md). A <I>namespace</I> 
 is used to keep one set of names from interfering with another. For example, you 
 can have a variable named <TT>bar</TT> and a function called <TT>bar</TT>, and 
 the names will not conflict because variables and functions each have their own 
@@ -289,10 +287,10 @@ namespace.
 <P>The <TT>package</TT> keyword lets you create your own namespace. This lets 
 you create more than one function called <TT>new()</TT> as long as each is in 
 its own package or namespace. If you need to refer to a specific function in a 
-specific namespace, you can use <TT>Inventory_item-&gt;new</TT>, 
+specific namespace, you can use <TT>Inventory_item->new</TT>, 
 <TT>Inventory_item::new</TT>, or <TT>Inventory_item'new</TT>. Which notation you 
 use will probably depend on your background. Object-oriented folks will probably 
-want to use the <TT>-&gt;</TT> notation. 
+want to use the <TT>-></TT> notation. 
 <P>The second line, <TT>sub new</TT>, starts the definition of a function. It 
 has become accepted practice in the object-oriented world to construct new 
 objects with the <TT>new()</TT> method. This is called the class 
@@ -348,8 +346,8 @@ Bless the Hash and Pass the Reference</A>" later in this chapter.
 anonymous hash that holds the properties of the class. The hash definition is 
 repeated here for your convenience: 
 <P><B><PRE>{
-    "PART_NUM"    =&gt; undef,
-    "QTY_ON_HAND" =&gt; undef
+    "PART_NUM"    => undef,
+    "QTY_ON_HAND" => undef
 };</PRE></B>Nothing significant is happening here that you haven't seen before. 
 Each entry in the hash is a different property of the class. For the moment, I 
 have assigned the undefined value to the value part of the entries. Soon you'll 
@@ -372,7 +370,7 @@ somewhere. There isn't.
 it!</TD></TR></TBODY></TABLE>
 <P>The last statement in the file is really the first line that gets executed. 
 Everything else in the script have been class and method definitions. 
-<P><B><PRE>   $item = Inventory_item-&gt;new();</PRE></B>By now, you've probably 
+<P><B><PRE>   $item = Inventory_item->new();</PRE></B>By now, you've probably 
 guessed what this statement does. It assigns a reference to the anonymous hash 
 to <TT>$item</TT>. You can dereference <TT>$item</TT> in order to determine the 
 value of the entries in the hash. If you use the <TT>ref()</TT> function to 
@@ -395,15 +393,16 @@ determine the data type of <TT>$item</TT>, you find that its value is
   <LI><B>Objects can belong to only one class at a time:</B> You can use the 
   <TT>bless()</TT> function to change the ownership at any time. However, don't 
   do this unless you have a good reason. 
-  <P>The <TT>-&gt;</TT> operator is used to call a method associated with a 
+  <P>The <TT>-></TT> operator is used to call a method associated with a 
   class: There are two different ways to invoke or call class methods: 
   <P><B><PRE>$item = new Inventory_item;</PRE></B>or 
-  <P><B><PRE>$item = Inventory_item-&gt;new();</PRE></B>Both of these techniques are 
-  equivalent, but the <TT>-&gt;</TT> style is preferred by object-oriented 
+  <P><B><PRE>$item = Inventory_item->new();</PRE></B>Both of these techniques are 
+  equivalent, but the <TT>-></TT> style is preferred by object-oriented 
   folks.</LI></UL>
-<H3><A name="Example: Bless the Hash and Pass the Reference">Example: Bless the 
-Hash and Pass the Reference</A></H3>If you recall from Chapter 8, the 
-<TT>ref()</TT> function returns either the undefined value or a string 
+
+### Example: Bless the Hash and Pass the Reference
+
+If you recall from Chapter 8, the <TT>ref()</TT> function returns either the undefined value or a string 
 indicating the parameter's data type (<TT>SCALAR</TT>, <TT>ARRAY</TT>, 
 <TT>HASH</TT>, <TT>CODE</TT>, or <TT>REF</TT>). When classes are used, these 
 data types don't provide enough information. 
@@ -432,8 +431,10 @@ data of $fooRef is Bar</PRE></B>After the data type is changed, the
 value of <TT>HASH</TT>. This can happen only if the variable itself has been 
 altered. This example also shows that the <TT>bless()</TT> function works 
 outside the object-oriented world. 
-<H3><A name="Example: Initializing Properties">Example: Initializing 
-Properties</A></H3>You now know how to instantiate a new class by using a 
+
+### Example: Initializing Properties
+
+You now know how to instantiate a new class by using a 
 <TT>new()</TT> function and how to create class properties (the class 
 information) with undefined values. Let's look at how to give those properties 
 some real values. You need to start by looking at the <TT>new()</TT> function 
@@ -442,15 +443,15 @@ it.
 <P><B><PRE>sub new {
         my($class) = shift;
         bless {
-            "PART_NUM"    =&gt; undef,
-            "QTY_ON_HAND" =&gt; undef
+            "PART_NUM"    => undef,
+            "QTY_ON_HAND" => undef
         }, $class;
 }</PRE></B>The <TT>new()</TT> function is a <I>static </I>method. Static methods 
 are not associated with any specific object. This makes sense because the 
 <TT>new()</TT> function is designed to create objects. It can't be associated 
 with an object that doesn't exist yet, can it? 
 <P>The first argument to a static method is always the class name. Perl takes 
-the name of the class from in front of the <TT>-&gt;</TT> operator and adds it 
+the name of the class from in front of the <TT>-></TT> operator and adds it 
 to the beginning of the parameter array, which is passed to the <TT>new()</TT> 
 function. 
 <P>If you want to pass two values into the <TT>new()</TT> function to initialize 
@@ -462,20 +463,21 @@ as in the following:
         my($qty)     = shift;
 
         bless {
-            "PART_NUM"    =&gt; $partNum,
-            "QTY_ON_HAND" =&gt; $qty
+            "PART_NUM"    => $partNum,
+            "QTY_ON_HAND" => $qty
         }, $class;
 }</PRE></B>Each parameter you expect to see gets shifted out of the parameter 
 array into a scalar variable. Then the scalar variable is used to initialize the 
 anonymous hash. 
 <P>You invoke this updated version of <TT>new()</TT> by using this line of code: 
 
-<P><B><PRE>$item = Inventory_item-&gt;new("AW-30", 1200);</PRE></B>While this style of 
+<P><B><PRE>$item = Inventory_item->new("AW-30", 1200);</PRE></B>While this style of 
 parameter passing is very serviceable, Perl provides for the use of another 
 technique: passing named parameters. 
-<H3><A name="Example: Using Named Parameters in Constructors">Example: Using 
-Named Parameters in Constructors</A></H3>The concept of using named parameters 
-has been quickly accepted in new computer languages. I was first introduced to 
+
+### Example: Using Named Parameters in Constructors
+
+The concept of using named parameters has been quickly accepted in new computer languages. I was first introduced to 
 it while working with the scripting language for Microsoft Word. Rather than 
 explain the technique in words, let me show you an example in code, as shown in 
 Listing 14.2. I think you'll understand the value of this technique very 
@@ -514,29 +516,29 @@ quickly.
         my(%params) = @_;
 
         bless {
-            "PART_NUM"    =&gt; $params{"PART_NUM"},
-            "QTY_ON_HAND" =&gt; $params{"QTY_ON_HAND"}
+            "PART_NUM"    => $params{"PART_NUM"},
+            "QTY_ON_HAND" => $params{"QTY_ON_HAND"}
             }, $class;
     }
 
 package main;
 
-    $item = Inventory_item-&gt;new(
-"PART_NUM"    =&gt; "12A-34",
-"QTY_ON_HAND" =&gt; 34);
+    $item = Inventory_item->new(
+"PART_NUM"    => "12A-34",
+"QTY_ON_HAND" => 34);
 
-    print("The part number is " . %{$item}-&gt;{'PART_NUM'} . "\n");
-    print("The quantity is " . %{$item}-&gt;{'QTY_ON_HAND'} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
+    print("The part number is " . %{$item}->{'PART_NUM'} . "\n");
+    print("The quantity is " . %{$item}->{'QTY_ON_HAND'} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>One key statement to understand is the line in which the <TT>new()</TT> 
 function is called: 
-<P><B><PRE>$item = Inventory_item-&gt;new(
-"PART_NUM"    =&gt; "12A-34",
-               "QTY_ON_HAND" =&gt; 34);</PRE></B>This looks like an associative 
+<P><B><PRE>$item = Inventory_item->new(
+"PART_NUM"    => "12A-34",
+               "QTY_ON_HAND" => 34);</PRE></B>This looks like an associative 
 array is being passed as the parameter to <TT>new()</TT>, but looks are 
-deceiving in this case. The <TT>=&gt;</TT> operator does exactly the same thing 
+deceiving in this case. The <TT>=></TT> operator does exactly the same thing 
 as the comma operator. Therefore, the preceding statement is identical to the 
 following: 
-<P><B><PRE>$item = Inventory_item-&gt;new("PART_NUM", "12A-34", "QTY_ON_HAND", 34);</PRE></B>Also, 
+<P><B><PRE>$item = Inventory_item->new("PART_NUM", "12A-34", "QTY_ON_HAND", 34);</PRE></B>Also, 
 a four element array is being passed to <TT>new()</TT>. 
 <P>The second line of the <TT>new()</TT> function, <TT>my(%params) = @_;</TT> 
 does something very interesting. It takes the four element array and turns it 
@@ -550,12 +552,14 @@ using <TT>%params</TT>. The initialization of the anonymous hash - inside the
 looking at the script, you always know which property is being referred to. In 
 addition, you can also use this technique to partially initialize the anonymous 
 hash. For example, 
-<P><B><PRE>$item = Inventory_item-&gt;new("QTY_ON_HAND" =&gt; 34);</PRE></B>gives a 
+<P><B><PRE>$item = Inventory_item->new("QTY_ON_HAND" => 34);</PRE></B>gives a 
 value only to the QTY_ON_HAND property; the PART_NUM property will remain 
 undefined. You can use this technique with any type of function, not just 
 constructors. 
-<H3><A name="Example: Inheritance, Perl Style">Example: Inheritance, Perl 
-Style</A></H3>You already know that inheritance means that properties and 
+
+### Example: Inheritance, Perl Style
+
+You already know that inheritance means that properties and 
 methods of a parent class will be available to child classes. This section shows 
 you can use inheritance in Perl. 
 <P>First, a little diversion. You may not have realized it yet, but each package 
@@ -573,8 +577,8 @@ package main;
     print("$B::first\n");</PRE></B>displays 
 <P><B><PRE>package A
 package B</PRE></B>Notice that the <TT>::</TT> is being used as a scope 
-resolution operator in this example. The <TT>-&gt;</TT> notation will not work; 
-also, it's okay that<TT> -&gt;</TT> can't be used because we're not really 
+resolution operator in this example. The <TT>-></TT> notation will not work; 
+also, it's okay that<TT> -></TT> can't be used because we're not really 
 dealing with objects in this example, just different namespaces. 
 <P>You're probably wondering what this diversion has to do with inheritance, 
 right? Well, inheritance is accomplished by placing the names of parent classes 
@@ -596,19 +600,19 @@ package B;
     @ISA = (A);
 
 package main;
-    B-&gt;foo();
-    B-&gt;bar();</PRE></B>displays 
+    B->foo();
+    B->bar();</PRE></B>displays 
 <P><B><PRE>Inside A::foo
 [Error: Missing Function] B::bar B</PRE></B>Let's start with the nearly empty 
 class <TT>B</TT>. This class has no properties or methods; it just has a parent: 
-the <TT>A</TT> class. When Perl executes <TT>B-&gt;foo()</TT>, the first line in 
+the <TT>A</TT> class. When Perl executes <TT>B->foo()</TT>, the first line in 
 the main package, it first looks in <TT>B</TT>. When the <TT>foo()</TT> function 
 is not found, it looks to the <TT>@ISA</TT> array. The first element in the 
 array is <TT>A</TT>, so Perl looks at the <TT>A</TT> class. Because <TT>A</TT> 
 does have a <TT>foo()</TT> method, that method is executed. 
 <P>When a method can't be found by looking at each element of the <TT>@ISA</TT> 
 array, the <TT>UNIVERSAL</TT> class is checked. The second line of the main 
-package, <TT>B-&gt;bar()</TT>, tries to use a function that is not defined in 
+package, <TT>B->bar()</TT>, tries to use a function that is not defined in 
 either the base class <TT>B</TT> or the parent class <TT>A</TT>. Therefore, as a 
 last ditch effort, Perl looks in the <TT>UNIVERSAL</TT> class. The 
 <TT>bar()</TT> function is not there, but a special function called 
@@ -677,8 +681,8 @@ hash that can be used by the base class for adding additional properties.
         my($class)  = shift;
         my(%params) = @_;
         bless {
-            "PART_NUM"    =&gt; $params{"PART_NUM"},
-            "QTY_ON_HAND" =&gt; $params{"QTY_ON_HAND"}
+            "PART_NUM"    => $params{"PART_NUM"},
+            "QTY_ON_HAND" => $params{"QTY_ON_HAND"}
             }, $class;
     }
 
@@ -688,27 +692,27 @@ package Pen;
     sub new {
         my($class) = shift;
         my(%params) = @_;
-        my($self) = Inventory_item-&gt;new(@_);
+        my($self) = Inventory_item->new(@_);
 
-        $self-&gt;{"INK_COLOR"} = $params{"INK_COLOR"};
+        $self->{"INK_COLOR"} = $params{"INK_COLOR"};
 
         return(bless($self, $class));
     }
 
 package main;
-    $pen = Pen-&gt;new(
-        "PART_NUM"    =&gt; "12A-34",
-        "QTY_ON_HAND" =&gt; 34,
-        "INK_COLOR"   =&gt; "blue");
+    $pen = Pen->new(
+        "PART_NUM"    => "12A-34",
+        "QTY_ON_HAND" => 34,
+        "INK_COLOR"   => "blue");
 
-    print("The part number is " . %{$pen}-&gt;{'PART_NUM'}    . "\n");
-    print("The quantity is "    . %{$pen}-&gt;{'QTY_ON_HAND'} . "\n");
-    print("The ink color is "   . %{$pen}-&gt;{'INK_COLOR'}   . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
+    print("The part number is " . %{$pen}->{'PART_NUM'}    . "\n");
+    print("The quantity is "    . %{$pen}->{'QTY_ON_HAND'} . "\n");
+    print("The ink color is "   . %{$pen}->{'INK_COLOR'}   . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>This program displays: 
 <P><B><PRE>The part number is 12A-34
 The quantity is 34
 The ink color is blue</PRE></B>You should be familiar with all the aspects of 
-this script by now. The line <TT>my($self) = Inventory_item-&gt;new(@_);</TT> is 
+this script by now. The line <TT>my($self) = Inventory_item->new(@_);</TT> is 
 used to get a reference to an anonymous hash. This hash becomes the object for 
 the base class. 
 <P>To understand that calling the parent constructor creates the object that 
@@ -731,8 +735,10 @@ object-oriented world.
       <I>is</I> the object. But sometimes, it's good to follow conventional 
       wisdom so that others can more easily understand your 
   programs.</TD></TR></TBODY></TABLE>
-<H3><A name="Example: Polymorphism">Example: 
-Polymorphism</A></H3><I>Polymorphism</I>, although a big word, is a simple 
+
+### Example: Polymorphism
+
+<I>Polymorphism</I>, although a big word, is a simple 
 concept. It means that methods defined in the base class will override methods 
 defined in the parent classes. The following small example clarifies this 
 concept: 
@@ -749,7 +755,7 @@ package B;
     }
 
 package main;
-    B-&gt;foo();</PRE></B>This program displays 
+    B->foo();</PRE></B>This program displays 
 <P><B><PRE>Inside B::foo</PRE></B>The <TT>foo()</TT> defined in class <TT>B</TT> 
 overrides the definition that was inherited from class <TT>A</TT>. 
 <P>Polymorphism is mainly used to add or extend the functionality of an existing 
@@ -820,8 +826,8 @@ is unknown.
         my($class)  = shift;
         my(%params) = @_;
         bless {
-            "PART_NUM"    =&gt; $params{"PART_NUM"},
-            "QTY_ON_HAND" =&gt; $params{"QTY_ON_HAND"}
+            "PART_NUM"    => $params{"PART_NUM"},
+            "QTY_ON_HAND" => $params{"QTY_ON_HAND"}
         }, $class;
     }
 
@@ -829,7 +835,7 @@ is unknown.
         my($self)  = shift;
         my($delta)  = $_[0] ? $_[0] : 1;
 
-        $self-&gt;{"QTY_ON_HAND"} += $delta;
+        $self->{"QTY_ON_HAND"} += $delta;
     }
 
 package Pen;
@@ -839,9 +845,9 @@ package Pen;
     sub new {
         my($class) = shift;
         my(%params) = @_;
-        my($self) = $class-&gt;PARENT::new(@_);
+        my($self) = $class->PARENT::new(@_);
 
-        $self-&gt;{"INK_COLOR"} = $params{"INK_COLOR"};
+        $self->{"INK_COLOR"} = $params{"INK_COLOR"};
 
         return($self);
     }
@@ -850,25 +856,25 @@ package Pen;
         my($self)  = shift;
         my($delta)  = $_[0] ? $_[0] : 100;
 
-        $self-&gt;PARENT::qtyChange($delta);
+        $self->PARENT::qtyChange($delta);
     }
 
 
 package main;
 
-    $pen = Pen-&gt;new(
-        "PART_NUM"=&gt;"12A-34",
-        "QTY_ON_HAND"=&gt;340,
-        "INK_COLOR" =&gt; "blue");
+    $pen = Pen->new(
+        "PART_NUM"=>"12A-34",
+        "QTY_ON_HAND"=>340,
+        "INK_COLOR" => "blue");
 
     print("The data type is "   . ref($pen)                . "\n");
-    print("The part number is " . %{$pen}-&gt;{'PART_NUM'}    . "\n");
-    print("The quantity is "    . %{$pen}-&gt;{'QTY_ON_HAND'} . "\n");
-    print("The ink color is "   . %{$pen}-&gt;{'INK_COLOR'}   . "\n");
+    print("The part number is " . %{$pen}->{'PART_NUM'}    . "\n");
+    print("The quantity is "    . %{$pen}->{'QTY_ON_HAND'} . "\n");
+    print("The ink color is "   . %{$pen}->{'INK_COLOR'}   . "\n");
 
-    $pen-&gt;qtyChange();
+    $pen->qtyChange();
     print("\n");
-    print("The quantity is "    . %{$pen}-&gt;{'QTY_ON_HAND'} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
+    print("The quantity is "    . %{$pen}->{'QTY_ON_HAND'} . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>This program displays 
 <P><B><PRE>The data type is Pen
 The part number is 12A-34
@@ -888,7 +894,7 @@ hierarchy (the <TT>@ISA</TT> array) until a definition is found for the
 requested function. 
 <P>The <TT>Pen::new()</TT> function uses the <TT>@PARENT::ISA</TT> to find the 
 parent constructor using this line: <TT>my($self) = 
-$class-&gt;PARENT::new(@_);</TT>. I don't really recommend calling parent 
+$class->PARENT::new(@_);</TT>. I don't really recommend calling parent 
 constructors in this manner because the constructor that gets called will depend 
 on the order of classes in the <TT>@ISA</TT> array. Having code that is 
 dependent on an array keeping a specific order is a recipe for disaster; you 
@@ -920,8 +926,10 @@ is taking place.
       class, and <TT>Pen::qtyChange()</TT> refers to the <TT>qtyChange()</TT> 
       function in the <TT>Pen</TT> class. This notation lets you uniquely 
       identify any method in your script.</TD></TR></TBODY></TABLE>
-<H3><A name="Example: How One Class Can Contain Another">Example: How One Class 
-Can Contain Another</A></H3>Now that you have seen several objects in action, 
+
+### Example: How One Class Can Contain Another
+
+Now that you have seen several objects in action, 
 you probably realize that some class properties will be objects themselves. For 
 example, you might have a billing object that contains an inventory object, or 
 you might use a car object inside a warehouse object. The possibilities are 
@@ -987,8 +995,8 @@ are seen by the interpreter.
         my($class)  = shift;
         my(%params) = @_;
         bless {
-            "PART_NUM"    =&gt; $params{"PART_NUM"},
-            "QTY_ON_HAND" =&gt; $params{"QTY_ON_HAND"}
+            "PART_NUM"    => $params{"PART_NUM"},
+            "QTY_ON_HAND" => $params{"QTY_ON_HAND"}
         }, $class;
 }
 
@@ -998,9 +1006,9 @@ package Pen;
     sub new {
         my($class) = shift;
         my(%params) = @_;
-        my($self) = Inventory_item-&gt;new(@_);
+        my($self) = Inventory_item->new(@_);
 
-        $self-&gt;{"INK_COLOR"} = Color-&gt;new($params{"INK_COLOR"});
+        $self->{"INK_COLOR"} = Color->new($params{"INK_COLOR"});
 
         return(bless($self, $class));
     }
@@ -1021,10 +1029,10 @@ package Color;
 package main;
     print("Executing main statements\n");
 
-    $pen = Pen-&gt;new(
-        "PART_NUM"    =&gt; "12A-34",
-        "QTY_ON_HAND" =&gt; 34,
-        "INK_COLOR"   =&gt; "blue");
+    $pen = Pen->new(
+        "PART_NUM"    => "12A-34",
+        "QTY_ON_HAND" => 34,
+        "INK_COLOR"   => "blue");
 
     %properties = %{$pen};
     print("The part number is " . $properties{'PART_NUM'}     . "\n");
@@ -1038,7 +1046,7 @@ The quantity is 34
 The ink color is Die Lot 13</PRE></B>Where to start? You already know about the 
 <TT>Inventory_item</TT> class and the <TT>@ISA</TT> array. Let's look at the 
 assignment to the <TT>INK_COLOR</TT> entry of the <TT>Pen</TT> class. This line, 
-<TT>$self-&gt;{"INK_COLOR"} = Color-&gt;new($params{"INK_COLOR"});</TT>, is used 
+<TT>$self->{"INK_COLOR"} = Color->new($params{"INK_COLOR"});</TT>, is used 
 to call the constructor for the <TT>Color</TT> class. The expression 
 <TT>$params{"INK_COLOR"}</TT> passes the value of <TT>"blue"</TT> to the 
 <TT>Color</TT> constructor, which returns a reference to one of the colors in 
@@ -1110,7 +1118,7 @@ worked.</TT></P></TD></TR></TBODY></TABLE>
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>package UNIVERSAL;
     sub lookup {
-        return(%{$_[0]}-&gt;{$_[1]});
+        return(%{$_[0]}->{$_[1]});
     }
 
 package Inventory_item;
@@ -1119,18 +1127,18 @@ package Inventory_item;
         my(%params) = @_;
         my($self)   = { };
 
-        $self-&gt;{"PART_NUM"}    = $params{"PART_NUM"};
-        $self-&gt;{"QTY_ON_HAND"} = $params{"QTY_ON_HAND"};
+        $self->{"PART_NUM"}    = $params{"PART_NUM"};
+        $self->{"QTY_ON_HAND"} = $params{"QTY_ON_HAND"};
 
         return(bless($self, $class));
     }
 
 package main;
 
-    $item = Inventory_item-&gt;new("PART_NUM"=&gt;"12A-34", "QTY_ON_HAND"=&gt;34);
+    $item = Inventory_item->new("PART_NUM"=>"12A-34", "QTY_ON_HAND"=>34);
 
-    print("The part number is " . $item-&gt;lookup('PART_NUM')     . "\n");
-    print("The quantity is "    . $item-&gt;lookup('QTY_ON_HAND')  . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
+    print("The part number is " . $item->lookup('PART_NUM')     . "\n");
+    print("The quantity is "    . $item->lookup('QTY_ON_HAND')  . "\n");</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>I don't think this example needs any further explanation, so let's use the 
 space normally reserved to further discussion of the listing and show you 
 another utility function instead. The <TT>printAll()</TT> function shown here 
@@ -1142,18 +1150,18 @@ properties to display:
 
     print("CLASS: $self\n");
     foreach $key (@keys) {
-        printf("\t%10.10s =&gt; $self-&gt;{$key}\n", $key);
+        printf("\t%10.10s => $self->{$key}\n", $key);
     }
 }</PRE></B>If you put this function into the <TT>UNIVERSAL</TT> package, it will 
 be available to any classes you define. 
 <P>After constructing an inventory object, the statement 
-<TT>$item-&gt;printAll();</TT> might display 
+<TT>$item->printAll();</TT> might display 
 <P><B><PRE>CLASS: Inventory_item=HASH(0x77ceac)
-          PART_NUM =&gt; 12A-34
-        QTY_ON_HAN =&gt; 34</PRE></B>and the statement 
-<TT>$item-&gt;printAll('PART_NUM');</TT> might display 
+          PART_NUM => 12A-34
+        QTY_ON_HAN => 34</PRE></B>and the statement 
+<TT>$item->printAll('PART_NUM');</TT> might display 
 <P><B><PRE>CLASS: Inventory_item=HASH(0x77ceac)
-          PART_NUM =&gt; 12A-34</PRE></B>
+          PART_NUM => 12A-34</PRE></B>
 
 ## Summary
 

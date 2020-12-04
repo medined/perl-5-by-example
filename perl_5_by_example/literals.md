@@ -23,8 +23,7 @@ quick glimpse at them:
   <LI>Associative Arrays - This is the most complicated data type. Think of it 
   as a list in which every value has an associated lookup item.</LI></UL>
 
-Associative arrays will be discussed in Chapter 3, "<A 
-href="ch03.htm">Variables</A>." Numbers, strings, 
+Associative arrays will be discussed in [](./variables.md). Numbers, strings, 
 and regular arrays will be discussed in the sections below. 
 
 ## Numeric Literals
@@ -87,8 +86,9 @@ find scientific notation to be of use. <A name="Andy Poulsen"></A>
       number is 102,300. This problem was spotted by Andy 
 Poulsen.</TD></TR></TBODY></TABLE>
 
-<H3><A name="Example: Numbers">Example: Numbers</A></H3>Let's take a look at 
-some different types of numbers that you can use in your program code. 
+### Example: Numbers
+
+Let's take a look at some different types of numbers that you can use in your program code. 
 
 First, here are some integers. 
 
@@ -139,8 +139,10 @@ value</I> for simplicity's sake.
 datum. They are frequently used in programs to identify filenames, display 
 messages, and prompt for input. In Perl you can use single quotes ('), double 
 quotes("), and back quotes (`). 
-<H3><A name="Example: Single-quoted Strings">Example: Single-quoted 
-Strings</A></H3>The following examples show you how to use string literals. 
+
+### Example: Single-quoted Strings
+
+The following examples show you how to use string literals. 
 String literals are widely used to identify file names or when messages are 
 displayed to users. First, we'll look at single-quoted strings, then 
 double-quoted strings. 
@@ -153,8 +155,7 @@ double-quoted strings.
     <TD bgColor=lightcyan>The real value of single-quoted strings won't become 
       apparent until you read about variable interpolation in the section "<A 
       href="ch03.htm#Example: Variable Interpolation">Example: 
-      Variable Interpolation</A>" in Chapter 3, "<A 
-      href="ch03.htm">Variables</A>."</TD></TR></TBODY></TABLE>
+      Variable Interpolation</A>" in [](./variables.md).</TD></TR></TBODY></TABLE>
 
 <TABLE border=0>
   <TBODY>
@@ -235,20 +236,17 @@ literal.
 
 You can see that with single-quoted literals, even the line breaks in your 
 source code are part of the string. 
-<H3><A name="Example: Double-Quoted Strings">Example: Double-Quoted 
-Strings</A></H3>Double-quoted strings start out simple, then become a bit more 
-involved than single-quoted strings. With double-quoted strings, you can use the 
-backslash to add some special characters to your string.Chapter 3, "<A 
-href="ch03.htm">Variables</A>" , will talk about 
-how double-quoted strings and variables interact. 
+
+### Example: Double-Quoted Strings
+
+Double-quoted strings start out simple, then become a bit more involved than single-quoted strings. With double-quoted strings, you can use the backslash to add some special characters to your string. [](./variables.md) will talk about how double-quoted strings and variables interact. 
 
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
   <TR>
     <TD bgColor=black><FONT color=lightcyan size=4><B>Note</B></FONT></TD></TR>
   <TR>
-    <TD bgColor=lightcyan>Variables</I> - which are described in Chapter 3,"<A 
-      href="ch03.htm">Variables</A>" - are simply 
+    <TD bgColor=lightcyan>Variables</I> - which are described in [](./variables.md) - are simply 
       locations in the computer's memory where Perl holds the various data 
       types. They're called variables because the content of the memory can 
       change as needed. </TD></TR></TBODY></TABLE>
@@ -360,9 +358,7 @@ the table will illustrate some of them.
             here, lowercase will not work.</TD></TR>
         <TR>
           <TD vAlign=top>\Q </TD>
-          <TD vAlign=top>Quote meta-characters as literals. See Chapter 10, 
-            "<A href="ch10.htm">Regular 
-            Expressions</A>" , for more information on meta-characters.</TD></TR>
+          <TD vAlign=top>Quote meta-characters as literals. See [](./regular-expressions.md) for more information on meta-characters.</TD></TR>
         <TR>
           <TD vAlign=top>\U </TD>
           <TD vAlign=top>Change the following characters to uppercase until a 
@@ -381,9 +377,7 @@ the table will illustrate some of them.
   <TR>
     <TD bgColor=black><FONT color=white size=4><B>Tip</B></FONT></TD></TR>
   <TR>
-    <TD bgColor=lightpink>In the next chapter, "<A 
-      href="ch03.htm">Variables</A>," you'll see 
-      why you might need to use a backslash when using the $ and @ characters. 
+    <TD bgColor=lightpink>In [](./variables.md) you'll see why you might need to use a backslash when using the $ and @ characters. 
     </TD></TR></TBODY></TABLE>
 
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -482,8 +476,10 @@ simply press the ENTER key by mistake.
       because they have no ending NULL character. If you are thinking of 
       converting C/C++ programs to Perl, take care to modify any code that 
       relies on the NULL character to end a string. </TD></TR></TBODY></TABLE>
-<H3><A name="Example: Back-Quoted Strings">Example: Back-Quoted 
-Strings</A></H3>It might be argued that back-quoted strings are not really a 
+
+### Example: Back-Quoted Strings
+
+It might be argued that back-quoted strings are not really a 
 data type. That's because Perl uses back-quoted strings to execute system 
 commands. When Perl sees a back-quoted string, it passes the contents to 
 Windows, UNIX, or whatever operating system you are using. 
@@ -513,8 +509,10 @@ lines in a file, to help sort a list of addresses, or to store a variety of
 items. We'll look at some simple arrays in this section. In the next chapter, 
 "<A href="ch03.htm">Variables</A>" , you'll see 
 more examples of how useful arrays can be. 
-<H3><A name="Example: Printing an Array">Example: Printing an Array</A></H3>In 
-this section, we'll look at printing an array and see how arrays are represented 
+
+### Example: Printing an Array
+
+In this section, we'll look at printing an array and see how arrays are represented 
 in Perl source code. 
 
 This example shows an empty array, an array of numbers and an array of 
@@ -544,7 +542,7 @@ strings. Figure 2.4 shows the output of Listing 2.3.
       Printing Some Array Literals </B></FONT></TD></TR>
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
-print "Here is an empty array:" . () . "&lt;-- Nothing there!\n";
+print "Here is an empty array:" . () . "<-- Nothing there!\n";
 print (12, 014, 0x0c, 34.34, 23.3E-3);
 print "\n";
 print ("This", "is", 'an', "array", 'of', "strings");
@@ -567,17 +565,17 @@ interchangeably, as shown in the last line.
     <TD bgColor=lightcyan>Listing 2.3 uses the period, or 
       <I>concatenation</I>, operator to join a string representation of the 
       empty array with the string <TT>"Here is an empty array:"</TT> and the 
-      string <TT>"&lt;-- Nothing there!\n"</TT>. You can read more about 
-      operators in Chapter 4, "<A 
-      href="ch04.htm">Operators</A>." 
+      string <TT>"<-- Nothing there!\n"</TT>. You can read more about 
+      operators in [](./operators.md). 
       
       In this and other examples in this chapters, the elements of an array 
       will be printed with no spaces between them. You will see how to print 
-      with spaces in the section "Strings Revisited" in Chapter 4,"<A 
-      href="ch03.htm">Variables</A>" . 
+      with spaces in the section "Strings Revisited" in [](./variables.md). 
   </TD></TR></TBODY></TABLE>
-<H3><A name="Example: Nesting Arrays">Example: Nesting Arrays</A></H3>Many times 
-a simple list is not enough. If you're a painter, you might have one array that 
+
+### Example: Nesting Arrays
+
+Many times a simple list is not enough. If you're a painter, you might have one array that 
 holds the names of orange hues and one that holds the names of yellow hues. To 
 print them, you can use Perl's ability to specify a sub-array inside your main 
 array definition. 
@@ -608,8 +606,10 @@ array. In other words, the <TT>array:</TT>
 is exactly equivalent to 
 
 ("Bright Orange", "Burnt", "Canary Yellow", "Sunbeam") 
-<H3><A name="Example: Using a Range of Values">Example: Using a Range of 
-Values</A></H3>At times you might need an array that consists of sequential 
+
+### Example: Using a Range of Values
+
+At times you might need an array that consists of sequential 
 numbers or letters. Instead of making you list out the entire array, Perl has a 
 shorthand notation that you can use. 
 

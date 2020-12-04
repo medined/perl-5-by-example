@@ -5,7 +5,7 @@
 <P><B><PRE>123;</PRE></B>which is a numeric literal followed by a semicolon. The 
 semicolon is very important. It tells Perl that the statement is complete. A 
 more complicated statement might be 
-<P><B><PRE>$bookSize = ($numOfPages &gt;= 1200 ? "Large" : "Normal");</PRE></B>which 
+<P><B><PRE>$bookSize = ($numOfPages >= 1200 ? "Large" : "Normal");</PRE></B>which 
 says if the number of pages is 1,200 or greater, then assign <TT>"Large"</TT> to 
 <TT>$bookSize</TT>; otherwise, assign <TT>"Normal"</TT> to <TT>$bookSize</TT>. 
 <A name="David Rasch"></A>
@@ -16,7 +16,7 @@ says if the number of pages is 1,200 or greater, then assign <TT>"Large"</TT> to
   Note</B></FONT></TD></TR>
   <TR>
     <TD bgColor=lightcyan>The printed version of this book showed the above 
-      example as <TT>$bookSize = ($numOfPages &gt;= 1200 : "Large" : 
+      example as <TT>$bookSize = ($numOfPages >= 1200 : "Large" : 
       "Normal");</TT>. Please note that the first colon was a typographical 
       error and it should be a question mark. David Rasch the sharp-eyed person 
       that spotted this problem.</TD></TR></TBODY></TABLE>
@@ -193,7 +193,7 @@ of creating a function, you can still isolate one bit of code from another.
 <P>Here is how I frequently use a statement block: 
 <P><B><PRE>$firstVar = 10;
 {
-    $secondVar &gt;&gt;= 2;
+    $secondVar >>= 2;
     $secondVar++;
 }
 $thirdVar = 20;</PRE></B>The statement block serves to emphasize that the inner 
@@ -278,28 +278,24 @@ lists seven different types of statements.
   <TR>
     <TD vAlign=top>Assignment statements </TD>
     <TD vAlign=top>These statements assign a value to one or more variables. 
-      They are discussed, along with the assignment operator, in Chapter 4, "<A 
-      href="ch04.htm">Operators</A>." </TD></TR>
+      They are discussed, along with the assignment operator, in [](./operators.md).</TD></TR>
   <TR>
     <TD vAlign=top>Decision statements </TD>
     <TD vAlign=top>These statements allow you to test a condition and choose 
-      among one or more actions. Decision statements are discussed in Chapter 7, 
-      "<A href="ch07.htm">Control Statements</A>." 
+      among one or more actions. Decision statements are discussed in [](./control-statements.md). 
     </TD></TR>
   <TR>
     <TD vAlign=top>Jump statements </TD>
     <TD vAlign=top>These statements let you unconditionally change the program 
       flow to another point in your code. For instance, you could use the 
       <TT>redo</TT> keyword to send your program flow back to the beginning of a 
-      statement block. Jump statements are discussed in Chapter 7, "<A 
-      href="ch07.htm">Control Statements</A>." 
+      statement block. Jump statements are discussed in [](./control-statements.md).
   </TD></TR>
   <TR>
     <TD vAlign=top>Loop statements </TD>
     <TD vAlign=top>These statements let you perform a series of statements 
       repeatedly while some condition is true or until some condition is true. 
-      Loop statements are discussed in Chapter 7, "<A 
-      href="ch07.htm">Control Statements</A>." 
+      Loop statements are discussed in [](./control-statements.md).
   </TD></TR>
   <TR>
     <TD vAlign=top>Modified Statements </TD>
@@ -355,8 +351,10 @@ keyword to perform some action. There are four modifying keywords: <TT>if</TT>,
 modified statement is 
 <P><B><PRE>EXPRESSION modifier (CONDITION);</PRE></B>Let's look at some examples of 
 modified statements. 
-<H3><A name="Example: Using the if Modifier">Example: Using the <I>if</I> 
-Modifier</A></H3>The <TT>if</TT> modifier tells Perl that the expression should 
+
+### Example: Using the if Modifier
+
+The <TT>if</TT> modifier tells Perl that the expression should 
 be evaluated only if a given condition is true. The basic syntax of a modified 
 statement with the if modifier is 
 <P><B><PRE>EXPRESSION if (CONDITION);</PRE></B>This is a compact way of saying 
@@ -390,8 +388,7 @@ the value of <TT>$secondVar</TT> is 20 at the time the condition is evaluated.
 If you changed the 10 to a 20 in the condition, Perl would increment 
 <TT>$firstVar</TT>. 
 <P>You can find out about the <TT>if</TT> statement - as opposed to the 
-<TT>if</TT> modifier - in Chapter 7, "<A 
-href="ch07.htm">Control Statements</A>." 
+<TT>if</TT> modifier - in [](./control-statements.md)." 
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
@@ -503,8 +500,10 @@ B = BBBB</PRE></B>These lines of code should look a little familiar to you. The
 5 example. The <TT>assignElement()</TT> function will make an assignment unless 
 a key-value pair with the same key already exists. In that case, the assignment 
 statement is bypassed. 
-<H3><A name="Example: Using the until Modifier">Example: Using the <I>until</I> 
-Modifier</A></H3>The <TT>until</TT> modifier is a little more complex than the 
+
+### Example: Using the until Modifier
+
+The <TT>until</TT> modifier is a little more complex than the 
 <TT>if</TT> or <TT>unless</TT> modifiers. It repeatedly evaluates the expression 
 until the condition becomes true. The basic syntax of a modified statement with 
 the <TT>until</TT> modifier is 
@@ -524,11 +523,11 @@ be evaluated. The following example proves this:
     <TD bgColor=blanchedalmond><TT>
       <P>Initialize <TT>$firstVar</TT> to 10. 
       <P>Repeatedly evaluate <TT>$firstVar++</TT> until the condition 
-      <TT>$firstVar &gt; 2</TT> is true. 
+      <TT>$firstVar > 2</TT> is true. 
       <P>Print the value of <TT>$firstVar</TT>.</TT> 
       <P></P></TD></TR></TBODY></TABLE>
 <P><B><PRE>$firstVar = 10;
-$firstVar++ until ($firstVar &gt; 2);
+$firstVar++ until ($firstVar > 2);
 
 print("firstVar = $firstVar\n");</PRE></B>This program displays 
 <P><B><PRE>firstVar = 10</PRE></B>This shows that the expression <TT>$firstVar++</TT> 
@@ -548,11 +547,11 @@ the expression repeatedly until the condition is true. Here is an example:
     <TD bgColor=blanchedalmond><TT>
       <P>Initialize <TT>$firstVar</TT> to 10. 
       <P>Repeatedly evaluate <TT>$firstVar++</TT> until the condition 
-      <TT>$firstVar &gt; 20</TT> is true. 
+      <TT>$firstVar > 20</TT> is true. 
       <P>Print the value of <TT>$firstVar</TT>.</TT> 
       <P></P></TD></TR></TBODY></TABLE>
 <P><B><PRE>$firstVar = 10;
-$firstVar++ until ($firstVar &gt; 20);
+$firstVar++ until ($firstVar > 20);
 
 print("firstVar = $firstVar\n");</PRE></B>This program displays 
 <P><B><PRE>firstVar = 21</PRE></B>In this case, the <TT>$firstVar++</TT> expression is 
@@ -560,10 +559,11 @@ executed 11 times. Each execution of the expression increments the value of
 <TT>$firstVar</TT>. When <TT>$firstVar</TT> is equal to 21, the statement ends 
 because 21 is greater than 20, which means that the condition is true. 
 <P>You can find out about the <TT>until</TT> statement - as opposed to the 
-<TT>until</TT> modifier - in Chapter 7, "<A 
-href="ch07.htm">Control Statements</A>." 
-<H3><A name="Example: Using the while Modifier">Example: Using the <I>while</I> 
-Modifier</A></H3>The <TT>while</TT> modifier is the opposite of the 
+<TT>until</TT> modifier - [](./control-statements.md).
+
+### Example: Using the while Modifier
+
+The <TT>while</TT> modifier is the opposite of the 
 <TT>until</TT> modifier. It repeatedly evaluates the expression while the 
 condition is true. When the condition becomes false, the statement ends. The 
 basic syntax of a modified statement with the <TT>while</TT> modifier is 
@@ -583,11 +583,11 @@ be evaluated. Here is an example using the <TT>while</TT> modifier.
     <TD bgColor=blanchedalmond><TT>
       <P>Initialize <TT>$firstVar</TT> to 10. 
       <P>Repeatedly evaluate <TT>$firstVar++</TT> while the condition 
-      <TT>$firstVar &lt; 20</TT> is true. 
+      <TT>$firstVar < 20</TT> is true. 
       <P>Print the value of <TT>$firstVar</TT>.</TT> 
       <P></P></TD></TR></TBODY></TABLE>
 <P><B><PRE>$firstVar = 10;
-$firstVar++ while ($firstVar &lt; 20);
+$firstVar++ while ($firstVar < 20);
 
 print("firstVar = $firstVar\n");</PRE></B>This program displays <PRE><B>firstVar = 20</B></PRE>
 <P>You can compare this example directly to the last example given for the 
@@ -595,8 +595,7 @@ print("firstVar = $firstVar\n");</PRE></B>This program displays <PRE><B>firstVar
 the <TT>while</TT> modifier, the operators in the conditions are also opposite 
 in nature. </P>
 <P>You can find out about the <TT>while</TT> statement - as opposed to the 
-<TT>while</TT> modifier - in Chapter 7, "<A 
-href="ch07.htm">Control Statements</A>." 
+<TT>while</TT> modifier - in [](./control-statements.md).
 
 ## Summary
 
@@ -611,11 +610,8 @@ changes that are guaranteed not to affect other portions of the program.
 <P>Then, seven types of statements were mentioned: no-action, action, 
 assignment, decision, jump, loop, and modified. This chapter described 
 no-action, action, and modified statements. Assignment statements were mentioned 
-in Chapter 3, "<A href="ch03.htm">Variables</A>" 
-and again in Chapter 4,"<A 
-href="ch04.htm">Operators</A>" . Decision, jump, 
-and loop statements are covered in Chapter 7,"<A 
-href="ch07.htm">Control Statements</A>." . 
+in [](./variables.md) and again in [](./operators.md). Decision, jump, 
+and loop statements are covered in [](./control-statements.md). 
 <P>Modified statements use the <TT>if</TT>, <TT>unless</TT>, <TT>until</TT>, and 
 <TT>while</TT> keywords to affect the evaluation of an expression. The 
 <TT>if</TT> keyword evaluates an expression if a given condition is true. The 
@@ -624,8 +620,8 @@ given condition is false. The <TT>until</TT> keyword repeatedly evaluates an
 expression until the condition is true. The <TT>while</TT> keyword is the 
 opposite of until so that it repeatedly evaluates an expression until the 
 condition is false. 
-<P>The next chapter, "<A href="ch07.htm">Control 
-Statements</A>," explores the <TT>decision</TT>, <TT>jump</TT>, and 
+
+[](./control-statements.md) explores the <TT>decision</TT>, <TT>jump</TT>, and 
 <TT>loop</TT> statement in detail. 
 
 ## Review Questions
@@ -648,7 +644,7 @@ Statements</A>," explores the <TT>decision</TT>, <TT>jump</TT>, and
   <P><B><PRE>$firstVar = 10;
 $secondVar = 20;
 
-$firstVar += $secondVar++ if ($firstVar &gt; 10);
+$firstVar += $secondVar++ if ($firstVar > 10);
 
 print("firstVar = $firstVar\n");
 print("secondVar = $secondVar\n");</PRE></B></LI></OL>

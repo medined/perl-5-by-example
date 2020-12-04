@@ -59,8 +59,8 @@ that reads the data file and displays the information.
       File</B></FONT></P></TD></TR>
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
-<P>open(FILE, "&lt;format.dat");
-@lines = &lt;FILE&gt;;
+<P>open(FILE, "<format.dat");
+@lines = <FILE>;
 close(FILE);
 
 foreach (@lines) {
@@ -109,8 +109,8 @@ does this.
       Using the <I>Split()</I> Function</B></FONT></P></TD></TR>
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
-<P>open(FILE, "&lt;format.dat");
-@lines = &lt;FILE&gt;;
+<P>open(FILE, "<format.dat");
+@lines = <FILE>;
 close(FILE);
 
 foreach (@lines) {
@@ -230,8 +230,10 @@ write();</PRE></B>These lines will display:
 <TT>STDOUT</TT>. Notice that the decimal points are automatically lined up when 
 the lines are displayed. 
 <P>
-<H3><A name="Example: Using Field Lines">Example: Using Field Lines</A></H3>The 
-field lines of a format statement control what is displayed and how. The 
+
+### Example: Using Field Lines
+
+The field lines of a format statement control what is displayed and how. The 
 simplest field line contains only static text. You can use <I>static</I> or 
 unchanging text as labels for variable information, dollar signs in front of 
 amounts, a separator character such as a comma between first and last name, or 
@@ -262,11 +264,11 @@ list of the different format characters you can use in field lines.
     <TD vAlign=top>This character represents the start of a field 
 holder.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>&lt;</TT> </TD>
+    <TD vAlign=top><TT><</TT> </TD>
     <TD vAlign=top>This character indicates that the field should be 
       left-justified.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>&gt;</TT> </TD>
+    <TD vAlign=top><TT>></TT> </TD>
     <TD vAlign=top>This character indicates that the field should be 
       right-justified.</TD></TR>
   <TR>
@@ -334,12 +336,12 @@ program in Listing 11.4 displays the information in nice, neat columns.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 format =
-  Album=@&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  Artist=@&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  Price=$@##.##
+  Album=@<<<<<<<<<<<<<  Artist=@>>>>>>>>>>>>  Price=$@##.##
         $album,                $artist,              $price
 .
 
-open(FILE, "&lt;format.dat");
-@lines = &lt;FILE&gt;;
+open(FILE, "<format.dat");
+@lines = <FILE>;
 close(FILE);
 
 foreach (@lines) {
@@ -358,10 +360,10 @@ foreach (@lines) {
 see that the columns are now neatly aligned. This was done with the 
 <TT>format</TT> statement and the <TT>write()</TT> function. The <TT>format</TT> 
 statement used in this example used three field holders. The first field holder, 
-<TT>@&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</TT>, created a 
+<TT>@<<<<<<<<<<<<<</TT>, created a 
 left-justified spot for a 14-character-wide field filled by the value in 
 <TT>$album</TT>. The second field holder, 
-<TT>@&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</TT>, created a 
+<TT>@>>>>>>>>>>>></TT>, created a 
 right-justified spot for a 12-character-wide field filled by the value in 
 <TT>$artist</TT>. The last field holder, <TT>@##.##</TT>, created a 
 6-character-wide field filled by the numeric value in <TT>$price</TT>. 
@@ -369,15 +371,17 @@ right-justified spot for a 12-character-wide field filled by the value in
 and I would agree with that. Instead of placing field labels on the line, you 
 can put them in the report heading. The next section discusses how to do this. 
 <P>
-<H3><A name="Example: Report Headings">Example: Report Headings</A></H3>Format 
-statements for a report heading use the same format as the detail line 
+
+### Example: Report Headings
+
+Format statements for a report heading use the same format as the detail line 
 <TT>format</TT> statement, except that <TT>_TOP</TT> is appended to the file 
 handle. In the case of <TT>STDOUT</TT>, you must specify <TT>STDOUT_TOP</TT>. 
 Simply using <TT>_TOP</TT> will not work. 
 <P>To add a heading to the report about the CD collection, you might use the 
 following <TT>format</TT> statement: 
 <P><B><PRE>format STDOUT_TOP =
-  @||||||||||||||||||||||||||||||||||||  Pg @&lt;
+  @||||||||||||||||||||||||||||||||||||  Pg @<
   "CD Collection of David Medinets",        $%
 
   Album              Artist            Price
@@ -449,20 +453,20 @@ collection report on two pages by using this technique.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>format =
-  Album=@&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  Artist=@&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  Price=$@##.##
+  Album=@<<<<<<<<<<<<<  Artist=@>>>>>>>>>>>>  Price=$@##.##
         $album,                $artist,              $price
 .
 
 format STDOUT_TOP =
-  @||||||||||||||||||||||||||||||||||||  Pg @&lt;
+  @||||||||||||||||||||||||||||||||||||  Pg @<
   "CD Collection of David Medinets",        $%
 
   Album              Artist            Price
   -----------------  ----------------  -------
 .
 
-open(FILE, "&lt;format.dat");
-@lines = &lt;FILE&gt;;
+open(FILE, "<format.dat");
+@lines = <FILE>;
 close(FILE);
 
 $= = 6;
@@ -545,9 +549,10 @@ efficiency.</TD></TR></TBODY></TABLE>
       variable to place the footer at the bottom of the 
 page.</P></TD></TR></TBODY></TABLE></B>
 <P>
-<H3><A name="Example: Using Functions in the Value Line">Example: Using 
-Functions in the Value Line</A></H3>You've already seen the value line in 
-action. Most of the time, its use will be very simple: create the field holder 
+
+### Example: Using Functions in the Value Line
+
+You've already seen the value line in action. Most of the time, its use will be very simple: create the field holder 
 in the field line and then put the variable name in the value line. But there 
 are some other value line capabilities you should know about. In addition to 
 simple scalar variables, you can specify array variables and even functions on 
@@ -591,12 +596,12 @@ ellipses to a string if it is too wide for a column.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>format =
-  @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  $@##.##
+  @<<<<<<<<<<<<<<<<  @<<<<<<<<<<<<<<<  $@##.##
   dotize(17, $album), dotize(16, $artist), $price
 .
 
 format STDOUT_TOP =
-  @||||||||||||||||||||||||||||||||||||  Pg @&lt;
+  @||||||||||||||||||||||||||||||||||||  Pg @<
   "CD Collection of David Medinets",        $%
 
   Album              Artist            Price
@@ -606,7 +611,7 @@ format STDOUT_TOP =
 sub dotize {
     my($width, $string) = @_;
 
-    if (length($string) &gt; $width) {
+    if (length($string) > $width) {
         return(substr($string, 0, $width - 3) . "...");
     }
     else {
@@ -614,8 +619,8 @@ sub dotize {
     }
 }
 
-open(FILE, "&lt;format.dat");
-@lines = &lt;FILE&gt;;
+open(FILE, "<format.dat");
+@lines = <FILE>;
 close(FILE);
 
 foreach (@lines) {
@@ -640,8 +645,10 @@ similar technique to invoke any function in the value line. You can also use
 expressions directly in the value line, but it might be harder to maintain 
 because the intent of the expression might not be clear. 
 <P>
-<H3><A name="Example: Changing Formats">Example: Changing Formats</A></H3>So 
-far, you've seen only how to use a single format statement per report. If Perl 
+
+### Example: Changing Formats
+
+So far, you've seen only how to use a single format statement per report. If Perl 
 could handle only one format per report, it wouldn't have much utility as a 
 reporting tool. Fortunately, by using the <TT>$~</TT> special variable, you can 
 control which format is used for any given <TT>write()</TT> function call. 
@@ -687,7 +694,7 @@ and displays the total using an alternate <TT>format</TT> statement.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>format =
-  @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  $@###.##
+  @<<<<<<<<<<<<<<<<  @<<<<<<<<<<<<<<<  $@###.##
   dotize(17, $album), dotize(16, $artist), $price
 .
 
@@ -698,7 +705,7 @@ format STDOUT_TOTAL =
 .
 
 format STDOUT_TOP =
-  @||||||||||||||||||||||||||||||||||||  Pg @&lt;
+  @||||||||||||||||||||||||||||||||||||  Pg @<
   "CD Collection of David Medinets",        $%
 
   Album              Artist            Price
@@ -708,7 +715,7 @@ format STDOUT_TOP =
 sub dotize {
     my($width, $string) = @_;
 
-    if (length($string) &gt; $width) {
+    if (length($string) > $width) {
         return(substr($string, 0, $width - 3) . "...");
     }
     else {
@@ -716,8 +723,8 @@ sub dotize {
     }
 }
 
-open(FILE, "&lt;format.dat");
-@lines = &lt;FILE&gt;;
+open(FILE, "<format.dat");
+@lines = <FILE>;
 close(FILE);
 
 $total = 0;
@@ -748,9 +755,10 @@ how to keep a running total and how to switch to an alternative detail line
 format. If you need to switch to an alternative heading format, assign the new 
 header format name to the <TT>$^</TT> special variable. 
 <P>
-<H3><A name="Example: Using Long Pieces of Text in Reports">Example: Using Long 
-Pieces of Text in Reports</A></H3>By using the <TT>^</TT>, <TT>~,</TT> and 
-<TT>~~</TT> formatting characters in your format statements, you can use long 
+
+### Example: Using Long Pieces of Text in Reports
+
+By using the <TT>^</TT>, <TT>~,</TT> and <TT>~~</TT> formatting characters in your format statements, you can use long 
 pieces of text in a report: for example, the first paragraph of a paper's 
 abstract or some notes associated with a database record. Listing 11.8 shows a 
 program that prints the definition of a word. The definition is too long to fit 
@@ -783,17 +791,17 @@ onto multiple lines.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>format =
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   $word,    $definition
 .
 
@@ -849,17 +857,17 @@ can be eliminated by placing the <TT>~</TT> character somewhere - usually at the
 beginning or end - of the field line. The <TT>format</TT> statement would then 
 look like this: 
 <P><B><PRE>format =
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ~
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ~
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ~
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ~
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ~
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ~
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ~
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ~
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ~
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ~
   $word,    $definition
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ~
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ~
   $word,    $definition
 .</PRE></B>The new report would not have a blank line. 
 <P><B><PRE>****************
@@ -877,14 +885,16 @@ placing <TT>~~</TT> on the field line, Perl will repeat the field line as often
 as needed until a blank line would be printed. Using this technique would change 
 the format statement to this: 
 <P><B><PRE>format =
-  ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ^&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; ~~
+  ^<<<<<<<< ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ~~
   $word,    $definition
 .</PRE></B>You might be wondering how Perl decides when a word ends. This 
 behavior is controlled by the <TT>$:</TT> variable. The default value for 
 <TT>$:</TT> is a string consisting of the space, newline, and dash characters. 
 <P>
-<H3><A name="Example: Writing to a File Instead of STDOUT">Example: Writing to a 
-File Instead of <I>STDOUT</I></A></H3>Up to this point in the chapter, we've 
+
+### Example: Writing to a File Instead of STDOUT
+
+Up to this point in the chapter, we've 
 only looked at writing a report to the display or <TT>STDOUT</TT>. This was done 
 to simplify and shorten the examples . Writing a report to a file requires that 
 you open a file for output and specify the file handle as a parameter to the 
@@ -928,15 +938,15 @@ File</B></FONT></P></TD></TR>
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR></I>
 <P>format CD_REPORT =
-  Album=@&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  Artist=@&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;  Price=$@##.##
+  Album=@<<<<<<<<<<<<<  Artist=@>>>>>>>>>>>>  Price=$@##.##
         $album,                $artist,              $price
 .
 
-open(FILE, "&lt;format.dat");
-@lines = &lt;FILE&gt;;
+open(FILE, "<format.dat");
+@lines = <FILE>;
 close(FILE);
 
-open(CD_REPORT, "&gt;format.rpt");
+open(CD_REPORT, ">format.rpt");
 
 foreach (@lines) {
     chop;
@@ -1006,7 +1016,7 @@ before setting the <TT>$~</TT> or <TT>$^</TT> special variables.
   <TR>
     <TD bgColor=#fffaa0><B><PRE><BR>
 <P>format CD_REPORT =
-  @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;  $@###.##
+  @<<<<<<<<<<<<<<<<  @<<<<<<<<<<<<<<<  $@###.##
   dotize(17, $album), dotize(16, $artist), $price
 .
 
@@ -1018,7 +1028,7 @@ format CD_REPORT_TOTAL =
 
 
 format CD_REPORT_TOP =
-  @||||||||||||||||||||||||||||||||||||  Pg @&lt;
+  @||||||||||||||||||||||||||||||||||||  Pg @<
   "CD Collection of David Medinets",        $%
 
   Album              Artist            Price
@@ -1028,7 +1038,7 @@ format CD_REPORT_TOP =
 sub dotize {
     my($width, $string) = @_;
 
-    if (length($string) &gt; $width) {
+    if (length($string) > $width) {
         return(substr($string, 0, $width - 3) . "...");
     }
     else {
@@ -1036,11 +1046,11 @@ sub dotize {
     }
 }
 
-open(FILE, "&lt;format.dat");
-@lines = &lt;FILE&gt;;
+open(FILE, "<format.dat");
+@lines = <FILE>;
 close(FILE);
 
-open(CD_REPORT, "&gt;format.rpt");
+open(CD_REPORT, ">format.rpt");
 
 $total = 0;
 foreach (@lines) {
@@ -1126,7 +1136,7 @@ examples of how to use them .
   <P></P>
   <LI>How can you change a detail format line into a header format line? 
   <P></P>
-  <LI>What is the <TT>&gt;</TT> format character used for? 
+  <LI>What is the <TT>></TT> format character used for? 
   <P></P>
   <LI>What is the <TT>$^L</TT> variable used for? 
   <P></P>

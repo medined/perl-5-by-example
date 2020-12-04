@@ -90,9 +90,7 @@ imaginable for a scalar variable as long as it begins with a $.
       <P>This scalar variable will hold the number of rooms. 
       <P>This scalar variabe will hold the title of a book. 
       <P>This scalar variable conflicts with a Perl special variable that you'll 
-      learn about in Chapter 11, "<A 
-      href="ch12.htm">Using Special 
-      Variables</A>."</TT></P></TD></TR></TBODY></TABLE>
+      learn about in [](./special-variables.md).</TT></P></TD></TR></TBODY></TABLE>
 <P><B><PRE></TT>$numberOfRooms
 $bookTitle
 $0</PRE></B>
@@ -115,8 +113,10 @@ $0</PRE></B>
 no practical limit to the length of a Perl variable name, but I like to keep 
 them under 15 characters. Anything longer than that means that it will take a 
 while to type them and increases the chances of spelling errors. 
-<H3><A name="Example: Assigning Values to Scalar Variables">Example: Assigning 
-Values to Scalar Variables</A></H3>Now that you know what scalar variable names 
+
+### Example: Assigning Values to Scalar Variables
+
+Now that you know what scalar variable names 
 look like, we'll look at how you can assign a value to them. Assigning values to 
 a variable is done with the equals (=) sign. 
 <P>
@@ -133,8 +133,10 @@ a variable is done with the equals (=) sign.
 <P><B><PRE></TT>$numberOfRooms = 23;
 $bookTitle = "Perl by Example";</PRE></B>Notice that you are assigning literal 
 values to the variables. After assigning the values you can then change them. 
-<H3><A name="Changing Values in Scalar Variables">Changing Values in Scalar 
-Variables</A></H3>The next example will make a variable assignment and then 
+
+### Changing Values in Scalar Variables
+
+The next example will make a variable assignment and then 
 change that variable's value using a second assignment. The second assignment 
 will increment the value by five. 
 <P>
@@ -172,8 +174,7 @@ it.<BR></TD></TR></TBODY></TABLE>
       need to be maintained, you'll want to explicitly declare variables using 
       the my() function. Explicitly declaring functions will reduce errors and 
       improve the internal documentation of your programs. The my() function is 
-      discussed in Chapter 5, "<A 
-      href="ch05.htm">Functions</A>." 
+      discussed in [](./functions.md).
   <BR></TD></TR></TBODY></TABLE>
 
 ## Array Variables
@@ -194,11 +195,12 @@ in more detail. Array variable names always begin with a @ character.
 variables. There are no rules. Well, none that you need to worry about. In fact, 
 let's skip looking at variable names and get right to assigning arrays to 
 variables, instead. 
-<H3><A name="Example: Assigning Values to Array Variables">Example: Assigning 
-Values to Array Variables</A></H3>You use the equals (=) sign to assign values 
+
+### Example: Assigning Values to Array Variables
+
+You use the equals (=) sign to assign values 
 to array variables just like scalar values. 
-<P>We'll use one of the examples from Chapter 2, "<A 
-href="ch02.htm">Numeric and String Literals</A>" - 
+<P>We'll use one of the examples from [](./literals.md) - 
 reworked a little - here so that you'll already be familiar with part of the 
 example. 
 <P>
@@ -237,21 +239,21 @@ example.
 @numberArray = (12, 014, 0x0c, 34.34, 23.3E-3);
 @stringArray = ("This", "is", 'an', "array", 'of', "strings");
 @mixedArray = ("This", 30, "is", 'a', "mixed array", 'of', 0x08, "items");
-print "Here is an empty array:" . @emptyArray . "&lt;-- Nothing there!\n";
+print "Here is an empty array:" . @emptyArray . "<-- Nothing there!\n";
 print @numberArray;  print "\n";
 print @stringArray;  print "\n";
 print @mixedArray;   print "\n";
 </PRE></B></TD></TR></TBODY></TABLE>
 <P>This program will display 
-<P><B><PRE>Here is an empty array:0&lt;-- Nothing there!
+<P><B><PRE>Here is an empty array:0<-- Nothing there!
 12121234.340.0233
 Thisisanarrayofstrings
 This30isamixed arrayof8items</PRE></B>
+
 <P>In this example, we assign literal values to array variables and then display 
-them using the print command. This is very similar to what we did in Chapter 1, 
-"<A href="ch01.htm">Getting Your Feet Wet</A>," 
-except that we are temporarily storing the array values into variables before 
-printing them. 
+them using the print command. This is very similar to what we did in [](./getting-your-feet-wet.md)
+except that we are temporarily storing the array values into variables before printing them. 
+
 <P>Suppose that you want to create one array from two smaller ones. You can do 
 this by using the sub-arrays inside the assignment statement. 
 <P>
@@ -273,8 +275,10 @@ print @largeArray;</PRE></B>When run, this program prints the array (5, 6, 7, 8,
 the elements are still in the same order as the sub-arrays. When you concatenate 
 arrays in this manner, Perl does not sort them or modify their contents in any 
 way. 
-<H3><A name="Example: Using Array Elements">Example: Using Array 
-Elements</A></H3>Individual elements of an array are accessed by prefixing the 
+
+### Example: Using Array Elements
+
+Individual elements of an array are accessed by prefixing the 
 array name with a $ and using an index that indicates to Perl which element you 
 want to use. 
 <P>Listing 3.2 creates an array of five elements and then prints each individual 
@@ -324,16 +328,17 @@ base array subscript.
       array subscript; usually it is zero. However, it can be changed to any 
       integer you want. Even negative ones. Using a negative base array 
       subscript will probably make your programs hard to understand and I 
-      recommend against it. Other special variables are mentioned in Chapter 11, 
-      "<A href="ch12.htm">Using Special 
-      Variables</A>." <BR></TD></TR></TBODY></TABLE>
+      recommend against it. Other special variables are mentioned in [](./special-variables.md).
+      <BR></TD></TR></TBODY></TABLE>
 <P>You can replace the numeric literal indexes in the above example with scalar 
 variables. You can say: 
 <P><B><PRE>$index = 2;
 @array = (1..5);
 print $array[$index];  print "\n";</PRE></B>which would print 3. 
-<H3><A name="Example: Using Negative Subscripts">Example: Using Negative 
-Subscripts</A></H3>Perl is definitely a language that will surprise you at 
+
+### Example: Using Negative Subscripts
+
+Perl is definitely a language that will surprise you at 
 times. In other languages, subscripts must be positive integers. However, Perl 
 lets you use negative subscripts to access array elements in reverse order. 
 <P>
@@ -370,9 +375,10 @@ print $array[-5];  print "\n";</PRE></B></TD></TR></TBODY></TABLE>
 3
 2
 1</PRE></B>
-<H3><A name="Example: Determining the Number of Elements in an Array">Example: 
-Determining the Number of Elements in an Array</A></H3>If you need to determine 
-the number of elements that an array contains you can assign the array to a 
+
+### Example: Determining the Number of Elements in an Array
+
+If you need to determine the number of elements that an array contains you can assign the array to a 
 scalar variable. 
 <P>In fact, any time that an array is used when a scalar is needed, the value 
 used will be the number of array elements. 
@@ -408,9 +414,10 @@ $doubleTheSize.
       However, this ability can be confusing while looking at someone else's 
       program if you don't remember that there is a difference between scalar 
       contexts and array contexts.<BR></TD></TR></TBODY></TABLE>
-<H3><A name="Example: How to Grab a Slice (or Part) of An Array">Example: How to 
-Grab a Slice (or Part) of An Array</A></H3>At times you will need to use some 
-elements of an array and not others. You might want to assign array elements to 
+
+### Example: How to Grab a Slice (or Part) of An Array
+
+At times you will need to use some elements of an array and not others. You might want to assign array elements to 
 scalars or to another array. Using only part of an array is done with an array 
 slice. An array <I>slice</I> uses an @ character and the square brackets ([]) to 
 create a sub-array consisting of selected individual elements. For example, 
@@ -444,8 +451,7 @@ $first=One  $third=Three
 spaces because the array variable was enclosed in double quotes. The section, <A 
 href="ch03.htm#Example: Variable Interpolation">Example: 
 Variable Interpolation</A> discusses this issue in more detail. You won't really 
-understand the power of array slices until you learn about functions in Chapter 
-5. At that point, you'll see that functions (sub programs that you invoke using 
+understand the power of array slices until you learn about functions in [](./functions.md). At that point, you'll see that functions (sub programs that you invoke using 
 a function name) can return a value. And that the return value might be an 
 array. When calling a function that returns the time and date in an array, a 
 slice can be used to "grab" just those elements that you are interested in. For 
@@ -463,9 +469,10 @@ start with the % character.
 "Hash" refers to how associative array elements are stored in memory. "Hash" is 
 also much shorter than "associative array" and therefore much easier to type and 
 talk about. 
-<H3><A name="Example: Assigning Values to Associative Array Variables">Example: 
-Assigning Values to Associative Array Variables</A></H3>Before we discuss 
-associative arrays further, let's see how to assign values to them. When 
+
+### Example: Assigning Values to Associative Array Variables
+
+Before we discuss associative arrays further, let's see how to assign values to them. When 
 defining a whole array, you can use the same representation that was used for 
 arrays - just remember that you need two items for every element in the 
 associative array. You can also assign values to individual elements of an 
@@ -502,12 +509,13 @@ with variables.
 ## Double Quoted Strings Revisited
 
 Perl strings have some additional functionality that was not 
-mentioned in Chapter 1, "<A href="ch01.htm">Getting 
-Your Feet Wet</A>," because you needed to know a little about variables 
+mentioned in [](./getting-your-feet-wet.md) because you needed to know a little about variables 
 beforehand. Now that you are familiar with how Perl handles basic variables, 
 let's look a little deeper at double quoted strings. 
-<H3><A name="Example: Variable Interpolation">Example: Variable 
-Interpolation</A></H3><I>Interpolation</I> is a big word for a simple concept - 
+
+### Example: Variable Interpolation
+
+<I>Interpolation</I> is a big word for a simple concept - 
 replacement of a variable name with its value.You already know that variable 
 names are a "stand-in" for a value. If $var is equal to 10, the $var + 20 is 
 really 10 + 20. In Perl, this concept is also used inside strings. You can 
@@ -577,9 +585,11 @@ variable name tell Perl where the name starts and ends.
       Kirby Hughes (<B>khughes@netcom.com</B>) tell him I said "thanks." He 
       remembered that curly braces can be used in this 
 manner.<BR></TD></TR></TBODY></TABLE>
-<H3><A name="Example: Using the $" Variable? Special>Example: Using the 
-<I>$"</I> Special Variable</A></H3>Perl has a number of special variables. These 
-variables each have a predefined meaning. Chapter 11, "Using Special Variables," 
+
+### Example: Using the $" Special Variable
+
+Perl has a number of special variables. These 
+variables each have a predefined meaning. [](./special-variables.md) 
 introduces you to quite a few Perl special variables. However, since we were 
 just looking at strings and array we should also spend a moment and talk about 
 the $" special variable. 

@@ -118,8 +118,10 @@ in the following list.
 <P>Web servers can have many different types of log files. For example, you 
 might see a proxy access log, or an error log. In this chapter, we'll focus on 
 the access log - where the web server tracks every access to your web site. 
-<H3><A name="Example: Reading a Log File">Example: Reading a Log File</A></H3>In 
-this section you see a Perl script that can open a log file and iterate over the 
+
+### Example: Reading a Log File
+
+In this section you see a Perl script that can open a log file and iterate over the 
 lines of the log file. It is usually unwise to read entire log files into memory 
 because they can get quite large. A friend of mine has a log file that is over 
 113 Megabytes! 
@@ -129,7 +131,7 @@ or you can split the entry into its components. To read each line into a single
 variable, use the following code sample: 
 <P><B><PRE>$LOGFILE = "access.log";
 open(LOGFILE) or die("Could not open log file.");
-foreach $line (&lt;LOGFILE&gt;) {
+foreach $line (<LOGFILE>) {
     chomp($line);              # remove the newline from $line.
     # do line-by-line processing.
 }</PRE></B>
@@ -182,7 +184,7 @@ command and some processing to value 11 variables:
 
 $LOGFILE = "access.log";
 open(LOGFILE) or die("Could not open log file.");
-foreach $line (&lt;LOGFILE&gt;) {
+foreach $line (<LOGFILE>) {
     ($site, $logName, $fullName, $date, $gmt,
          $req, $file, $proto, $status, $length) = split(' ',$line);
     $time = substr($date, 13);
@@ -243,7 +245,7 @@ log entries.
 
 $LOGFILE = "access.log";
 open(LOGFILE) or die("Could not open log file.");
-foreach $line (&lt;LOGFILE&gt;) {
+foreach $line (<LOGFILE>) {
     $w = "(.+?)";
     $line =~ m/^$w $w $w \[$w:$w $w\] "$w $w $w" $w $w/;
 
@@ -268,8 +270,10 @@ formats. If you use a server that delimits the date/time item with curly
 brackets, you only need to change the line with the matching operator to 
 accommodate the different format.
 <P>
-<H3><A name="Example: Listing Access by Document">Example: Listing Access by 
-Document</A></H3>One easy and useful analysis that you can do is to find out how 
+
+### Example: Listing Access by Document
+
+One easy and useful analysis that you can do is to find out how 
 many times each document at your site has been visited. Listing 21.3 contains a 
 program that reports on the access counts of documents beginning with the letter 
 s. 
@@ -322,12 +326,12 @@ s.
 <P>#!/usr/bin/perl -w
 
 format =
-  @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; @&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+  @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @>>>>>>>
   $document,                              $count
 .
 
 format STDOUT_TOP =
-  @||||||||||||||||||||||||||||||||||||  Pg @&lt;
+  @||||||||||||||||||||||||||||||||||||  Pg @<
   "Access Counts for S* Documents",,        $%
 
   Document                                Access Count
@@ -343,7 +347,7 @@ sub parseLogEntry {
 
 $LOGFILE = "access.log";
 open(LOGFILE) or die("Could not open log file.");
-foreach (&lt;LOGFILE&gt;) {
+foreach (<LOGFILE>) {
     $fileSpec = (parseLogEntry())[7];
     $fileSpec =~ m!.+/(.+)!;
     $fileName = $1;
@@ -381,8 +385,10 @@ entry if no file was explicitly requested.
 <P>You can use this same counting technique to display the most frequent remote 
 sites that contact your server. You can also check the status code to see how 
 many requests have been rejected. The next section looks at status codes. 
-<H3><A name="Example: Looking at the Status Code">Example: Looking at the Status 
-Code</A></H3>It is important for you to periodically check the server's log file 
+
+### Example: Looking at the Status Code
+
+It is important for you to periodically check the server's log file 
 in order to determine if unauthorized people are trying to access secured 
 documents. This is done by checking the status code in the log file entries. 
 <P>Every status code is a three digit number. The first digit defines how your 
@@ -491,12 +497,12 @@ this case, 401.
 <P>#!/usr/bin/perl -w
 
 format =
-  @&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; @&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+  @<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< @>>>>>>>
   $site,                                  $count
 .
 
 format STDOUT_TOP =
-  @||||||||||||||||||||||||||||||||||||  Pg @&lt;
+  @||||||||||||||||||||||||||||||||||||  Pg @<
   "Unauthorized Access Report",             $%
 
   Remote Site Name                        Access Count
@@ -512,7 +518,7 @@ sub parseLogEntry {
 
 $LOGFILE = "access.log";
 open(LOGFILE) or die("Could not open log file.");
-foreach (&lt;LOGFILE&gt;) {
+foreach (<LOGFILE>) {
     ($site, $status) = (parseLogEntry())[0, 9];
 
     if ($status eq '401') {
@@ -541,8 +547,10 @@ else {
   kairos.algonet.se                              4</PRE></B>You can expand this 
 program's usefulness by also displaying the logName and fullName items from the 
 log file. 
-<H3><A name="Example: Converting the Report to a Web Page">Example: Converting 
-the Report to a Web Page</A></H3>Creating nice reports for your own use is all 
+
+### Example: Converting the Report to a Web Page
+
+Creating nice reports for your own use is all 
 well and good. But suppose your boss wants the statistics updated hourly and 
 available on demand? Printing the report and faxing to the head office is 
 probably a bad idea. One solution is to convert the report into a web page. 
@@ -611,7 +619,7 @@ $webPage  = "acescnt.htm";
 $mailAddr = 'medined@mtolive.com';
 
 open(LOGFILE) or die("Could not open log file.");
-foreach (&lt;LOGFILE&gt;) {
+foreach (<LOGFILE>) {
     $fileSpec = (parseLogEntry())[7];
     $fileSpec =~ m!.+/(.+)!;
     $fileName = $1;
@@ -622,30 +630,32 @@ foreach (&lt;LOGFILE&gt;) {
 }
 close(LOGFILE);
 
-open(WEBPAGE, "&gt;$webPage");
-print WEBPAGE ("&lt;HEAD&gt;&lt;TITLE&gt;Access Counts&lt;/TITLE&gt;&lt;/HEAD&gt;");
-print WEBPAGE ("&lt;BODY&gt;");
-print WEBPAGE ("&lt;H1&gt;", scalar(localtime), "&lt;/H1&gt;");
-print WEBPAGE ("&lt;UL&gt;");
-print WEBPAGE ("&lt;TABLE BORDER=1 CELLPADDING=10&gt;");
-print WEBPAGE ("&lt;TR&gt;&lt;TH&gt;Document&lt;/TH&gt;&lt;TH&gt;Access&lt;BR&gt;Count&lt;/TH&gt;&lt;/TR&gt;");
+open(WEBPAGE, ">$webPage");
+print WEBPAGE ("<HEAD><TITLE>Access Counts</TITLE></HEAD>");
+print WEBPAGE ("<BODY>");
+print WEBPAGE ("<H1>", scalar(localtime), "</H1>");
+print WEBPAGE ("<UL>");
+print WEBPAGE ("<TABLE BORDER=1 CELLPADDING=10>");
+print WEBPAGE ("<TR><TH>Document</TH><TH>Access<BR>Count</TH></TR>");
 
 foreach $document (sort(keys(%docList))) {
     $count = $docList{$document};
-    print WEBPAGE ("&lt;TR&gt;");
-    print WEBPAGE ("&lt;TD&gt;&lt;FONT SIZE=2&gt;&lt;TT&gt;$document&lt;/TT&gt;&lt;/FONT&gt;&lt;/TD&gt;");
-    print WEBPAGE ("&lt;TD ALIGN=right&gt;$count&lt;/TD&gt;");
-    print WEBPAGE ("&lt;/TR&gt;");
+    print WEBPAGE ("<TR>");
+    print WEBPAGE ("<TD><FONT SIZE=2><TT>$document</TT></FONT></TD>");
+    print WEBPAGE ("<TD ALIGN=right>$count</TD>");
+    print WEBPAGE ("</TR>");
 }
 
-print WEBPAGE ("&lt;/TABLE&gt;&lt;P&gt;");
-print WEBPAGE ("&lt;/UL&gt;");
-print WEBPAGE ("Have questions? Contact &lt;A HREF=\"mailto:$mailAddr\"&gt;$mailAddr&lt;/A&gt;");
-print WEBPAGE ("&lt;/BODY&gt;&lt;/HTML&gt;");
+print WEBPAGE ("</TABLE><P>");
+print WEBPAGE ("</UL>");
+print WEBPAGE ("Have questions? Contact <A HREF=\"mailto:$mailAddr\">$mailAddr</A>");
+print WEBPAGE ("</BODY></HTML>");
 close(WEBPAGE);</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P><I>Fig. 21.1 - The Web Page that Displayed the Access Counts</I> 
-<H3><A name="Existing Log File Analyzing Programs">Existing Log File Analyzing 
-Programs</A></H3>Now that you've learned some of the basics of log file 
+
+### Existing Log File Analyzing Programs
+
+Now that you've learned some of the basics of log file 
 statistics, you should check out a program called S<TT>tatbot</TT> which can be 
 used to automatically generate statistics and graphs. You can find it at: 
 <P><B><PRE><A href="http://www.xmission.com/~dtubbs/">http://www.xmission.com/~dtubbs/</A></PRE></B>Statbot 
@@ -678,8 +688,10 @@ to Yahoo's Log Analysis Tools page:
 <P><B><PRE><A href="http://www.yahoo.com/Computers_and_Internet/Software/Internet/World_Wide_Web/Servers/Log_Analysis_Tools/">http://www.yahoo.com/Computers_and_Internet/Software/Internet/World_Wide_Web/Servers/Log_Analysis_Tools/</A></PRE></B>This 
 page lists all types of log file analyzers - from simple Perl scripts to 
 full-blown graphical applications. 
-<H3><A name="Creating Your Own CGI Log File">Creating Your Own CGI Log 
-File</A></H3>It is generally a good idea to keep track of who executes your CGI 
+
+### Creating Your Own CGI Log File
+
+It is generally a good idea to keep track of who executes your CGI 
 scripts. You've already been introduced to the environment variables that are 
 available within your CGI script. Using the information provided by those 
 environment variables, you can create your own log file. 
@@ -719,17 +731,17 @@ sub writeCgiEntry {
     my($browser) = $ENV{'HTTP_USER_AGENT'};
     my($time)    = time;
 
-    open(LOGFILE,"&gt;&gt;$logFile") or die("Can't open cgi log file.\n");
+    open(LOGFILE,">>$logFile") or die("Can't open cgi log file.\n");
     print LOGFILE ("$script!$name!$addr!$browser!$time\n");
     close(LOGFILE);
 }
 writeCgiEntry();
 
 print "Content-type: text/html\n\n";
-print "&lt;HTML&gt;";
-print "&lt;TITLE&gt;CGI Test&lt;/TITLE&gt;";
-print "&lt;BODY&gt;&lt;H1&gt;Testing!&lt;/H1&gt;&lt;/BODY&gt;";
-print "&lt;/HTML&gt;";</PRE></TD></TR></TBODY></TABLE>
+print "<HTML>";
+print "<TITLE>CGI Test</TITLE>";
+print "<BODY><H1>Testing!</H1></BODY>";
+print "</HTML>";</PRE></TD></TR></TBODY></TABLE>
 <P>Everytime this script is called, an entry will be made in the CGI log file. 
 If you place a call to the <TT>writeCgiEntry()</TT> function in all of your CGI 
 scripts, after a while you will be able perform some statistical analysis on who 
@@ -739,8 +751,10 @@ uses your CGI scripts.
 
 So far we've been looking at examining the server log files in this chapter. Perl is 
 also very useful for creating the web pages that the user will view. 
-<H3><A name="Example: Generating a What's New Page">Example: Generating a What's 
-New Page</A></H3>One of the most common features of a web site is a What's New 
+
+### Example: Generating a What's New Page
+
+One of the most common features of a web site is a What's New 
 page. This page typically lists all of the files modified in the last week or 
 month along with a short description of the document. 
 <P>A What's New page is usually automatically generated using a scheduler 
@@ -845,8 +859,8 @@ sub getLastTime {
     my($newLog) = shift;        # filename of log file.
     my($time)   = time();       # the current time is the default.
 
-    if (open(NEWLOG, "&lt;$newLog")) {
-        chomp($time = &lt;NEWLOG&gt;);
+    if (open(NEWLOG, "<$newLog")) {
+        chomp($time = <NEWLOG>);
         close(NEWLOG);
     }
     return($time);
@@ -856,7 +870,7 @@ sub setLastTime {
     my($newLog) = shift;        # filename of log file.
     my($time)   = shift;        # the time of this run.
 
-    open(NEWLOG, "&gt;$newLog") or die("Can't write What's New log file.");
+    open(NEWLOG, ">$newLog") or die("Can't write What's New log file.");
     print NEWLOG ("$time\n");
     close(NEWLOG);
 }
@@ -888,17 +902,17 @@ sub checkFiles {
         $modTime = (stat($fullFilename))[9]; # only need the mod time.
         $title   = 'Untitled';               # provide a default value
 
-        if ($modTime &gt; $time) {
+        if ($modTime > $time) {
             open(FILE, $fullFilename);
-                while (&lt;FILE&gt;) {
-                    if (m!&lt;title&gt;(.+)&lt;/title&gt;!i) {
+                while (<FILE>) {
+                    if (m!<title>(.+)</title>!i) {
                         $title = $1;
                         last;
                     }
                 }
             close(FILE);
 
-            %{$hashRef}-&gt;{substr($fullFilename, length($base))} =
+            %{$hashRef}->{substr($fullFilename, length($base))} =
                 [ $modTime, $title ];
         }
     }
@@ -911,39 +925,39 @@ sub createHTML {
     my($htmlTitle)  = "What's New Since " . scalar(localtime($lastTime)) . "!";
     my(@sortedList) = sort(keys(%{$hashRef}));
 
-    open(HTML, "&gt;$htmlFile");
+    open(HTML, ">$htmlFile");
 
-    print HTML ("&lt;TITLE&gt;$htmlTitle&lt;/TITLE&gt;\n");
-    print HTML ("&lt;HTML&gt;\n");
-    print HTML ("&lt;HEAD&gt;&lt;TITLE&gt;$htmlTitle&lt;/TITLE&gt;&lt;/HEAD&gt;\n");
-    print HTML ("&lt;BODY&gt;\n");
-    print HTML ("&lt;H1&gt;$htmlTitle&lt;/H1&gt;&lt;P&gt;\n");
+    print HTML ("<TITLE>$htmlTitle</TITLE>\n");
+    print HTML ("<HTML>\n");
+    print HTML ("<HEAD><TITLE>$htmlTitle</TITLE></HEAD>\n");
+    print HTML ("<BODY>\n");
+    print HTML ("<H1>$htmlTitle</H1><P>\n");
 
     if (scalar(@sortedList) == 0) {
         print HTML ("There are no new files.\n");
     }
     else {
-        print HTML ("&lt;TABLE BORDER=1 CELLPADDING=10&gt;\n");
-        print HTML ("&lt;TR&gt;\n");
-        print HTML ("  &lt;TH&gt;Filename&lt;/TH&gt;\n");
-        print HTML ("  &lt;TH&gt;Modification&lt;BR&gt;Date&lt;/TH&gt;\n");
-        print HTML ("  &lt;TH&gt;Title&lt;/TH&gt;\n");
-        print HTML ("&lt;/TR&gt;\n");
+        print HTML ("<TABLE BORDER=1 CELLPADDING=10>\n");
+        print HTML ("<TR>\n");
+        print HTML ("  <TH>Filename</TH>\n");
+        print HTML ("  <TH>Modification<BR>Date</TH>\n");
+        print HTML ("  <TH>Title</TH>\n");
+        print HTML ("</TR>\n");
         foreach (sort(keys(%{$hashRef}))) {
-            my($modTime, $title) = @{%{$hashRef}-&gt;{$_}};
+            my($modTime, $title) = @{%{$hashRef}->{$_}};
 
             $modTime = scalar(localtime($modTime));
-            print HTML ("&lt;TR&gt;\n");
-            print HTML ("  &lt;TD&gt;&lt;FONT SIZE=2&gt;&lt;A HREF=\"$_\"&gt;$_&lt;/A&gt;&lt;/FONT&gt;&lt;/TD&gt;\n");
-            print HTML ("  &lt;TD&gt;&lt;FONT SIZE=2&gt;$modTime&lt;/FONT&gt;&lt;/TD&gt;\n");
-            print HTML ("  &lt;TD&gt;&lt;FONT SIZE=2&gt;$title&lt;/FONT&gt;&lt;/TD&gt;\n");
-            print HTML ("&lt;/TR&gt;\n");
+            print HTML ("<TR>\n");
+            print HTML ("  <TD><FONT SIZE=2><A HREF=\"$_\">$_</A></FONT></TD>\n");
+            print HTML ("  <TD><FONT SIZE=2>$modTime</FONT></TD>\n");
+            print HTML ("  <TD><FONT SIZE=2>$title</FONT></TD>\n");
+            print HTML ("</TR>\n");
         }
-        print HTML ("&lt;/TABLE&gt;\n");
+        print HTML ("</TABLE>\n");
     }
 
-    print HTML ("&lt;/BODY&gt;\n");
-    print HTML ("&lt;/HTML&gt;\n");
+    print HTML ("</BODY>\n");
+    print HTML ("</HTML>\n");
     close(HTML);
 }</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>The program from Listing 21.7 will generate an HTML file that can be 
@@ -960,7 +974,7 @@ the reference then to rerun the What's New script.
 <P>I think the only tricky code in Listing 21.7 is where it creates an anonymous 
 array that is stored into the hash that holds the changed files. Look at that 
 line of code closely. 
-<P><B><PRE>%{$hashRef}-&gt;{substr($fullFilename, length($base))} = [ $modTime, $title ];</PRE></B>The 
+<P><B><PRE>%{$hashRef}->{substr($fullFilename, length($base))} = [ $modTime, $title ];</PRE></B>The 
 <TT>$hashRef</TT> variable holds a reference to <TT>%modList</TT> that was 
 passed from the main program. The key part of the key-value pair for this hash 
 is the relative path and file name. The value part is an anonymous array that 
@@ -1033,8 +1047,9 @@ the two directories that are used as parameters for <TT>checkFiles()</TT>. The
 first directory is the path to the web server root - it will not change as the 
 recursion happens. The second directory is the directory that the function is 
 currently looking at. It will change with each recursion. 
-<H3><A name="Example: Getting User Feedback">Example: Getting User 
-Feedback</A></H3>
+
+### Example: Getting User Feedback
+
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
   <TR>
@@ -1066,14 +1081,14 @@ these steps:
 <P>In step one, you need to add a small HTML form to each web page at your site. 
 This form does not have to be very complex just one button will do. You can get 
 started by adding the following form to the bottom of your home page just before 
-the <TT>&lt;/BODY&gt;</TT> tag. 
-<P><B><PRE>&lt;FORM METHOD=POST Action="cgi-bin/feedback.pl"&gt;
-  &lt;INPUT TYPE=hidden NAME="to" VALUE="xxxxxxxxxxxxxxxxxx"&gt;
-  &lt;INPUT TYPE=hidden NAME="subject" VALUE="Home Page"&gt;
-  &lt;CENTER&gt;
-    &lt;INPUT TYPE=submit VALUE="Send a comment to the webmaster"&gt;
-  &lt;/CENTER&gt;
-&lt;/FORM&gt;</PRE></B>
+the <TT></BODY></TT> tag. 
+<P><B><PRE><FORM METHOD=POST Action="cgi-bin/feedback.pl">
+  <INPUT TYPE=hidden NAME="to" VALUE="xxxxxxxxxxxxxxxxxx">
+  <INPUT TYPE=hidden NAME="subject" VALUE="Home Page">
+  <CENTER>
+    <INPUT TYPE=submit VALUE="Send a comment to the webmaster">
+  </CENTER>
+</FORM></PRE></B>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
   <TR>
@@ -1138,36 +1153,36 @@ my(%formData);
 getFormData(\%formData);
 
 print "Content-type: text/html\n\n";
-print("&lt;HTML&gt;");
-print("&lt;HEAD&gt;&lt;TITLE&gt;Web Page Comment Form&lt;/TITLE&gt;&lt;/HEAD&gt;\n");
-print("&lt;BODY&gt;\n");
-print("&lt;H1 ALIGN=CENTER&gt;Web Page Comment Form&lt;/H1&gt;\n");
+print("<HTML>");
+print("<HEAD><TITLE>Web Page Comment Form</TITLE></HEAD>\n");
+print("<BODY>\n");
+print("<H1 ALIGN=CENTER>Web Page Comment Form</H1>\n");
 
-print("&lt;FORM METHOD=\"POST\" Action=\"mailto:$formData{'to'}\"&gt;\n");
-print("&lt;TABLE CELLPADDING=3&gt;");
-print("&lt;TR&gt;&lt;TD&gt;To:&lt;/TD&gt;&lt;TD&gt;$formData{'to'}&lt;TD&gt;&lt;/TR&gt;\n");
-print("&lt;TR&gt;&lt;TD&gt;Subject:&lt;/TD&gt;&lt;TD&gt;$formData{'subject'}&lt;/TD&gt;&lt;/TR&gt;\n");
-print("&lt;TR&gt;");
-print("&lt;TD&gt;&lt;B&gt;Your email address:&lt;/B&gt;&lt;/TD&gt;");
-print("&lt;TD&gt;&lt;INPUT TYPE=\"text\" NAME=\"addr\" SIZE=40 MAXLENGTH=80&gt;&lt;/TD&gt;");
-print("&lt;/TR&gt;\n");
-print("&lt;TR&gt;&lt;TD VALIGN=top&gt;&lt;B&gt;How urgently do you need a reply:&lt;/B&gt;&lt;/TD&gt;\n");
-print("&lt;TD&gt;&lt;INPUT TYPE=\"radio\" NAME=\"urgency\" VALUE=\"fyi\" CHECKED&gt; Just FYI\n");
-print("&lt;INPUT TYPE=\"radio\" NAME=\"urgency\" VALUE=\"plr\"&gt; Please Reply\n");
-print("&lt;INPUT TYPE=\"radio\" NAME=\"urgency\" VALUE=\"rur\"&gt; Reply Urgently&lt;/TD&gt;&lt;TR&gt;\n");
-print("&lt;TR&gt;&lt;TD VALIGN=top&gt;&lt;B&gt;What is the nature of your feedback:&lt;/B&gt;&lt;/TD&gt;\n");
-print("&lt;TD&gt;&lt;SELECT NAME=\"nature\" SIZE=3 MULTIPLE&gt;\n");
-print("&lt;OPTION SELECTED&gt;General Comments\n");
-print("&lt;OPTION&gt; Found Typo\n");
-print("&lt;OPTION&gt; Bug Report\n");
-print("&lt;/SELECT&gt;&lt;/TD&gt;&lt;/TR&gt;\n");
-print("&lt;TR&gt;&lt;TD VALIGN=top&gt;&lt;B&gt;Please enter your comments:&lt;/B&gt;&lt;/TD&gt;\n");
-print("&lt;TD&gt;&lt;TEXTAREA NAME=\"comment\" COLS=50 ROWS=5&gt;&lt;/TEXTAREA&gt;&lt;/TD&gt;&lt;/TR&gt;\n");
-print("&lt;/TABLE&gt;&lt;P&gt;");
-print("&lt;CENTER&gt;&lt;INPUT TYPE=\"submit\" VALUE=\"Mail Your Comments\"&gt;&lt;/CENTER&gt;\n");
-print("&lt;/FORM&gt;");
-print("&lt;/BODY&gt;");
-print("&lt;/HTML&gt;");
+print("<FORM METHOD=\"POST\" Action=\"mailto:$formData{'to'}\">\n");
+print("<TABLE CELLPADDING=3>");
+print("<TR><TD>To:</TD><TD>$formData{'to'}<TD></TR>\n");
+print("<TR><TD>Subject:</TD><TD>$formData{'subject'}</TD></TR>\n");
+print("<TR>");
+print("<TD><B>Your email address:</B></TD>");
+print("<TD><INPUT TYPE=\"text\" NAME=\"addr\" SIZE=40 MAXLENGTH=80></TD>");
+print("</TR>\n");
+print("<TR><TD VALIGN=top><B>How urgently do you need a reply:</B></TD>\n");
+print("<TD><INPUT TYPE=\"radio\" NAME=\"urgency\" VALUE=\"fyi\" CHECKED> Just FYI\n");
+print("<INPUT TYPE=\"radio\" NAME=\"urgency\" VALUE=\"plr\"> Please Reply\n");
+print("<INPUT TYPE=\"radio\" NAME=\"urgency\" VALUE=\"rur\"> Reply Urgently</TD><TR>\n");
+print("<TR><TD VALIGN=top><B>What is the nature of your feedback:</B></TD>\n");
+print("<TD><SELECT NAME=\"nature\" SIZE=3 MULTIPLE>\n");
+print("<OPTION SELECTED>General Comments\n");
+print("<OPTION> Found Typo\n");
+print("<OPTION> Bug Report\n");
+print("</SELECT></TD></TR>\n");
+print("<TR><TD VALIGN=top><B>Please enter your comments:</B></TD>\n");
+print("<TD><TEXTAREA NAME=\"comment\" COLS=50 ROWS=5></TEXTAREA></TD></TR>\n");
+print("</TABLE><P>");
+print("<CENTER><INPUT TYPE=\"submit\" VALUE=\"Mail Your Comments\"></CENTER>\n");
+print("</FORM>");
+print("</BODY>");
+print("</HTML>");
 
 sub getFormData {
     my($hashRef) = shift;	# ref to hash to hold form data.
@@ -1179,7 +1194,7 @@ sub getFormData {
     foreach (split(/&amp;/, $in)) {
         s/\+/ /g;
         ($key, $value) = split(/=/, $_);
-        %{$hashRef}-&gt;{$key} = $value;
+        %{$hashRef}->{$key} = $value;
     }
 }</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 <P>This form will send all of the information from the feedback form to your 
@@ -1242,8 +1257,8 @@ shows how to generate a form when the user clicks on a feedback button. This
 simple program can be expanded as needed to generate different forms based on 
 which web page the user clicked feedback on. You need to create a second CGI 
 script to process the results of the feedback form. 
-<P>The next chapter, "<A href="ch22.htm">Internet 
-Resources</A>," will direct you to some resources that are available on the 
+
+[](./internet-resources.md) directs you to some resources that are available on the 
 Internet. The chapter covers Usenet Newsgroups, web sites, and the IRC. 
 
 ## Review Questions

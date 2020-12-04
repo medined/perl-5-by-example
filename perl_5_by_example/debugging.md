@@ -97,8 +97,7 @@ see this error message.
     <TD bgColor=black><FONT color=lightpink size=4><B>Tip</B></FONT></TD></TR>
   <TR>
     <TD bgColor=lightpink>As long as you follow the object calling guidelines 
-      used in Chapter 14, "<A href="ch14.htm">What 
-      Are Objects?</A>," you will never have to worry about the more advanced 
+      used in [](./objects.md), you will never have to worry about the more advanced 
       ways to call object methods.<BR></TD></TR></TBODY></TABLE>
 <P>This list of syntax errors could go on for quite a while, but you probably 
 understand the basic concepts: 
@@ -147,8 +146,9 @@ debugged, you can always recombine the simple statements into complex ones.
       assignment operator (<TT>=</TT>) when you should use the equality operator 
       (<TT>==</TT>). If you are creating a conditional expression, you'll almost 
       always use the equality operator (<TT>==</TT>).<BR></TD></TR></TBODY></TABLE>
-<H3><A name="Using the -w Command-line Option">Using the <TT>-w</TT> 
-Command-line Option</A></H3>
+
+### Using the -w Command-line Option
+
 <P>One of the most important features to combat logic errors is the <TT>-w</TT> 
 command-line option, which causes warning messages to be displayed indicating 
 questionable Perl code. Questionable code includes identifiers that are 
@@ -203,10 +203,10 @@ affect whether the message will be suppressed.
       version of Perl. If you can't get it to work in your version, don't spend 
       too much time trying to find the problem. It simply may not work properly 
       in your version of Perl, either.<BR></TD></TR></TBODY></TABLE>
-<H3><A name="Being Strict with Your Variables">Being Strict with Your 
-Variables</A></H3>In the last chapter, "<A 
-href="ch15.htm">Perl Modules</A>," the use of 
-modules to implement pragmas was discussed. One very useful pragma to aid in 
+
+### Being Strict with Your Variables
+
+In [](./modules.md) the use of modules to implement pragmas was discussed. One very useful pragma to aid in 
 debugging is <TT>use strict;</TT>. This statement does two things: 
 <P>
 <UL>
@@ -215,21 +215,9 @@ debugging is <TT>use strict;</TT>. This statement does two things:
   unintentionally changing the value of a variable in a function. 
   <P></P>
   <LI>Ensures that you can't use accidental symbolic dereferencing. This topic 
-  was not covered in Chapter 8, "<A 
-  href="ch08.htm">References</A>," because it is 
-  relatively advanced. If you use the dereferencing techniques shown in Chapter 
-  8, you won't need to worry about this requirement.</LI></UL>
-<P><B>
-<TABLE cellSpacing=0 cellPadding=0 border=0>
-  <TBODY>
-  <TR>
-    <TD bgColor=black><FONT color=lightpink size=4><B>Tip</B></FONT></TD></TR>
-  <TR>
-    <TD bgColor=lightpink>The strict directory on the CD holds all listings 
-      from Chapter 8 converted so they work with the <TT>use strict;</TT> 
-      pragma: essentially, all the variables needed to be declared local using 
-      the <TT>my()</TT> function.<BR></TD></TR></TBODY></TABLE>
-<P>
+  was not covered in [](./references.md), because it is 
+  relatively advanced. If you use the dereferencing techniques shown, you won't need to worry about this requirement.</LI></UL>
+
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
   <TR>
@@ -267,8 +255,10 @@ print("$bar\n");</PRE></B>I bet you already have guessed that the <TT>my()</TT>
 function makes the variables local to the <TT>main</TT> package. 
 <P>In the next section, you see how to use the debugger to step through your 
 programs. 
-<H3><A name="Stepping Through Your Script">Stepping Through Your 
-Script</A></H3>So far, you've read about how to limit the possibility of errors 
+
+### Stepping Through Your Script
+
+So far, you've read about how to limit the possibility of errors 
 appearing in your programs. If, after using the <TT>-w</TT> and the 
 <TT>strict</TT> pragma, you still have a problem, it's time to use the 
 <I>debugger</I>. 
@@ -283,9 +273,7 @@ called 08lst08.pl. If you want to invoke the debugger with no script, you need
 to perform a small bit of magic, like this 
 <P><B><PRE>perl -d -e "1;"</PRE></B>to start debugger without any program. I say that 
 this is a bit of magic because you haven't read about all the different 
-command-line options available for the Perl interpreter. You see them all in 
-Chapter 17, "<A href="ch17.htm">Command-line 
-Options</A>." The <TT>-e</TT> option tells Perl to execute a single Perl 
+command-line options available for the Perl interpreter. You see them all in [](./cli.md). The <TT>-e</TT> option tells Perl to execute a single Perl 
 statement. In this case the statement is <TT>1;</TT>, which basically means do 
 nothing. It does, however, stop the interpreter from looking for the name of a 
 script file on the command line. 
@@ -297,8 +285,8 @@ Emacs support available.
 Enter h for help.
 
 main::(08lst08.pl:3):   my($codeRef);
-  DB&lt;1&gt;</PRE></B>This message tells you that the debugger (<TT>DB</TT>) 
-routines have been loaded. The <TT>DB&lt;1&gt;</TT> is a prompt that indicates 
+  DB<1></PRE></B>This message tells you that the debugger (<TT>DB</TT>) 
+routines have been loaded. The <TT>DB<1></TT> is a prompt that indicates 
 that the debugger is waiting for input. The line number inside the angle 
 brackets is the current execution line<I>.</I> The <I>current execution line</I> 
 is that line that the debugger waits to execute. 
@@ -336,13 +324,13 @@ the commands on your own.
     <TD vAlign=top><TT>L</TT> </TD>
     <TD vAlign=top>Lists all breakpoints and actions.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>&lt; ACTION</TT> </TD>
+    <TD vAlign=top><TT>< ACTION</TT> </TD>
     <TD vAlign=top>Forces the debugger to execute <TT>ACTION</TT> each time 
       the debugger prompt is displayed. This command is great if you need to 
       print the value of certain values each time you are prompted by the 
       debugger.</TD></TR>
   <TR>
-    <TD vAlign=top><TT>&gt; ACTION</TT> </TD>
+    <TD vAlign=top><TT>> ACTION</TT> </TD>
     <TD vAlign=top>Forces the debugger to execute <TT>ACTION</TT> after every 
       debugger command you issue.</TD></TR>
   <TR>
@@ -530,8 +518,10 @@ is very powerful. Most programmers will not need all of the functionality that
 the debugger has. If you learn to display script lines, to use breakpoints, and 
 to display variables, you'll be well on your way to solving any logic problem 
 that may arise. 
-<H3><A name="Examples: Displaying Information">Examples: Displaying 
-Information</A></H3>The debugger uses the concept of a current display line. The 
+
+### Examples: Displaying Information
+
+The debugger uses the concept of a current display line. The 
 <I>current display line</I> is simply the last line that has been displayed by 
 the <TT>l</TT> command. When the debugger first starts, the current display line 
 is the first executable line. See Listing 16.1 for some examples. 
@@ -670,8 +660,10 @@ should result in a display like this:
         2       '3'
 4       '4'</PRE></B>The <TT>1;</TT> line of code is used to let you execute the 
 array assignment without the debugger ending. Just ignore it. 
-<H3><A name="Examples: Using the n Command">Examples: Using the <TT>n</TT> 
-Command</A></H3>The <TT>n</TT> command lets you step over function calls in your 
+
+### Examples: Using the n Command
+
+The <TT>n</TT> command lets you step over function calls in your 
 scripts. This command saves you time because you won't need to single-step 
 through every line of every function. The program in Listing 16.3 has three 
 functions defined and three function calls and is used to demonstrate the 
@@ -721,8 +713,10 @@ This is function b
 15:     c();
 This is function c</PRE></B>By switching between the <TT>s</TT> and <TT>n</TT> 
 commands, you can decide which functions to step into and which to step over. 
-<H3><A name="Examples: Using Breakpoints">Examples: Using 
-Breakpoints</A></H3>Breakpoints are used to tell the debugger where to stop 
+
+### Examples: Using Breakpoints
+
+Breakpoints are used to tell the debugger where to stop 
 execution of your script. After the execution is stopped, the debugger prompts 
 you to enter a debugger command. For example, you might want to set a breakpoint 
 on a line that assigns a complicated expression to a variable. This allows you 
@@ -749,24 +743,24 @@ to check any variables used in the expression before it is executed.
 is 7. Using the <TT>c</TT> command causes the entire program to be executed. A 
 transcript of the debugging session might look like this: 
 <P><B><PRE>main::(16lst04.pl:7):   a(10);
-  DB&lt;1&gt; <B>c</B>
+  DB<1> <B>c</B>
 This is function a. Foo is 10.
 This is function a. Foo is 5.</PRE></B>You can force the debugger to stop each 
 time that <TT>a()</TT> is invoked by using the <TT>b a</TT> command. This lets 
 you examine the <TT>@_</TT> parameter array before the function is started. For 
 example: 
 <P><B><PRE>main::(16lst04.pl:7):   a(10);
-  DB&lt;1&gt; <B>b a</B>
-  DB&lt;2&gt; <B>c</B>
+  DB<1> <B>b a</B>
+  DB<2> <B>c</B>
 main::a(16lst04.pl:2):      my($foo) = @_;
-  DB&lt;3&gt; <B>p @_</B>
+  DB<3> <B>p @_</B>
 10
-  DB&lt;4&gt; <B>c</B>
+  DB<4> <B>c</B>
 This is function a. Foo is 10.
 main::a(16lst04.pl:2):      my($foo) = @_;
-  DB&lt;4&gt; <B>p @_</B>
+  DB<4> <B>p @_</B>
 5
-  DB&lt;5&gt; <B>c</B>
+  DB<5> <B>c</B>
 This is function a. Foo is 5.</PRE></B>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
@@ -784,14 +778,14 @@ debugger stops just before executing a function, the parameter array is
 initialized but not any of the local variables. A debugging session using 
 conditional breakpoints might look like this: 
 <P><B><PRE>main::(16lst04.pl:7):   a(10);
-  DB&lt;1&gt; b 4 $foo == 5
-  DB&lt;2&gt; <B>L</B>
+  DB<1> b 4 $foo == 5
+  DB<2> <B>L</B>
 4:          print("This is function a. Foo is $foo.\n");
   break if ($foo == 5)
-  DB&lt;2&gt; <B>c</B>
+  DB<2> <B>c</B>
 This is function a. Foo is 10.
 main::a(16lst04.pl:4):      print("This is function a. Foo is $foo.\n");
-  DB&lt;2&gt; <B>c</B>
+  DB<2> <B>c</B>
 This is function a. Foo is 5.</PRE></B>The debugger did not stop during the 
 first call to <TT>a()</TT> because <TT>$foo</TT> was equal to <TT>10</TT>. On 
 the second call, <TT>$foo</TT> is set to <TT>5</TT> which causes the debugger to 
@@ -810,8 +804,10 @@ in this display:
 <P><B><PRE>7:      a(10);
   break if (1)</PRE></B>If you want to delete <I>all</I> the breakpoints at 
 once, use the <TT>D</TT> command. 
-<H3><A name="Examples: Creating Command Aliases">Examples: Creating Command 
-Aliases</A></H3>The <TT>=</TT> command is used to create command aliases. If you 
+
+### Examples: Creating Command Aliases
+
+The <TT>=</TT> command is used to create command aliases. If you 
 find yourself issuing the same long command over and over again, you can create 
 an alias for that command. For example, the debugger command 
 <P><B><PRE>= pFoo print("foo=$foo\n");</PRE></B>creates an alias called <TT>pFoo</TT>. 
@@ -825,11 +821,10 @@ following line as a template:
 <P><B><PRE>$DB::alias{'pFoo'} = 'print("foo=$foo\n");';</PRE></B>After you create this 
 file and its alias definitions, the aliases will be available in every debugging 
 session. 
-<H3><A 
-name="Examples: Using the Debugger as an Interactive Interpreter">Examples: 
-Using the Debugger as an Interactive Interpreter</A></H3>In Chapter 13, "<A 
-href="ch13.htm">Handling Errors and Signals</A>," 
-you learned how to create an interactive Perl interpreter that could replace 
+
+### Examples: Using the Debugger as an Interactive Interpreter
+
+In [](./errors.md), you learned how to create an interactive Perl interpreter that could replace 
 shell and batch files. The program was shown in Listing 13.3. You can also use 
 the debugger as an interactive interpreter. In fact, it does an even better job 
 in some cases. 
@@ -881,15 +876,15 @@ sub help {
 16lst05.pl</TT>. After the script loads, you can run any of the functions by 
 typing their name at the debugger prompt. Here is a sample debugger session: 
 <P><B><PRE>main::(16lst05.pl:22):  1;
-  DB&lt;1&gt; help
+  DB<1> help
 
 backupUsers will perform the nightly backup.
 printUserReport will display user usage statistics.
 
 
-  DB&lt;2&gt; backupUsers
+  DB<2> backupUsers
 
-  DB&lt;3&gt; q</PRE></B>
+  DB<3> q</PRE></B>
 
 ## Summary
 

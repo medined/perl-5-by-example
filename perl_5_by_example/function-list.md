@@ -96,7 +96,9 @@ This section listed Perl's functions by category.
 
 Here is the list of Perl's function sorted by name. 
 <P></TABLE>
-<H3><A name="abs( [EXPR] )">abs( [EXPR] )</A></H3>
+
+### abs( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -110,8 +112,9 @@ Here is the list of Perl's function sorted by name.
     <TD vAlign=top>Definition:</TD>
     <TD>Calculates an absolute value. For example, <TT>abs(-10)</TT> is 10. 
   </TD></TR></TBODY></TABLE>
-<H3><A name="accept ( NEWSOCKET, GENERICSOCKET )">accept ( NEWSOCKET, 
-GENERICSOCKET )</A></H3>
+
+### accept ( NEWSOCKET, GENERICSOCKET )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -130,7 +133,9 @@ GENERICSOCKET )</A></H3>
       <TT>socket()</TT> function. You can find more information about 
       <TT>accept()</TT> in section 2 of the UNIX manual pages. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="alarm ( NUM_OF_SECONDS )">alarm ( NUM_OF_SECONDS )</A></H3>
+
+### >alarm ( NUM_OF_SECONDS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -148,11 +153,11 @@ GENERICSOCKET )</A></H3>
       with <TT>NUM_OF_SECONDS</TT> equal to zero cancels the current alarm. You 
       can find more information about <TT>alarm()</TT> in section 3 of the UNIX 
       manual pages. It is possible for Perl to trap such signals and call 
-      specific signal handling subroutines. See Chapter 13, "<A 
-      href="ch13.htm">Handling Errors and 
-      Signals</A>." 
+      specific signal handling subroutines. See [](./errors.md).
       <P><B><PRE>alarm(10);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="atan2 ( [EXPR] )">atan2 ( [EXPR] )</A></H3>
+
+### atan2 ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -168,7 +173,9 @@ GENERICSOCKET )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Calculates an arc tangent. 
       <P><B><PRE>$arcTangent = atan2(60,2);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="bind ( SOCKET, NAME )">bind ( SOCKET, NAME )</A></H3>
+
+### bind ( SOCKET, NAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -184,7 +191,9 @@ GENERICSOCKET )</A></H3>
     <TD>Binds a network address to the socket handle. You can find more 
       information about <TT>bind()</TT> in section 2 of the UNIX manual pages. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="binmode ( FILEHANDLE )">binmode ( FILEHANDLE )</A></H3>
+
+### binmode ( FILEHANDLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -204,14 +213,12 @@ GENERICSOCKET )</A></H3>
       linefeed('\n')-automatically translated into the UNIX end-of-line 
       character ('\n') when reading from the file and when when writing to the 
       file. Binary mode files do not have this automatic transformation. See "<A 
-      href="ch09.htm#Example: Binary Files">Example: 
-      Binary Files</A>" in Chapter 9, "<A 
-      href="ch09.htm">Using Files</A>," for more 
-      information. 
+      href="ch09.htm#Example: Binary Files">Example: Binary Files</A>" in [](./files.md), for more information. 
       <P><B><PRE>open(FILE, "file.dat");
 binmode(FILE);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="bless (REFERENCE, [CLASSNAME] )">bless (REFERENCE, [CLASSNAME] 
-)</A></H3>
+
+### bless (REFERENCE, [CLASSNAME] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -227,9 +234,7 @@ binmode(FILE);</PRE></B></TR></TBODY></TABLE>
     <TD>Changes the type of the referenced variable to <TT>CLASSNAME</TT>. It 
       is used to assign a class name the referenced variable, thus changing the 
       string returned by the <TT>ref()</TT> function. If <TT>CLASSNAME</TT> is 
-      not specified, the name of the current package is used. See Chapter 8, "<A 
-      href="ch08.htm">References</A>," for more 
-      information. 
+      not specified, the name of the current package is used. See [](./references.md), for more information. 
       <P><B><PRE>$temp = { };
 bless $temp, 'ATMPCLASS';
 print("bless() \$temp is now has type ",
@@ -244,7 +249,9 @@ ref($temp), "\n");</PRE></B>
             parameter if the blessing function might be 
       inherited.</TD></TR></TBODY></TABLE>
       <P></B></P></TR></TBODY></TABLE>
-<H3><A name="caller ( [EXPR] )">caller ( [EXPR] )</A></H3>
+
+### caller ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -265,7 +272,9 @@ ref($temp), "\n");</PRE></B>
 File=$file Line=$line\n");
 }
 testcaller();</PRE></B></TR></TBODY></TABLE>
-<H3><A name="chdir ( [DIRNAME] )">chdir ( [DIRNAME] )</A></H3>
+
+### chdir ( [DIRNAME] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -283,7 +292,9 @@ testcaller();</PRE></B></TR></TBODY></TABLE>
       <P><B><PRE>chdir("/") ?
     print("It worked.\n") :
     print("It didn't work.\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="chmod (MODE, LIST )">chmod (MODE, LIST )</A></H3>
+
+### chmod (MODE, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -299,7 +310,9 @@ testcaller();</PRE></B></TR></TBODY></TABLE>
     <TD><TT>MODE</TT> is an octal number representing file permissions which 
       are applied to all the files in <TT>LIST</TT>. 
       <P><B><PRE>chmod(0744, "test1.txt", "test2.txt");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="chomp ( [STRING | LIST] )">chomp ( [STRING | LIST] )</A></H3>
+
+### chomp ( [STRING | LIST] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -320,7 +333,9 @@ testcaller();</PRE></B></TR></TBODY></TABLE>
       <TT>$_</TT>. 
       <P><B><PRE>$temp = "AAAAA!\n";
 print("chomp(\$temp) returned ", chomp($temp), ".\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="chop ( [STRING | LIST] )">chop ( [STRING | LIST] )</A></H3>
+
+### chop ( [STRING | LIST] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -347,8 +362,9 @@ print("chop(\$tmp) returned ", chop($tmp), "\n");</PRE></B>
             "\n") rather than <TT>chop()</TT> if you are not sure that the 
             string has a trailing newline.</TD></TR></TBODY></TABLE>
       <P></P></TR></TBODY></TABLE>
-<H3><A name="chown ( NUMERICAL_UID, NUMERICAL_GID, LIST )">chown ( 
-NUMERICAL_UID, NUMERICAL_GID, LIST )</A></H3>
+
+### chown ( NUMERICAL_UID, NUMERICAL_GID, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -364,7 +380,9 @@ NUMERICAL_UID, NUMERICAL_GID, LIST )</A></H3>
     <TD>Changes the ownership of the files in <TT>LIST</TT> to the user ID and 
       the group ID specified as parameters 
       <P><B><PRE>chown(1, 1, "test1.txt");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="chr ( NUMBER )">chr ( NUMBER )</A></H3>
+
+### chr ( NUMBER )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -380,7 +398,9 @@ NUMERICAL_UID, NUMERICAL_GID, LIST )</A></H3>
     <TD>Returns the ASCII character represented by <TT>NUMBER</TT>. For 
       example, <TT>chr(69)</TT> is the letter E. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="chroot ( DIR_NAME )">chroot ( DIR_NAME )</A></H3>
+
+### chroot ( DIR_NAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -408,7 +428,9 @@ NUMERICAL_UID, NUMERICAL_GID, LIST )</A></H3>
             processes safer by only allowing them access to the subdirectory 
             tree relevant to their purpose.</TD></TR></TBODY></TABLE>
       <P></P></TR></TBODY></TABLE>
-<H3><A name="close ( FILEHANDLE )">close ( FILEHANDLE )</A></H3>
+
+### close ( FILEHANDLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -427,7 +449,9 @@ NUMERICAL_UID, NUMERICAL_GID, LIST )</A></H3>
       <P><B><PRE>open(FILE, "test1.txt");
 # some file activity
 close(FILE);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="closedir ( DIRHANDLE )">closedir ( DIRHANDLE )</A></H3>
+
+### closedir ( DIRHANDLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -444,7 +468,9 @@ close(FILE);</PRE></B></TR></TBODY></TABLE>
       <P><B><PRE>opendir(DIR, ".");
 # some directory activity
 closedir(DIR);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="connect ( SOCKET, NAME )">connect ( SOCKET, NAME )</A></H3>
+
+### connect ( SOCKET, NAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -460,7 +486,9 @@ closedir(DIR);</PRE></B></TR></TBODY></TABLE>
     <TD>Attempts to connect to a remote socket. <TT>NAME</TT> must be a packed 
       address of the correct type for the socket. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="cos ( [EXPR] )">cos ( [EXPR] )</A></H3>
+
+### cos ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -476,7 +504,9 @@ closedir(DIR);</PRE></B></TR></TBODY></TABLE>
     <TD vAlign=top>Definition:</TD>
     <TD>Calculates a cosine. 
       <P><B><PRE>$temp = cos(60);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="crypt ( TEXT, SALT )">crypt ( TEXT, SALT )</A></H3>
+
+### crypt ( TEXT, SALT )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -492,7 +522,9 @@ closedir(DIR);</PRE></B></TR></TBODY></TABLE>
     <TD>Encrypts <TT>TEXT</TT> using a key (either <TT>SALT</TT> or the first 
       two letters of <TT>TEXT</TT>). 
       <P><B><PRE>$encyptedString = crypt("Password","TR");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="dbmclose ( HASH )">dbmclose ( HASH )</A></H3>
+
+### dbmclose ( HASH )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -516,8 +548,9 @@ closedir(DIR);</PRE></B></TR></TBODY></TABLE>
           <TD bgColor=lightpink>This function has been superseded by the 
             <TT>untie()</TT> function.</TD></TR></TBODY></TABLE>
       <P></P></TR></TBODY></TABLE>
-<H3><A name="dbmopen ( HASH, DATABASE_NAME, MODE )">dbmopen ( HASH, 
-DATABASE_NAME, MODE )</A></H3>
+
+### dbmopen ( HASH, DATABASE_NAME, MODE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -542,7 +575,9 @@ DATABASE_NAME, MODE )</A></H3>
           <TD bgColor=lightpink>This function has been superseded by the 
             <TT>tie()</TT> function.</TD></TR></TBODY></TABLE>
       <P></P></TR></TBODY></TABLE>
-<H3><A name="defined ( EXPR )">defined ( EXPR )</A></H3>
+
+### defined ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -563,7 +598,9 @@ DATABASE_NAME, MODE )</A></H3>
       <P><B><PRE>@iexist = (1,2,3);
 print("exists.\n") if defined(@iexist);
 print("does not exist.\n") unless defined(@iexist);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="delete ( EXPR )">delete ( EXPR )</A></H3>
+
+### delete ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -579,10 +616,12 @@ print("does not exist.\n") unless defined(@iexist);</PRE></B></TR></TBODY></TABL
     <TD vAlign=top>Definition:</TD>
     <TD>Deletes an entry from an associative array. <TT>EXPR</TT> is the key 
       for the entry to delete. 
-      <P><B><PRE>%Hash = ('Jan' =&gt; 'One', 'Feb' =&gt; 'Two',
-  'Mar' =&gt; 'Three');
+      <P><B><PRE>%Hash = ('Jan' => 'One', 'Feb' => 'Two',
+  'Mar' => 'Three');
 delete($Hash{'Jan'});</PRE></B></TR></TBODY></TABLE>
-<H3><A name="die ( [LIST] )">die ( [LIST] )</A></H3>
+
+### die ( [LIST] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -603,7 +642,9 @@ delete($Hash{'Jan'});</PRE></B></TR></TBODY></TABLE>
       to "at test.pl at line 10" will be appended to the end. 
       <P><B><PRE>die("Something fatal has happened and
   the script must die!");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="do ( SCRIPTNAME )">do ( SCRIPTNAME )</A></H3>
+
+### do ( SCRIPTNAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -626,7 +667,9 @@ delete($Hash{'Jan'});</PRE></B></TR></TBODY></TABLE>
       <TT>$@</TT>. If the file is successfully compiled, <TT>do()</TT> returns 
       the value of the last expression evaluated. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="dump ( [LABEL] )">dump ( [LABEL] )</A></H3>
+
+### dump ( [LABEL] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -646,7 +689,9 @@ delete($Hash{'Jan'});</PRE></B></TR></TBODY></TABLE>
       initialization so that execution is faster when reloading the dumped 
       image. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="each ( HASH )">each ( HASH )</A></H3>
+
+### each ( HASH )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -662,12 +707,14 @@ delete($Hash{'Jan'});</PRE></B></TR></TBODY></TABLE>
     <TD>Allows iteration over the entries in an associative array. Each time 
       it is evaluated, another key-value pair is returned. When all the entries 
       have been returned, it returns an empty array. 
-      <P><B><PRE>%NumberWord = ('1' =&gt; 'One', '2' =&gt; 'Two',
-  '3' =&gt; 'Three');
+      <P><B><PRE>%NumberWord = ('1' => 'One', '2' => 'Two',
+  '3' => 'Three');
 while (($key, $value) = each(%NumberWord)) {
     print("$key: $value\n");
 }</PRE></B></TR></TBODY></TABLE>
-<H3><A name="endgrent ( )">endgrent ( )</A></H3>
+
+### endgrent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -684,7 +731,9 @@ while (($key, $value) = each(%NumberWord)) {
       other group related functions. 
       <P><B><PRE>($name, $pw, $gid, @members) = getgrent();
 endgrent();</PRE></B></TR></TBODY></TABLE>
-<H3><A name="endhostent ( )">endhostent ( )</A></H3>
+
+### endhostent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -701,7 +750,9 @@ endgrent();</PRE></B></TR></TBODY></TABLE>
       related functions. 
       <P><B><PRE>$host = gethostbyname("lynch");
 endhostent();</PRE></B></TR></TBODY></TABLE>
-<H3><A name="endnetent ( )">endnetent ( )</A></H3>
+
+### endnetent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -718,7 +769,9 @@ endhostent();</PRE></B></TR></TBODY></TABLE>
       and network related functions. 
       <P><B><PRE>($name, $aliases, $addrtype, $net) = getnetent();
 endnetent();</PRE></B></TR></TBODY></TABLE>
-<H3><A name="endprotoent ( )">endprotoent ( )</A></H3>
+
+### endprotoent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -735,7 +788,9 @@ endnetent();</PRE></B></TR></TBODY></TABLE>
       and protocol related functions. 
       <P><B><PRE>($name, $alias, $protocol) = getprotoent();
 endprotoent();</PRE></B></TR></TBODY></TABLE>
-<H3><A name="endpwent ( )">endpwent ( )</A></H3>
+
+### endpwent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -753,7 +808,9 @@ endprotoent();</PRE></B></TR></TBODY></TABLE>
       <P><B><PRE>($name, $pass, $uid, $gid, $quota, $name,
     $gcos, $logindir, $shell) = getpwent();
 endpwent();</PRE></B></TR></TBODY></TABLE>
-<H3><A name="endservent ( )">endservent ( )</A></H3>
+
+### endservent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -770,7 +827,9 @@ endpwent();</PRE></B></TR></TBODY></TABLE>
       and related functions. 
       <P><B><PRE>($name, $aliases, $port, $protocol) = getservent();
 endservent();</PRE></B></TR></TBODY></TABLE>
-<H3><A name="eof ( [FILEHANDLE] )">eof ( [FILEHANDLE] )</A></H3>
+
+### eof ( [FILEHANDLE] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -795,7 +854,9 @@ endservent();</PRE></B></TR></TBODY></TABLE>
 print("eof() returned ",
   eof(FILE) ? "TRUE" : "FALSE", "\n");
 close(FILE);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="eval ( [EXPR | BLOCK] )">eval ( [EXPR | BLOCK] )</A></H3>
+
+### eval ( [EXPR | BLOCK] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -831,9 +892,7 @@ close(FILE);</PRE></B></TR></TBODY></TABLE>
           <TD bgColor=lightpink><TT>eval()</TT> traps possible error 
             conditions which would otherwise crash a program and so can be used 
             to test if certain features are available which would cause runtime 
-            errors if used when not available. See Chapter 13, "<A 
-            href="ch13.htm">Handling Errors and 
-            Signals</A>," for more information.</TD></TR></TBODY></TABLE>
+            errors if used when not available. See [](./errors.md), for more information.</TD></TR></TBODY></TABLE>
       <P><B><PRE>$answer = 3;
 eval("$answer = ;");
 if ($@ eq "") {
@@ -842,7 +901,9 @@ if ($@ eq "") {
 else {
     print("eval() error: $@");
 }</PRE></B></TR></TBODY></TABLE>
-<H3><A name="exec ( LIST )">exec ( LIST )</A></H3>
+
+### exec ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -859,7 +920,9 @@ else {
       command. <B>There is no return from this call.</B> Note that 
       <TT>system()</TT> calls external commands and does return. 
       <P><B><PRE>exec("cat /etc/motd");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="exists ( EXPR )">exists ( EXPR )</A></H3>
+
+### exists ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -873,14 +936,16 @@ else {
   <TR>
     <TD vAlign=top>Definition:</TD>
     <TD>Tests whether a given key value exists in an associative array. 
-      <P><B><PRE>%test = ( 'One' =&gt; '1', 'Two' =&gt; '2');
+      <P><B><PRE>%test = ( 'One' => '1', 'Two' => '2');
 if (exists($test{'One'})) {
     print("exists() returned success.\n");
 }
 else {
     print("exists() returned an error.\n");
 }</PRE></B></TR></TBODY></TABLE>
-<H3><A name="exit ( [EXPR] )">exit ( [EXPR] )</A></H3>
+
+### exit ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -898,7 +963,9 @@ else {
       supplied. If an <TT>END</TT> block has been defined, it will be called. 
       Also, object destructors may be called for the process truly ends. 
       <P><B><PRE>exit(16);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="exp ( [EXPR] )">exp ( [EXPR] )</A></H3>
+
+### exp ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -914,8 +981,9 @@ else {
     <TD>Returns the natural log base (e) to the power of <TT>EXPR</TT>. If no 
       parameter is specified, <TT>$_</TT> is used. 
       <P><B><PRE>print "exp() e**1 is ", exp(1), "\n";</PRE></B></TR></TBODY></TABLE>
-<H3><A name="fcntl ( FILEHANDLE, FUNCTION, PACKED_FLAGS )">fcntl ( FILEHANDLE, 
-FUNCTION, PACKED_FLAGS )</A></H3>
+
+### fcntl ( FILEHANDLE, FUNCTION, PACKED_FLAGS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -933,7 +1001,9 @@ FUNCTION, PACKED_FLAGS )</A></H3>
       usually executed when Perl is installed. See the perlfunc man page for 
       more information. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="fileno ( FILEHANDLE )">fileno ( FILEHANDLE )</A></H3>
+
+### fileno ( FILEHANDLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -949,8 +1019,9 @@ FUNCTION, PACKED_FLAGS )</A></H3>
     <TD>Returns the file descriptor given a file handle. File descriptors are 
       useful when using bitmaps for the <TT>select()</TT> function. 
       <P><B><PRE>print("fileno() ", fileno(FILE), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="flock ( FILEHANDLE, OPERATION_FLAGS )">flock ( FILEHANDLE, 
-OPERATION_FLAGS )</A></H3>
+
+### flock ( FILEHANDLE, OPERATION_FLAGS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -967,7 +1038,9 @@ OPERATION_FLAGS )</A></H3>
       shared lock, or remove locks. You can find more information about 
       <TT>flock()</TT> in section 2 of the UNIX manual pages. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="fork ( )">fork ( )</A></H3>
+
+### fork ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -985,7 +1058,9 @@ OPERATION_FLAGS )</A></H3>
       You can find more information about <TT>fork()</TT> in section 2 of the 
       UNIX manual pages. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="formline ( PICTURE, LIST )">formline ( PICTURE, LIST )</A></H3>
+
+### formline ( PICTURE, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1001,10 +1076,11 @@ OPERATION_FLAGS )</A></H3>
     <TD>This internal function is used by the format mechanism. It allows 
       direct manipulation of the format process by adding values to the format 
       accumulator (<TT>$^A</TT>). For more information about formats, see 
-      Chapter 11, "<A href="ch11.htm">Creating 
-      Reports</A>." 
+      [](./reports.md).
       <P></P></TR></TBODY></TABLE>
-<H3><A name="getc ( [FILEHANDLE] )">getc ( [FILEHANDLE] )</A></H3>
+
+### getc ( [FILEHANDLE] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1022,7 +1098,9 @@ OPERATION_FLAGS )</A></H3>
       <P><B><PRE>open(FILE, "/etc/motd");
 print "getc() ", getc(FILE), "\n";
 close(FILE);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getgrent ( )">getgrent ( )</A></H3>
+
+### getgrent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1041,7 +1119,9 @@ close(FILE);</PRE></B></TR></TBODY></TABLE>
       <P><B><PRE>($name, $pw, $gid, @members) = getgrent();
 print("getgrent() Examines
   /etc/group [$name,$gid] file.\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getgrgid ( GID )">getgrgid ( GID )</A></H3>
+
+### getgrgid ( GID )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1059,7 +1139,9 @@ print("getgrent() Examines
       <P><B><PRE>($grname, $grpw, $gid, @members) = getgrgid(0);
 print("getgrgid() Returns group
   name given GID [$grname]\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getgrname ( NAME )">getgrname ( NAME )</A></H3>
+
+### getgrname ( NAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1077,8 +1159,9 @@ print("getgrgid() Returns group
       <P><B><PRE>($grname, $grpw, $gid, @members) = getgrnam("root");
 print("getgrnam() Returns group
   GID given name [$gid]\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="gethostbyaddr ( ADDRESS, AF_INIT )">gethostbyaddr ( ADDRESS, 
-AF_INIT )</A></H3>
+
+### gethostbyaddr ( ADDRESS, AF_INIT )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1099,8 +1182,9 @@ $addr = pack('C4', (140,203,7,103));
 ($name, $alias, $addrtype, $length, @addrs) =
 gethostbyaddr($addr, AF_INET);
 print("gethostbyaddr() [$alias].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="gethostbyname ( NAME, [PROTOCOL] )">gethostbyname ( NAME, 
-[PROTOCOL] )</A></H3>
+
+### gethostbyname ( NAME, [PROTOCOL] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1118,7 +1202,9 @@ print("gethostbyaddr() [$alias].\n");</PRE></B></TR></TBODY></TABLE>
       <P><B><PRE>($name, $alias, $addrtype, $length, @addrs) =
    gethostbyname("lynch");
 print("gethostbyname() [$alias].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="gethostent ( )">gethostent ( )</A></H3>
+
+### gethostent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1135,7 +1221,9 @@ print("gethostbyname() [$alias].\n");</PRE></B></TR></TBODY></TABLE>
       <P><B><PRE>($name, $alias, $addrtype, $length, @addrs) =
    gethostent();
 print("gethostent() [$alias].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getlogin ( )">getlogin ( )</A></H3>
+
+### getlogin ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1152,8 +1240,9 @@ print("gethostent() [$alias].\n");</PRE></B></TR></TBODY></TABLE>
       Use <TT>getpwuid()</TT>for more information on the login beccause the 
       information stored in <TT>/etc/utmp</TT> is limited. 
       <P><B><PRE>print ("getlogin() ", getlogin(), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getnetbyaddr ( ADDRESS, ADDR_TYPE )">getnetbyaddr ( ADDRESS, 
-ADDR_TYPE )</A></H3>
+
+### getnetbyaddr ( ADDRESS, ADDR_TYPE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1173,7 +1262,9 @@ ADDR_TYPE )</A></H3>
   getnetbyaddr($net, $addrtype);
 print("getnetbyaddr() Reads /etc/networks
   [$name]\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getnetbyname ( NAME )">getnetbyname ( NAME )</A></H3>
+
+### getnetbyname ( NAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1192,7 +1283,9 @@ print("getnetbyaddr() Reads /etc/networks
   getnetbyname("localnet");
 print("getnetbyname() Reads /etc/networks
   [$name]\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getnetent ( )">getnetent ( )</A></H3>
+
+### getnetent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1211,7 +1304,9 @@ print("getnetbyname() Reads /etc/networks
   getnetent();
 print("getnetent() Reads /etc/networks [$name,
   $addrtype]\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getpeername ( SOCKET )">getpeername ( SOCKET )</A></H3>
+
+### getpeername ( SOCKET )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1232,7 +1327,9 @@ print("getnetent() Reads /etc/networks [$name,
 $packedRemoteAddr = getpeername(S);
 ($family, $port, $remoteAddr) =
    unpack($sockaddr,$packedRemoteAddr);</PRE></B><B><PRE></PRE></B></TR></TBODY></TABLE>
-<H3><A name="getpgrp ( PID )">getpgrp ( PID )</A></H3>
+
+### getpgrp ( PID )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1249,7 +1346,9 @@ $packedRemoteAddr = getpeername(S);
     <TD vAlign=top>Definition:</TD>
     <TD>Finds the current process group for a given pid. 
       <P><B><PRE>print("getpgrp() ", getpgrp(0), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getppid ( )">getppid ( )</A></H3>
+
+### getppid ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1264,7 +1363,9 @@ $packedRemoteAddr = getpeername(S);
     <TD vAlign=top>Definition:</TD>
     <TD>Finds the pid of the parent process. 
       <P><B><PRE>print("getppid() ", getppid(), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getpriority ( WHICH, WHO )">getpriority ( WHICH, WHO )</A></H3>
+
+### getpriority ( WHICH, WHO )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1282,7 +1383,9 @@ $packedRemoteAddr = getpeername(S);
       <TT>PRIO_PROCESS</TT> (0), <TT>PRIO_PGGRP</TT> (1), <TT>PRIO_USER</TT> 
       (2). 
       <P><B><PRE>print("getpriority() ", getpriority(0, 0), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getprotobyname ( NAME )">getprotobyname ( NAME )</A></H3>
+
+### getprotobyname ( NAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1301,7 +1404,9 @@ $packedRemoteAddr = getpeername(S);
       <P><B><PRE>($name, $alias, $proto) = getprotobyname("IP");
 print("getprotobyname()
 /etc/proto [$name, $alias, $proto].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getprotobynumber ( NUMBER )">getprotobynumber ( NUMBER )</A></H3>
+
+### getprotobynumber ( NUMBER )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1318,7 +1423,9 @@ print("getprotobyname()
       <P><B><PRE>($name, $alias, $proto) = getprotobynumber(0);
 print("getprotobynumber()
 /etc/protocols [$name, $alias, $proto].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getprotoent ( )">getprotoent ( )</A></H3>
+
+### getprotoent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1337,7 +1444,9 @@ print("getprotobynumber()
       <P><B><PRE>($name, $alias, $proto) = getprotoent();
 print("getprotoent()
 Closes /etc/protocols [$name, $alias, $proto].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getpwent ( )">getpwent ( )</A></H3>
+
+### getpwent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1357,7 +1466,9 @@ Closes /etc/protocols [$name, $alias, $proto].\n");</PRE></B></TR></TBODY></TABL
 $quota, $name, $gcos, $dir, $shell) = getpwent();
 print("getpwent() /etc/passwd [$dir,
 $shell].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getpwnam ( NAME )">getpwnam ( NAME )</A></H3>
+
+### getpwnam ( NAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1375,7 +1486,9 @@ $quota, $name,
     $gcos, $dir, $shell) = getpwnam("root");
 print("getpwnam() /etc/passwd [$dir,
 $shell].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getpwuid ( UID )">getpwuid ( UID )</A></H3>
+
+### getpwuid ( UID )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1394,8 +1507,9 @@ $quota, $name,
     $gcos, $dir, $shell) = getpwuid(0);
 print("getpwuid() /etc/passwd [$dir,
 $shell].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getservbyname ( NAME, PROTOCOL )">getservbyname ( NAME, PROTOCOL 
-)</A></H3>
+
+### getservbyname ( NAME, PROTOCOL )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1411,8 +1525,9 @@ $shell].\n");</PRE></B></TR></TBODY></TABLE>
       file. 
       <P><B><PRE>($name, $aliases, $port,
 $protol) = getservbyname("tcpmux", "tcp");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getservbyport ( PORT_NUMBER, PROTOCOL )">getservbyport ( 
-PORT_NUMBER, PROTOCOL )</A></H3>
+
+### getservbyport ( PORT_NUMBER, PROTOCOL )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1428,7 +1543,9 @@ PORT_NUMBER, PROTOCOL )</A></H3>
 
       <P><B><PRE>($name, $aliases, $port,
 $proto) = getservbyport(512, "tcp");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getservent ( )">getservent ( )</A></H3>
+
+### getservent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1446,7 +1563,9 @@ $proto) = getservbyport(512, "tcp");</PRE></B></TR></TBODY></TABLE>
 $proto) = getservent();
 print("getservent() /etc/servers
 [$name].\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getsockname ( SOCKET)">getsockname ( SOCKET)</A></H3>
+
+### getsockname ( SOCKET)
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1464,8 +1583,9 @@ print("getservent() /etc/servers
 getsockname(S);
 ($family, $port, $localAddr) = unpack('S n a4 x8',
 $packedAddr);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="getsockopt ( SOCKET, LEVEL, OPTNAME )">getsockopt ( SOCKET, LEVEL, 
-OPTNAME )</A></H3>
+
+### getsockopt ( SOCKET, LEVEL, OPTNAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1480,7 +1600,9 @@ OPTNAME )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Gets the value of a specified socket option. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="glob ( EXPR )">glob ( EXPR )</A></H3>
+
+### glob ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1497,7 +1619,9 @@ OPTNAME )</A></H3>
       <TT>EXPR</TT>. 
       <P><B><PRE>@files =
 glob("*.txt");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="gmtime ( [EXPR] )">gmtime ( [EXPR] )</A></H3>
+
+### gmtime ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1519,7 +1643,9 @@ glob("*.txt");</PRE></B></TR></TBODY></TABLE>
       <P><B><PRE>($sec, $min, $hour, $mday,
 $mon, $year, $wday, $ydat, $isdst) = gmtime();
 print "gmtime() 19$year-$mon-$mday\n";</PRE></B></TR></TBODY></TABLE>
-<H3><A name="grep ( BLOCK | EXPR, LIST )">grep ( BLOCK | EXPR, LIST )</A></H3>
+
+### grep ( BLOCK | EXPR, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1547,7 +1673,9 @@ print("grep(), ", grep(/^T/, @a), "\n");
 # Print all elements in a list.
 @a = ('One', 'Two', 'Three', 'Four', 'Five');
 grep( print("$_\n"), @a);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="hex ( EXPR )">hex ( EXPR )</A></H3>
+
+### hex ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1566,7 +1694,9 @@ grep( print("$_\n"), @a);</PRE></B></TR></TBODY></TABLE>
       numbers in numeric contexts. 
       <P><B><PRE>print("hex() ", hex("ff"),
 "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="import ( )">import ( )</A></H3>
+
+### import ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1584,8 +1714,9 @@ grep( print("$_\n"), @a);</PRE></B></TR></TBODY></TABLE>
       it as the module is being loaded. You can use the <TT>import()</TT> 
       function to initialize variables, open files, or do any other setup work. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="index ( STRING, SUBSTRING, [POSITION] )">index ( STRING, SUBSTRING, 
-[POSITION] )</A></H3>
+
+### index ( STRING, SUBSTRING, [POSITION] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1611,7 +1742,9 @@ $answer2 = index("abcdefghijiklmdef", "def", $answer1 +
 3);
 print("index() def is at $answer1 and next at
 $answer2\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="int ( [EXPR] )">int ( [EXPR] )</A></H3>
+
+### int ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1629,8 +1762,9 @@ $answer2\n");</PRE></B></TR></TBODY></TABLE>
       <TT>21</TT>. 
       <P><B><PRE>print("int() ",
 int(345.678), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="ioctl ( FILEHANDLE, FUNCTION, SCALAR )">ioctl ( FILEHANDLE, 
-FUNCTION, SCALAR )</A></H3>
+
+### ioctl ( FILEHANDLE, FUNCTION, SCALAR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1651,7 +1785,9 @@ FUNCTION, SCALAR )</A></H3>
       the operating system. You can find more information about <TT>ioctl()</TT> 
       in section 2 of the UNIX manual pages. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="join ( EXPR, LIST )">join ( EXPR, LIST )</A></H3>
+
+### join ( EXPR, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1670,7 +1806,9 @@ FUNCTION, SCALAR )</A></H3>
       will return <TT>'QQ!AA'</TT>. 
       <P><B><PRE>@listone = (0, 1, 2, 3);
 print("join() ", join("-",@listone), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="keys ( HASH )">keys ( HASH )</A></H3>
+
+### keys ( HASH )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1687,11 +1825,13 @@ print("join() ", join("-",@listone), "\n");</PRE></B></TR></TBODY></TABLE>
       by the internal storage requirements, so it is often useful to use the 
       <TT>sort()</TT> function before processing. For example, 
       <TT>sort(keys(%hash))</TT>. 
-      <P><B><PRE>%hash = ('One' =&gt; 1, 'Two'
-=&gt; 2, 'Three' =&gt; 3, 'Four' =&gt; 4);
+      <P><B><PRE>%hash = ('One' => 1, 'Two'
+=> 2, 'Three' => 3, 'Four' => 4);
 print("keys() ", join("-", keys(%hash)),
 "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="kill ( SIGNAL, LIST )">kill ( SIGNAL, LIST )</A></H3>
+
+### kill ( SIGNAL, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1707,7 +1847,9 @@ print("keys() ", join("-", keys(%hash)),
     <TD>Sends <TT>SIGNAL</TT> to the processes identified by <TT>LIST</TT>. If 
       <TT>SIGNAL</TT> is negative then process groups are killed instead. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="lc ( EXPR )">lc ( EXPR )</A></H3>
+
+### lc ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1723,7 +1865,9 @@ print("keys() ", join("-", keys(%hash)),
     <TD>Creates a copy of <TT>EXPR</TT> with all letters in lowercase. 
       <P><B><PRE>print("lc() ", lc("ABCDef"),
 "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="lcfirst ( EXPR )">lcfirst ( EXPR )</A></H3>
+
+### lcfirst ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1739,7 +1883,9 @@ print("keys() ", join("-", keys(%hash)),
     <TD>Creates a copy of <TT>EXPR</TT> with the first letter in lowercase. 
       <P><B><PRE>print("lcfirst() ",
 lcfirst("ABCDef"), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="length ( [EXPR] )">length ( [EXPR] )</A></H3>
+
+### length ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1756,7 +1902,9 @@ lcfirst("ABCDef"), "\n");</PRE></B></TR></TBODY></TABLE>
       expression is supplied $_ is used. 
       <P><B><PRE>print("length() ",
 length("01234"), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="link ( OLD_FILE, NEW_FILE )">link ( OLD_FILE, NEW_FILE )</A></H3>
+
+### link ( OLD_FILE, NEW_FILE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1773,7 +1921,9 @@ length("01234"), "\n");</PRE></B></TR></TBODY></TABLE>
       called <TT>OLD_FILE</TT>. 
       <P><B><PRE>print("The result from
 link() is ", link("/usr/local", "/tmp/link"), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="listen ( SOCKET, QUEUESIZE )">listen ( SOCKET, QUEUESIZE )</A></H3>
+
+### listen ( SOCKET, QUEUESIZE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1789,7 +1939,9 @@ link() is ", link("/usr/local", "/tmp/link"), "\n");</PRE></B></TR></TBODY></TAB
     <TD>Listens for connections on a socket. <TT>QUEUESIZE</TT> specifies how 
       many processes can wait for connections. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="local ( LIST )">local ( LIST )</A></H3>
+
+### local ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1810,7 +1962,9 @@ link() is ", link("/usr/local", "/tmp/link"), "\n");</PRE></B></TR></TBODY></TAB
       current block. 
       <P><B><PRE>local($numTires) =
 10;</PRE></B></TR></TBODY></TABLE>
-<H3><A name="localtime ( [EXPR] )">localtime ( [EXPR] )</A></H3>
+
+### localtime ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1833,7 +1987,9 @@ link() is ", link("/usr/local", "/tmp/link"), "\n");</PRE></B></TR></TBODY></TAB
       <P><B><PRE>($sec, $min, $hour, $mday,
 $mon, $year, $wday, $ydat, $isdst) = localtime();
 print("localtime() 19$year-$mon-$mday\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="log ( [EXPR] )">log ( [EXPR] )</A></H3>
+
+### log ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1851,7 +2007,9 @@ print("localtime() 19$year-$mon-$mday\n");</PRE></B></TR></TBODY></TABLE>
       expression. 
       <P><B><PRE>print("log() ", log(2.5),
 "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="lstat ( FILEHANDLE | EXPR )">lstat ( FILEHANDLE | EXPR )</A></H3>
+
+### lstat ( FILEHANDLE | EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1878,7 +2036,9 @@ $nlink, $uid, $gid, $rdev, $size,
     $atime, $mtime, $ctime, $blksize, $blocks) =
 lstat("/tmp/link");
 print("lstat() $device, $inode, $ctime \n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="map ( BLOCK | EXPR, LIST )">map ( BLOCK | EXPR, LIST )</A></H3>
+
+### map ( BLOCK | EXPR, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1906,7 +2066,9 @@ print("After  map: @result\n");
 # Print all elements in a list.
 @array = ('One', 'Two', 'Three', 'Four', 'Five');
 map( print("$_\n"), @array);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="mkdir ( FILENAME, [MODE] )">mkdir ( FILENAME, [MODE] )</A></H3>
+
+### mkdir ( FILENAME, [MODE] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1925,7 +2087,9 @@ map( print("$_\n"), @array);</PRE></B></TR></TBODY></TABLE>
       <TT>$!</TT> is set to the operating system error. 
       <P><B><PRE>print("mkdir() ",
 mkdir("testdir", 0777), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="msgctl ( ID, COMMAND, ARG )">msgctl ( ID, COMMAND, ARG )</A></H3>
+
+### msgctl ( ID, COMMAND, ARG )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1946,7 +2110,9 @@ mkdir("testdir", 0777), "\n");</PRE></B></TR></TBODY></TABLE>
       You can find more information about <TT>msggctl()</TT> in section 2 of the 
       UNIX manual pages. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="msgget ( KEY, FLAGS )">msgget ( KEY, FLAGS )</A></H3>
+
+### msgget ( KEY, FLAGS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1962,8 +2128,9 @@ mkdir("testdir", 0777), "\n");</PRE></B></TR></TBODY></TABLE>
     <TD vAlign=top>Definition:</TD>
     <TD>Determines the message queue id. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="msgrcv ( QUEUE_ID, BUFFER, BUFFER_SIZE, TYPE, FLAGS )">msgrcv ( 
-QUEUE_ID, BUFFER, BUFFER_SIZE, TYPE, FLAGS )</A></H3>
+
+### msgrcv ( QUEUE_ID, BUFFER, BUFFER_SIZE, TYPE, FLAGS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1979,8 +2146,9 @@ QUEUE_ID, BUFFER, BUFFER_SIZE, TYPE, FLAGS )</A></H3>
     <TD>Gets a message from <TT>QUEUE_ID</TT>. The message is placed into 
       <TT>BUFFER</TT>. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="msgsnd ( QUEUE_ID, BUFFER, FLAGS )">msgsnd ( QUEUE_ID, BUFFER, 
-FLAGS )</A></H3>
+
+### msgsnd ( QUEUE_ID, BUFFER, FLAGS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -1996,7 +2164,9 @@ FLAGS )</A></H3>
     <TD>Send a message to <TT>QUEUE_ID</TT>. The message to be sent should be 
       in <TT>BUFFER</TT>. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="my ( LIST )">my ( LIST )</A></H3>
+
+### my ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2010,8 +2180,7 @@ FLAGS )</A></H3>
   <TR>
     <TD vAlign=top>Definition:</TD>
     <TD>Declares each of the variables listed to be local to the lexical unit 
-      (block or file). See Chapter 5, "<A 
-      href="ch05.htm">Functions</A>," for more 
+      (block or file). See [](./functions.md), for more 
       information. 
       <P><B><PRE># Define the function foo
 with four local variables.
@@ -2020,7 +2189,9 @@ sub foo {
     my(@params) = @_;
     my($tireType, $tirePressure);
 }</PRE></B></TR></TBODY></TABLE>
-<H3><A name="oct ( [EXPR] )">oct ( [EXPR] )</A></H3>
+
+### oct ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2039,8 +2210,9 @@ sub foo {
       numbers in numeric contexts. 
       <P><B><PRE>print("oct() ", oct("88"),
 "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="open ( FILEHANDLE | EXPR | FILENAME )">open ( FILEHANDLE | EXPR | 
-FILENAME )</A></H3>
+
+### open ( FILEHANDLE | EXPR | FILENAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2057,7 +2229,7 @@ FILENAME )</A></H3>
       an expression, the resulting value is used as the handle. If no filename 
       is specified a variable with the same name as the file handle used (this 
       should be a scalar variable with a string value referring to the file 
-      name). The special file name '-' refers to <TT>STDIN</TT> and '&gt;-' 
+      name). The special file name '-' refers to <TT>STDIN</TT> and '>-' 
       refers to <TT>STDOUT</TT>. 
       <P>The file name string may be prefixed with the following values to 
       indicate the mode: 
@@ -2068,19 +2240,19 @@ FILENAME )</A></H3>
           <TH align=left>Prefix Value </TH>
           <TH align=left>Description</TH></TR>
         <TR>
-          <TD>&lt;</TD>
+          <TD><</TD>
           <TD>read access, this is the default</TD></TR>
         <TR>
-          <TD>&gt;</TD>
+          <TD>></TD>
           <TD>write access</TD></TR>
         <TR>
-          <TD>+&gt;</TD>
+          <TD>+></TD>
           <TD>create a file with read/write access</TD></TR>
         <TR>
-          <TD>+&lt;</TD>
+          <TD>+<</TD>
           <TD>read/write access to an existing file</TD></TR>
         <TR>
-          <TD>&gt;&gt;</TD>
+          <TD>>></TD>
           <TD>append to a file</TD></TR>
         <TR>
           <TD>" CMD |"</TD>
@@ -2093,8 +2265,9 @@ FILENAME )</A></H3>
         <TT>CMD</TT>.</TD></TR></TBODY></TABLE>
       <P><B><PRE>$FILE = "foo.dat"
 open(FILE) or die("Unable to open $FILE because: $!");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="opendir ( DIRHANDLE, EXPR | DIRNAME )">opendir ( DIRHANDLE, EXPR | 
-DIRNAME )</A></H3>
+
+### opendir ( DIRHANDLE, EXPR | DIRNAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2113,7 +2286,9 @@ DIRNAME )</A></H3>
       <P><B><PRE>$dir = "/tmp"
 opendir(DIR, $dir) or
   die("Unable to open $dir because $!");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="ord ( [EXPR] )">ord ( [EXPR] )</A></H3>
+
+### ord ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2130,7 +2305,9 @@ opendir(DIR, $dir) or
     <TD>Returns the numeric ascii code of the first character in the 
       expression. For example, <TT>ord('A')</TT> returns a value of 65. 
       <P><B><PRE>print("ord() ", ord('G'), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="pack ( TEMPLATE, LIST )">pack ( TEMPLATE, LIST )</A></H3>
+
+### pack ( TEMPLATE, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2248,8 +2425,9 @@ opendir(DIR, $dir) or
 @address = (140, 203, 7, 103)
 $addr = pack('C4', @address);
 print("@address is packed as: $addr\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="pipe ( READHANDLE, WRITEHANDLE )">pipe ( READHANDLE, WRITEHANDLE 
-)</A></H3>
+
+### pipe ( READHANDLE, WRITEHANDLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2264,7 +2442,9 @@ print("@address is packed as: $addr\n");</PRE></B></TR></TBODY></TABLE>
     <TD vAlign=top>Definition:</TD>
     <TD>Opens a pair of connected pipes. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="pop ( ARRAY_VARIABLE )">pop ( ARRAY_VARIABLE )</A></H3>
+
+### pop ( ARRAY_VARIABLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2282,7 +2462,9 @@ print("@address is packed as: $addr\n");</PRE></B></TR></TBODY></TABLE>
       <P><B><PRE>@a = (1, 2, 3, 4);
 print("pop() ", pop(@a), "leaves ",@a,
 "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="pos ( [SCALAR] )">pos ( [SCALAR] )</A></H3>
+
+### pos ( [SCALAR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2304,8 +2486,9 @@ print("pop() ", pop(@a), "leaves ",@a,
       <P><B><PRE>$name = "alpha1 alpha2 alpha3 alpha4";
 $name =~ m/alpha/g;
 print("pos() ", pos($name), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="print [FILEHANDLE] ( [LIST] )">print [FILEHANDLE] ( [LIST] 
-)</A></H3>
+
+### print [FILEHANDLE] ( [LIST] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2331,8 +2514,9 @@ print("pos() ", pos($name), "\n");</PRE></B></TR></TBODY></TABLE>
 # The inside print() function is evaluated first,
 # then the
 # outer print() function is evaluated.</PRE></B></TR></TBODY></TABLE>
-<H3><A name="printf [FILEHANDLE] ( FORMAT, LIST )">printf [FILEHANDLE] ( FORMAT, 
-LIST )</A></H3>
+
+### printf [FILEHANDLE] ( FORMAT, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2349,10 +2533,11 @@ LIST )</A></H3>
       file handle is specified, <TT>STDOUT</TT> is used. For more information, 
       see "<A 
       href="ch09.htm#Example: Printing Revisited">Example: 
-      Printing Revisited</A>," in Chapter 9, "<A 
-      href="ch09.htm">Using Files</A>." 
+      Printing Revisited</A>," in [](./files.md). 
       <P><B><PRE>printf("printf() An integer printed with leading zeroes %05d.\n", 9);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="push ( ARRAY, LIST )">push ( ARRAY, LIST )</A></H3>
+
+### push ( ARRAY, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2376,7 +2561,9 @@ print("There are ", push(@array), "elements.\n");
 @array = ( 1, 2 );
 print("There are ", push(@array, (3, 4, 5)),
 "elements.\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="q ( LIST )">q ( LIST )</A></H3>
+
+### q ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2395,7 +2582,9 @@ print("There are ", push(@array, (3, 4, 5)),
       can actually use any set of delimiters, not just the parentheses. 
       <P><B><PRE>print(q(This is a single quoted string
   without interpolation), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="qq ( LIST )">qq ( LIST )</A></H3>
+
+### qq ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2414,7 +2603,9 @@ print("There are ", push(@array, (3, 4, 5)),
       can actually use any set of delimiters, not just the parentheses. 
       <P><B><PRE>print(qq(This is a double quoted string
   with interpolation\n));</PRE></B></TR></TBODY></TABLE>
-<H3><A name="quotemeta ( EXPR )">quotemeta ( EXPR )</A></H3>
+
+### quotemeta ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2430,7 +2621,9 @@ print("There are ", push(@array, (3, 4, 5)),
     <TD>Escapes all meta-characters in <TT>EXPR</TT>. For example, 
       <TT>quotemeta("AB*..C")</TT> returns <TT>"'AB\*\.\.C"</TT>. 
       <P><B><PRE>print quotemeta("AB*\n[.]*");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="qw ( LIST )">qw ( LIST )</A></H3>
+
+### qw ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2452,7 +2645,9 @@ print("There are ", push(@array, (3, 4, 5)),
       programmer's program without remembering what it is. You can actually use 
       any set of delimiters, not just the parentheses. 
       <P><B><PRE>@array = qw(This is a list of words without interpolation);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="qx ( LIST )">qx ( LIST )</A></H3>
+
+### qx ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2476,7 +2671,9 @@ print("There are ", push(@array, (3, 4, 5)),
 # @output array.
 #
 @output = qx(du -s /tmp);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="rand ( [EXPR] )">rand ( [EXPR] )</A></H3>
+
+### rand ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2496,8 +2693,9 @@ print("There are ", push(@array, (3, 4, 5)),
       unless the initial seed value is altered with <TT>srand()</TT>. 
       <P><B><PRE># print a random number between 0 and 10.
 print("rand(), ", rand(10), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="read ( FILEHANDLE, BUFFER, LENGTH, [OFFSET] )">read ( FILEHANDLE, 
-BUFFER, LENGTH, [OFFSET] )</A></H3>
+
+### read ( FILEHANDLE, BUFFER, LENGTH, [OFFSET] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2521,7 +2719,9 @@ BUFFER, LENGTH, [OFFSET] )</A></H3>
    print("read() $buffer\n");
    close(CLOSE)
 }</PRE></B></TD></TR></TBODY></TABLE>
-<H3><A name="readdir ( DIRHANDLE )">readdir ( DIRHANDLE )</A></H3>
+
+### readdir ( DIRHANDLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2538,7 +2738,9 @@ BUFFER, LENGTH, [OFFSET] )</A></H3>
       <P><B><PRE>opendir(DIR, "/tmp");
 @file = readdir(DIR);
 print("readdir() @files\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="readlink ( [EXPR] )">readlink ( [EXPR] )</A></H3>
+
+### readlink ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2556,8 +2758,9 @@ print("readdir() @files\n");</PRE></B></TR></TBODY></TABLE>
     <TD>Gets the value of a symbolic link. System errors are returned 
       <TT>$!</TT>. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="recv ( SOCKET, BUFFER, LENGTH, FLAGS )">recv ( SOCKET, BUFFER, 
-LENGTH, FLAGS )</A></H3>
+
+### recv ( SOCKET, BUFFER, LENGTH, FLAGS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2572,7 +2775,9 @@ LENGTH, FLAGS )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Places information from a socket into a buffer. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="ref ( EXPR )">ref ( EXPR )</A></H3>
+
+### ref ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2593,7 +2798,9 @@ LENGTH, FLAGS )</A></H3>
 bless($foobar, 'ATMPCLASS');
 print("ref() \$foobar is now in class ", ref($foobar),
 "\n";</PRE></B></TR></TBODY></TABLE>
-<H3><A name="rename ( OLDNAME, NEWNAME )">rename ( OLDNAME, NEWNAME )</A></H3>
+
+### rename ( OLDNAME, NEWNAME )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2611,7 +2818,9 @@ print("ref() \$foobar is now in class ", ref($foobar),
       boundaries. 
       <P><B><PRE>print("rename() returned ",
   rename("/tmp/test", "/tmp/test2"), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="reset ( [EXPR] )">reset ( [EXPR] )</A></H3>
+
+### reset ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2643,7 +2852,9 @@ reset();</PRE></B>
             you may not want to alter-like the ARGV and ENV 
         variables.</TD></TR></TBODY></TABLE>
       <P></P></TR></TBODY></TABLE>
-<H3><A name="reverse ( LIST )">reverse ( LIST )</A></H3>
+
+### reverse ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2660,7 +2871,9 @@ reset();</PRE></B>
       or string is simply reversed. 
       <P><B><PRE>@array = (1, 2, 3);
 print("reverse() ", reverse(@array), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="rewinddir ( DIRHANDLE )">rewinddir ( DIRHANDLE )</A></H3>
+
+### rewinddir ( DIRHANDLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2692,8 +2905,9 @@ map( print("$_ ") , readdir(DIR));
 print("\n");
 
 closedir(DIR);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="rindex ( STRING, SUBSTRING, [POSITION] )">rindex ( STRING, 
-SUBSTRING, [POSITION] )</A></H3>
+
+### rindex ( STRING, SUBSTRING, [POSITION] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2723,7 +2937,9 @@ $answer2 = rindex("abcdefghijiklmdef", "def",
   $answer1 - 3);
 print("rindex() \"def\" is at $answer1 and next
   at $answer2\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="rmdir ( [DIRNAME] )">rmdir ( [DIRNAME] )</A></H3>
+
+### rmdir ( [DIRNAME] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2740,7 +2956,9 @@ print("rindex() \"def\" is at $answer1 and next
     <TD>Tries to delete the specified directory. The directory must be empty 
       of all files, symbolic links, and sub-directories. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="scalar ( EXPR )">scalar ( EXPR )</A></H3>
+
+### scalar ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2757,8 +2975,9 @@ print("rindex() \"def\" is at $answer1 and next
       a list. For example, <TT>scalar(@array)</TT> will return the number of 
       elements in <TT>@array</TT>. 
       <P><B><PRE>$numElements = scalar(@array);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="seek ( FILEHANDLE, POSITION, WHENCE )">seek ( FILEHANDLE, POSITION, 
-WHENCE )</A></H3>
+
+### seek ( FILEHANDLE, POSITION, WHENCE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2777,7 +2996,9 @@ WHENCE )</A></H3>
       function is mainly used with fixed length records to randomly access 
       specific records of the file. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="seekdir ( DIRHANDLE, POS )">seekdir ( DIRHANDLE, POS )</A></H3>
+
+### seekdir ( DIRHANDLE, POS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2794,7 +3015,9 @@ WHENCE )</A></H3>
       with <TT>telldir()</TT>. This is useful when processing directories with 
       <TT>readdir()</TT>. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="select ( [FILEHANDLE] )">select ( [FILEHANDLE] )</A></H3>
+
+### select ( [FILEHANDLE] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2813,7 +3036,7 @@ WHENCE )</A></H3>
       The return value is the currently selected file handle (before any change) 
       so it is useful to assign this to a variable in order to be able to 
       restore the original handle as the default at a later stage. 
-      <P><B><PRE>open(FILE,"&gt;t.out");
+      <P><B><PRE>open(FILE,">t.out");
     $oldHandle = select(FILE);
         print("This is sent to /tmp/t.out.\n");
     select($oldHandle);
@@ -2822,12 +3045,13 @@ print("This is sent to STDOUT.\n");
 # file handle and restores it in one step. The secret is
 # the use of parentheses to create a list out of the return
 # values of the statements evaluated by the comma operator.
-open(FILE, "&gt;t.out");
+open(FILE, ">t.out");
     select((select(FILE),
            print("This is sent to t.out.\n"))[0]);
 print("This is sent to STDOUT.\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="select ( RBITS, WBITS, EBITS, TIMEOUT )">select ( RBITS, WBITS, 
-EBITS, TIMEOUT )</A></H3>
+
+### select ( RBITS, WBITS, EBITS, TIMEOUT )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2843,8 +3067,9 @@ EBITS, TIMEOUT )</A></H3>
     <TD>Examines file descriptors to see if they are ready or if they have 
       exception conditions pending. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="semctl ( ID, SEMNUM, CMD, ARG )">semctl ( ID, SEMNUM, CMD, ARG 
-)</A></H3>
+
+### semctl ( ID, SEMNUM, CMD, ARG )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2860,7 +3085,9 @@ EBITS, TIMEOUT )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Controls operations on semaphores. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="semget ( KEY, NSEMS, FLAGS )">semget ( KEY, NSEMS, FLAGS )</A></H3>
+
+### semget ( KEY, NSEMS, FLAGS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2875,7 +3102,9 @@ EBITS, TIMEOUT )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Finds the semaphore associated with <TT>KEY</TT>. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="semop ( KEY, OPSTRING )">semop ( KEY, OPSTRING )</A></H3>
+
+### semop ( KEY, OPSTRING )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2890,8 +3119,9 @@ EBITS, TIMEOUT )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Performs semaphore operations like signaling and waiting. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="send ( SOCKET, BUFFER, FLAGS, [TO] )">send ( SOCKET, BUFFER, FLAGS, 
-[TO] )</A></H3>
+
+### send ( SOCKET, BUFFER, FLAGS, [TO] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2908,7 +3138,9 @@ EBITS, TIMEOUT )</A></H3>
     <TD>Sends the information in a buffer to a socket. If the socket is not 
       connected, you can specify a destination using the <TT>TO</TT> parameter. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="setgrent ( )">setgrent ( )</A></H3>
+
+### setgrent ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2924,7 +3156,9 @@ EBITS, TIMEOUT )</A></H3>
     <TD>Rewinds the <TT>/etc/group</TT> file to the start of the file for 
       subsequent accesses using <TT>getgrent()</TT>. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="sethostent ( STAYOPEN )">sethostent ( STAYOPEN )</A></H3>
+
+### sethostent ( STAYOPEN )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2942,7 +3176,9 @@ EBITS, TIMEOUT )</A></H3>
       (<TT>STAYOPEN</TT> = 1). This affects functions like 
       <TT>gethostbyname()</TT>. 
       <P><B><PRE>sethostent(1);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="setnetent ( STAYOPEN )">setnetent ( STAYOPEN )</A></H3>
+
+### setnetent ( STAYOPEN )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2960,7 +3196,9 @@ EBITS, TIMEOUT )</A></H3>
       then the file is kept open between calls to <TT>getnetbyname()</TT> and 
       <TT>getnetbyaddr()</TT>. 
       <P><B><PRE>setnetent(1);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="setpgrp (PID, PGRP)">setpgrp (PID, PGRP)</A></H3>
+
+### setpgrp (PID, PGRP)
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2977,8 +3215,9 @@ EBITS, TIMEOUT )</A></H3>
       <TT>PID</TT> is zero, the current process group for the current process is 
       set. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="setpriority ( WHICH, WHO, PRIORITY )">setpriority ( WHICH, WHO, 
-PRIORITY )</A></H3>
+
+### setpriority ( WHICH, WHO, PRIORITY )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -2998,7 +3237,9 @@ PRIORITY )</A></H3>
       priority (normally in the range 120 to 20) where the lower the priority 
       the more favorable the scheduling of the process by the operating system. 
       <P><B><PRE>print("setpriority() ", setpriority(0, 0, -20), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="setprotoent ( STAYOPEN )">setprotoent ( STAYOPEN )</A></H3>
+
+### setprotoent ( STAYOPEN )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3016,7 +3257,9 @@ PRIORITY )</A></H3>
       <TT>STAYOPEN</TT> has a value of 1 then the file is kept open between 
       calls to <TT>getprotobyname()</TT> and <TT>getprotobynumber()</TT>. 
       <P><B><PRE>setprotoent(1);</PRE></B></TR></TBODY></TABLE>
-<H3><A name=setpwent>setpwent</A></H3>
+
+### setpwent
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3032,7 +3275,9 @@ PRIORITY )</A></H3>
     <TD>Rewinds the <TT>/etc/passwd</TT> file used by <TT>getpwent()</TT> and 
       other password related functions. 
       <P><B><PRE>setpwent();</PRE></B></TR></TBODY></TABLE>
-<H3><A name="setservent ( STAYOPEN )">setservent ( STAYOPEN )</A></H3>
+
+### setservent ( STAYOPEN )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3050,8 +3295,9 @@ PRIORITY )</A></H3>
       then the file is kept open between calls to <TT>getservbyname()</TT> and 
       <TT>getservbyport()</TT>. 
       <P><B><PRE>setservent(1);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="setsockopt ( SOCKET, LEVEL, OPTNAME, OPTVAL )">setsockopt ( SOCKET, 
-LEVEL, OPTNAME, OPTVAL )</A></H3>
+
+### setsockopt ( SOCKET, LEVEL, OPTNAME, OPTVAL )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3066,7 +3312,9 @@ LEVEL, OPTNAME, OPTVAL )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Sets socket options. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="shift ( [ARRAY] )">shift ( [ARRAY] )</A></H3>
+
+### shift ( [ARRAY] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3089,7 +3337,9 @@ while ($element = shift(@array)) {
     print("$element - ");
 }
 print("\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="shmctl ( ID, CMD, ARG )">shmctl ( ID, CMD, ARG )</A></H3>
+
+### shmctl ( ID, CMD, ARG )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3105,7 +3355,9 @@ print("\n");</PRE></B></TR></TBODY></TABLE>
     <TD vAlign=top>Definition:</TD>
     <TD>Controls shared memory. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="shmget ( KEY, SIZE, FLAGS )">shmget ( KEY, SIZE, FLAGS )</A></H3>
+
+### shmget ( KEY, SIZE, FLAGS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3121,8 +3373,9 @@ print("\n");</PRE></B></TR></TBODY></TABLE>
     <TD vAlign=top>Definition:</TD>
     <TD>Finds the id of a shared memory segment. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="shmread ( ID, BUFFER, POS, SIZE )">shmread ( ID, BUFFER, POS, SIZE 
-)</A></H3>
+
+### shmread ( ID, BUFFER, POS, SIZE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3137,8 +3390,9 @@ print("\n");</PRE></B></TR></TBODY></TABLE>
     <TD vAlign=top>Definition:</TD>
     <TD>Reads information from a shared memory segment. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="shmwrite ( ID, BUFFER, POS, SIZE )">shmwrite ( ID, BUFFER, POS, 
-SIZE )</A></H3>
+
+### shmwrite ( ID, BUFFER, POS, SIZE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3153,7 +3407,9 @@ SIZE )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Writes information from a shared memory segment. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="shutdown ( SOCKET, HOW )">shutdown ( SOCKET, HOW )</A></H3>
+
+### shutdown ( SOCKET, HOW )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3171,7 +3427,9 @@ SIZE )</A></H3>
       information will stopped. If <TT>HOW</TT> = 2, then both sending and 
       receiving is disallowed. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="sin ( [EXPR] )">sin ( [EXPR] )</A></H3>
+
+### sin ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3187,8 +3445,9 @@ SIZE )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Calculates the sine of the expression in radians. 
       <P><B><PRE>$temp = sin(4);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="sleep ( [NUM_SECONDS_TO_SLEEP] )">sleep ( [NUM_SECONDS_TO_SLEEP] 
-)</A></H3>
+
+### sleep ( [NUM_SECONDS_TO_SLEEP] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3205,8 +3464,9 @@ SIZE )</A></H3>
       specified (if none specified it sleeps forever, but may be woken up by a 
       <TT>SIGALRM</TT> signal if this has been programmed). 
       <P><B><PRE>sleep(5);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="socket ( SOCKET, DOMAIN, TYPE, PROTOCOL )">socket ( SOCKET, DOMAIN, 
-TYPE, PROTOCOL )</A></H3>
+
+### socket ( SOCKET, DOMAIN, TYPE, PROTOCOL )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3231,8 +3491,9 @@ TYPE, PROTOCOL )</A></H3>
             you have the statement <TT>use Socket;</TT> at the top of your file 
             so that the proper definitions get imported.</TD></TR></TBODY></TABLE>
       <P></P></TR></TBODY></TABLE>
-<H3><A name="socketpair ( SOCKET1, SOCKET2, DOMAIN, TYPE, PROTOCOL )">socketpair 
-( SOCKET1, SOCKET2, DOMAIN, TYPE, PROTOCOL )</A></H3>
+
+### socketpair ( SOCKET1, SOCKET2, DOMAIN, TYPE, PROTOCOL )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3248,8 +3509,9 @@ TYPE, PROTOCOL )</A></H3>
     <TD>Creates an unnamed pair of the specified type of sockets in the 
       specified domain. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="sort ( [SUBNAME | BLOCK], LIST )">sort ( [SUBNAME | BLOCK], LIST 
-)</A></H3>
+
+### sort ( [SUBNAME | BLOCK], LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3275,8 +3537,9 @@ TYPE, PROTOCOL )</A></H3>
       extensive discussion of sorting techniques. 
       <P><B><PRE>@array = ("z", "w", "r", "i", "b", "a");
 print("sort() ", sort(@array), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="splice ( ARRAY, OFFSET, [LENGTH], [LIST] )">splice ( ARRAY, OFFSET, 
-[LENGTH], [LIST] )</A></H3>
+
+### splice ( ARRAY, OFFSET, [LENGTH], [LIST] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3298,8 +3561,9 @@ print("sort() ", sort(@array), "\n");</PRE></B></TR></TBODY></TABLE>
 @array        = ("a", "e", "i", "o", "u");
 @removedItems =
    splice(@array, 0 , 3, ("A", "E", "I"));</PRE></B></TR></TBODY></TABLE>
-<H3><A name="split ( [/PATTERN/], [EXPR], [LIMIT] )">split ( [/PATTERN/], 
-[EXPR], [LIMIT] )</A></H3>
+
+### split ( [/PATTERN/], [EXPR], [LIMIT] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3318,7 +3582,9 @@ print("sort() ", sort(@array), "\n");</PRE></B></TR></TBODY></TABLE>
       A negative limit has the same effect as no limit. This function is often 
       used in conjunction with <TT>join()</TT> to create small text databases. 
       <P><B><PRE>@fields = split(/:/, "1:2:3:4:5");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="sprintf ( FORMAT, LIST )">sprintf ( FORMAT, LIST )</A></H3>
+
+### sprintf ( FORMAT, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3334,7 +3600,9 @@ print("sort() ", sort(@array), "\n");</PRE></B></TR></TBODY></TABLE>
     <TD>Uses format specifiers to format the elements of <TT>LIST</TT> in 
       specific ways. 
       <P><B><PRE>$text = sprintf("%0d \n", 9);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="sqrt ( [EXPR] )">sqrt ( [EXPR] )</A></H3>
+
+### sqrt ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3350,7 +3618,9 @@ print("sort() ", sort(@array), "\n");</PRE></B></TR></TBODY></TABLE>
     <TD vAlign=top>Definition:</TD>
     <TD>Calculates square roots. 
       <P><B><PRE>$result = sqrt(4);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="srand ( [EXPR] )">srand ( [EXPR] )</A></H3>
+
+### srand ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3388,7 +3658,9 @@ srand(26);
 print("Here's the same random number: ",
     rand(), ".\n");</PRE></TD></TR></TBODY></TABLE>
       <P></P></TR></TBODY></TABLE>
-<H3><A name="stat ( FILEHANDLE | EXPR )">stat ( FILEHANDLE | EXPR )</A></H3>
+
+### stat ( FILEHANDLE | EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3413,7 +3685,9 @@ print("Here's the same random number: ",
       stat("/etc/passwd");
 
 print("stat() $device, $inode, $ctime\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="study ( [SCALAR] )">study ( [SCALAR] )</A></H3>
+
+### study ( [SCALAR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3436,8 +3710,9 @@ print("stat() $device, $inode, $ctime\n");</PRE></B></TR></TBODY></TABLE>
       studied string). Thus is often used in a loop processing, where each line 
       of a file is studied before being processed with various pattern matches. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="substr ( EXPR, OFFSET, [LEN] )">substr ( EXPR, OFFSET, [LEN] 
-)</A></H3>
+
+### substr ( EXPR, OFFSET, [LEN] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3456,7 +3731,9 @@ print("stat() $device, $inode, $ctime\n");</PRE></B></TR></TBODY></TABLE>
       instead of the left hand side. If the length is negative, it means to trim 
       the string by that number of characters. 
       <P><B><PRE>$temp = substring("okay", 2);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="symlink ( OLDFILE, NEWFILE )">symlink ( OLDFILE, NEWFILE )</A></H3>
+
+### symlink ( OLDFILE, NEWFILE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3469,7 +3746,9 @@ print("stat() $device, $inode, $ctime\n");</PRE></B></TR></TBODY></TABLE>
       <P>Definition Creates a symbolic link from the existing file to the new 
       file. 
       <P><B><PRE>symlink("/usr/local", "/tmp/symlink_to_usr_local");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="syscall ( LIST )">syscall ( LIST )</A></H3>
+
+### syscall ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3499,8 +3778,9 @@ print("stat() $device, $inode, $ctime\n");</PRE></B></TR></TBODY></TABLE>
       the call. 
       <P><B><PRE>require(""syscall.ph");
 syscall(&amp;SYS_getpid);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="sysopen ( FILEHANDLE, FILENAME, MODE, [PERMISSIONS] )">sysopen ( 
-FILEHANDLE, FILENAME, MODE, [PERMISSIONS] )</A></H3>
+
+### sysopen ( FILEHANDLE, FILENAME, MODE, [PERMISSIONS] )
+
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
   <TR>
@@ -3527,8 +3807,9 @@ FILEHANDLE, FILENAME, MODE, [PERMISSIONS] )</A></H3>
       system-dependent. You may be able to look in the <TT>Fcntl</TT> module for 
       more information. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="sysread ( FILEHANDLE, BUFFER, LENGTH, [OFFSET] )">sysread ( 
-FILEHANDLE, BUFFER, LENGTH, [OFFSET] )</A></H3>
+
+### sysread ( FILEHANDLE, BUFFER, LENGTH, [OFFSET] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3558,7 +3839,9 @@ FILEHANDLE, BUFFER, LENGTH, [OFFSET] )</A></H3>
             <TT>syswrite()</TT> should be mixed with other types of input and 
             output functions.</TD></TR></TBODY></TABLE>
       <P></P></TR></TBODY></TABLE>
-<H3><A name="system ( LIST )">system ( LIST )</A></H3>
+
+### system ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3583,9 +3866,10 @@ FILEHANDLE, BUFFER, LENGTH, [OFFSET] )</A></H3>
         <TR>
           <TD bgColor=lightcyan>To capture the output from a system call use a 
             back-quoted string instead of <TT>system()</TT>.</TD></TR></TBODY></TABLE>
-      <P><B><PRE>system("ls -F /var &gt; /tmp/t.tmp");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="syswrite ( FILEHANDLE, BUFFER, LENGTH, [OFFSET] )">syswrite ( 
-FILEHANDLE, BUFFER, LENGTH, [OFFSET] )</A></H3>
+      <P><B><PRE>system("ls -F /var > /tmp/t.tmp");</PRE></B></TR></TBODY></TABLE>
+
+### syswrite ( FILEHANDLE, BUFFER, LENGTH, [OFFSET] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3611,7 +3895,9 @@ FILEHANDLE, BUFFER, LENGTH, [OFFSET] )</A></H3>
             <TT>syswrite()</TT> should be mixed with other types of input and 
             output functions.</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
 <P></TABLE>
-<H3><A name="tell ( [FILEHANDLE] )">tell ( [FILEHANDLE] )</A></H3>
+
+### tell ( [FILEHANDLE] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3628,7 +3914,9 @@ FILEHANDLE, BUFFER, LENGTH, [OFFSET] )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Gets the current position in a file. 
       <P><B><PRE>$filePos = tell(FILE);</PRE></B></TR></TBODY></TABLE>
-<H3><A name="telldir ( DIRHANDLE )">telldir ( DIRHANDLE )</A></H3>
+
+### telldir ( DIRHANDLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3647,8 +3935,9 @@ FILEHANDLE, BUFFER, LENGTH, [OFFSET] )</A></H3>
       <P><B><PRE>opendir(DIR, "/tmp");
 readdir(DIR);
 print("telldir() ", telldir(DIR), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="tie ( VARIABLE, PACKAGENAME, LIST )">tie ( VARIABLE, PACKAGENAME, 
-LIST )</A></H3>
+
+### tie ( VARIABLE, PACKAGENAME, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3680,7 +3969,9 @@ LIST )</A></H3>
 $return = tie %c, Configure;
 print("tie() returned \"$return\" and a sample
   value is $c{installbin}\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="tied ( VARIABLE )">tied ( VARIABLE )</A></H3>
+
+### tied ( VARIABLE )
+
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
   <TR>
@@ -3707,7 +3998,9 @@ print("tie() returned \"$return\" and a sample
       of. This is the same object as was returned by the original call to 
       <TT>tie()</TT> when it was bound. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="time ( )">time ( )</A></H3>
+
+### time ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3724,7 +4017,9 @@ print("tie() returned \"$return\" and a sample
       to access the different elements of time-day, month, etc... 
       <P>$then = time(); # time passes while code is running. $now = time(); 
       $elaspedTime = $now - $then; </P></TR></TBODY></TABLE>
-<H3><A name="times ( )">times ( )</A></H3>
+
+### times ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3743,8 +4038,9 @@ print("tie() returned \"$return\" and a sample
   $childuser) = times();
 print("times() $usertime $systemtime $childsystem
   $childuser\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="truncate ( FILEHANDLE | EXPR, LENGTH )">truncate ( FILEHANDLE | 
-EXPR, LENGTH )</A></H3>
+
+### truncate ( FILEHANDLE | EXPR, LENGTH )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3760,7 +4056,9 @@ EXPR, LENGTH )</A></H3>
     <TD>Truncates the file referenced by <TT>FILEHANDLE</TT> or named by 
       <TT>EXPR</TT> to <TT>LENGTH</TT>. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="uc ( EXPR )">uc ( EXPR )</A></H3>
+
+### uc ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3775,7 +4073,9 @@ EXPR, LENGTH )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Creates a copy of <TT>EXPR</TT> with all letters in uppercase. 
       <P><B><PRE>print("uc() ", uc("abcdEF"), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="ucfirst ( EXPR )">ucfirst ( EXPR )</A></H3>
+
+### ucfirst ( EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3790,7 +4090,9 @@ EXPR, LENGTH )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Creates a copy of <TT>EXPR</TT> with the first letter in uppercase. 
       <P><B><PRE>print("ucfirst() ", ucfirst("abcdEF"), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="umask ( [EXPR] )">umask ( [EXPR] )</A></H3>
+
+### umask ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3808,7 +4110,9 @@ EXPR, LENGTH )</A></H3>
       arguments returns the current umask. This is the UNIX mechanism used to 
       modify the permissions of any files created. 
       <P><B><PRE>print("umask() The current umask is: ", umask(), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="undef ( [EXPR] )">undef ( [EXPR] )</A></H3>
+
+### undef ( [EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3824,7 +4128,9 @@ EXPR, LENGTH )</A></H3>
     <TD>Undefines the value of <TT>EXPR</TT>. The expression may be a scalar, 
       an array or a subroutine (specified with a &amp; prefix). 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="unlink ( LIST )">unlink ( LIST )</A></H3>
+
+### unlink ( LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3839,7 +4145,9 @@ EXPR, LENGTH )</A></H3>
     <TD vAlign=top>Definition:</TD>
     <TD>Deletes the files in <TT>LIST</TT>. 
       <P><B><PRE>unlink("/tmp/t.tst", "/tmp/t.bak");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="unpack ( TEMPLATE, EXPR )">unpack ( TEMPLATE, EXPR )</A></H3>
+
+### unpack ( TEMPLATE, EXPR )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3855,7 +4163,9 @@ EXPR, LENGTH )</A></H3>
     <TD>Unpacks data using the same template mechanism as <TT>pack()</TT> to 
       specify the format of the data in <TT>EXPR</TT>. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="unshift ( ARRAY, LIST )">unshift ( ARRAY, LIST )</A></H3>
+
+### unshift ( ARRAY, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3873,7 +4183,9 @@ EXPR, LENGTH )</A></H3>
       <P><B><PRE>@array = qw(a, b, c);
 print("unshift() Array has ",
     unshift(@array, 1, 2, 3), " elements: @array\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="untie ( VARIABLE )">untie ( VARIABLE )</A></H3>
+
+### untie ( VARIABLE )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3888,8 +4200,9 @@ print("unshift() Array has ",
     <TD vAlign=top>Definition:</TD>
     <TD>Breaks the binding between a variable and a package. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="utime ( ACCESS_TIME, MODIFICATION_TIME, LIST )">utime ( 
-ACCESS_TIME, MODIFICATION_TIME, LIST )</A></H3>
+
+### utime ( ACCESS_TIME, MODIFICATION_TIME, LIST )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3907,7 +4220,9 @@ ACCESS_TIME, MODIFICATION_TIME, LIST )</A></H3>
       must be in the numeric format (for example, seconds since January 1, 
       1970). 
       <P><B><PRE>utime(time(), time(), "/tmp/t.tst");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="values ( HASH )">values ( HASH )</A></H3>
+
+### values ( HASH )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3924,11 +4239,12 @@ ACCESS_TIME, MODIFICATION_TIME, LIST )</A></H3>
       ordered by the internal storage requirements, so it is often useful to use 
       the <TT>sort()</TT> function before processing. For example, 
       <TT>sort(values(%hash))</TT>. 
-      <P><B><PRE>%hash = ('One' =&gt; 1, 'Two' =&gt; 2,
-  'Three' =&gt; 3, 'Four' =&gt; 4);
+      <P><B><PRE>%hash = ('One' => 1, 'Two' => 2,
+  'Three' => 3, 'Four' => 4);
 print("keys() ", join("-", values(%hash)), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="vec ( EXPR, OFFSET, NUM_BITS )">vec ( EXPR, OFFSET, NUM_BITS 
-)</A></H3>
+
+### vec ( EXPR, OFFSET, NUM_BITS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3957,7 +4273,9 @@ vec($vec, 15, 4) = 15; # bits 12 to 15
 # be decoded by unpack() as a hex number
 print("vec() Has a created a string of nybbles,
     in hex: ", unpack("h*", $vec), "\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="wait ( )">wait ( )</A></H3>
+
+### wait ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3973,7 +4291,9 @@ print("vec() Has a created a string of nybbles,
     <TD vAlign=top>Definition:</TD>
     <TD>Waits for a child process to end. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="waitpid ( PID, FLAGS )">waitpid ( PID, FLAGS )</A></H3>
+
+### waitpid ( PID, FLAGS )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -3992,7 +4312,9 @@ print("vec() Has a created a string of nybbles,
       <TT>waitpid()</TT> UNIX system call. A value of 0 for <TT>FLAGS</TT> 
       should work on all operating systems that support processes. 
       <P></P></TR></TBODY></TABLE>
-<H3><A name="wantarray ( )">wantarray ( )</A></H3>
+
+### wantarray ( )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -4019,7 +4341,9 @@ $result = foo();    # scalar context
 print("foo() in a  scalar context: $result\n");
 print("foo() in an array  context:
 @result\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="warn ( [LIST] )">warn ( [LIST] )</A></H3>
+
+### warn ( [LIST] )
+
 <TABLE>
   <TBODY>
   <TR>
@@ -4034,11 +4358,12 @@ print("foo() in an array  context:
     <TD vAlign=top>Definition:</TD>
     <TD>Prints <TT>LIST</TT> to STDERR, like <TT>die()</TT>, but doesn't cause 
       the script to exit or raise an exception. If there is no newline in the 
-      list, <TT>warn()</TT> will append the text "at line &lt;line number&gt;\n" 
+      list, <TT>warn()</TT> will append the text "at line <line number>\n" 
       to the message. However, the script will continue after a warn(). 
       <P><B><PRE>warn("Unable to calculate value, using defaults instead.\n");</PRE></B></TR></TBODY></TABLE>
-<H3><A name="write ( [FILEHANDLE | EXPR] )">write ( [FILEHANDLE | EXPR] 
-)</A></H3>
+
+### write ( [FILEHANDLE | EXPR] )
+
 <TABLE>
   <TBODY>
   <TR>

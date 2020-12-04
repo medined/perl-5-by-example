@@ -27,8 +27,8 @@ You can use the examples in this book with just about any hardware and operating
 There are several ways to use this book. One obvious method is to begin at the first page 
 and proceed in order until the last. Most beginning programmers will use this 
 method and the book is specifically designed so that each chapter builds on the 
-last. Alternatively, you can read up to [Regular Expressions](./regular-expressions.md) and then 
-skip to the [Function List](./function-list.md). You can then read specific chapters as needed when your projects demand them. Either approach works. 
+last. Alternatively, you can read up to [](./regular-expressions.md) and then 
+skip to the [](./function-list.md). You can then read specific chapters as needed when your projects demand them. Either approach works. 
 
 ```{note}
 It is critical to read through the Perl Command Reference (Appendix C) at least once before starting any major project. Otherwise, you might spend hours developing a function that Perl already has pre-defined.
@@ -64,46 +64,46 @@ The following conventions are used in this book:
 
 Perl I, "Basic Perl," consists of the first 8 chapters of this book.
 
-* [Getting Your Feet Wet](./getting-your-feet-wet.md) - presents a short history of Perl and lets you create and execute your first Perl 
+* [](./getting-your-feet-wet.md) - presents a short history of Perl and lets you create and execute your first Perl 
 program.
-* [Numeric and String Literals](./literals.md) - tells you how to explicitly represent non-changeable information in your program.
-* [Variables](./variables.md) - shows how to represent changeable information.
-* [Operators](./operators.md) - discusses how to change the information.
-* [Functions](./functions.md) - discusses how to create parcels of code that you can call or execute by name.
-* [Statements](./statements.md) - dives deep into exactly what the term *statement* means to Perl.
-* [Control Statements](./control-statements.md) - shows how different statements can uses to control your programs.
-* [References](./references.md) - completes the introduction to Perl basics by taking a peek into the world of data structures. 
+* [](./literals.md) - tells you how to explicitly represent non-changeable information in your program.
+* [](./variables.md) - shows how to represent changeable information.
+* [](./operators.md) - discusses how to change the information.
+* [](./functions.md) - discusses how to create parcels of code that you can call or execute by name.
+* [](./statements.md) - dives deep into exactly what the term *statement* means to Perl.
+* [](./control-statements.md) - shows how different statements can uses to control your programs.
+* [](./references.md) - completes the introduction to Perl basics by taking a peek into the world of data structures. 
 
 The next three chapters make up Part II, "Intermediate Perl." These chapters contain valuable information that will let you create powerful, complete applications.
 
-* [Using Files](./files.md) - discusses how files can be uses to store and retrieve information.
-* [Regular Expressions](./regular-expressions.md) - highlights one of Perl's most useful abilities - pattern 
+* [](./files.md) - discusses how files can be uses to store and retrieve information.
+* [](./regular-expressions.md) - highlights one of Perl's most useful abilities - pattern 
 matching.
-* [Creating Reports](./reports.md) - shows you how to present information in a structured way using Perl's inherent reporting ability.
+* [](./reports.md) - shows you how to present information in a structured way using Perl's inherent reporting ability.
 
 Part III, "Advanced Perl," discusses some of the more difficult aspects of Perl.
-* [Using Special Variables](./special-variables.md) - lists all of the special variables that you use in Perl and shows examples of the more useful ones.
-* [Handling Errors and Signals](./errors.md) - introduces the concept of error handling.
-* [What Are Objects?](./objects.md) - discusses the wonderful world of object-oriented programming.
-* [Perl Modules](./modules.md) - shows you how to create your own modules to aid in reusing existing functions.
-* [Debugging Perl](./debugging.md) - helps you to find the bugs or problems in your programs.
-* [Command-line Options](./cli.md) - lists all of the options that you can use on the command-line that starts Perl.
+* [](./special-variables.md) - lists all of the special variables that you use in Perl and shows examples of the more useful ones.
+* [](./errors.md) - introduces the concept of error handling.
+* [](./objects.md) - discusses the wonderful world of object-oriented programming.
+* [](./modules.md) - shows you how to create your own modules to aid in reusing existing functions.
+* [](./debugging.md) - helps you to find the bugs or problems in your programs.
+* [](./cli.md) - lists all of the options that you can use on the command-line that starts Perl.
 
 Part IV, "Perl and the Internet," looks at how 
 Perl can be used with the Internet.
-* [Using Internet Protocols](./internet-protocols.md) - discusses several of the protocols commonly used on the Internet-such as FTP, SMTP, and POP.
-* [What is CGI?](./cgi.md) - eases you into writing scripts that can be executed by remote users.
-* [Form Processing](./form-processing.md) - discusses HTML forms and how Perl scripts can process form information.
-* [Using Perl with Web Servers](./web-servers.md) - examines web server log file and how to create HTML web pages using Perl.
-* [Internet Resources](./internet-resources.md) - lists 
+* [](./internet-protocols.md) - discusses several of the protocols commonly used on the Internet-such as FTP, SMTP, and POP.
+* [](./cgi.md) - eases you into writing scripts that can be executed by remote users.
+* [](./form-processing.md) - discusses HTML forms and how Perl scripts can process form information.
+* [](./web-servers.md) - examines web server log file and how to create HTML web pages using Perl.
+* [](./internet-resources.md) - lists 
 several types of Perl resources that are available on the Internet-such as Usenet Newsgroups, web sites, and the `#perl` and `#cgi` IRC channels.
 
 Also included are:
-* [Review Question Answers](./review-answers.md) - contains answers to the review questions that are at the end of every chapter. Try not to peek!
-* [Glossary](./glossary.md) - lists definitions for some words you might be unfamiliar with.
-* [Function List](./function-list.md) - contains a list of Perl's many functions.
-* [Using the Registry in Windows 95/NT](./windows-registry.md) - introduces you to the Registry database used by Windows 95 and Windows NT to store system and application information.
-* [What's on the CD?](./cd-contents.md) - describes the contents of the CD.
+* [](./review-answers.md) - contains answers to the review questions that are at the end of every chapter. Try not to peek!
+* [](./glossary.md) - lists definitions for some words you might be unfamiliar with.
+* [](./function-list.md) - contains a list of Perl's many functions.
+* [](./windows-registry.md) - introduces you to the Registry database used by Windows 95 and Windows NT to store system and application information.
+* [](./cd-contents.md) - describes the contents of the CD.
 
 ## Copyright
 

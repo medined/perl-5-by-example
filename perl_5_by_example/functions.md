@@ -264,7 +264,7 @@ used inside the function.
       <P>Call the firstSub() function. 
       <P>Print the elements of the array. 
       <P>Define the firstSub() function. 
-      <P>Assign the first two elements of @_ to $firstVar and $secondVar.P&gt; 
+      <P>Assign the first two elements of @_ to $firstVar and $secondVar.P> 
       Change the values of the scalar variables.</TT></P></TD></TR></TBODY></TABLE>
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
@@ -458,8 +458,7 @@ easy definition is that it creates variables that only the current function can
 see. The true definition is that it creates variables with lexical scope. That 
 is, variables that are local to the file, block, or eval. This distinction is 
 only important when creating modules or objects so let's ignore the complicated 
-definition for now. You'll hear more about it in Chapter 15, "<A 
-href="ch15.htm">Perl Modules</A>." 
+definition for now. You'll hear more about it in [](./modules.md). 
 <P>If you remember, I mentioned calling parameters by reference. Passing 
 parameters by reference means that functions can change the variable's value and 
 the main program sees the change. When <TT>local()</TT> is used in conjunction 
@@ -564,8 +563,10 @@ sub firstSub{
 there is a limit to the number of times your program can nest functions, you 
 should never run into this limitation unless you are working with recursive 
 mathematical functions. 
-<H3><A name="Example: Using a Private Function">Example: Using a Private 
-Function</A></H3>Occasionally, you might want to create a private function. A 
+
+### Example: Using a Private Function
+
+Occasionally, you might want to create a private function. A 
 private function is one that is only available inside the scope where it was 
 defined. 
 <P>
@@ -653,8 +654,8 @@ string functions.
     <TD vAlign=top><TT>join(STRING, ARRAY)</TT> </TD>
     <TD vAlign=top>Returns a string that consists of all of the elements of 
       <TT>ARRAY</TT> joined together by <TT>STRING</TT>. For instance, 
-      <TT>join("&gt;&gt;", ("AA", "BB", "CC"))</TT> returns 
-      <TT>"AA&gt;&gt;BB&gt;&gt;CC"</TT>.</TD></TR>
+      <TT>join(">>", ("AA", "BB", "CC"))</TT> returns 
+      <TT>"AA>>BB>>CC"</TT>.</TD></TR>
   <TR>
     <TD vAlign=top><TT>lc(STRING)</TT> </TD>
     <TD vAlign=top>Returns a string with every letter of <TT>STRING</TT> in 
@@ -723,14 +724,14 @@ string functions.
       needing to do anything. 
       <P>Some of these functions use the special variable <TT>$_</TT> as the 
       default string to work with. More information about <TT>$ </TT>can be 
-      found in Chapter 9, "<A href="ch09.htm">Using 
-      Files</A>," and Chapter 12, "<A 
-      href="ch12.htm">Using Special Variables</A>." 
+      found in [](./files.md), and [](./special-variables.md). 
       <BR></P></TD></TR></TBODY></TABLE>
 <P>The next few sections demonstrate some of these functions. After seeing some 
 of them work, you'll be able to use the rest of them. 
-<H3><A name="Example: Changing a String's Value">Example: Changing a String's 
-Value</A></H3>Frequently, I find that I need to change part of a string's value, 
+
+### Example: Changing a String's Value
+
+Frequently, I find that I need to change part of a string's value, 
 usually somewhere in the middle of the string. When this need arises, I turn to 
 the <TT>substr()</TT> function. Normally, the <TT>substr()</TT> function returns 
 a sub-string based on three parameters: the string to use, the position to start 
@@ -765,8 +766,10 @@ value to the string that <TT>substr()</TT> returns.
       <P>Print $firstVar.</TT></P></TD></TR></TBODY></TABLE><B><PRE>$firstVar = "0123BBB789";
 substr($firstVar, 4, 3) = "AAA";
 print("firstVar  = $firstVar\n");</PRE></B>This program prints: <B><PRE>firstVar = 0123AAA789</PRE></B>
-<H3><A name="Example: Searching a String">Example: Searching a 
-String</A></H3>Another useful thing you can do with strings is search them to 
+
+### Example: Searching a String
+
+Another useful thing you can do with strings is search them to 
 see if they contain a given sub-string. For example if you have a full path name 
 such as <TT>"C:\\WINDOWS\\TEMP\\WSREWE.DAT"</TT>, you might need to extract the 
 file name at the end of the path. You might do this by searching for the last 
@@ -780,8 +783,7 @@ backslash and then using <TT>substr()</TT> to return the sub-string.
     <TD bgColor=lightcyan>The path name string has double-backslashes to 
       indicate to Perl that we really want a backslash in the string and not 
       some other escape sequence. You can read more about escape sequences in 
-      Chapter 2, "<A href="ch02.htm">Numeric and 
-      String Literals</A>." <BR></TD></TR></TBODY></TABLE>
+      [](./liternals.md).<BR></TD></TR></TBODY></TABLE>
 <P>
 <TABLE cellSpacing=0 cellPadding=0 border=0>
   <TBODY>
@@ -845,8 +847,8 @@ sorting the elements. Table 5.2 lists the functions you can use with arrays.
     <TD vAlign=top><TT>join(STRING, ARRAY)</TT> </TD>
     <TD vAlign=top>Returns a string that consists of all of the elements of 
       <TT>ARRAY</TT> joined together by <TT>STRING</TT>. For instance, 
-      <TT>join("&gt;&gt;", ("AA", "BB", "CC"))</TT> returns 
-      <TT>"AA&gt;&gt;BB&gt;&gt;CC"</TT>.</TD></TR>
+      <TT>join(">>", ("AA", "BB", "CC"))</TT> returns 
+      <TT>"AA>>BB>>CC"</TT>.</TD></TR>
   <TR>
     <TD vAlign=top><TT>keys(ASSOC_ARRAY)</TT> </TD>
     <TD vAlign=top>Returns a list that holds all of the keys in a given 
@@ -860,8 +862,7 @@ sorting the elements. Table 5.2 lists the functions you can use with arrays.
   <TR>
     <TD vAlign=top><TT>pack(STRING, ARRAY)</TT> </TD>
     <TD vAlign=top>Creates a binary structure, using <TT>STRING</TT> as a 
-      guide, of the elements of <TT>ARRAY</TT>. You can look in Chapter 8, "<A 
-      href="ch08.htm">References</A>," for more 
+      guide, of the elements of <TT>ARRAY</TT>. You can look in [](./references.md), for more 
       information.</TD></TR>
   <TR>
     <TD vAlign=top><TT>pop(ARRAY)</TT> </TD>
@@ -887,8 +888,7 @@ sorting the elements. Table 5.2 lists the functions you can use with arrays.
   <TR>
     <TD vAlign=top><TT>sort(ARRAY)</TT> </TD>
     <TD vAlign=top>Returns a list containing the elements of <TT>ARRAY</TT> in 
-      sorted order. See Chapter 8, "<A 
-      href="ch08.htm">References</A>," for more 
+      sorted order. See [](./references.md), for more 
       information.</TD></TR>
   <TR>
     <TD vAlign=top><TT>splice(ARRAY1, OFFSET, LENGTH, ARRAY2)</TT> </TD>
@@ -922,8 +922,10 @@ order.</TD></TR></TBODY></TABLE>
 <P>As I did with the string functions, only a few of these functions will be 
 explored. Once you see the examples, you'll be able to handle the rest with no 
 trouble. 
-<H3><A name="Example: Printing an Associative Array">Example: Printing an 
-Associative Array</A></H3>The <TT>each()</TT> function returns key, value pairs 
+
+### Example: Printing an Associative Array
+
+The <TT>each()</TT> function returns key, value pairs 
 of an associative array one-by-one in a list. This is called <I>iterating</I> 
 over the elements of the array. Iteration is a synonym for looping. So you could 
 also say that the <TT>each()</TT> function starts at the beginning of an array 
@@ -954,8 +956,10 @@ the array is reached. Therefore, you can use it as the basis of the
 <TT>while</TT>'s condition. When the end of the array is reached, the program 
 continues execution after the closing curly brace. In this example, the program 
 simply ends. 
-<H3><A name="Example: Checking the Existence of an Element">Example: Checking 
-the Existence of an Element</A></H3>You can use the <TT>defined()</TT> function 
+
+### Example: Checking the Existence of an Element
+
+You can use the <TT>defined()</TT> function 
 to check if an array element exists before you assign a value to it. This 
 ability is very handy if you are reading values from a disk file and don't want 
 to overlay values already in memory. For instance, suppose you have a disk file 
@@ -1075,8 +1079,7 @@ functions that deal specifically with arrays. The list of functions included the
 ability to delete elements, return key and value pairs from associative arrays, 
 reverse an array's elements, and sort an array. Examples were shown for printing 
 an associative array and checking for the existence of an element. 
-<P>The next chapter, "<A 
-href="ch06.htm">Statements</A>," goes into detail 
+<P>The next chapter, [](./statements.md), goes into detail 
 about what statements are and how you create them. The information that you 
 learned about variables and functions will come into play. You'll see how to 
 link variables and functions together to form expressions and statements. 
