@@ -53,8 +53,10 @@ Create Patterns</A>" .. Then, the "<A
 href="ch10.htm#Pattern Examples">Pattern 
 Examples</A>" section shows you some situations and how regular expressions can 
 be used to resolve the situations. 
-<H2><A name="Pattern Delimiters">Pattern Delimiters</A></H2>Every regular 
-expression operator allows the use of alternative <I>pattern delimiters</I>. A 
+
+## Pattern Delimiters
+
+Every regular expression operator allows the use of alternative <I>pattern delimiters</I>. A 
 <I>delimiter </I>marks the beginning and end of a given pattern. In the 
 following statement, 
 <P><B><PRE>m//;</PRE></B>you see two of the standard delimiters - the slashes 
@@ -119,8 +121,10 @@ Create Patterns</A>" section later in this chapter.
     it.</TD></TR></TBODY></TABLE>
 <P>The next few sections look at the matching, substitution, and translation 
 operators in more detail. 
-<H2><A name="The Matching Operator (m//)">The Matching Operator 
-(<I>m//</I>)</A></H2>The matching operator (<TT>m//</TT>) is used to find 
+
+## The Matching Operator (m//)
+
+The matching operator (<TT>m//</TT>) is used to find 
 patterns in strings. One of its more common uses is to look for a specific 
 string inside a data file. For instance, you might look for all customers whose 
 last name is "Johnson" or you might need a list of all names starting with the 
@@ -221,8 +225,10 @@ or used inside a loop. This feature comes in handy after you learn about
 meta-characters in the section called "<A 
 href="ch10.htm#How to Create Patterns">How to 
 Create Patterns</A>" later in this chapter. 
-<H2><A name="The Substitution Operator (s///)">The Substitution Operator 
-(<I>s///</I>)</A></H2>The substitution operator (<TT>s///</TT>) is used to 
+
+## The Substitution Operator (s///)
+
+The substitution operator (<TT>s///</TT>) is used to 
 change strings. It requires two operands, like this: 
 <P><B><PRE>s/a/z/;</PRE></B>This statement changes the first <TT>a</TT> in <TT>$_</TT> 
 into a <TT>z</TT>. Not too complicated, huh? Things won't get complicated until 
@@ -313,8 +319,10 @@ If used, variable interpolation is active even if single quotes are used. In
 addition, if back quotes are used as delimiters, the replacement pattern is 
 executed as a DOS or UNIX command. The output of the command is then used as the 
 replacement text. 
-<H2><A name="The Translation Operator (tr///)">The Translation Operator 
-(<I>tr///</I>)</A></H2>The translation operator (<TT>tr///</TT>) is used to 
+
+## The Translation Operator (tr///)
+
+The translation operator (<TT>tr///</TT>) is used to 
 change individual characters in the <TT>$_</TT> variable. It requires two 
 operands, like this: 
 <P><B><PRE>tr/a/z/;</PRE></B>This statement translates all occurrences of <TT>a</TT> 
@@ -384,8 +392,10 @@ also can compress repeated characters using the <TT>s</TT> option.
       utility to convert lowercase characters to uppercase characters, or vice 
       versa. Perl now has the <TT>lc()</TT> and <TT>uc()</TT> functions that can 
       do this much quicker.</TD></TR></TBODY></TABLE></B>
-<H2><A name="The Binding Operators (=~ and !~)">The Binding Operators (<I>=~</I> 
-and <I>!~</I>)</A></H2>The search, modify, and translation operations work on 
+
+## The Binding Operators (=~ and !~)
+
+The search, modify, and translation operations work on 
 the <TT>$_</TT> variable by default. What if the string to be searched is in 
 some other variable? That's where the binding operators come into play. They let 
 you bind the regular expression operators to a variable other than <TT>$_</TT>. 
@@ -433,8 +443,10 @@ $scalar =~ tr/h/H/;
 print("\$scalar = $scalar\n");</PRE></B>This program displays the following: 
 <P><B><PRE>$scalar = THe tree Has many leaves</PRE></B>The first print line does not 
 get executed because the complementary binding operator returns false. 
-<H2><A name="How to Create Patterns">How to Create Patterns</A></H2>So far in 
-this chapter, you've read about the different operators used with regular 
+
+## How to Create Patterns
+
+So far in this chapter, you've read about the different operators used with regular 
 expressions, and you've seen how to match simple sequences of characters. Now 
 we'll look at the wide array of meta-characters that are used to harness the 
 full power of regular expressions. <I>Meta-characters</I> are characters that 
@@ -1296,8 +1308,10 @@ print("@array\n");</PRE></B>This program displays
       components and match each boundary. If all else fails, you can always ask 
       for help on the <TT>comp.lang.perl.misc</TT> 
 newsgroup.</TD></TR></TBODY></TABLE></B>
-<H2><A name="Pattern Examples">Pattern Examples</A></H2>In order to demonstrate 
-many different patterns, I will depart from the standard example format in this 
+
+## Pattern Examples
+
+In order to demonstrate many different patterns, I will depart from the standard example format in this 
 section. Instead, I will explain a matching situation in italicized text and 
 then a possible resolution will immediately follow. After the resolution, I'll 
 add some comments to explain how the match is done. In all of these examples, 
@@ -1646,7 +1660,10 @@ Translation Operator</A></H3>
   delimiters - <TT>::</TT> in this example - then an empty array element will be 
   created. Use <TT>/:+/</TT> as the delimiter to match in order to eliminate the 
   empty array elements.</LI></UL>
-<H2><A name=Summary>Summary</A></H2>This chapter introduced you to regular 
+
+## Summary
+
+This chapter introduced you to regular 
 expressions or patterns, regular expression operators, and the binding 
 operators. There are three regular expression operators - <TT>m//</TT>, 
 <TT>s///</TT>, and <TT>tr///</TT> - which are used to match, substitute, and 
@@ -1699,7 +1716,8 @@ commentary was given for each example.
 <P>In the next chapter, you'll read about how to present information by using 
 formats. Formats are used to help relieve some of the programming burden from 
 the task of creating reports. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
 <OL>
   <LI>Can you use variable interpolation with the translation operator? 
   <P></P>
@@ -1720,7 +1738,9 @@ the task of creating reports.
   <LI>What will be displayed by the following program? 
   <P><B><PRE>$_ = 'AB AB AC';
 print m/c$/i;</PRE></B></LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Write a pattern that matches either <TT>"top"</TT> or <TT>"topgun"</TT>. 
   <P></P>

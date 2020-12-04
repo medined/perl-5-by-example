@@ -43,8 +43,10 @@ pre- and post-increment operators can be used to change a variable's value.
 <P>Let's take a short diversion from our main discussion about statements and 
 look at expressions in isolation. Then we'll return to statements to talk about 
 statement blocks and statement modifiers. 
-<H2><A name=" Understanding Expressions">Understanding Expressions</A></H2>You 
-can break the universe of expressions up in to into four types: 
+
+## Understanding Expressions
+
+You can break the universe of expressions up in to into four types: 
 <P>
 <UL>
   <LI>Simple Expressions 
@@ -179,8 +181,10 @@ to document, and easy to maintain.
       parenthesis, subtract one from the total. If you reach zero at the end of 
       the expression, the parentheses are balanced.<BR></TD></TR></TBODY></TABLE>
 <P>Now we'll go back to looking at statements. 
-<H2><A name="Statement Blocks">Statement Blocks</A></H2>A <I>statement block 
-</I>is a group of statements surrounded by curly braces. Perl views a statement 
+
+## Statement Blocks
+
+A <I>statement block</I>is a group of statements surrounded by curly braces. Perl views a statement 
 block as one statement. The last statement executed becomes the value of the 
 statement block. This means that any place you can use a single statement - like 
 the <TT>map</TT> function - you can use a statement block. You can also create 
@@ -197,8 +201,10 @@ code is set apart from the rest of the program. In this case, the initialization
 of <TT>$secondVar</TT> is a bit more complex than the other variables. Using a 
 statement block does not change the program execution in any way; it simply is a 
 visual device to mark sections of code and a way to create local variables. 
-<H2><A name=" Statement Blocks and Local Variables">Statement Blocks and Local 
-Variables</A></H2>Normally, it's a good idea to place all of your variable 
+
+## Statement Blocks and Local Variables
+
+Normally, it's a good idea to place all of your variable 
 initialization at the top of a program or function. However, if you are 
 maintaining some existing code, you may want to use a statement block and local 
 variables to minimize the impact of your changes on the rest of the code - 
@@ -250,8 +256,10 @@ the statement block does indeed have a local scope.
       bugs have been found and the need for debugging is over, you can remove 
       the statement block quickly and easily because all the code is in one 
       spot.<BR></TD></TR></TBODY></TABLE>
-<H2><A name="Statement Types">Statement Types</A></H2>Just as there were several 
-types of expressions, there are also several types of statements. Table 6.5 
+
+## Statement Types
+
+Just as there were several types of expressions, there are also several types of statements. Table 6.5 
 lists seven different types of statements. 
 <P>
 <TABLE cellPadding=10 border=1>
@@ -589,7 +597,10 @@ in nature. </P>
 <P>You can find out about the <TT>while</TT> statement - as opposed to the 
 <TT>while</TT> modifier - in Chapter 7, "<A 
 href="ch07.htm">Control Statements</A>." 
-<H2><A name=Summary>Summary</A></H2>This chapter discussed Perl statements and 
+
+## Summary
+
+This chapter discussed Perl statements and 
 how they are built from expressions. You read about four types of expressions: 
 simple, simple with side effects, simple with operators, and complex. 
 <P>Next, you read about statement blocks. These program constructs are good to 
@@ -616,7 +627,9 @@ condition is false.
 <P>The next chapter, "<A href="ch07.htm">Control 
 Statements</A>," explores the <TT>decision</TT>, <TT>jump</TT>, and 
 <TT>loop</TT> statement in detail. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What is an expression? 
   <P></P>
@@ -639,7 +652,9 @@ $firstVar += $secondVar++ if ($firstVar &gt; 10);
 
 print("firstVar = $firstVar\n");
 print("secondVar = $secondVar\n");</PRE></B></LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Write a simple expression that uses the exponentiation operator. 
   <P></P>

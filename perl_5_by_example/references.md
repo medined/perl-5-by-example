@@ -6,8 +6,10 @@ computer's memory. Therefore, all of your variables and functions are located at
 some memory location. References are used to hold the memory addresses. When a
 reference is <I>dereferenced</I>, you retrieve the information referred to by
 the reference.
-<H2><A name="Reference Types">Reference Types</A></H2><A
-name="Josh Purinton"></A>There are six types of references. A reference can
+
+## Reference Types
+
+<A name="Josh Purinton"></A>There are six types of references. A reference can
 point to a scalar, an array, a hash, a function, a glob or another reference.
 Table 8.1 shows how the different types are valued with the assignment operator
 and how to dereference them using curly braces.
@@ -732,7 +734,10 @@ sign and curly braces turn the reference back into a scalar value that the
 not used to create the reference to the scalar return value then the
 <TT>${}</TT> dereferencing operation does not have a reference to dereference
 and you will get an "initialized value" error.
-<H2><A name=Summary>Summary</A></H2>In this chapter you learned about
+
+## Summary
+
+In this chapter you learned about
 references. References are scalar variables used to hold the memory locations.
 When references are dereferenced, the actual value is returned. For example, if
 the value of the reference is assigned like this: <TT>$refScalar = \10</TT>.
@@ -769,7 +774,9 @@ to other strings.
 introduces you to opening, reading, and writing files. You find out how to store
 the data records you've constructed in this chapter to a file for long-term
 storage.
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What is a reference?
   <P></P>
@@ -789,7 +796,9 @@ storage.
   <LI>Using the <TT>%database</TT> array in Listing 8.6, what will the following
   line of code display?
   <P><B><PRE>print(%{$database{"MRD-100"}}-&gt;{"Zip"} . "\n");</PRE></B></LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Write a program that will print the dereferenced value of <TT>$ref</TT> in
   the following line of code.

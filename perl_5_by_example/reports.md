@@ -163,8 +163,10 @@ line.
 <P>Headings and detail lines are defined by using format statements, which are 
 discussed in the next section. 
 <P>
-<H2><A name="What's a Format Statement">What's a Format Statement?</A></H2>Perl 
-uses <I>formats</I> as guidelines when writing report information. A format is 
+
+## What's a Format Statement?
+
+Perl uses <I>formats</I> as guidelines when writing report information. A format is 
 used to tell Perl what static text is needed and where variable information 
 should be placed. Formats are defined by using the <TT>format</TT> statement. 
 The syntax for the <TT>format</TT> statement is 
@@ -1090,8 +1092,10 @@ previous value.
 <P><B><PRE>$oldhandle = select(CD_REPORT);
 $~ = "CD_REPORT_TOTAL";
 select($oldhandle);</PRE></B>
-<H2><A name=Summary>Summary</A></H2>In this chapter, you learned how to create 
-simple reports that incorporate headers, footers, and detail lines. Headers are 
+
+## Summary
+
+In this chapter, you learned how to create simple reports that incorporate headers, footers, and detail lines. Headers are 
 used at the top of each page and can consist of both static text and values from 
 variables. Footers are used at the bottom of each page and can consist only of 
 static text. Detail lines make up the body of a report. 
@@ -1110,7 +1114,9 @@ to be closed.
 variables you have seen so far - and more - are discussed along with some 
 examples of how to use them . 
 <P>
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What is the syntax of the <TT>format</TT> statement? 
   <P></P>
@@ -1128,7 +1134,9 @@ examples of how to use them .
   <P></P>
   <LI>What will the following line of code do? 
   <P><B><PRE>select((select(ANNUAL_RPT), $^ = "REGIONAL_SALES")[0]);</PRE></B></LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Modify the program in Listing 11.4 to display the second field as 
   left-justified instead of right-justified. 

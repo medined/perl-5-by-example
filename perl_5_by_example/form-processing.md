@@ -4,7 +4,10 @@
 HTML forms. This chapter gives you an extremely brief overview of HTML and 
 Forms. Next you see how the form information is sent to CGI programs. After 
 being introduced to form processing, a Guest book application is developed. 
-<H2><A name="A Brief Overview of HTML">A Brief Overview of HTML</A></H2>HTML, or 
+
+## A Brief Overview of HTML
+
+HTML, or 
 <B>H</B>yper<B>t</B>ext <B>M</B>arkup <B>L</B>anguage, is used by web 
 programmers to describe the contents of a web page. It is not a programming 
 language. You simply use HTML to indicate what a certain chunk of text is - such 
@@ -51,8 +54,10 @@ inside the &lt;BODY&gt;..&lt;/BODY&gt; tags.
 <P>That's enough about generic HTML. The next section discusses Server-Side 
 Includes. Today, Server-Side Includes are replacing some basic CGI programs, so 
 it is important to know about them. 
-<H2><A name="Server-Side Includes">Server-Side Includes</A></H2>One of the 
-newest features that has been added to web servers is that of Server-Side 
+
+## Server-Side Includes
+
+One of the newest features that has been added to web servers is that of Server-Side 
 Includes or SSI. SSI is a set of functions built into web servers that give HTML 
 developers the ability to insert data into HTML documents using special 
 directives. This means that you can have dynamic documents without needing to 
@@ -196,7 +201,10 @@ Check the documentation that came with it for more information.
       a high-powered computer running your web server and you expect to have a 
       lot of traffic, you might want to limit the number of documents that use 
       Server-Side Includes.</TD></TR></TBODY></TABLE>
-<H2><A name="HTML Forms">HTML Forms</A></H2>HTML forms are designed to let a web 
+
+## HTML Forms
+
+HTML forms are designed to let a web 
 page designer interact with users by letting them fill out a form. The form can 
 be composed of elements such as input boxes, buttons, checkboxes, radio buttons, 
 and selection lists. All of the form elements are specified using HTML tags 
@@ -334,8 +342,10 @@ user must press the enter key.
     <TD bgColor=lightcyan>If you'd like a more advanced introduction to HTML 
       forms, try this web site:</TD></TR></TBODY></TABLE>
 <P><B><PRE>http://robot0.ge.uiuc.edu/~carlosp/cs317/ft.1.html</PRE></B>
-<H2><A name="Handling Form Information">Handling Form Information</A></H2>There 
-are two ways for your form to receive form information - the GET method and the 
+
+## Handling Form Information
+
+There are two ways for your form to receive form information - the GET method and the 
 POST method. The transfer mechanism is specified in the &lt;FORM&gt; tag using 
 the METHOD modifier. For example, the following HTML line tells the client web 
 browser to send the form information back to the server using the GET method. 
@@ -606,8 +616,10 @@ sub decodeURL {
       form? Perhaps the getFormData() function should have some type of 
       limitation that any individual field should only be 1,024 bytes in 
     length?</TD></TR></TBODY></TABLE>
-<H2><A name="Filling in a Form and Mailing the Information">Filling in a Form 
-and Mailing the Information</A></H2>You can have a form's information 
+
+## Filling in a Form and Mailing the Information
+
+You can have a form's information 
 automatically mailed to an email address by using the mailto: notation in the 
 ACTION modifier of the &lt;FORM&gt; tag. For example, 
 <P><B><PRE>&lt;FORM METHOD=get ACTION=mailto:medined@mtolive.com&gt;</PRE></B>When the 
@@ -633,8 +645,10 @@ Chapter 19.
 you won't know which login name the CGI program will be running under. Including 
 the Reply-To field will ensure that the reader of the message can easily respond 
 to the email message if needed. 
-<H2><A name="Debugging Form Processing CGI Scripts">Debugging Form Processing 
-CGI Scripts</A></H2>CGI programs get their information from three sources: the 
+
+## Debugging Form Processing CGI Scripts
+
+CGI programs get their information from three sources: the 
 URL that invokes them, environment variables, and from the STDIN filehandle. 
 Most of the time, this information comes from the web server that invokes the 
 CGI script. However, you can manually recreate the script's normal environment. 
@@ -702,8 +716,10 @@ process follows these steps:
   STDIN. 
   <P></P>
   <LI>Fix any errors that arise.</LI></OL>
-<H2><A name="Creating a Guest Book for Your Site">Creating a Guest Book for Your 
-Site</A></H2>In this section, you create a Guest book for your web site. A Guest 
+
+## Creating a Guest Book for Your Site
+
+In this section, you create a Guest book for your web site. A Guest 
 book gives visitors a place to add comments and see what comments other visitors 
 have made. I find that they add to the sense of community that a web site has. 
 <P>The sample Guest book application will be presented in two stages. First, an 
@@ -1244,7 +1260,10 @@ to confusion on the part of vistors.
 link will let visitors add a new entry and the other refreshes the page. If a 
 second visitor has added a Guest book entry while the first visitor was reading, 
 refreshing the page will display the new entry. 
-<H2><A name=Summary>Summary</A></H2>This chapter introduced you to HTML forms 
+
+## Summary
+
+This chapter introduced you to HTML forms 
 and form processing. You learned that HTML tags provide guidelines about how the 
 content of a document is structured. For example, the &lt;P&gt; tag indicates a 
 new paragraph is starting and the &lt;H1&gt;..&lt;/H1&gt; tags indicate a text 
@@ -1289,7 +1308,9 @@ were added.
 <P>The next chapter, "<A href="ch21.htm">Using Perl 
 with Web Servers</A>," explores web server log files and ways to automatically 
 create web pages. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What does the acronym HTML stand for? 
   <P></P>
@@ -1304,7 +1325,9 @@ create web pages.
   <LI>How much text can be entered into a &lt;TEXTAREA&gt; input field? 
   <P></P>
   <LI>Can you debug a CGI script?</LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Create a HTML document with a title of "My First HTML Document." 
   <P></P>

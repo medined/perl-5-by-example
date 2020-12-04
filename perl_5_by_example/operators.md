@@ -36,8 +36,10 @@ right." The "<A
 href="ch04.htm#Order of Precedence">Order of 
 Precedence</A>" section later in this chapter will discuss precedence in more 
 detail. 
-<H2><A name="Operator Types">Operator Types</A></H2>Perl supports many types of 
-operators. Table 4.1 shows all of the operator types in the Perl language. This 
+
+## Operator Types
+
+Perl supports many types of operators. Table 4.1 shows all of the operator types in the Perl language. This 
 chapter discusses the more commonly used types in detail. You can learn about 
 any type not discussed in this chapter by looking in the chapter referenced in 
 that type's description in Table 4.1. 
@@ -150,8 +152,10 @@ that type's description in Table 4.1.
     <TD vAlign=top>The ternary operator is used to choose between two choices 
       based on a given condition. For instance: If the park is within one mile, 
       John can walk, otherwise he must drive.</TD></TR></TBODY></TABLE>
-<H2><A name="The Binary Arithmetic Operators">The Binary Arithmetic 
-Operators</A></H2>There are six <I>binary arithmetic operators</I>: addition, 
+
+## The Binary Arithmetic Operators
+
+There are six <I>binary arithmetic operators</I>: addition, 
 subtraction, multiplication, exponentiation, division, and modulus. While you 
 may be unfamiliar with the modulus operator, the rest act exactly as you would 
 expect them to. Table 4.2 lists the arithmetic operators that act on two 
@@ -249,8 +253,10 @@ affect how many items are processed before the message is printed. Changing the
 value to 15 means that a message will be printed every 15 items. Chapter 7, "<A 
 href="ch07.htm">Control Statements</A>," describes 
 the <TT>if</TT> and <TT>for</TT> statement in detail. 
-<H2><A name="The Unary Arithmetic Operators">The Unary Arithmetic 
-Operators</A></H2>The unary arithmetic operators act on a single operand. They 
+
+## The Unary Arithmetic Operators
+
+The unary arithmetic operators act on a single operand. They 
 are used to change the sign of a value; to increment a value or to decrement a 
 value. <I>Incrementing</I> a value means to add one to its value. 
 <I>Decrementing</I> a value means to subtract one from its value. Table 4.3 
@@ -450,8 +456,10 @@ post-increment and post-decrement operators as needed.
       achieving the same objective. You will become a more efficient programmer 
       if you decide on one approach to incrementing/decrementing and use it 
       consistently.<BR></TD></TR></TBODY></TABLE></B>
-<H2><A name="The Logical Operators">The Logical Operators</A></H2><I>Logical 
-operators </I>are mainly used to control program flow. Usually you will find 
+
+## The Logical Operators
+
+<I>Logical operators </I>are mainly used to control program flow. Usually you will find 
 them as part of an <TT>if</TT>, a <TT>while</TT> or some other control 
 statement. Control statements are discussed in Chapter 7, "<A 
 href="ch07.htm">Control Statements</A>." 
@@ -626,8 +634,10 @@ if ($secondVar == 0) {
    print("zero\n");
 };</PRE></B>The program produces the following output: <B><PRE>zero</PRE></B>You could replace the 10 in the first line with "ten", 'ten', 
 or any non-zero, non-null value. 
-<H2><A name="The Bitwise Operators">The Bitwise Operators</A></H2>The <I>bitwise 
-</I>operators, listed in Table 4.8, are similar to the logical operators, except 
+
+## The Bitwise Operators
+
+The <I>bitwise </I>operators, listed in Table 4.8, are similar to the logical operators, except 
 that they work on a smaller scale. <A name="Daniel R Selig"></A>
 <P>
 <TABLE cellPadding=10 border=1>
@@ -768,8 +778,10 @@ for your use is not limited to one byte. You are really limited by however many
 bytes Perl uses for one scalar variable - probably 4. You'll need to read the 
 Perl documentation that came with the interpreter to determine how many bytes 
 your scalar variables use. 
-<H2><A name="The Numeric Relational Operators">The Numeric Relational 
-Operators</A></H2>The <I>numeric relational </I>operators, listed in Table 4.9, 
+
+## The Numeric Relational Operators
+
+The <I>numeric relational </I>operators, listed in Table 4.9, 
 are used to test the relationship between two operands. You can see if one 
 operand is equal to another, if one operand is greater than another, or if one 
 operator is less than another. 
@@ -862,8 +874,10 @@ following output: <B><PRE>-1
 1</PRE></B>The -1 indicates that $lowVar (8) is less than $midVar (10). The 0 
 indicates that $midVar is equal to itself. And the 1 indicates that $hiVar (12) 
 is greater than $midVar (10). 
-<H2><A name="The String Relational Operators">The String Relational 
-Operators</A></H2>The <I>string relational operators</I>, listed in Table 4.10, 
+
+## The String Relational Operators
+
+The <I>string relational operators</I>, listed in Table 4.10, 
 are used to test the relationship between two operands. You can see if one 
 operand is equal to another, if one operand is greater than another, or if one 
 operator is less than another. 
@@ -942,8 +956,10 @@ $secondVar = " A";
 print($firstVar cmp $secondVar, "\n");</PRE></B>The program produces the 
 following output <B><PRE>1</PRE></B>which means that "<TT>AA</TT>" is greater than "<TT> A</TT>" 
 according to the criteria used by the <TT>cmp</TT> operator. 
-<H2><A name="The Ternary Operator">The Ternary Operator</A></H2>The 
-<I>ternary</I> is actually a sequence of operators. The operator is used like 
+
+## The Ternary Operator
+
+The <I>ternary</I> is actually a sequence of operators. The operator is used like 
 this: <B><PRE>CONDITION-PART ? TRUE-PART : FALSE-PART</PRE></B>which is shorthand for the 
 following statement: <B><PRE>if (CONDITION-PART) {
     TRUE-PART
@@ -1060,8 +1076,10 @@ assignment operator.
       ternary operator is as bad as using it to control program flow. However, I 
       like this ability because it gives you the ability to concisely determine 
       which variable is the target of an assignment.<BR></TD></TR></TBODY></TABLE>
-<H2><A name="The Range Operator (..)">The Range Operator (<I>..</I>)</A></H2>The 
-range operator was already introduced to you in Chapter 3, "<A 
+
+## The Range Operator (..)
+
+The range operator was already introduced to you in Chapter 3, "<A 
 href="ch03.htm">Variables</A>," when you read about 
 arrays. I review its use here - in an array context - in a bit more detail. 
 <H3><A name="Example: Using the Range Operator">Example: Using the Range 
@@ -1198,8 +1216,10 @@ created.<BR></TD></TR></TBODY></TABLE>
       ('bf'..'ay') actually creates an array with the elements bf, bg, bh ... 
       zz. The array creation stops when the z character is 
   reached.<BR></TD></TR></TBODY></TABLE>
-<H2><A name="The String Operators (. and x)">The String Operators (<I>.</I> and 
-<I>x</I>)</A></H2>Perl has two different string operators - the concatenation 
+
+## The String Operators (. and x)
+
+Perl has two different string operators - the concatenation 
 (<TT>.</TT>) operator and the repetition (<TT>x</TT>) operator. These operators 
 make it easy to manipulate strings in certain ways. Let's start with the 
 concatenation operator. 
@@ -1305,8 +1325,10 @@ print("$firstVar\n");</PRE></B>This program produces the following output: <B><P
     <TD bgColor=lightpink>If you want the repeat an array element, explicitly 
       say which element you want to repeat using an array 
   index.<BR></TD></TR></TBODY></TABLE></B>
-<H2><A name="The Assignment Operators">The Assignment Operators</A></H2>The last 
-type of operators that we'll look at are <I>assignment</I> operators. You've 
+
+## The Assignment Operators
+
+The last type of operators that we'll look at are <I>assignment</I> operators. You've 
 already used the basic assignment operator (<I>=</I>) to value variables in some 
 of the examples earlier in this chapter. In addition, Perl has shortcut 
 assignment operators that combine the basic assignment operator with another 
@@ -1560,8 +1582,10 @@ elements, some of the scalar variables will have an undefined value.
   <TR>
     <TD bgColor=lightpink>You can also use the array slice and range operators 
       with this type of assignment also.<BR></TD></TR></TBODY></TABLE></B>
-<H2><A name="Order of Precedence">Order of Precedence</A></H2>We briefly touched 
-on the order of precedence concept at the beginning of the chapter. Now that you 
+
+## Order of Precedence
+
+We briefly touched on the order of precedence concept at the beginning of the chapter. Now that you 
 are familiar with most of Perl's operators we can explore the subject in more 
 detail. Table 4.12 is an exhaustive list of operators and how they rank in terms 
 of precedence - the higher the level, the higher their precedence. Operators at 
@@ -1802,7 +1826,10 @@ are equal.
     <TD bgColor=lightpink>If you always use parentheses to indicate how you 
       want the operators to be evaluated, you'll never need to worry about 
       operator precedence in your code.<BR></TD></TR></TBODY></TABLE></B>
-<H2><A name=Summary>Summary</A></H2>This chapter was pretty long and you've seen 
+
+## Summary
+
+This chapter was pretty long and you've seen 
 quite a few examples of how operators can be used. Let's review. 
 <P>You learned that operators are used to tell Perl what actions to perform. 
 Some operators take precedence over others so that they and their operands will 
@@ -1838,7 +1865,9 @@ evaluate operators.
 href="ch05.htm">Functions</A>," will look at how 
 functions and list operators are the same thing. And you will be introduced to 
 subroutines and parameters. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What are three arithmetic operators? 
   <P></P>
@@ -1864,7 +1893,9 @@ subroutines and parameters.
   <P></P>
   <LI>If an array were defined with ("<TT>fy</TT>".."<TT>gb</TT>"), what would 
   its elements be?</LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Assign a value to <TT>$firstVar</TT> using both division and subtraction. 
   <P></P>

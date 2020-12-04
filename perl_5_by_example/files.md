@@ -42,8 +42,10 @@ c:/a_long_directory_name/a_long_subdirectory_name/a_long_file_name.doc</PRE></B>
       checking will be used in the example. Instead, error checking information 
       will be discussed in Chapter 13, "Handling Exceptions and 
   Signals."<BR></TD></TR></TBODY></TABLE>
-<H2><A name="Some Files Are Standard">Some Files Are Standard</A></H2>In an 
-effort to make programs more uniform, there are three connections that always 
+
+## Some Files Are Standard
+
+In an effort to make programs more uniform, there are three connections that always 
 exist when your program starts. These are <TT>STDIN</TT>, <TT>STDOUT</TT>, and 
 <TT>STDERR</TT>. Actually, these names are <I>file handles</I>. File handles are 
 variables used to manipulate files. Just like you need to grab the handle of a 
@@ -205,8 +207,10 @@ while (&lt;&gt;) {
     print();
 }</PRE></B>Next, we will take a look at the ways that Perl lets you test files, 
 and following that, the functions that can be used with files. 
-<H2><A name="File Test Operators">File Test Operators</A></H2>Perl has many 
-operators that you can use to test different aspects of a file. For example, you 
+
+## File Test Operators
+
+Perl has many operators that you can use to test different aspects of a file. For example, you 
 can use the <TT>-e</TT> operator to ensure that a file exists before deleting 
 it. Or you can check that a file can be written to before appending to it. By 
 checking the feasibility of the impending file operation, you can reduce the 
@@ -464,7 +468,9 @@ perl.exe is 61952 bytes long.</PRE></B>
       use the file information from the last system call and the <TT>$_</TT> 
       variable is used as the default parameter for a variety of 
     functions.<BR></TD></TR></TBODY></TABLE>
-<H2><A name="File Functions">File Functions</A></H2>
+
+## File Functions
+
 <TABLE cellPadding=10 border=1>
   <CAPTION>Table 9.3-Perl's File Functions</CAPTION>
   <TBODY>
@@ -1613,7 +1619,10 @@ printf("The name is %-10.5s.\n", $name);</PRE></B>This program displays:
 <P><B><PRE>The name is John     .</PRE></B>The period way off to the right shows that 
 the string was left-justified and padded with spaces until it was 10 positions 
 wide. 
-<H2><A name=Globbing>Globbing</A></H2>Perl supports a feature called 
+
+## Globbing
+
+Perl supports a feature called 
 <I>globbing</I> which lets you use wildcard characters to find filenames. A 
 <I>wildcard</I> character is like the wild card in poker. It can have more than 
 one meaning. Let's look at some of the simpler examples. 
@@ -1632,8 +1641,10 @@ the letter f. The next chapter, "<A
 href="ch10.htm">Regular Expressions</A>," will show 
 you more ways to specify file names. Most of the meta-characters used in Chapter 
 10 can be used inside globs. 
-<H2><A name="Using Data Structures With Files">Using Data Structures With 
-Files</A></H2>In the last chapter, you saw how to create complex data 
+
+## Using Data Structures With Files
+
+In the last chapter, you saw how to create complex data 
 structures. Creating a program to read and write those structures is beyond the 
 scope of this book. However, the following examples will show you how to use 
 simpler data structures. The same techniques can be applied to the more 
@@ -1717,7 +1728,10 @@ can be further simplified to:
     ("1212", "Jan", "Jaspree", "Painter");</PRE></B>This assignment statement 
 shows that each array element on the right is paired with a key value on the 
 left so that four separate hash assignments are taking place in this statement. 
-<H2><A name=Summary>Summary</A></H2>This was a rather long chapter, and we've 
+
+## Summary
+
+This was a rather long chapter, and we've 
 really only talked about the basics of using files. You have enough information 
 now to explore the rest of the file functions. You could also create functions 
 to read more complicated data structures with what you've learned so far. 
@@ -1782,7 +1796,9 @@ But, you now know enough to create any kind of file that you might need.
 Expressions</A>," covers the most difficult topics related to Perl. In fact, 
 Perl's regular expressions are one of the main reasons to learn the language. 
 Few other languages will give you equivalent functionality. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What is a file handle? 
   <P></P>
@@ -1805,7 +1821,9 @@ Few other languages will give you equivalent functionality.
   <P></P>
   <LI>What will the following statement display?</LI></OL>
 <P><B><PRE>     printf("%x", 16);</PRE></B>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Write a program to open a file and display each line along with its line 
   number. 

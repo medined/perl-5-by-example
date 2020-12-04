@@ -12,8 +12,10 @@ described in the text where the meaning is not obvious.
 the UNIX system and are at least moderately complicated to use. Please look in 
 the UNIX documentation for additional information if you're interested in the 
 socket, shared memory, or semaphore functions. 
-<H2><A name="Functions by Category">Functions by Category</A></H2>This section 
-listed Perl's functions by category. 
+
+## Functions by Category
+
+This section listed Perl's functions by category. 
 <P><B>
 <UL>
   <LI>Array:</B> chomp, join, keys, map, pop, push, reverse, shift, sort, 
@@ -89,8 +91,10 @@ listed Perl's functions by category.
   getservbyname, getservbyport, getservent, ioctl, link, lstat, readlink, 
   select, setgrent, sethostent, setnetent, setpgrp, setpriority, setprotoent, 
   setpwent, setservent, sleep, syscall, times, umask, wait, waitpid</LI></UL>
-<H2><A name="Functions by Name">Functions by Name</A></H2>Here is the list of 
-Perl's function sorted by name. 
+
+## Functions by Name
+
+Here is the list of Perl's function sorted by name. 
 <P></TABLE>
 <H3><A name="abs( [EXPR] )">abs( [EXPR] )</A></H3>
 <TABLE>

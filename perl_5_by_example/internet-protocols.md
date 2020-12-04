@@ -125,8 +125,10 @@ to examples that use them. You see how to send and receive mail. Sending mail is
 done using the Simple Mail Transfer Protocol (SMTP) which is detailed in an RFC 
 numbered 821. Receiving mail is done using the Post Office Portocol (POP) as 
 detailed in RFC 1725. 
-<H2><A name=Sockets>Sockets</A></H2><I>Sockets</I> are the low-level links that 
-enable Internet conversations. There are a whole slew of functions that deal 
+
+## Sockets
+
+<I>Sockets</I> are the low-level links that enable Internet conversations. There are a whole slew of functions that deal 
 with sockets. Fortunately, you don't normally need to deal with them all. A 
 small subset is all you need to get started. This section will focus in on those 
 aspects of sockets that are useful in Perl. There will be whole areas of sockets 
@@ -333,8 +335,10 @@ how. It's a bit complicated to explain here.
 the send() and recv() functions to talk with the server. 
 <P>The rest of the chapter will be devoted to looking at examples of specific 
 protocols. Let's start out by looking at the time service. 
-<H2><A name="Using the Time Service">Using the Time Service</A></H2>It is very 
-important that all computers on a given network report the same time. This 
+
+## Using the Time Service
+
+It is very important that all computers on a given network report the same time. This 
 allows backups and other regularly scheduled events to be automated. Instead of 
 manually adjusting the time on every computer in the network, you can designate 
 a time server. The other computers can use the time server to determine the 
@@ -432,8 +436,10 @@ sub ctime {
 So I'll leave it in your hands to figure how to do that. 
 <P>The next section is devoted to sending mail. First the protocol will be 
 explained and then you see a Perl script that can send a mail message. 
-<H2><A name="Sending Mail (SMTP)">Sending Mail (SMTP)</A></H2>Before you send 
-mail, the entire message needs to be composed. You need to know where it is 
+
+## Sending Mail (SMTP)
+
+Before you send mail, the entire message needs to be composed. You need to know where it is 
 going, who gets it, and what the text of the message is. When this information 
 has been gathered, you begin the process of transferring the information to a 
 mail server. 
@@ -916,8 +922,10 @@ Netscape's mail program.
 yourself, you need only change the first two assignments. Change $mailTo to your 
 own email address. And change $mailServer to your own mail server. Now run the 
 script. After a minute or two a new mail message will appear in your mailbox. 
-<H2><A name="Receiving Mail (POP)">Receiving Mail (POP)</A></H2>The flip side to 
-sending mail is, of course, receiving it. This is done using the POP or Post 
+
+## Receiving Mail (POP)
+
+The flip side to sending mail is, of course, receiving it. This is done using the POP or Post 
 Office Protocol. Since you've already read about the SMTP protocol in detail, 
 I'll skip describing the details of the POP. After all, the details can be read 
 in the RFC documents when they are needed. Instead, I'll use the POP3Client 
@@ -1057,8 +1065,10 @@ automatically forward the messages to a covering person while you are on
 vacation. I'm sure that with a little thought you can come up with a half-dozen 
 ways to make your life easier by automatically handling some of your in-coming 
 mail. 
-<H2><A name="Checking for Upness (Echo)">Checking for Upness 
-(Echo)</A></H2>Occasionally it's good to know if a server is up and functioning. 
+
+## Checking for Upness (Echo)
+
+Occasionally it's good to know if a server is up and functioning. 
 The echo service is used to make that determination. Listing 18.4 shows a 
 program that checks the upness of two servers. 
 <P>
@@ -1182,8 +1192,10 @@ could also be done written like this:
     print("echo: $host could not be found, sorry.\n")
     return(0);
 }</PRE></B>
-<H2><A name="Transferring Files (FTP)">Transferring Files (FTP)</A></H2>One of 
-the backbones of the Internet is the ability to transfer files. There are 
+
+## Transferring Files (FTP)
+
+One of the backbones of the Internet is the ability to transfer files. There are 
 thousands of servers from which you can download files. For the latest graphic 
 board drivers to the best in shareware to the entire set of UNIX sources, FTP is 
 the answer. 
@@ -1325,8 +1337,10 @@ list of /pub/perl/faq
      FAQ.gz</PRE></B>I'm sure that you can pick out the different FTP commands 
 and responses in this output. Notice that the FTP commands and responses are 
 only displayed when the debugging feature is turned on. 
-<H2><A name="Reading the News (NNTP)">Reading the News (NNTP)</A></H2>One of the 
-most valuable services offered on the net is Usenet newsgroups. Most newsgroups 
+
+## Reading the News (NNTP)
+
+One of the most valuable services offered on the net is Usenet newsgroups. Most newsgroups 
 are question and answer forums. You post a message - perhaps asking a question. 
 And, usually, you get a quick response. In addition, a small number of 
 newsgroups are used to distribute information. Chapter 23, "<A 
@@ -1678,8 +1692,10 @@ million characters. This is probably not good. You might consider a different
 method. The second problem is that it ignores error messages sent from the 
 server. In a professional program, this is a bad thing to do. Use this program 
 as a launchpad to a more robust application. 
-<H2><A name="The World Wide Web (HTTP)">The World Wide Web 
-(HTTP)</A></H2>Unfortunately, the HTTP protocol is a bit extensive to cover in 
+
+## The World Wide Web (HTTP)
+
+Unfortunately, the HTTP protocol is a bit extensive to cover in 
 this introductory book. However, if you've read and understood the examples in 
 this chapter. Then, you'll have little problem downloading some modules from the 
 CPAN archives and quickly writing your own web crawling programs. You can find 
@@ -1716,7 +1732,10 @@ $perlHomePage = url_get('http://www.perl.com');</B></P></PRE></TT></TD></TR></TB
 <P>The HTTP standard is kept on the <A 
 href="http://www.w3.org/pub/WWW/Protocols/HTTP/HTTP2.html">http://www.w3.org/pub/WWW/Protocols/HTTP/HTTP2.html</A> 
 web page. 
-<H2><A name=Summary>Summary</A></H2>Learning Internet protocols will give you a 
+
+## Summary
+
+Learning Internet protocols will give you a 
 very valuable skill and enable you to save time by automating some of the more 
 mundane tasks you do. I'm sure you'll be able to come up with some fascinating 
 new tools to make yourself more productive. For example, The other day I 
@@ -1758,7 +1777,9 @@ While the example was a rather large program, it still only covered a few of the
 commands that are available. 
 <P>Lastly, the HTTP protocol was mentioned. A very short - two line - program 
 was given to retrieve a single web page. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What is a protocol? 
   <P></P>
@@ -1778,7 +1799,9 @@ was given to retrieve a single web page.
   <LI>Why shouldn't the echo service by used by Windows operating systems? 
   <P></P>
   <LI>What is the largest NNTP reponse in terms of bytes?</LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Send an e-mail message to <B>medined@mtolive.com</B>. Use a subject of 
   "Perl by Example" and let me know your opinion of the book so far. 

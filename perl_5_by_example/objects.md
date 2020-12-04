@@ -34,8 +34,10 @@ expand on these definitions and show some examples of their use.
   <P></P>
   <LI><B>Polymorphism:</B> A child class can redefine a method already defined 
   in the parent class.</LI></UL>
-<H2><A name="Learning about Classes">Learning about Classes</A></H2>Before 
-looking at specific examples of object-oriented Perl code, you need to see some 
+
+## Learning about Classes
+
+Before looking at specific examples of object-oriented Perl code, you need to see some 
 generic examples. Looking at generic examples while learning the "standard" 
 object-oriented terminology will ensure that you have a firm grasp of the 
 concepts. If you had to learn new Perl concepts at the same time as the object 
@@ -111,8 +113,10 @@ Perhaps even until you start looking at Perl code.
       quicker because you are using functionality that is already working. 
       Therefore - at least in theory - your programs should be easier to 
     create.</TD></TR></TBODY></TABLE>
-<H2><A name="Abstract Thinking">Abstract Thinking</A></H2>Earlier, I mentioned 
-the term <I>abstraction</I>. Let's examine the idea a little further. In order 
+
+## Abstract Thinking
+
+Earlier, I mentioned the term <I>abstraction</I>. Let's examine the idea a little further. In order 
 to do this, you need a working definition of the term <I>model</I>. How about, 
 "A model is an approximation of something." If you build a model car, some of 
 the items in the original car will be missing, like spark plugs, for example. If 
@@ -146,8 +150,10 @@ class does not need to change.
 <P>By keeping the external interface of the class fixed, an abstraction is being 
 used. This reduces the amount of time spent retrofitting programs each time a 
 change is made to a class the program is using. 
-<H2><A name="Overriding Methods with Polymorphism">Overriding Methods with 
-Polymorphism</A></H2><I>Polymorphism</I> is just a little more complicated than 
+
+## Overriding Methods with Polymorphism
+
+<I>Polymorphism</I> is just a little more complicated than 
 inheritance because it involves methods. Earlier I said you might not learn 
 about methods before you look at a real object-oriented Perl program, but I 
 changed my mind. Let's make up some methods that belong in an inventory program. 
@@ -189,9 +195,10 @@ hierarchy with more than one level.
 not methods. As far as I know, however, there is no special terminology to 
 reflect this. These information-only classes may serve as adjunct or helper 
 classes. 
-<H2><A name="Keeping Code and Data Together with Encapsulation">Keeping Code and 
-Data Together with Encapsulation</A></H2>There's not much that I need to say 
-about encapsulation. Keeping the methods in the same place as the information 
+
+## Keeping Code and Data Together with Encapsulation
+
+There's not much that I need to say about encapsulation. Keeping the methods in the same place as the information 
 they affect seems like common sense. It wasn't done using earlier languages 
 mostly because the programming tools were not available. The extra work required 
 to manually perform encapsulation outweighed the benefits that would be gained. 
@@ -201,8 +208,10 @@ if pens were sold in lots of 100, the <TT>changeQuantityOnHand()</TT> function
 would reflect this. Changing the quantity by only one would not be possible. 
 This enforcement of business rules is one of the biggest attractions of 
 object-oriented programming. 
-<H2><A name="How Perl Handles Objects">How Perl Handles Objects</A></H2>Remember 
-the concept of references that was discussed in Chapter 8,"<A 
+
+## How Perl Handles Objects
+
+Remember the concept of references that was discussed in Chapter 8,"<A 
 href="ch08.htm">References</A>" ? If not, please 
 re-read it. References will play a large role in the rest of the chapter and are 
 critical to understanding how classes are used. You specifically need to 
@@ -1041,9 +1050,10 @@ you can define hash entries inside the <TT>Color</TT> class. When variables are
 defined inside a package but outside a function, they are called <I>static</I> 
 variables. You can access one of the hash entries in the <TT>Color</TT> package 
 like this: <TT>$Color::colors{"blue"}</TT>. 
-<H2><A name="Static Versus Regular Methods and Variables">Static Versus Regular 
-Methods and Variables</A></H2>You already learned that a static method is one 
-that can be called without needing an instantiated object. Actually, you can 
+
+## Static Versus Regular Methods and Variables
+
+You already learned that a static method is one that can be called without needing an instantiated object. Actually, you can 
 also have static variables as you saw in the last section. Static variables can 
 be used to emulate <I>constants</I>, values that don't change. Constants are 
 very useful. For example, you can use them for tax rates, mathematical 
@@ -1144,8 +1154,10 @@ be available to any classes you define.
 <TT>$item-&gt;printAll('PART_NUM');</TT> might display 
 <P><B><PRE>CLASS: Inventory_item=HASH(0x77ceac)
           PART_NUM =&gt; 12A-34</PRE></B>
-<H2><A name=Summary>Summary</A></H2>This chapter served as an introduction to 
-objects. It was not intended to turn you into an overnight object guru. I hope 
+
+## Summary
+
+This chapter served as an introduction to objects. It was not intended to turn you into an overnight object guru. I hope 
 that enough information was presented so you have an understanding of the object 
 terminology and can read other people's programs. You can also create your own 
 methods and properties. However, if you need to create more than a few small 
@@ -1202,7 +1214,9 @@ of the general module functionality and how to store module (and class)
 definition in different script files. You also see how to use some of the 
 prewritten modules available in your Perl distribution files and on the 
 Internet. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What is an object? 
   <P></P>
@@ -1223,7 +1237,9 @@ Internet.
   <P></P>
   <LI>How can you create a function that is available to all classes in your 
   script?</LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Design an object model of a car. Create objects for the car, tires, and 
   doors. 

@@ -63,8 +63,9 @@ another. This lets you use $name, @name, and %name to refer to different values.
 <P>Each variable type will be discussed in its own section. You'll see how to 
 name variables, set their values, and some of the uses to which they can be put. 
 
-<H2><A name="Scalar Variables">Scalar Variables</A></H2>Scalar variables are 
-used to track single pieces of information. You'd use them to hold the title of 
+## Scalar Variables
+
+Scalar variables are used to track single pieces of information. You'd use them to hold the title of 
 a book, or the number of rooms in a house. You can use just about any name 
 imaginable for a scalar variable as long as it begins with a $. 
 <P>
@@ -174,8 +175,10 @@ it.<BR></TD></TR></TBODY></TABLE>
       discussed in Chapter 5, "<A 
       href="ch05.htm">Functions</A>." 
   <BR></TD></TR></TBODY></TABLE>
-<H2><A name="Array Variables">Array Variables</A></H2>You had a short 
-introduction to arrays last chapter when you printed out entire arrays (with no 
+
+## Array Variables
+
+You had a short introduction to arrays last chapter when you printed out entire arrays (with no 
 spaces, remember?) using Perl's print statement. Now, you'll learn about arrays 
 in more detail. Array variable names always begin with a @ character. 
 <P>
@@ -447,8 +450,10 @@ a function name) can return a value. And that the return value might be an
 array. When calling a function that returns the time and date in an array, a 
 slice can be used to "grab" just those elements that you are interested in. For 
 example, just the year or just the hour. 
-<H2><A name="Associative Array Variables">Associative Array 
-Variables</A></H2>Now it's time to look at associative arrays. These are 
+
+## Associative Array Variables
+
+Now it's time to look at associative arrays. These are 
 definitely the most complicated of the three data types. And yet, they are just 
 another type of array. You've already seen that array elements can be accessed 
 with both positive and negative integer indexes. Well, with associative arrays 
@@ -493,8 +498,10 @@ will return a null or blank string.
 in operators, functions, and statements. We'll handle these topics in future 
 chapters. In the next section, we look at string literals and how they interact 
 with variables. 
-<H2><A name="Double Quoted Strings Revisited">Double Quoted Strings 
-Revisited</A></H2>Perl strings have some additional functionality that was not 
+
+## Double Quoted Strings Revisited
+
+Perl strings have some additional functionality that was not 
 mentioned in Chapter 1, "<A href="ch01.htm">Getting 
 Your Feet Wet</A>," because you needed to know a little about variables 
 beforehand. Now that you are familiar with how Perl handles basic variables, 
@@ -598,8 +605,10 @@ print "@array\n";</PRE></B>This program will print:
 <P><B><PRE>1,2,3,4,5</PRE></B>Of course, since $" is a scalar variable you could also 
 assign a longer string to it. For instance, you could use $" = ", " to add both 
 a comma and a space between the array elements. 
-<H2><A name=Summary>Summary</A></H2>This chapter introduced you to the concept 
-of variables - places in computer memory that are used to hold values as your 
+
+## Summary
+
+This chapter introduced you to the concept of variables - places in computer memory that are used to hold values as your 
 program runs. They are called variables because you can assign different values 
 to them as needed. 
 <P>You read about three types of variables: Scalars, arrays, and associative 
@@ -630,7 +639,9 @@ example, $associativeArray{"Jack B."}).
 variable interpolation works. You saw that Perl automatically replaces variables 
 inside double quoted strings. When arrays are printed inside strings their 
 elements are separated by the value of $" - which is usually a space. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What are the three basic data types that Perl uses? 
   <P></P>
@@ -647,7 +658,8 @@ elements are separated by the value of $" - which is usually a space.
   <LI>What is an associative array? 
   <P></P>
   <LI>How can you access associative array elements?</LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
 <OL>
   <LI>Create a array called @months. It should have 12 elements in it with the 
   names of the month represented as strings. 

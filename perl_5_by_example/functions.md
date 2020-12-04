@@ -133,8 +133,10 @@ assigned to the <TT>$areaOfFirstCircle</TT> scalar variable.
 and a subroutine. The difference being that a function returns a value and a 
 subroutine does not. Perl makes no such distinctions. Everything is a function - 
 whether or not it returns a value. 
-<H2><A name="Example: Using the Parameter Array (@_)">Example: Using the 
-Parameter Array (<I>@_</I>)</A></H2>All parameters to a function are stored in 
+
+## Example: Using the Parameter Array (@_>)
+
+All parameters to a function are stored in 
 an array called <TT>@_</TT>. One side effect of this is that you can find out 
 how many parameters were passed by evaluating <TT>@_</TT> in a scalar context. 
 <P>
@@ -198,8 +200,10 @@ does the array element to scalar assignment. The first element is assigned to
 <TT>$height</TT> and the second element is assigned to <TT>$width</TT>. After 
 the assignment is made you can use the scalar variables to represent the 
 parameters. 
-<H2><A name="Example: Passing Parameters by Reference">Example: Passing 
-Parameters by Reference</A></H2>Using scalar variables inside your functions is 
+
+## Example: Passing Parameters by Reference
+
+Using scalar variables inside your functions is 
 a good idea for another reason - besides simple readability concerns. When you 
 change the value of the elements of the <TT>@_</TT> array, you also change the 
 value of the parameters in the rest of the program. This is because Perl 
@@ -344,8 +348,10 @@ Perl variables are accessible everywhere inside a program. This ability to
 globally access variables can be a good thing at times. But it doesn't help when 
 trying to isolate a function from the rest of your program. The next section 
 shows you how to create variables that can only be used inside functions. 
-<H2><A name="Example: Scope of Variables">Example: Scope of 
-Variables</A></H2><I>Scope</I> refers to the visibility of variables. In other 
+
+## Example: Scope of Variables
+
+<I>Scope</I> refers to the visibility of variables. In other 
 words, which parts of your program can see or use it. Normally, every variable 
 has a global scope. Once defined, every part of your program can access a 
 variable. 
@@ -461,8 +467,10 @@ with assigning the <TT>@_</TT> array elements to scalars, then the parameters
 are essentially being called by value. The function can change the value of the 
 variable, but only the function is affected. The rest of the program sees the 
 old value. 
-<H2><A name="Example: Using a List as a Function Parameter">Example: Using a 
-List as a Function Parameter</A></H2>Now that you understand about the scope of 
+
+## Example: Using a List as a Function Parameter
+
+Now that you understand about the scope of 
 variables, let's take another look at parameters. Since all parameters are 
 passed to a function in one array, what if you need to pass both a scalar and an 
 array to the same function? This next example shows you what happens. 
@@ -523,8 +531,10 @@ firstSub: firstVar = AAAA</PRE></B>
       array elements become joined together and passed as one array to the 
       function. Your function won't be able to tell when one array starts and 
       another ends.<BR></TD></TR></TBODY></TABLE>
-<H2><A name="Example: Nesting Function Calls">Example: Nesting Function 
-Calls</A></H2>Function calls can be nested many levels deep. Nested function 
+
+## Example: Nesting Function Calls
+
+Function calls can be nested many levels deep. Nested function 
 calls simply means that one function can call another which in turn can call 
 another. Exactly how many levels you can nest depends on which version of Perl 
 you are running and how your machine is configured. Normally, you don't have to 
@@ -598,8 +608,10 @@ is too much functionality for a single private function to have.
 <P>The rest of the chapter is devoted to showing you some of the built-in 
 function of Perl. These little nuggets of functionality will become part of your 
 arsenal of programming weapons. 
-<H2><A name="String Functions">String Functions</A></H2>The first set of 
-functions that we'll look at are those that deal with strings. These functions 
+
+## String Functions
+
+The first set of functions that we'll look at are those that deal with strings. These functions 
 let you determine a string's length, search for a sub-string, and change the 
 case of the characters in the string, among other things. Table 5.1 shows Perl's 
 string functions. 
@@ -792,8 +804,10 @@ print("$fileName\n");</PRE></B>This program prints: <B><PRE>WSREWE.DAT</PRE></B>
 to <TT>substr()</TT>, it simply returns the sub-string that starts at the 
 position specified by the second parameter and continues until the end of the 
 string specified by the first parameter. 
-<H2><A name="Array Functions">Array Functions</A></H2>Arrays are a big part of 
-the Perl language and it has a lot of functions to help you work with them. Some 
+
+## Array Functions
+
+Arrays are a big part of the Perl language and it has a lot of functions to help you work with them. Some 
 of the actions they perform include deleting elements, checking for the 
 existence of an element, reversing all of the the elements in an array, and 
 sorting the elements. Table 5.2 lists the functions you can use with arrays. 
@@ -1029,7 +1043,10 @@ sub createPair{
 200, Grace Kelly</PRE></B>You can see the customer number for George Orwell has 
 been changed to 101. If the array had already had an entry for 101, the George 
 Orwell' new customer number would be 102. 
-<H2><A name=Summary>Summary</A></H2>In this chapter you've learned about 
+
+## Summary
+
+In this chapter you've learned about 
 functions - what they are and how to call them. You saw that you can create your 
 own function or use one of Perl's many built-in functions. Each function can 
 accept any number of parameters which get delivered to the function in the form 
@@ -1063,7 +1080,9 @@ href="ch06.htm">Statements</A>," goes into detail
 about what statements are and how you create them. The information that you 
 learned about variables and functions will come into play. You'll see how to 
 link variables and functions together to form expressions and statements. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What is a parameter? 
   <P></P>
@@ -1081,7 +1100,9 @@ link variables and functions together to form expressions and statements.
   variables created with <TT>my()</TT>? 
   <P></P>
   <LI>What does the <TT>map()</TT> function do?</LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Create a function that prints its own parameter list. 
   <P></P>

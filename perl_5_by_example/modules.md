@@ -77,8 +77,10 @@ For example, <TT>$Outer::Inner::foo</TT>. This really refers to a module named
 <TT>Outer::Inner</TT>, so named by the statement: <TT>package 
 Outer::Inner;</TT>. Module designers sometimes use this technique to simulate 
 nested modules. 
-<H2><A name="Module Constructors and Destructors">Module Constructors and 
-Destructors</A></H2>You may recall constructors and destructors from the 
+
+## Module Constructors and Destructors
+
+You may recall constructors and destructors from the 
 discussion about objects in the last chapter. Constructors are used to 
 initialize something and destructors are used to write log messages, close 
 files, and do other clean-up type duties. 
@@ -159,8 +161,10 @@ Main</PRE></B>
       signal, be sure to define a signal-handler function. See Chapter 13, "<A 
       href="ch13.htm">Handling Errors and 
       Signals</A>," for more information.</TD></TR></TBODY></TABLE>
-<H2><A name="Symbol Tables">Symbol Tables</A></H2>Each namespace - and 
-therefore, each module, class, or package - has its own symbol table. A 
+
+## Symbol Tables
+
+Each namespace - and therefore, each module, class, or package - has its own symbol table. A 
 <I>symbol table</I>, in Perl, is a hash that holds all of the names defined in a 
 namespace. All of the variable and function names can be found there. The hash 
 for each namespace is named after the namespace with two colons. For example, 
@@ -232,8 +236,10 @@ are forced there. For example, <TT>STDIN</TT>, <TT>STDOUT</TT>, <TT>STDERR</TT>,
 <TT>@ARGV</TT>, <TT>@ARGVOUT</TT>, <TT>%ENV</TT>, <TT>@INC</TT>, and 
 <TT>%SIG</TT> are forced into the <TT>main</TT> namespace regardless of when 
 they are used. 
-<H2><A name="The require Compiler Directive">The <TT>require</TT> Compiler 
-Directive</A></H2>The <TT>require</TT> directive is used to load Perl libraries. 
+
+## The require Compiler Directive
+
+The <TT>require</TT> directive is used to load Perl libraries. 
 If you needed to load a library called <TT>Room.pl</TT>, you would do so like 
 this: 
 <P><B><PRE>require Room.pl;</PRE></B>No exporting of symbols is done by the 
@@ -266,8 +272,10 @@ are seen.
     <TD bgColor=lightcyan>Prototypes are not covered in this book. If you are 
       using Perl 5.002 or later, prototypes should be discussed in the 
       documentation that comes with the Perl distribution.</TD></TR></TBODY></TABLE>
-<H2><A name="The use Compiler Directive">The <TT>use</TT> Compiler 
-Directive</A></H2>When it came time to add modules to Perl, thought was given to 
+
+## The use Compiler Directive
+
+When it came time to add modules to Perl, thought was given to 
 how this could be done and still support the old libraries. It was decided that 
 a new directive was needed. Thus, <TT>use</TT> was born. 
 <P>The <TT>use</TT> directive will automatically export function and variable 
@@ -295,8 +303,10 @@ a statement like this:
 you add optional elements to the <TT>use</TT> directive you need to explicitly 
 list all of the names that you want to use. The <TT>:DEFAULT</TT> is a short way 
 of saying, "give me everything in the <TT>@EXPORT</TT> list." 
-<H2><A name="What's a Pragma">What's a Pragma?</A></H2>In a - hopefully futile - 
-effort to confuse programmers, the <TT>use</TT> directive was given a second job 
+
+## What's a Pragma?
+
+In a - hopefully futile - effort to confuse programmers, the <TT>use</TT> directive was given a second job 
 to do. It turns other compiler directives on and off. For example, you might 
 want to force Perl to use integer math instead of floating-point math to speed 
 up certain sections of your program. 
@@ -348,8 +358,10 @@ use.
   <TR>
     <TD vAlign=top>subs </TD>
     <TD vAlign=top>Lets you predeclare function names.</TD></TR></TBODY></TABLE>
-<H2><A name="The strict Pragma">The <TT>strict</TT> Pragma</A></H2>The most 
-important pragma is <TT>strict</TT>. This pragma generates compiler errors if 
+
+## The strict Pragma
+
+The most important pragma is <TT>strict</TT>. This pragma generates compiler errors if 
 unsafe programming is detected. There are three specific things that are 
 detected: 
 <P>
@@ -438,8 +450,10 @@ practice.
     <TD bgColor=lightpink>Always use the <TT>strict</TT> pragma in your 
       scripts. It will take a little longer to declare everything, but the time 
       saved in debugging will more than make up for it.</TD></TR></TBODY></TABLE>
-<H2><A name="The Standard Modules">The Standard Modules</A></H2>Table 15.2 lists 
-the modules that should come with all distributions of Perl. Some of these 
+
+## The Standard Modules
+
+Table 15.2 lists the modules that should come with all distributions of Perl. Some of these 
 modules are not portable across all operating systems, however. The descriptions 
 for the modules mention the incompatibility if I know about it. 
 <P>
@@ -546,8 +560,10 @@ for the modules mention the incompatibility if I know about it.
     <TD vAlign=top>Socket </TD>
     <TD vAlign=top>Loads socket definitions used by the socket 
   functions.</TD></TR></TBODY></TABLE>
-<H2><A name="strict, my() and Modules"><TT>strict</TT>, <TT>my()</TT> and 
-Modules</A></H2>In order to use the <TT>strict</TT> pragma with modules you need 
+
+## strict, my() and Modules
+
+In order to use the <TT>strict</TT> pragma with modules you need 
 to know a bit more about the <TT>my()</TT> function about how it creates lexical 
 variables instead of local variables. You may be tempted to think that variables 
 declared with <TT>my()</TT> are local to a package. Especially since you can 
@@ -569,8 +585,10 @@ line option. Since the variable is inside a package, there is no guarantee that
 it will be used by the calling script and the -w command line option generates a 
 warning about any variable that is only used once. By adding the harmless 
 logical and to the declaration, the warning messages are avoided. 
-<H2><A name="Module Examples">Module Examples</A></H2>This section shows you how 
-to use the <TT>Carp</TT>, <TT>English</TT>, and <TT>Env</TT> modules. After 
+
+## Module Examples
+
+This section shows you how to use the <TT>Carp</TT>, <TT>English</TT>, and <TT>Env</TT> modules. After 
 looking at these examples, you should feel comfortable about trying the rest. 
 <H3><A name="Example: The Carp Module">Example: The <TT>Carp</TT> 
 Module</A></H3>This useful little module lets you do a better job of analyzing 
@@ -959,7 +977,10 @@ The <TT>strict</TT> pragma requires all variables to be lexically declared or to
 be fully qualified. The environment variables are declared in the <TT>Env</TT> 
 package, but exported into the <TT>main</TT> namespace. Therefore, they need to 
 be qualified using the <TT>main::</TT> notation. 
-<H2><A name=Summary>Summary</A></H2>In this chapter you learned about Perl 
+
+## Summary
+
+In this chapter you learned about Perl 
 modules. You read about several guidelines that should be followed when creating 
 modules. For example, package name should have their first letter capitalized 
 and use file extensions of <TT>pm</TT>. 
@@ -1008,8 +1029,10 @@ the <TT>%Env</TT> hash variable.
 <P>In the next chapter, you learn about debugging Perl code. You read about 
 syntax or compile-time errors versus run-time errors. And the <TT>strict</TT> 
 pragma will be discussed in more detail. 
-<H2><A name="Review Questions">Review Questions</A></H2>Answers to Review 
-Questions are in Appendix A: 
+
+## Review Questions
+
+Answers to Review Questions are in Appendix A: 
 <P>
 <OL>
   <LI>What is a module? 
@@ -1027,7 +1050,9 @@ Questions are in Appendix A:
   <LI>What is a symbol table?
   <P></P>
   <LI>How can you create a variable that is local to a package?</LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Write a program that uses <TT>BEGIN</TT> and <TT>END</TT> blocks to write 
   a message to a log file about the start and end times for the program. 

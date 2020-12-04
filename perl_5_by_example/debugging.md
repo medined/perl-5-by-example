@@ -26,8 +26,10 @@ also display or modify the value of variables. The debugger is discussed in the
 section "<A 
 href="ch16.htm#Stepping Through Your Script">Stepping 
 Through Your Script</A>." 
-<H2><A name="Syntax Errors">Syntax Errors</A></H2>Perl is generally considered 
-an interpreted language. However, this is not truly accurate. Before being 
+
+## Syntax Errors
+
+Perl is generally considered an interpreted language. However, this is not truly accurate. Before being 
 executed, your script is compiled into an internal format - just like Java's 
 byte-codes or Pascal's p-code. While Perl is compiling your program, it also 
 checks for syntax errors. This is why syntax errors are also called 
@@ -40,8 +42,10 @@ Errors</A>," might help. If you are uncertain which line of code really
 generated the error, try commenting out the likely culprits. Then, re-execute 
 your program and look at the error messages that are produced to see if they 
 have changed. 
-<H2><A name="Common Syntax Errors">Common Syntax Errors</A></H2>One very common 
-error is to use <TT>elseif</TT> instead of the correct <TT>elsif</TT> keyword. 
+
+## Common Syntax Errors
+
+One very common error is to use <TT>elseif</TT> instead of the correct <TT>elsif</TT> keyword. 
 As you program, you'll find that you consistently make certain kinds of errors. 
 This is okay. Everyone has his or her own little quirks. Mine is that I keep 
 using the assignment operator instead of the equality operator. Just remember 
@@ -104,7 +108,10 @@ understand the basic concepts:
   <P></P>
   <LI>Errors frequently have nothing to do with the error message 
 displayed.</LI></UL>
-<H2><A name="Logic Errors">Logic Errors</A></H2>These are the programming 
+
+## Logic Errors
+
+These are the programming 
 problems - sometimes called bugs - that you can stare at for hours without 
 having a clue about why your script doesn't work. If you find yourself in this 
 position, take a walk or eat some chocolate. In other words, take a break from 
@@ -883,7 +890,10 @@ printUserReport will display user usage statistics.
   DB&lt;2&gt; backupUsers
 
   DB&lt;3&gt; q</PRE></B>
-<H2><A name=Summary>Summary</A></H2>I think there is a certain art to debugging 
+
+## Summary
+
+I think there is a certain art to debugging 
 that only experience can teach. There are so many different places where things 
 can go wrong that it's impossible to remember which bug is most likely to appear 
 in a given scenario. If you have lived through the frustration of tracking a bug 
@@ -914,7 +924,9 @@ and print or modify variables. You can also set breakpoints or actions, and you
 can interactively call any function directly from the debugger command line. 
 <P>The next chapter discusses all the Perl command-line options. You'll also 
 read more about the <TT>-e</TT> option mentioned earlier. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What is a logic error? 
   <P></P>
@@ -933,7 +945,9 @@ read more about the <TT>-e</TT> option mentioned earlier.
   <LI>What is an alias? 
   <P></P>
   <LI>What is a common error associated with conditional expressions?</LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Name three common syntax errors. 
   <P></P>

@@ -4,8 +4,10 @@
 functions. You can use special variables to hold the results of searches, the 
 values of environment variables, and flags to control debugging. In short, every 
 aspect of Perl programming uses special variables. 
-<H2><A name="What Are the Special Variables">What Are the Special 
-Variables?</A></H2>Table 12.1 shows a list of the special variables you can use 
+
+## What Are the Special Variables?
+
+Table 12.1 shows a list of the special variables you can use 
 in your programs. The order of this list is identical to the list in the file 
 <TT>PERLVAR.htm</TT>, which comes with your Perl distribution. This table lets 
 you quickly find any special variable you may come across in examples or someone 
@@ -657,8 +659,10 @@ the directories in <TT>PATH</TT>.
 <P>Environment variables can be useful if you want a quick way to pass 
 information between a parent and a child process. The parent can set the 
 variables, and the child can read it. 
-<H2><A name=Summary>Summary</A></H2>This chapter gathered into one location all 
-the special variables used by Perl. Most of the variables have already been 
+
+## Summary
+
+This chapter gathered into one location all the special variables used by Perl. Most of the variables have already been 
 discussed in previous chapters, and a few will be discussed in later chapters. 
 <P>Table 12.1 was organized to follow the <TT>PERLVAR.htm</TT> document that 
 comes in the Perl distribution, so if you aren't familiar with a variable used 
@@ -675,7 +679,9 @@ href="ch13.htm">Handling Exceptions and
 Signals</A>," you learn about how to handle error conditions, use the 
 <TT>eval()</TT> function, and other things dealing with exceptions that can 
 happen while your program runs. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>What is the <TT>$/</TT> variable used for? 
   <P></P>
@@ -703,7 +709,9 @@ $\ = "\n";
 foreach (@array) {
     print();
 }</PRE></B></LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Write a program that changes the array element separator used in 
   interpolation of arrays inside double-quoted strings to be a comma instead of 

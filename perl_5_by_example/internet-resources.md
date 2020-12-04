@@ -28,8 +28,10 @@ helpful.
       done visiting all the sites, you will know where to access the most recent
       of the tools and you can begin to download and build your own CGI
       development library.</TD></TR></TBODY></TABLE>
-<H2><A name="Usenet Newsgroups">Usenet Newsgroups</A></H2>Usenet is an Internet
-service that distributes articles or messages between servers. Each article is
+
+## Usenet Newsgroups
+
+Usenet is an Internet service that distributes articles or messages between servers. Each article is
 targeted to a specific newsgroup. You need a news reader program in order to
 download articles from the news server to your local machine.
 <P>
@@ -120,8 +122,10 @@ web page.
 contain many references to CGI programming using Perl, which is one of the more
 popular approaches to CGI. Look at all of the newsgroups beginning with
 comp.infosystems.www for those that meet your needs.
-<H2><A name="Web Sites">Web Sites</A></H2>The following sites are good places to
-visit to build up your Perl and/or CGI script library. In addition, the sites
+
+## Web Sites
+
+The following sites are good places to visit to build up your Perl and/or CGI script library. In addition, the sites
 will begin to give you an idea of what exactly already exists that you can use,
 or modify for your own use. You will be amazed at what is available that is
 either freeware or shareware.
@@ -406,8 +410,10 @@ href="http://www.atmos.washington.edu/perl/perl.html">http://www.atmos.washingto
 
 <P>The University of Florida Perl page can be found at:
 <P><A href="http://www0.cise.ufl.edu/perl/">http://www0.cise.ufl.edu/perl/</A>
-<H2><A name="Internet Relay Chat, or IRC">Internet Relay Chat, or
-IRC</A></H2>The Internet Relay Chat service is a powerful tool. If you're lucky
+
+## Internet Relay Chat, or IRC
+
+The Internet Relay Chat service is a powerful tool. If you're lucky
 you can connect with very knowledgeable people who will answer your questions.
 The advantage of IRC is that you can hold a real-time conversation with other
 people. You ask a question, they respond. You can then ask for clarification or
@@ -424,8 +430,10 @@ book. Install it and try connecting to one of the EfNet servers. I like to use
 <TT><B>type /join #perl</TT></B> and say hello to everyone. You might even see
 me - my nickname is WasWaldo.
 <P><I>Fig. 22.4 - A Random Snapshot of the IRC Channels.</I>
-<H2><A name=Summary>Summary</A></H2>You've finally the end of the journey that
-was mentioned in Chapter 1,"<A
+
+## Summary
+
+You've finally the end of the journey that was mentioned in Chapter 1,"<A
 href="ch01.htm">Getting Your Feet Wet</A>" . I hope
 you enjoyed reading this book as much as I enjoyed writing it. While I was doing
 research, I took advantage of every resource listed in this chapter. If you have

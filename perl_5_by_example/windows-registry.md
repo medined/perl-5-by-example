@@ -130,8 +130,10 @@ provided three shortcut keys:
     <TD bgColor=tomato>Remember, <B>changing the Registry is dangerous!</B> 
       Make sure that your Registry is backed up before making 
   changes.</TD></TR></TBODY></TABLE>
-<H2><A name="Registry Files">Registry Files</A></H2>There are two files 
-associated with the Registry. The <TT>user.dat</TT> file holds user-specific 
+
+## Registry Files
+
+There are two files associated with the Registry. The <TT>user.dat</TT> file holds user-specific 
 data, and the <TT>system.dat</TT> file holds everything else. They are located 
 in the <TT>\windows</TT> directory and have their hidden, system, and read-only 
 attributes turned on. This means that if you run the <TT>dir</TT> command while 
@@ -204,8 +206,10 @@ backup files directly into the <TT>\windows</TT> directory. After copying the
 files, reboot your system. 
 <P>If you are still having problems, consider re-installing Windows or calling 
 an expert for help. 
-<H2><A name="Using the Registry">Using the Registry</A></H2>At this point, you 
-have some background information about the Registry, and you know how to make a 
+
+## Using the Registry
+
+At this point, you have some background information about the Registry, and you know how to make a 
 Registry backup. Let's look at how to use the Registry. To make Registry access 
 as easy as possible, I have created an object-oriented module, called 
 <TT>DmmReg.pm</TT>, for Registry access. 
@@ -480,9 +484,10 @@ foreach $name (sort(keys(%pairs))) {
 <P><B><PRE>Data File   : c:\perl5\test.dat
 Date        : 07-01-1996
 Message File: c:\perl5\friday.log</PRE></B>
-<H2><A name="Some Common Uses for the Registry">Some Common Uses for the 
-Registry</A></H2>There are several common uses for the Registry besides storing 
-configuration information that needs to be persistent: 
+
+## Some Common Uses for the Registry
+
+There are several common uses for the Registry besides storing configuration information that needs to be persistent: 
 <P>
 <UL>
   <LI><B>To create a file association</B>-You can associate an executable file 
@@ -558,8 +563,10 @@ to the <TT>new</TT> sub-menu by following these steps:
 for both the .pl and .pm extensions, your <TT>new</TT> context menu will look 
 like Figure E.7. 
 <P><I>Fig. d.7 - The New Sub-menu with Options to Create Perl Files</I> 
-<H2><A name=Summary>Summary</A></H2>This chapter briefly introduced you to the 
-Windows Registry. The Registry is used to store all types of information about 
+
+## Summary
+
+This chapter briefly introduced you to the Windows Registry. The Registry is used to store all types of information about 
 the hardware and software that are installed on your computer system. 
 <P>You learned that there are three root keys (<TT>HKEY_DYN_DATA</TT>, 
 <TT>HKEY_LOCAL_MACHINE</TT>, and <TT>HKEY_USERS</TT>) and three shortcut keys 

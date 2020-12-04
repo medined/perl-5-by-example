@@ -13,8 +13,10 @@ stopping the execution of your script; this is by using the <TT>eval()</TT>
 function. 
 <P>Then, you'll see what a signal is and how to use the <TT>%SIG</TT> 
 associative array to create a signal handling function. 
-<H2><A name="Checking for Errors">Checking for Errors</A></H2>There is only one 
-way to check for errors in any programming language. You need to test the return 
+
+## Checking for Errors
+
+There is only one way to check for errors in any programming language. You need to test the return 
 values of the functions that you call. Most functions return zero or false when 
 something goes wrong. So when using a critical function like <TT>open()</TT> or 
 <TT>sysread()</TT>, checking the return value helps to ensure that your program 
@@ -43,8 +45,10 @@ sometimes be used to determine the last error that took place.
 <P>Once you detect an error and you can't correct the problem without outside 
 intervention, you need to communicate the problem to the user. This is usually 
 done with the <TT>die()</TT> and <TT>warn()</TT> functions. 
-<H2><A name="Example: Using the errno Variable">Example: Using the <I>errno</I> 
-Variable</A></H2>When an error occurs, it is common practice for UNIX-based 
+
+## Example: Using the errno Variable
+
+When an error occurs, it is common practice for UNIX-based 
 functions and programs to set a variable called <TT>errno</TT> to reflect which 
 error has occurred. If <TT>errno=2</TT>, then your script tried to access a 
 directory or file that did not exist. Table 13.1 lists ten possible values the 
@@ -208,8 +212,10 @@ the <TT>/text</TT> directory does not exist. As with <TT>die()</TT>, you can
 eliminate the script name and line number by ending your error message with a 
 newline. You could also use the <TT>$!</TT> variable to display the system error 
 message. 
-<H2><A name="Trapping Fatal Errors">Trapping Fatal Errors</A></H2>There are 
-times when reporting fatal errors and then exiting the script are not 
+
+## Trapping Fatal Errors
+
+There are times when reporting fatal errors and then exiting the script are not 
 appropriate responses to a problem. For example, your script might try to use 
 the <TT>alarm()</TT> function, which is not supported in some versions of Perl. 
 Normally, using an unsupported function causes your problem to exit, but you can 
@@ -351,8 +357,10 @@ make them easier to document and maintain.
       interpreter and some customized commands. This saves on hard disk space if 
       you use a lot of batch files because each file may take up to 4,096 bytes, 
       regardless of its actual size.</TD></TR></TBODY></TABLE>
-<H2><A name="What Is a Signal">What Is a Signal?</A></H2><I>Signals</I> are 
-messages sent by the operating system to the process running your Perl script. 
+
+## What Is a Signal?
+
+<I>Signals</I> are messages sent by the operating system to the process running your Perl script. 
 At any time, a signal that must be answered can be sent to your process. 
 Normally, a default handler is used to take care of a signal. For example, under 
 Windows 95, when you press the Ctrl+C key combination, your process is sent an 
@@ -498,7 +506,10 @@ chdir('/printer') or die($!);</B></P></PRE></TT></TD></TR></TBODY></TABLE>
 these lines: 
 <P><B><PRE></B>WARN: No such file or directory at 13lst02.pl line 22.
 DIE: No such file or directory at 13lst02.pl line 23.</PRE></B>
-<H2><A name=Summary>Summary</A></H2>Your program's capability to handle error 
+
+## Summary
+
+Your program's capability to handle error 
 conditions that may arise will determine, to a certain extent, how usable your 
 program is. If a user of your program finds that it stops working with no error 
 messages and, therefore, no way to solve whatever problem has arisen, then your 
@@ -531,7 +542,9 @@ depending on which operating system you are using. The <TT>%SIG</TT> associative
 array is used to set up your own signal handling function. 
 <P>The next chapter discusses object orientation. You learn the definition of an 
 object, how to create one, and how to derive new objects from existing objects. 
-<H2><A name="Review Questions">Review Questions</A></H2>
+
+## Review Questions
+
 <OL>
   <LI>Why is it important to check for errors? 
   <P></P>
@@ -547,7 +560,9 @@ object, how to create one, and how to derive new objects from existing objects.
   <LI>What will the statement <TT>$SIG{'ABRT'} = 'IGNORE'</TT> do?? 
   <P></P>
   <LI>Which signal is used to trap floating point exceptions?</LI></OL>
-<H2><A name="Review Exercises">Review Exercises</A></H2>
+
+## Review Exercises
+
 <OL>
   <LI>Write a program that opens a file and uses the <TT>die()</TT> function if 
   an error occurs. 
